@@ -33,22 +33,26 @@
   p{margin:0 0 1em}
   ul,ol{padding-left:1.3em}
   .intro{color:var(--redup); font-size:.95rem; margin-top:-.4em}
+
   .kotak{border:1px solid var(--garis); border-radius:14px; padding:16px 18px; margin:1.5em 0; background:#fff}
   .kotak-rumus{background:var(--utama-muda); border-color:#c7d2fe; text-align:center}
   .kotak-ingat{border-left:5px solid var(--aksen); background:#f0fdfa}
   .kotak-awas{border-left:5px solid var(--kuning); background:#fffbeb}
   .kotak-contoh{border-left:5px solid var(--biru); background:#f0f9ff}
   .label{font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--redup); margin-bottom:.5em}
-  .rumus{font-family:"Cambria Math","Times New Roman",Georgia,serif; font-size:1.22rem; font-style:italic}
+
+  .rumus{font-family:"Cambria Math","Times New Roman",Georgia,serif; font-size:1.22rem; font-style:normal}
   .rumus sub{font-style:normal; font-size:.7em}
   .pecahan{display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; margin:0 .25em; line-height:1.25}
   .pecahan>span:first-child{border-bottom:1.5px solid currentColor; padding:0 .35em}
   .pecahan>span:last-child{padding:0 .35em}
   .langkah{margin:.35em 0; padding-left:1.1em}
   .akar{font-family:"Cambria Math","Times New Roman",Georgia,serif; font-size:1.1rem}
+
   table{width:100%; border-collapse:collapse; margin:1.2em 0; font-size:.92rem}
   th,td{border:1px solid var(--garis); padding:9px 11px; text-align:left; vertical-align:top}
   th{background:#f8fafc; font-weight:700}
+
   .sim{border:1px solid var(--garis); border-radius:16px; overflow:hidden; margin:1.6em 0; background:#fff}
   .sim-atas{padding:12px 16px; background:#0f172a; color:#fff; font-weight:700; font-size:.9rem}
   .sim-kanvas-bungkus{background:#f8fafc; padding:10px}
@@ -57,21 +61,28 @@
   .atur label{display:block; font-size:.78rem; font-weight:700; color:var(--redup); margin-bottom:6px}
   .atur output{color:var(--utama); font-variant-numeric:tabular-nums}
   input[type=range]{width:100%; accent-color:var(--utama); height:28px}
-  button{font:inherit; font-weight:700; font-size:.88rem; padding:11px 18px; border-radius:10px; border:1px solid var(--utama); background:var(--utama); color:#fff; cursor:pointer; min-height:44px}
+  button{
+    font:inherit; font-weight:700; font-size:.88rem; padding:11px 18px; border-radius:10px;
+    border:1px solid var(--utama); background:var(--utama); color:#fff; cursor:pointer; min-height:44px;
+  }
   button.sekunder{background:#fff; color:var(--utama)}
   button:active{transform:translateY(1px)}
   .sim-hasil{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--garis); border-top:1px solid var(--garis)}
   .hasil{background:#fff; padding:12px 8px; text-align:center; min-width:0}
   .hasil b{display:block; font-size:1.08rem; color:var(--utama); font-variant-numeric:tabular-nums; overflow-wrap:anywhere}
   .hasil span{font-size:.7rem; color:var(--redup); font-weight:700; text-transform:uppercase; letter-spacing:.06em}
+
   .soal{border:1px solid var(--garis); border-radius:14px; padding:16px 18px; margin:1.2em 0}
   .soal .jawaban{display:none; margin-top:12px; padding:12px 14px; border-radius:10px; background:#f0fdfa; border-left:4px solid var(--aksen)}
   .soal .jawaban.tampil{display:block}
   .soal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:.8em 0}
   .mini{border:1px solid var(--garis);border-radius:10px;padding:10px 12px;background:#f8fafc}
+  .cek{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:10px}
+
   .ringkas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:1.2em 0}
   .ringkas>div{border:1px solid var(--garis);border-radius:12px;padding:13px 14px}
   .ringkas b{color:var(--utama)}
+
   @media (max-width:700px){.sim-atur{grid-template-columns:1fr 1fr}}
   @media (max-width:560px){
     body{padding:16px 14px 50px; font-size:15px}
@@ -84,106 +95,403 @@
 </style>
 </head>
 <body>
+
 <h1 id="persamaan-kuadrat">Persamaan Kuadrat: Menentukan Akar</h1>
 <p class="intro">SMA &middot; Matematika UTBK &middot; adaptasi materi dari dokumen sumber &middot; perkiraan waktu baca 35–45 menit</p>
+
 <p>Persamaan kuadrat adalah persamaan yang pangkat tertinggi variabelnya dua. Fokus materi ini adalah <b>menentukan akar</b>, yaitu nilai <span class="rumus">x</span> yang membuat persamaan bernilai benar. Pola contoh dan latihan mengikuti dokumen sumber yang diberikan, kemudian penjelasannya disusun ulang dalam bahasa Indonesia agar sesuai kebutuhan SMA dan UTBK.</p>
-<div class="kotak kotak-ingat"><div class="label">Gagasan utama</div>Jika persamaan dapat ditulis sebagai <span class="rumus">ax² + bx + c = 0</span> dengan <span class="rumus">a ≠ 0</span>, maka tujuan kita adalah mencari semua nilai <span class="rumus">x</span> yang membuat ruas kiri sama dengan nol.</div>
+
+<div class="kotak kotak-ingat">
+  <div class="label">Gagasan utama</div>
+  Jika persamaan dapat ditulis sebagai <span class="rumus">ax² + bx + c = 0</span> dengan <span class="rumus">a ≠ 0</span>, maka tujuan kita adalah mencari semua nilai <span class="rumus">x</span> yang membuat ruas kiri sama dengan nol.
+</div>
+
 <h2 id="bentuk-umum">1. Bentuk Umum dan Arti Akar</h2>
-<div class="kotak kotak-rumus"><span class="rumus">ax² + bx + c = 0, &nbsp; a ≠ 0</span></div>
+<div class="kotak kotak-rumus">
+  <span class="rumus">ax² + bx + c = 0, &nbsp; a ≠ 0</span>
+</div>
 <p>Akar persamaan kuadrat sering ditulis <span class="rumus">x₁</span> dan <span class="rumus">x₂</span>. Jika kedua nilainya sama, persamaan mempunyai <b>akar kembar</b>. Dalam bilangan real, ada juga persamaan yang tidak mempunyai akar real.</p>
+
 <h3 id="prinsip-hasil-kali-nol">Prinsip hasil kali nol</h3>
 <p>Metode yang paling sering muncul pada dokumen sumber adalah faktorisasi. Dasarnya sederhana:</p>
-<div class="kotak kotak-rumus"><span class="rumus">P(x) · Q(x) = 0 &nbsp; ⇒ &nbsp; P(x)=0 atau Q(x)=0</span></div>
-<div class="kotak kotak-contoh"><div class="label">Contoh dari pola soal sumber</div><p><b>Tentukan akar</b> <span class="rumus">x² − 4x + 3 = 0</span>.</p><p class="langkah"><span class="rumus">x² − 4x + 3 = (x−1)(x−3)</span></p><p class="langkah"><span class="rumus">x−1=0</span> atau <span class="rumus">x−3=0</span></p><p style="margin:0"><b>Akar:</b> <span class="akar">{1, 3}</span>.</p></div>
+<div class="kotak kotak-rumus">
+  <span class="rumus">P(x) · Q(x) = 0 &nbsp; ⇒ &nbsp; P(x)=0 atau Q(x)=0</span>
+</div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh dari pola soal sumber</div>
+  <p><b>Tentukan akar</b> <span class="rumus">x² − 4x + 3 = 0</span>.</p>
+  <p class="langkah"><span class="rumus">x² − 4x + 3 = (x−1)(x−3)</span></p>
+  <p class="langkah"><span class="rumus">x−1=0</span> atau <span class="rumus">x−3=0</span></p>
+  <p style="margin:0"><b>Akar:</b> <span class="akar">{1, 3}</span>.</p>
+</div>
+
 <h2 id="faktorisasi-trinomial">2. Faktorisasi Persamaan Kuadrat</h2>
 <p>Untuk bentuk <span class="rumus">x² + bx + c = 0</span>, cari dua bilangan yang <b>jumlahnya b</b> dan <b>hasil kalinya c</b>. Untuk koefisien depan selain 1, faktorisasi dapat dilakukan dengan mengelompokkan atau mencoba pasangan faktor yang sesuai.</p>
-<table><thead><tr><th>Persamaan dari sumber</th><th>Faktorisasi</th><th>Akar</th></tr></thead><tbody><tr><td class="rumus">x² + 5x − 14 = 0</td><td class="rumus">(x+7)(x−2)=0</td><td class="akar">{−7, 2}</td></tr><tr><td class="rumus">2x² + x − 15 = 0</td><td class="rumus">(x+3)(2x−5)=0</td><td class="akar">{−3, 5/2}</td></tr><tr><td class="rumus">4x² − 8x + 3 = 0</td><td class="rumus">(2x−1)(2x−3)=0</td><td class="akar">{1/2, 3/2}</td></tr></tbody></table>
-<div class="kotak kotak-contoh"><div class="label">Contoh soal</div><p>Tentukan akar <span class="rumus">2x² + x − 15 = 0</span>.</p><p><span class="rumus">2x² + x − 15 = (x+3)(2x−5)</span></p><p>Jadi <span class="rumus">x = −3</span> atau <span class="rumus">x = 5/2</span>.</p></div>
+
+<table>
+  <thead><tr><th>Persamaan dari sumber</th><th>Faktorisasi</th><th>Akar</th></tr></thead>
+  <tbody>
+    <tr><td class="rumus">x² + 5x − 14 = 0</td><td class="rumus">(x+7)(x−2)=0</td><td class="akar">{−7, 2}</td></tr>
+    <tr><td class="rumus">2x² + x − 15 = 0</td><td class="rumus">(x+3)(2x−5)=0</td><td class="akar">{−3, 5/2}</td></tr>
+    <tr><td class="rumus">4x² − 8x + 3 = 0</td><td class="rumus">(2x−1)(2x−3)=0</td><td class="akar">{1/2, 3/2}</td></tr>
+  </tbody>
+</table>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh soal</div>
+  <p>Tentukan akar <span class="rumus">2x² + x − 15 = 0</span>.</p>
+  <p><span class="rumus">2x² + x − 15 = (x+3)(2x−5)</span></p>
+  <p>Jadi <span class="rumus">x = −3</span> atau <span class="rumus">x = 5/2</span>.</p>
+</div>
+
 <h2 id="akar-kembar">3. Akar Kembar dan Bentuk Kuadrat Sempurna</h2>
 <p>Jika sebuah persamaan dapat ditulis sebagai kuadrat dari satu faktor, kedua akarnya sama.</p>
-<div class="kotak kotak-rumus"><span class="rumus">(px+q)² = 0 &nbsp; ⇒ &nbsp; px+q=0</span></div>
-<div class="soal-grid"><div class="mini"><b>Contoh 1</b><br><span class="rumus">x² + 10x + 25 = (x+5)²</span><br>Akar: <span class="akar">{−5}</span></div><div class="mini"><b>Contoh 2</b><br><span class="rumus">4x² − 12x + 9 = (2x−3)²</span><br>Akar: <span class="akar">{3/2}</span></div></div>
+<div class="kotak kotak-rumus">
+  <span class="rumus">(px+q)² = 0 &nbsp; ⇒ &nbsp; px+q=0</span>
+</div>
+
+<div class="soal-grid">
+  <div class="mini"><b>Contoh 1</b><br><span class="rumus">x² + 10x + 25 = (x+5)²</span><br>Akar: <span class="akar">{−5}</span></div>
+  <div class="mini"><b>Contoh 2</b><br><span class="rumus">4x² − 12x + 9 = (2x−3)²</span><br>Akar: <span class="akar">{3/2}</span></div>
+</div>
+
 <h2 id="faktor-bersama-dan-selisih-kuadrat">4. Faktor Bersama dan Selisih Kuadrat</h2>
 <p>Dokumen sumber juga memuat persamaan yang dapat diselesaikan sangat cepat tanpa mencari pasangan faktor trinomial.</p>
+
 <h3 id="faktor-bersama">Faktor bersama x</h3>
-<div class="kotak kotak-contoh"><div class="label">Contoh soal</div><p><span class="rumus">x² − 7x = 0</span></p><p><span class="rumus">x(x−7)=0</span> sehingga <span class="rumus">x=0</span> atau <span class="rumus">x=7</span>.</p></div>
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh soal</div>
+  <p><span class="rumus">x² − 7x = 0</span></p>
+  <p><span class="rumus">x(x−7)=0</span> sehingga <span class="rumus">x=0</span> atau <span class="rumus">x=7</span>.</p>
+</div>
+
 <h3 id="selisih-kuadrat">Selisih dua kuadrat</h3>
-<div class="kotak kotak-rumus"><span class="rumus">x² − k² = (x−k)(x+k)</span></div>
-<div class="kotak kotak-contoh"><div class="label">Contoh soal</div><p><span class="rumus">x² − 9 = 0</span> ⇒ <span class="rumus">(x−3)(x+3)=0</span></p><p style="margin:0">Akar: <span class="akar">{−3, 3}</span>.</p></div>
-<div class="kotak kotak-awas"><div class="label">Kasus penting</div><span class="rumus">x² + 25 = 0</span> tidak mempunyai akar <b>real</b>, karena <span class="rumus">x²</span> tidak mungkin bernilai negatif untuk <span class="rumus">x</span> real.</div>
+<div class="kotak kotak-rumus">
+  <span class="rumus">x² − k² = (x−k)(x+k)</span>
+</div>
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh soal</div>
+  <p><span class="rumus">x² − 9 = 0</span> ⇒ <span class="rumus">(x−3)(x+3)=0</span></p>
+  <p style="margin:0">Akar: <span class="akar">{−3, 3}</span>.</p>
+</div>
+
+<div class="kotak kotak-awas">
+  <div class="label">Kasus penting</div>
+  <span class="rumus">x² + 25 = 0</span> tidak mempunyai akar <b>real</b>, karena <span class="rumus">x²</span> tidak mungkin bernilai negatif untuk <span class="rumus">x</span> real.
+</div>
+
 <h2 id="memeriksa-akar">5. Memeriksa Apakah Akar yang Diberikan Benar</h2>
 <p>Salah satu soal pada sumber meminta kita memeriksa pasangan akar yang diberikan. Cara tercepat adalah <b>faktorkan persamaan</b> atau <b>substitusikan nilai yang diklaim sebagai akar</b>.</p>
-<div class="kotak kotak-contoh"><div class="label">Contoh dari soal sumber</div><ol><li><span class="rumus">x² + x − 20 = 0</span>, akar yang diberikan <span class="akar">{−5,4}</span> → <b>benar</b>, karena <span class="rumus">(x+5)(x−4)=0</span>.</li><li><span class="rumus">x² − 4x = 0</span>, akar yang diberikan <span class="akar">{−2,2}</span> → <b>salah</b>; akar sebenarnya <span class="akar">{0,4}</span>.</li><li><span class="rumus">x² − 36 = 0</span>, akar yang diberikan <span class="akar">{−6,6}</span> → <b>benar</b>.</li></ol><p style="margin:0"><b>Kesimpulan:</b> pernyataan I dan III benar.</p></div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh dari soal sumber</div>
+  <ol>
+    <li><span class="rumus">x² + x − 20 = 0</span>, akar yang diberikan <span class="akar">{−5,4}</span> → <b>benar</b>, karena <span class="rumus">(x+5)(x−4)=0</span>.</li>
+    <li><span class="rumus">x² − 4x = 0</span>, akar yang diberikan <span class="akar">{−2,2}</span> → <b>salah</b>; akar sebenarnya <span class="akar">{0,4}</span>.</li>
+    <li><span class="rumus">x² − 36 = 0</span>, akar yang diberikan <span class="akar">{−6,6}</span> → <b>benar</b>.</li>
+  </ol>
+  <p style="margin:0"><b>Kesimpulan:</b> pernyataan I dan III benar.</p>
+</div>
+
 <h2 id="koefisien-pecahan">6. Koefisien Pecahan</h2>
 <p>Jika koefisien berupa pecahan, kalikan seluruh persamaan dengan KPK penyebut agar lebih mudah difaktorkan.</p>
-<div class="kotak kotak-contoh"><div class="label">Contoh soal dari sumber</div><p><span class="rumus">x² − <span class="pecahan"><span>3</span><span>4</span></span>x − <span class="pecahan"><span>5</span><span>2</span></span> = 0</span></p><p>Kalikan seluruh persamaan dengan 4:</p><p><span class="rumus">4x² − 3x − 10 = 0 = (4x+5)(x−2)</span></p><p style="margin:0"><b>Akar:</b> <span class="akar">{−5/4, 2}</span>.</p></div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh soal dari sumber</div>
+  <p><span class="rumus">x² − <span class="pecahan"><span>3</span><span>4</span></span>x − <span class="pecahan"><span>5</span><span>2</span></span> = 0</span></p>
+  <p>Kalikan seluruh persamaan dengan 4:</p>
+  <p><span class="rumus">4x² − 3x − 10 = 0 = (4x+5)(x−2)</span></p>
+  <p style="margin:0"><b>Akar:</b> <span class="akar">{−5/4, 2}</span>.</p>
+</div>
+
 <h2 id="menyederhanakan-persamaan">7. Sederhanakan Dulu, Baru Faktorkan</h2>
 <p>Pada UTBK, bentuk awal sering belum berupa <span class="rumus">ax²+bx+c=0</span>. Kembangkan tanda kurung, gabungkan suku sejenis, lalu faktorkan.</p>
-<div class="kotak kotak-contoh"><div class="label">Contoh 1 dari sumber</div><p><span class="rumus">(2x+4)(x−3) − x² = 3</span></p><p><span class="rumus">2x² − 2x − 12 − x² = 3</span></p><p><span class="rumus">x² − 2x − 15 = 0</span></p><p><span class="rumus">(x−5)(x+3)=0</span></p><p style="margin:0"><b>Akar:</b> <span class="akar">{−3,5}</span>.</p></div>
-<div class="kotak kotak-contoh"><div class="label">Contoh 2 dari sumber</div><p><span class="rumus">(2x+1)² + 2(x+1) = 3</span></p><p><span class="rumus">4x²+4x+1+2x+2=3</span></p><p><span class="rumus">4x²+6x=0</span> ⇒ <span class="rumus">2x(2x+3)=0</span></p><p style="margin:0"><b>Akar:</b> <span class="akar">{−3/2,0}</span>.</p></div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh 1 dari sumber</div>
+  <p><span class="rumus">(2x+4)(x−3) − x² = 3</span></p>
+  <p><span class="rumus">2x² − 2x − 12 − x² = 3</span></p>
+  <p><span class="rumus">x² − 2x − 15 = 0</span></p>
+  <p><span class="rumus">(x−5)(x+3)=0</span></p>
+  <p style="margin:0"><b>Akar:</b> <span class="akar">{−3,5}</span>.</p>
+</div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh 2 dari sumber</div>
+  <p><span class="rumus">(2x+1)² + 2(x+1) = 3</span></p>
+  <p><span class="rumus">4x²+4x+1+2x+2=3</span></p>
+  <p><span class="rumus">4x²+6x=0</span> ⇒ <span class="rumus">2x(2x+3)=0</span></p>
+  <p style="margin:0"><b>Akar:</b> <span class="akar">{−3/2,0}</span>.</p>
+</div>
+
 <h2 id="persamaan-rasional">8. Persamaan Rasional dan Syarat Penyebut</h2>
 <p>Jika ada pecahan aljabar, catat lebih dulu nilai yang membuat penyebut nol. Nilai tersebut <b>tidak boleh menjadi solusi</b>, walaupun muncul setelah perkalian silang.</p>
-<div class="kotak kotak-contoh"><div class="label">Contoh 1 dari sumber</div><p><span class="rumus"><span class="pecahan"><span>4x−3</span><span>x−1</span></span> = <span class="pecahan"><span>x+8</span><span>x</span></span></span>, dengan syarat <span class="rumus">x≠1</span> dan <span class="rumus">x≠0</span>.</p><p>Perkalian silang memberi <span class="rumus">3x²−10x+8=0</span>.</p><p><span class="rumus">(3x−4)(x−2)=0</span></p><p style="margin:0"><b>Akar:</b> <span class="akar">{4/3,2}</span>.</p></div>
-<div class="kotak kotak-contoh"><div class="label">Contoh 2 dari sumber — akar semu karena penyebut</div><p><span class="rumus"><span class="pecahan"><span>x</span><span>x−1</span></span> − <span class="pecahan"><span>5</span><span>x²+3x−4</span></span> = 0</span></p><p>Karena <span class="rumus">x²+3x−4=(x+4)(x−1)</span>, syaratnya <span class="rumus">x≠1</span> dan <span class="rumus">x≠−4</span>.</p><p>Setelah disamakan penyebut, pembilang menjadi <span class="rumus">x²+4x−5=(x+5)(x−1)</span>.</p><p>Calon akar: <span class="rumus">x=−5</span> dan <span class="rumus">x=1</span>. Tetapi <span class="rumus">x=1</span> dilarang oleh domain.</p><p style="margin:0"><b>Akar yang sah hanya:</b> <span class="akar">{−5}</span>.</p></div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh 1 dari sumber</div>
+  <p><span class="rumus"><span class="pecahan"><span>4x−3</span><span>x−1</span></span> = <span class="pecahan"><span>x+8</span><span>x</span></span></span>, dengan syarat <span class="rumus">x≠1</span> dan <span class="rumus">x≠0</span>.</p>
+  <p>Perkalian silang memberi <span class="rumus">3x²−10x+8=0</span>.</p>
+  <p><span class="rumus">(3x−4)(x−2)=0</span></p>
+  <p style="margin:0"><b>Akar:</b> <span class="akar">{4/3,2}</span>.</p>
+</div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh 2 dari sumber — akar semu karena penyebut</div>
+  <p><span class="rumus"><span class="pecahan"><span>x</span><span>x−1</span></span> − <span class="pecahan"><span>5</span><span>x²+3x−4</span></span> = 0</span></p>
+  <p>Karena <span class="rumus">x²+3x−4=(x+4)(x−1)</span>, syaratnya <span class="rumus">x≠1</span> dan <span class="rumus">x≠−4</span>.</p>
+  <p>Setelah disamakan penyebut, pembilang menjadi <span class="rumus">x²+4x−5=(x+5)(x−1)</span>.</p>
+  <p>Calon akar: <span class="rumus">x=−5</span> dan <span class="rumus">x=1</span>. Tetapi <span class="rumus">x=1</span> dilarang oleh domain.</p>
+  <p style="margin:0"><b>Akar yang sah hanya:</b> <span class="akar">{−5}</span>.</p>
+</div>
+
 <h2 id="nilai-mutlak">9. Persamaan Kuadrat dengan Nilai Mutlak</h2>
 <p>Soal terakhir pada sumber memuat <span class="rumus">|x−2|</span>. Pecah menjadi dua kasus sesuai definisi nilai mutlak.</p>
-<div class="kotak kotak-contoh"><div class="label">Contoh soal dari sumber</div><p>Tentukan jumlah akar <span class="rumus">x² + |x−2| − 4 = 0</span>.</p><p><b>Kasus 1: x ≥ 2.</b> <span class="rumus">|x−2|=x−2</span>, sehingga <span class="rumus">x²+x−6=0</span>. Akar aljabarnya <span class="rumus">2</span> dan <span class="rumus">−3</span>, tetapi yang memenuhi syarat hanya <span class="rumus">2</span>.</p><p><b>Kasus 2: x &lt; 2.</b> <span class="rumus">|x−2|=2−x</span>, sehingga <span class="rumus">x²−x−2=0</span>. Akar aljabarnya <span class="rumus">2</span> dan <span class="rumus">−1</span>, tetapi yang memenuhi syarat hanya <span class="rumus">−1</span>.</p><p style="margin:0">Jumlah akar yang sah: <span class="rumus">2 + (−1) = <b>1</b></span>.</p></div>
+
+<div class="kotak kotak-contoh">
+  <div class="label">Contoh soal dari sumber</div>
+  <p>Tentukan jumlah akar <span class="rumus">x² + |x−2| − 4 = 0</span>.</p>
+  <p><b>Kasus 1: x ≥ 2.</b> <span class="rumus">|x−2|=x−2</span>, sehingga <span class="rumus">x²+x−6=0</span>. Akar aljabarnya <span class="rumus">2</span> dan <span class="rumus">−3</span>, tetapi yang memenuhi syarat hanya <span class="rumus">2</span>.</p>
+  <p><b>Kasus 2: x &lt; 2.</b> <span class="rumus">|x−2|=2−x</span>, sehingga <span class="rumus">x²−x−2=0</span>. Akar aljabarnya <span class="rumus">2</span> dan <span class="rumus">−1</span>, tetapi yang memenuhi syarat hanya <span class="rumus">−1</span>.</p>
+  <p style="margin:0">Jumlah akar yang sah: <span class="rumus">2 + (−1) = <b>1</b></span>.</p>
+</div>
+
 <h2 id="pengayaan-diskriminan">10. Pengayaan UTBK: Diskriminan dan Rumus Kuadrat</h2>
 <p>Bagian ini merupakan <b>pengayaan untuk kebutuhan SMA/UTBK</b>. Ketika faktorisasi tidak segera terlihat, diskriminan dan rumus kuadrat memberi cara umum untuk menentukan akar.</p>
-<div class="kotak kotak-rumus"><p><span class="rumus">D = b² − 4ac</span></p><p><span class="rumus">x = <span class="pecahan"><span>−b ± √D</span><span>2a</span></span></span></p></div>
-<table><thead><tr><th>Nilai D</th><th>Makna akar real</th><th>Grafik parabola</th></tr></thead><tbody><tr><td><span class="rumus">D &gt; 0</span></td><td>Dua akar real berbeda</td><td>Memotong sumbu-x di dua titik</td></tr><tr><td><span class="rumus">D = 0</span></td><td>Satu akar real kembar</td><td>Menyinggung sumbu-x</td></tr><tr><td><span class="rumus">D &lt; 0</span></td><td>Tidak ada akar real</td><td>Tidak memotong sumbu-x</td></tr></tbody></table>
+
+<div class="kotak kotak-rumus">
+  <p><span class="rumus">D = b² − 4ac</span></p>
+  <p><span class="rumus">x = <span class="pecahan"><span>−b ± √D</span><span>2a</span></span></span></p>
+</div>
+<table>
+  <thead><tr><th>Nilai D</th><th>Makna akar real</th><th>Grafik parabola</th></tr></thead>
+  <tbody>
+    <tr><td><span class="rumus">D &gt; 0</span></td><td>Dua akar real berbeda</td><td>Memotong sumbu-x di dua titik</td></tr>
+    <tr><td><span class="rumus">D = 0</span></td><td>Satu akar real kembar</td><td>Menyinggung sumbu-x</td></tr>
+    <tr><td><span class="rumus">D &lt; 0</span></td><td>Tidak ada akar real</td><td>Tidak memotong sumbu-x</td></tr>
+  </tbody>
+</table>
+
 <h3 id="simulasi-akar">Simulasi akar dan grafik parabola</h3>
 <p>Ubah koefisien <span class="rumus">a</span>, <span class="rumus">b</span>, dan <span class="rumus">c</span>. Titik potong grafik dengan sumbu-x adalah akar real persamaan.</p>
-<div class="sim"><div class="sim-atas">Eksplorasi Persamaan Kuadrat</div><div class="sim-kanvas-bungkus"><canvas id="kanvas-kuadrat" width="800" height="420" aria-label="Grafik parabola dan akar persamaan kuadrat"></canvas></div><div class="sim-atur"><div class="atur"><label for="coef-a">a: <output id="coef-a-out">1</output></label><input type="range" id="coef-a" min="-5" max="5" value="1" step="1"></div><div class="atur"><label for="coef-b">b: <output id="coef-b-out">-4</output></label><input type="range" id="coef-b" min="-10" max="10" value="-4" step="1"></div><div class="atur"><label for="coef-c">c: <output id="coef-c-out">3</output></label><input type="range" id="coef-c" min="-10" max="10" value="3" step="1"></div></div><div class="sim-hasil"><div class="hasil"><span>Diskriminan</span><b id="hasil-d">4</b></div><div class="hasil"><span>Akar real</span><b id="hasil-akar">1 dan 3</b></div><div class="hasil"><span>Jenis</span><b id="hasil-jenis">2 akar real</b></div></div></div>
-<div class="kotak kotak-awas"><div class="label">Catatan simulator</div>Jika penggeser membuat <span class="rumus">a=0</span>, bentuknya bukan persamaan kuadrat. Simulator akan memberi peringatan dan tidak menghitung akar kuadrat.</div>
+<div class="sim">
+  <div class="sim-atas">Eksplorasi Persamaan Kuadrat</div>
+  <div class="sim-kanvas-bungkus"><canvas id="kanvas-kuadrat" width="800" height="420" aria-label="Grafik parabola dan akar persamaan kuadrat"></canvas></div>
+  <div class="sim-atur">
+    <div class="atur"><label for="coef-a">a: <output id="coef-a-out">1</output></label><input type="range" id="coef-a" min="-5" max="5" value="1" step="1"></div>
+    <div class="atur"><label for="coef-b">b: <output id="coef-b-out">-4</output></label><input type="range" id="coef-b" min="-10" max="10" value="-4" step="1"></div>
+    <div class="atur"><label for="coef-c">c: <output id="coef-c-out">3</output></label><input type="range" id="coef-c" min="-10" max="10" value="3" step="1"></div>
+  </div>
+  <div class="sim-hasil">
+    <div class="hasil"><span>Diskriminan</span><b id="hasil-d">4</b></div>
+    <div class="hasil"><span>Akar real</span><b id="hasil-akar">1 dan 3</b></div>
+    <div class="hasil"><span>Jenis</span><b id="hasil-jenis">2 akar real</b></div>
+  </div>
+</div>
+
+<div class="kotak kotak-awas">
+  <div class="label">Catatan simulator</div>
+  Jika penggeser membuat <span class="rumus">a=0</span>, bentuknya bukan persamaan kuadrat. Simulator akan memberi peringatan dan tidak menghitung akar kuadrat.
+</div>
+
 <h2 id="strategi-utbk">11. Strategi Cepat Mengerjakan Soal</h2>
-<div class="ringkas"><div><b>1. Rapikan dulu.</b><br>Pindahkan semua suku ke satu ruas dan bentuk <span class="rumus">ax²+bx+c=0</span>.</div><div><b>2. Cari bentuk khusus.</b><br>Cek faktor bersama, selisih kuadrat, atau kuadrat sempurna.</div><div><b>3. Faktorkan bila mudah.</b><br>Ini biasanya paling cepat untuk soal seperti pada PDF sumber.</div><div><b>4. Jaga domain.</b><br>Pada pecahan aljabar, buang calon akar yang membuat penyebut nol.</div><div><b>5. Nilai mutlak = kasus.</b><br>Pecah berdasarkan tanda ekspresi di dalam nilai mutlak.</div><div><b>6. Gunakan D bila perlu.</b><br>Jika faktorisasi sulit, diskriminan dan rumus kuadrat adalah metode umum.</div></div>
+<div class="ringkas">
+  <div><b>1. Rapikan dulu.</b><br>Pindahkan semua suku ke satu ruas dan bentuk <span class="rumus">ax²+bx+c=0</span>.</div>
+  <div><b>2. Cari bentuk khusus.</b><br>Cek faktor bersama, selisih kuadrat, atau kuadrat sempurna.</div>
+  <div><b>3. Faktorkan bila mudah.</b><br>Ini biasanya paling cepat untuk soal seperti pada PDF sumber.</div>
+  <div><b>4. Jaga domain.</b><br>Pada pecahan aljabar, buang calon akar yang membuat penyebut nol.</div>
+  <div><b>5. Nilai mutlak = kasus.</b><br>Pecah berdasarkan tanda ekspresi di dalam nilai mutlak.</div>
+  <div><b>6. Gunakan D bila perlu.</b><br>Jika faktorisasi sulit, diskriminan dan rumus kuadrat adalah metode umum.</div>
+</div>
+
 <h2 id="latihan-sumber">12. Latihan Berdasarkan Dokumen Sumber</h2>
 <p>Latihan berikut mempertahankan susunan inti soal dari PDF. Tekan <b>Lihat jawaban</b> setelah mencoba sendiri.</p>
-<div class="soal"><p><b>1. Tentukan akar dari persamaan berikut.</b></p><div class="soal-grid"><div class="mini">a) <span class="rumus">x²−4x+3=0</span></div><div class="mini">b) <span class="rumus">x²+5x−14=0</span></div><div class="mini">c) <span class="rumus">x²+10x+25=0</span></div><div class="mini">d) <span class="rumus">2x²+x−15=0</span></div><div class="mini">e) <span class="rumus">4x²−8x+3=0</span></div><div class="mini">f) <span class="rumus">4x²−12x+9=0</span></div></div><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> a) {1,3}; b) {−7,2}; c) {−5}; d) {−3,5/2}; e) {1/2,3/2}; f) {3/2}.</div></div>
-<div class="soal"><p><b>2. Tentukan akar dari bentuk khusus berikut.</b></p><div class="soal-grid"><div class="mini">a) <span class="rumus">x²−7x=0</span></div><div class="mini">b) <span class="rumus">x²+x=0</span></div><div class="mini">c) <span class="rumus">x²−9=0</span></div><div class="mini">e) <span class="rumus">x²−4=0</span></div><div class="mini">f) <span class="rumus">x²+25=0</span></div></div><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban real:</b> a) {0,7}; b) {0,−1}; c) {−3,3}; e) {−2,2}; f) tidak ada akar real.</div></div>
-<div class="soal"><p><b>3.</b> Manakah pasangan akar yang diberikan dengan benar?</p><p>I) <span class="rumus">x²+x−20=0</span> → {−5,4}<br>II) <span class="rumus">x²−4x=0</span> → {−2,2}<br>III) <span class="rumus">x²−36=0</span> → {−6,6}</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> I dan III.</div></div>
-<div class="soal"><p><b>4.</b> Tentukan akar <span class="rumus">x² − 3/4 x − 5/2 = 0</span>.</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> <span class="akar">{−5/4,2}</span>.</div></div>
-<div class="soal"><p><b>5.</b> Tentukan akar <span class="rumus">(2x+4)(x−3)−x²=3</span>.</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> <span class="akar">{−3,5}</span>.</div></div>
-<div class="soal"><p><b>6.</b> Tentukan akar <span class="rumus">(4x−3)/(x−1) = (x+8)/x</span>.</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> <span class="akar">{4/3,2}</span>.</div></div>
-<div class="soal"><p><b>7.</b> Tentukan akar <span class="rumus">(2x+1)² + 2(x+1)=3</span>.</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> <span class="akar">{−3/2,0}</span>.</div></div>
-<div class="soal"><p><b>8.</b> Tentukan akar <span class="rumus">x/(x−1) − 5/(x²+3x−4)=0</span>.</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> <span class="akar">{−5}</span>. Nilai <span class="rumus">x=1</span> harus ditolak karena membuat penyebut nol.</div></div>
-<div class="soal"><p><b>9.</b> Berapakah jumlah akar <span class="rumus">x²+|x−2|−4=0</span>?</p><button type="button" class="toggle-jawaban">Lihat jawaban</button><div class="jawaban"><b>Jawaban:</b> akar yang sah adalah <span class="rumus">−1</span> dan <span class="rumus">2</span>, sehingga jumlahnya <b>1</b>.</div></div>
+
+<div class="soal">
+  <p><b>1. Tentukan akar dari persamaan berikut.</b></p>
+  <div class="soal-grid">
+    <div class="mini">a) <span class="rumus">x²−4x+3=0</span></div>
+    <div class="mini">b) <span class="rumus">x²+5x−14=0</span></div>
+    <div class="mini">c) <span class="rumus">x²+10x+25=0</span></div>
+    <div class="mini">d) <span class="rumus">2x²+x−15=0</span></div>
+    <div class="mini">e) <span class="rumus">4x²−8x+3=0</span></div>
+    <div class="mini">f) <span class="rumus">4x²−12x+9=0</span></div>
+  </div>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> a) {1,3}; b) {−7,2}; c) {−5}; d) {−3,5/2}; e) {1/2,3/2}; f) {3/2}.</div>
+</div>
+
+<div class="soal">
+  <p><b>2. Tentukan akar dari bentuk khusus berikut.</b></p>
+  <div class="soal-grid">
+    <div class="mini">a) <span class="rumus">x²−7x=0</span></div>
+    <div class="mini">b) <span class="rumus">x²+x=0</span></div>
+    <div class="mini">c) <span class="rumus">x²−9=0</span></div>
+    <div class="mini">e) <span class="rumus">x²−4=0</span></div>
+    <div class="mini">f) <span class="rumus">x²+25=0</span></div>
+  </div>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban real:</b> a) {0,7}; b) {0,−1}; c) {−3,3}; e) {−2,2}; f) tidak ada akar real.</div>
+</div>
+
+<div class="soal">
+  <p><b>3.</b> Manakah pasangan akar yang diberikan dengan benar?</p>
+  <p>I) <span class="rumus">x²+x−20=0</span> → {−5,4}<br>
+     II) <span class="rumus">x²−4x=0</span> → {−2,2}<br>
+     III) <span class="rumus">x²−36=0</span> → {−6,6}</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> I dan III.</div>
+</div>
+
+<div class="soal">
+  <p><b>4.</b> Tentukan akar <span class="rumus">x² − 3/4 x − 5/2 = 0</span>.</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> <span class="akar">{−5/4,2}</span>.</div>
+</div>
+
+<div class="soal">
+  <p><b>5.</b> Tentukan akar <span class="rumus">(2x+4)(x−3)−x²=3</span>.</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> <span class="akar">{−3,5}</span>.</div>
+</div>
+
+<div class="soal">
+  <p><b>6.</b> Tentukan akar <span class="rumus">(4x−3)/(x−1) = (x+8)/x</span>.</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> <span class="akar">{4/3,2}</span>.</div>
+</div>
+
+<div class="soal">
+  <p><b>7.</b> Tentukan akar <span class="rumus">(2x+1)² + 2(x+1)=3</span>.</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> <span class="akar">{−3/2,0}</span>.</div>
+</div>
+
+<div class="soal">
+  <p><b>8.</b> Tentukan akar <span class="rumus">x/(x−1) − 5/(x²+3x−4)=0</span>.</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> <span class="akar">{−5}</span>. Nilai <span class="rumus">x=1</span> harus ditolak karena membuat penyebut nol.</div>
+</div>
+
+<div class="soal">
+  <p><b>9.</b> Berapakah jumlah akar <span class="rumus">x²+|x−2|−4=0</span>?</p>
+  <button type="button" class="toggle-jawaban">Lihat jawaban</button>
+  <div class="jawaban"><b>Jawaban:</b> akar yang sah adalah <span class="rumus">−1</span> dan <span class="rumus">2</span>, sehingga jumlahnya <b>1</b>.</div>
+</div>
+
 <h2 id="ringkasan">13. Ringkasan</h2>
-<table><thead><tr><th>Bentuk</th><th>Ide tercepat</th></tr></thead><tbody><tr><td class="rumus">x²+bx+c=0</td><td>Cari dua bilangan berjumlah <span class="rumus">b</span> dan hasil kalinya <span class="rumus">c</span>.</td></tr><tr><td class="rumus">x²+bx=0</td><td>Keluarkan faktor <span class="rumus">x</span>.</td></tr><tr><td class="rumus">x²−k²=0</td><td>Gunakan selisih kuadrat.</td></tr><tr><td class="rumus">(px+q)²=0</td><td>Akar kembar.</td></tr><tr><td>Pecahan aljabar</td><td>Catat domain dahulu, lalu hilangkan penyebut.</td></tr><tr><td>Nilai mutlak</td><td>Pecah menjadi kasus.</td></tr><tr><td>Sulit difaktorkan</td><td>Gunakan diskriminan dan rumus kuadrat.</td></tr></tbody></table>
+<table>
+  <thead><tr><th>Bentuk</th><th>Ide tercepat</th></tr></thead>
+  <tbody>
+    <tr><td class="rumus">x²+bx+c=0</td><td>Cari dua bilangan berjumlah <span class="rumus">b</span> dan hasil kalinya <span class="rumus">c</span>.</td></tr>
+    <tr><td class="rumus">x²+bx=0</td><td>Keluarkan faktor <span class="rumus">x</span>.</td></tr>
+    <tr><td class="rumus">x²−k²=0</td><td>Gunakan selisih kuadrat.</td></tr>
+    <tr><td class="rumus">(px+q)²=0</td><td>Akar kembar.</td></tr>
+    <tr><td>Pecahan aljabar</td><td>Catat domain dahulu, lalu hilangkan penyebut.</td></tr>
+    <tr><td>Nilai mutlak</td><td>Pecah menjadi kasus.</td></tr>
+    <tr><td>Sulit difaktorkan</td><td>Gunakan diskriminan dan rumus kuadrat.</td></tr>
+  </tbody>
+</table>
+
 <script>
 (function(){
   'use strict';
+
   var aEl=document.getElementById('coef-a');
   var bEl=document.getElementById('coef-b');
   var cEl=document.getElementById('coef-c');
   var canvas=document.getElementById('kanvas-kuadrat');
   var ctx=canvas.getContext('2d');
-  function fmt(n){if(!isFinite(n)){return '—';}if(Math.abs(n)<1e-10){n=0;}var s=(Math.round(n*100)/100).toFixed(2);return s.replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');}
+
+  function fmt(n){
+    if(!isFinite(n)){return '—';}
+    if(Math.abs(n)<1e-10){n=0;}
+    var s=(Math.round(n*100)/100).toFixed(2);
+    return s.replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');
+  }
+
   function gambar(){
     var a=parseFloat(aEl.value), b=parseFloat(bEl.value), c=parseFloat(cEl.value);
-    document.getElementById('coef-a-out').textContent=fmt(a);document.getElementById('coef-b-out').textContent=fmt(b);document.getElementById('coef-c-out').textContent=fmt(c);
+    document.getElementById('coef-a-out').textContent=fmt(a);
+    document.getElementById('coef-b-out').textContent=fmt(b);
+    document.getElementById('coef-c-out').textContent=fmt(c);
+
     ctx.clearRect(0,0,canvas.width,canvas.height);
     var xmin=-10,xmax=10,ymin=-20,ymax=20;
-    function px(x){return (x-xmin)/(xmax-xmin)*canvas.width;}function py(y){return canvas.height-(y-ymin)/(ymax-ymin)*canvas.height;}
-    ctx.strokeStyle='#e2e8f0';ctx.lineWidth=1;
+    function px(x){return (x-xmin)/(xmax-xmin)*canvas.width;}
+    function py(y){return canvas.height-(y-ymin)/(ymax-ymin)*canvas.height;}
+
+    ctx.strokeStyle='#e2e8f0'; ctx.lineWidth=1;
     for(var gx=-10;gx<=10;gx+=2){ctx.beginPath();ctx.moveTo(px(gx),0);ctx.lineTo(px(gx),canvas.height);ctx.stroke();}
     for(var gy=-20;gy<=20;gy+=5){ctx.beginPath();ctx.moveTo(0,py(gy));ctx.lineTo(canvas.width,py(gy));ctx.stroke();}
-    ctx.strokeStyle='#64748b';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,py(0));ctx.lineTo(canvas.width,py(0));ctx.stroke();ctx.beginPath();ctx.moveTo(px(0),0);ctx.lineTo(px(0),canvas.height);ctx.stroke();
-    ctx.fillStyle='#64748b';ctx.font='12px system-ui, sans-serif';ctx.fillText('x',canvas.width-16,py(0)-8);ctx.fillText('y',px(0)+8,14);
-    if(a===0){document.getElementById('hasil-d').textContent='—';document.getElementById('hasil-akar').textContent='a = 0';document.getElementById('hasil-jenis').textContent='Bukan kuadrat';ctx.fillStyle='#dc2626';ctx.font='bold 18px system-ui, sans-serif';ctx.fillText('a = 0 → bukan persamaan kuadrat',24,36);return;}
-    var D=b*b-4*a*c;document.getElementById('hasil-d').textContent=fmt(D);var roots=[];
-    if(D>1e-10){roots=[(-b-Math.sqrt(D))/(2*a),(-b+Math.sqrt(D))/(2*a)];roots.sort(function(x,y){return x-y;});document.getElementById('hasil-akar').textContent=fmt(roots[0])+' dan '+fmt(roots[1]);document.getElementById('hasil-jenis').textContent='2 akar real';}
-    else if(Math.abs(D)<=1e-10){roots=[-b/(2*a)];document.getElementById('hasil-akar').textContent=fmt(roots[0]);document.getElementById('hasil-jenis').textContent='Akar kembar';}
-    else{document.getElementById('hasil-akar').textContent='Tidak ada';document.getElementById('hasil-jenis').textContent='Tidak real';}
-    ctx.strokeStyle='#4f46e5';ctx.lineWidth=3;ctx.beginPath();var started=false;
-    for(var i=0;i<=800;i++){var x=xmin+(xmax-xmin)*i/800;var y=a*x*x+b*x+c;if(y<ymin-8||y>ymax+8){started=false;continue;}var X=px(x),Y=py(y);if(!started){ctx.moveTo(X,Y);started=true;}else{ctx.lineTo(X,Y);}}
-    ctx.stroke();ctx.fillStyle='#0d9488';
-    for(var r=0;r<roots.length;r++){if(roots[r]>=xmin&&roots[r]<=xmax){ctx.beginPath();ctx.arc(px(roots[r]),py(0),7,0,Math.PI*2);ctx.fill();ctx.fillStyle='#0f172a';ctx.fillText('x = '+fmt(roots[r]),px(roots[r])+9,py(0)-10);ctx.fillStyle='#0d9488';}}
+
+    ctx.strokeStyle='#64748b';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,py(0));ctx.lineTo(canvas.width,py(0));ctx.stroke();
+    ctx.beginPath();ctx.moveTo(px(0),0);ctx.lineTo(px(0),canvas.height);ctx.stroke();
+
+    ctx.fillStyle='#64748b';ctx.font='12px system-ui, sans-serif';
+    ctx.fillText('x',canvas.width-16,py(0)-8); ctx.fillText('y',px(0)+8,14);
+
+    if(a===0){
+      document.getElementById('hasil-d').textContent='—';
+      document.getElementById('hasil-akar').textContent='a = 0';
+      document.getElementById('hasil-jenis').textContent='Bukan kuadrat';
+      ctx.fillStyle='#dc2626';ctx.font='bold 18px system-ui, sans-serif';
+      ctx.fillText('a = 0 → bukan persamaan kuadrat',24,36);
+      return;
+    }
+
+    var D=b*b-4*a*c;
+    document.getElementById('hasil-d').textContent=fmt(D);
+    var roots=[];
+    if(D>1e-10){
+      roots=[(-b-Math.sqrt(D))/(2*a),(-b+Math.sqrt(D))/(2*a)];
+      roots.sort(function(x,y){return x-y;});
+      document.getElementById('hasil-akar').textContent=fmt(roots[0])+' dan '+fmt(roots[1]);
+      document.getElementById('hasil-jenis').textContent='2 akar real';
+    }else if(Math.abs(D)<=1e-10){
+      roots=[-b/(2*a)];
+      document.getElementById('hasil-akar').textContent=fmt(roots[0]);
+      document.getElementById('hasil-jenis').textContent='Akar kembar';
+    }else{
+      document.getElementById('hasil-akar').textContent='Tidak ada';
+      document.getElementById('hasil-jenis').textContent='Tidak real';
+    }
+
+    ctx.strokeStyle='#4f46e5';ctx.lineWidth=3;ctx.beginPath();
+    var started=false;
+    for(var i=0;i<=800;i++){
+      var x=xmin+(xmax-xmin)*i/800;
+      var y=a*x*x+b*x+c;
+      if(y<ymin-8 || y>ymax+8){started=false;continue;}
+      var X=px(x),Y=py(y);
+      if(!started){ctx.moveTo(X,Y);started=true;}else{ctx.lineTo(X,Y);}
+    }
+    ctx.stroke();
+
+    ctx.fillStyle='#0d9488';
+    for(var r=0;r<roots.length;r++){
+      if(roots[r]>=xmin && roots[r]<=xmax){
+        ctx.beginPath();ctx.arc(px(roots[r]),py(0),7,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='#0f172a';ctx.fillText('x = '+fmt(roots[r]),px(roots[r])+9,py(0)-10);ctx.fillStyle='#0d9488';
+      }
+    }
   }
-  aEl.addEventListener('input',gambar);bEl.addEventListener('input',gambar);cEl.addEventListener('input',gambar);
+
+  aEl.addEventListener('input',gambar);
+  bEl.addEventListener('input',gambar);
+  cEl.addEventListener('input',gambar);
+
   var toggles=document.querySelectorAll('.toggle-jawaban');
-  for(var i=0;i<toggles.length;i++){toggles[i].addEventListener('click',function(){var box=this.parentNode.querySelector('.jawaban');var show=!box.classList.contains('tampil');box.classList.toggle('tampil',show);this.textContent=show?'Sembunyikan jawaban':'Lihat jawaban';});}
+  for(var i=0;i<toggles.length;i++){
+    toggles[i].addEventListener('click',function(){
+      var box=this.parentNode.querySelector('.jawaban');
+      var show=!box.classList.contains('tampil');
+      box.classList.toggle('tampil',show);
+      this.textContent=show?'Sembunyikan jawaban':'Lihat jawaban';
+    });
+  }
+
   gambar();
 })();
 </script>
