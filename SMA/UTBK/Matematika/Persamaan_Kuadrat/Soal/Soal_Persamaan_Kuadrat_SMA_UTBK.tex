@@ -1,0 +1,114 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{mathastext}
+\usepackage{upgreek}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage{ragged2e}
+\definecolor{utama}{HTML}{334155}
+\definecolor{aksen}{HTML}{1D4ED8}
+\definecolor{jawab}{HTML}{166534}
+\definecolor{jelas}{HTML}{374151}
+\definecolor{garis}{HTML}{CBD5E1}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\arrayrulewidth}{0.8pt}
+\setlength{\tabcolsep}{8pt}
+\newcommand{\answer}[1]{\par\medskip\textbf{\color{jawab}ANSWER:} #1\par}
+\newcommand{\explanation}[1]{\textbf{\color{jelas}EXPLANATION:} #1\par\medskip}
+\newcommand{\question}[1]{\Needspace{7\baselineskip}\par\medskip\textbf{#1}\quad}
+\newenvironment{choices}{\begin{enumerate}[label=\Alph*.,leftmargin=1.8em]}{\end{enumerate}}
+\begin{document}
+\begin{center}{\LARGE\bfseries SOAL PERSAMAAN KUADRAT - SMA/UTBK}\par\end{center}
+\vspace{6pt}\hrule\vspace{8pt}
+\question{1.} Akar-akar persamaan \[x^2-11x+24=0\] adalah ....
+\begin{choices}\item 2 dan 12\item 3 dan 8\item 4 dan 6\item $-3$ dan $-8$\item $-4$ dan $-6$\end{choices}
+\answer{B}\explanation{Faktorkan persamaan menjadi \[x^2-11x+24=(x-3)(x-8)=0.\] Dengan prinsip hasil kali nol, diperoleh $x=3$ atau $x=8$.}
+\question{2.} Himpunan penyelesaian persamaan \[3x^2-10x+3=0\] adalah ....
+\begin{choices}\item $\left\{\frac13,3\right\}$\item $\left\{-\frac13,-3\right\}$\item $\{1,3\}$\item $\{-1,-3\}$\item $\{3,10\}$\end{choices}
+\answer{A}\explanation{Persamaan dapat difaktorkan: \[3x^2-10x+3=(3x-1)(x-3)=0.\] Maka $x=\frac13$ atau $x=3$.}
+\question{3.} Persamaan \[9x^2-24x+16=0\] mempunyai ....
+\begin{choices}\item dua akar real berbeda\item dua akar real berlawanan tanda\item satu akar real kembar\item tidak mempunyai akar real\item tiga akar real\end{choices}
+\answer{C}\explanation{$9x^2-24x+16=(3x-4)^2$, sehingga $x=\frac43$ merupakan akar kembar.}
+\question{4.} Akar-akar persamaan \[5x^2-20x=0\] adalah ....
+\begin{choices}\item 0 dan 2\item 0 dan 4\item $-4$ dan 0\item 4 dan 5\item $-5$ dan 4\end{choices}
+\answer{B}\explanation{$5x^2-20x=5x(x-4)=0$, maka $x=0$ atau $x=4$.}
+\question{5.} Himpunan penyelesaian dari \[4x^2-49=0\] adalah ....
+\begin{choices}\item $\{-7,7\}$\item $\left\{-\frac72,\frac72\right\}$\item $\left\{-\frac{49}{4},\frac{49}{4}\right\}$\item $\left\{-\frac27,\frac27\right\}$\item $\left\{\frac74,49\right\}$\end{choices}
+\answer{B}\explanation{$4x^2-49=(2x-7)(2x+7)=0$, sehingga $x=\pm\frac72$.}
+\question{6.} Persamaan berikut yang \textbf{tidak mempunyai akar real} adalah ....
+\begin{choices}\item $x^2-16=0$\item $x^2-6x+9=0$\item $x^2+4x+8=0$\item $x^2-2x=0$\item $x^2+3x-10=0$\end{choices}
+\answer{C}\explanation{Untuk $x^2+4x+8=0$, diskriminannya $D=4^2-4(1)(8)=-16<0$, sehingga tidak memiliki akar real.}
+\question{7.} Jika salah satu akar persamaan \[x^2-9x+k=0\] adalah 4, maka nilai $k$ adalah ....
+\begin{choices}\item 5\item 12\item 16\item 20\item 36\end{choices}
+\answer{D}\explanation{Substitusi $x=4$ memberi $16-36+k=0$, sehingga $k=20$.}
+\question{8.} Akar-akar persamaan \[2x^2+7x+3=0\] adalah ....
+\begin{choices}\item $-3$ dan $-\frac12$\item 3 dan $\frac12$\item $-3$ dan $\frac12$\item 3 dan $-\frac12$\item $-1$ dan $-\frac32$\end{choices}
+\answer{A}\explanation{$2x^2+7x+3=(2x+1)(x+3)=0$, maka $x=-\frac12$ atau $x=-3$.}
+\question{9.} Diberikan persamaan \[x^2-13x+40=0.\] Pernyataan yang benar adalah ....
+\begin{choices}\item Salah satu akarnya adalah 5.\item Salah satu akarnya adalah 8.\item Jumlah kedua akar adalah 13.\item Hasil kali kedua akar adalah $-40$.\item Persamaan dapat difaktorkan menjadi $(x-5)(x-8)=0$.\end{choices}
+\answer{A, B, C, E}\explanation{$x^2-13x+40=(x-5)(x-8)$, sehingga akarnya 5 dan 8, jumlah 13, hasil kali 40.}
+\question{10.} Perhatikan persamaan \[4x^2+12x+9=0.\] Pernyataan yang benar adalah ....
+\begin{choices}\item Diskriminannya sama dengan nol.\item Persamaan memiliki dua akar real berbeda.\item Persamaan dapat ditulis sebagai $(2x+3)^2=0$.\item Akarnya adalah $x=-\frac32$.\item Persamaan tidak mempunyai akar real.\end{choices}
+\answer{A, C, D}\explanation{$D=12^2-4(4)(9)=0$ dan $4x^2+12x+9=(2x+3)^2$, sehingga akar kembar $x=-\frac32$.}
+\question{11.} Diberikan persamaan \[x^2-2x-15=0.\] Pernyataan yang benar adalah ....
+\begin{choices}\item Akar-akarnya 5 dan $-3$.\item Kedua akar mempunyai tanda yang sama.\item Hasil kali akar adalah $-15$.\item Jumlah akar adalah 2.\item Persamaan mempunyai akar kembar.\end{choices}
+\answer{A, C, D}\explanation{$x^2-2x-15=(x-5)(x+3)$, sehingga akar 5 dan $-3$, jumlah 2, hasil kali $-15$.}
+\question{12.} Diberikan beberapa persamaan berikut.
+\begin{align*}\text{I. }&x^2-25=0\\\text{II. }&x^2+6x+9=0\\\text{III. }&x^2+2x+10=0\\\text{IV. }&x^2-x-12=0\end{align*}
+Pernyataan yang benar adalah ....
+\begin{choices}\item Persamaan I mempunyai dua akar real berbeda.\item Persamaan II mempunyai akar kembar.\item Persamaan III mempunyai dua akar real berbeda.\item Persamaan III tidak mempunyai akar real.\item Persamaan IV mempunyai akar 4 dan $-3$.\end{choices}
+\answer{A, B, D, E}\explanation{I memiliki akar $\pm5$. II adalah $(x+3)^2=0$. III memiliki $D=-36<0$. IV adalah $(x-4)(x+3)=0$.}
+\question{13.} Diketahui $\upalpha$ dan $\upbeta$ merupakan akar persamaan \[x^2-12x+32=0\] dengan $\upalpha<\upbeta$.
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}\hline\textbf{P}&\textbf{Q}\\\hline$\upbeta$&7\\\hline\end{tabular}\end{center}
+\begin{choices}\item $P>Q$\item $P<Q$\item $P=Q$\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.\end{choices}
+\answer{A}\explanation{Akar persamaan adalah 4 dan 8. Karena $\upalpha<\upbeta$, maka $\upbeta=8$, sehingga $P>Q$.}
+\question{14.} Diketahui akar-akar persamaan \[2x^2-10x+12=0\] adalah $\upalpha$ dan $\upbeta$.
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}\hline\textbf{P}&\textbf{Q}\\\hline$\upalpha+\upbeta$&5\\\hline\end{tabular}\end{center}
+\begin{choices}\item $P>Q$\item $P<Q$\item $P=Q$\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.\end{choices}
+\answer{C}\explanation{$\upalpha+\upbeta=-\frac{-10}{2}=5$, maka $P=Q$.}
+\question{15.} Diketahui $\upalpha$ dan $\upbeta$ adalah akar persamaan \[x^2-7x+10=0.\]
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}\hline\textbf{P}&\textbf{Q}\\\hline$\upalpha\upbeta$&8\\\hline\end{tabular}\end{center}
+\begin{choices}\item $P>Q$\item $P<Q$\item $P=Q$\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.\end{choices}
+\answer{A}\explanation{Hasil kali akar $=\frac ca=10$, jadi $P=10>8=Q$.}
+\question{16.} Diketahui $\upalpha$ merupakan salah satu akar persamaan \[x^2-10x+21=0.\]
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}\hline\textbf{P}&\textbf{Q}\\\hline$\upalpha$&5\\\hline\end{tabular}\end{center}
+\begin{choices}\item $P>Q$\item $P<Q$\item $P=Q$\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.\end{choices}
+\answer{D}\explanation{Akar persamaan adalah 3 atau 7. Maka $P$ bisa lebih kecil atau lebih besar dari 5.}
+\question{17.} Persamaan \[x^2-px+12=0\] mempunyai dua akar positif. Berapakah nilai $p$?
+
+(1) Salah satu akar adalah 3.\\
+(2) Selisih kedua akar adalah 1.
+\begin{choices}\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.\item Masing-masing pernyataan cukup.\item Kedua pernyataan tidak cukup.\end{choices}
+\answer{D}\explanation{Hasil kali akar 12. Dari (1), akar 3 dan 4 sehingga $p=7$. Dari (2), dua akar positif berproduk 12 dan berselisih 1 juga 3 dan 4. Masing-masing cukup.}
+\question{18.} Diketahui persamaan \[x^2+bx+c=0.\] Apakah persamaan tersebut mempunyai akar kembar?
+
+(1) $b^2=4c$.\\
+(2) Jumlah kedua akar adalah $-b$.
+\begin{choices}\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.\item Masing-masing pernyataan cukup.\item Kedua pernyataan tidak cukup.\end{choices}
+\answer{A}\explanation{Akar kembar jika $D=b^2-4c=0$. Pernyataan (1) langsung menjamin $D=0$, sedangkan (2) selalu berlaku dan tidak cukup.}
+\question{19.} Diketahui salah satu akar persamaan \[x^2-kx+c=0\] adalah 3. Berapakah nilai $k$?
+
+(1) $c=18$.\\
+(2) Akar yang lain adalah 6.
+\begin{choices}\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.\item Masing-masing pernyataan cukup.\item Kedua pernyataan tidak cukup.\end{choices}
+\answer{D}\explanation{Dari (1), akar lain $=18/3=6$, sehingga $k=9$. Dari (2), akar langsung 3 dan 6, sehingga $k=9$. Masing-masing cukup.}
+\Needspace{18\baselineskip}\question{20.} Persamaan \[x^2-ax+b=0\] mempunyai akar $\upalpha$ dan $\upbeta$. Berapakah nilai $\upalpha+\upbeta$?
+
+(1) $\upalpha\upbeta=24$.\\
+(2) $a=11$.
+\begin{choices}\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.\item Masing-masing pernyataan cukup.\item Kedua pernyataan tidak cukup.\end{choices}
+\answer{B}\explanation{Jumlah akar $\upalpha+\upbeta=a$. Pernyataan (1) hanya memberi hasil kali akar; pernyataan (2) memberi $a=11$, sehingga jumlah akar 11.}
+\end{document}
