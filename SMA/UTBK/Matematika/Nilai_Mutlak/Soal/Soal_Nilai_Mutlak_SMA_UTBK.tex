@@ -1,0 +1,285 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{mathastext}
+\usepackage{upgreek}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage{ragged2e}
+
+\definecolor{jawab}{HTML}{166534}
+\definecolor{jelas}{HTML}{374151}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\arrayrulewidth}{0.8pt}
+\setlength{\tabcolsep}{8pt}
+
+\newcommand{\answer}[1]{\par\medskip\textbf{\color{jawab}ANSWER:} #1\par}
+\newcommand{\explanation}[1]{\textbf{\color{jelas}EXPLANATION:} #1\par\medskip}
+\newcommand{\question}[1]{\Needspace{8\baselineskip}\par\medskip\textbf{#1}\quad}
+\newenvironment{choices}{\begin{enumerate}[label=\Alph*.,leftmargin=1.8em]}{\end{enumerate}}
+
+\begin{document}
+
+\question{1.} Himpunan penyelesaian persamaan
+\[
+|3x+2|=11
+\]
+adalah ....
+\begin{choices}
+\item $\left\{-\frac{13}{3},3\right\}$
+\item $\left\{-3,\frac{13}{3}\right\}$
+\item $\left\{-\frac{11}{3},3\right\}$
+\item $\left\{-\frac{13}{3},\frac{11}{3}\right\}$
+\item $\{-13,3\}$
+\end{choices}
+\answer{A}
+\explanation{Untuk $|f(x)|=c$ dengan $c\ge0$, berlaku $f(x)=c$ atau $f(x)=-c$. Maka $3x+2=11$ memberi $x=3$, sedangkan $3x+2=-11$ memberi $x=-\frac{13}{3}$.}
+
+\question{2.} Pada garis bilangan, titik $x$ berjarak 7 satuan dari titik 4. Nilai $x$ yang mungkin adalah ....
+\begin{choices}
+\item $-11$ dan 3
+\item $-7$ dan 11
+\item $-3$ dan 11
+\item 3 dan 7
+\item 4 dan 11
+\end{choices}
+\answer{C}
+\explanation{Pernyataan ``$x$ berjarak 7 satuan dari 4'' ditulis $|x-4|=7$. Jadi $x-4=7$ atau $x-4=-7$, sehingga $x=11$ atau $x=-3$.}
+
+\question{3.} Himpunan penyelesaian dari
+\[
+|2x-5|=|x+4|
+\]
+adalah ....
+\begin{choices}
+\item $\left\{-9,\frac13\right\}$
+\item $\left\{\frac13,9\right\}$
+\item $\{-1,9\}$
+\item $\left\{-\frac13,9\right\}$
+\item $\left\{-9,-\frac13\right\}$
+\end{choices}
+\answer{B}
+\explanation{Karena $|A|=|B|$, maka $A=B$ atau $A=-B$. Dari $2x-5=x+4$ diperoleh $x=9$. Dari $2x-5=-(x+4)$ diperoleh $3x=1$, sehingga $x=\frac13$.}
+
+\question{4.} Himpunan penyelesaian persamaan
+\[
+|2x+1|=x+7
+\]
+adalah ....
+\begin{choices}
+\item $\left\{-\frac83,6\right\}$
+\item $\left\{-6,\frac83\right\}$
+\item $\{-8,6\}$
+\item $\left\{-\frac83\right\}$
+\item $\{6\}$
+\end{choices}
+\answer{A}
+\explanation{Ruas kanan harus non-negatif: $x+7\ge0$, sehingga $x\ge-7$. Cabang pertama $2x+1=x+7$ memberi $x=6$. Cabang kedua $2x+1=-(x+7)$ memberi $3x=-8$, sehingga $x=-\frac83$. Keduanya memenuhi syarat $x\ge-7$.}
+
+\question{5.} Banyaknya penyelesaian real persamaan
+\[
+|x^2-5x|=6
+\]
+adalah ....
+\begin{choices}
+\item 0
+\item 1
+\item 2
+\item 3
+\item 4
+\end{choices}
+\answer{E}
+\explanation{Persamaan setara dengan $x^2-5x=6$ atau $x^2-5x=-6$. Persamaan pertama memberi $(x-6)(x+1)=0$, yaitu $x=6,-1$. Persamaan kedua memberi $(x-2)(x-3)=0$, yaitu $x=2,3$. Ada 4 penyelesaian real berbeda.}
+
+\question{6.} Persamaan
+\[
+|x-2|=k
+\]
+memiliki tepat satu penyelesaian real. Nilai $k$ adalah ....
+\begin{choices}
+\item $-2$
+\item $-1$
+\item 0
+\item 1
+\item 2
+\end{choices}
+\answer{C}
+\explanation{Jika $k<0$, tidak ada solusi. Jika $k>0$, ada dua solusi $x=2-k$ dan $x=2+k$. Tepat satu solusi terjadi saat $k=0$, yaitu $x=2$.}
+
+\question{7.} Untuk setiap $x,y\in\mathbb{R}$ dengan $y\ne0$, pernyataan yang benar adalah ....
+\begin{choices}
+\item $|x|\ge0$
+\item $|x|=|-x|$
+\item $|xy|=|x|+|y|$
+\item $\left|\frac{x}{y}\right|=\frac{|x|}{|y|}$
+\item $|x|^2=x^2$
+\end{choices}
+\answer{A, B, D, E}
+\explanation{Sifat nilai mutlak yang berlaku adalah non-negatif, simetri, sifat pembagian, dan $|x|^2=x^2$. Untuk perkalian berlaku $|xy|=|x|\,|y|$, bukan penjumlahan.}
+
+\question{8.} Diketahui persamaan
+\[
+|x+1|=3.
+\]
+Pernyataan yang benar adalah ....
+\begin{choices}
+\item Salah satu penyelesaiannya adalah $x=-4$.
+\item Salah satu penyelesaiannya adalah $x=2$.
+\item Jumlah kedua penyelesaian adalah $-2$.
+\item Hasil kali kedua penyelesaian adalah 8.
+\item Kedua penyelesaian masing-masing berjarak 3 satuan dari $-1$.
+\end{choices}
+\answer{A, B, C, E}
+\explanation{Dari $|x+1|=3$ diperoleh $x+1=3$ atau $x+1=-3$, sehingga $x=2$ atau $x=-4$. Jumlahnya $-2$, hasil kalinya $-8$, dan keduanya berjarak 3 dari pusat $-1$.}
+
+\question{9.} Diberikan persamaan
+\[
+|x-1|=2x+5.
+\]
+Pernyataan yang benar adalah ....
+\begin{choices}
+\item Syarat ruas kanan adalah $x\ge-\frac52$.
+\item $x=-6$ merupakan penyelesaian persamaan.
+\item $x=-\frac43$ merupakan penyelesaian persamaan.
+\item Himpunan penyelesaiannya hanya memiliki satu anggota.
+\item Persamaan tidak memiliki penyelesaian real.
+\end{choices}
+\answer{A, C, D}
+\explanation{Syarat $2x+5\ge0$ memberi $x\ge-\frac52$. Cabang $x-1=2x+5$ menghasilkan $x=-6$, tetapi gagal syarat. Cabang $x-1=-(2x+5)$ menghasilkan $3x=-4$, yaitu $x=-\frac43$, dan nilai ini memenuhi syarat.}
+
+\question{10.} Diketahui $\upalpha<\upbeta$ merupakan dua penyelesaian persamaan
+\[
+|x-5|=2.
+\]
+Bandingkan kuantitas P dan Q berikut.
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}
+\hline
+\textbf{P} & \textbf{Q} \\
+\hline
+$\upbeta-\upalpha$ & 4 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{choices}
+\item $P>Q$
+\item $P<Q$
+\item $P=Q$
+\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.
+\end{choices}
+\answer{C}
+\explanation{Penyelesaian $|x-5|=2$ adalah $x=3$ dan $x=7$. Karena $\upalpha=3$ dan $\upbeta=7$, maka $P=7-3=4=Q$.}
+
+\question{11.} Diketahui $\upalpha$ dan $\upbeta$ merupakan penyelesaian persamaan
+\[
+|2x-3|=5.
+\]
+Bandingkan P dan Q berikut.
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}
+\hline
+\textbf{P} & \textbf{Q} \\
+\hline
+$\upalpha\upbeta$ & $-3$ \\
+\hline
+\end{tabular}
+\end{center}
+\begin{choices}
+\item $P>Q$
+\item $P<Q$
+\item $P=Q$
+\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.
+\end{choices}
+\answer{B}
+\explanation{Dari $2x-3=5$ diperoleh $x=4$, sedangkan dari $2x-3=-5$ diperoleh $x=-1$. Jadi $P=(4)(-1)=-4$, sedangkan $Q=-3$. Maka $P<Q$.}
+
+\question{12.} Bilangan real $x$ memenuhi
+\[
+|x+2|=4.
+\]
+Bandingkan P dan Q berikut.
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.35\textwidth}|}
+\hline
+\textbf{P} & \textbf{Q} \\
+\hline
+$x^2$ & 9 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{choices}
+\item $P>Q$
+\item $P<Q$
+\item $P=Q$
+\item Hubungan $P$ dan $Q$ tidak dapat ditentukan.
+\end{choices}
+\answer{D}
+\explanation{Persamaan menghasilkan $x=2$ atau $x=-6$. Jika $x=2$, maka $P=4<Q$. Jika $x=-6$, maka $P=36>Q$. Hubungan tidak dapat ditentukan secara tunggal.}
+
+\question{13.} Diketahui persamaan
+\[
+|x-a|=5.
+\]
+Berapakah nilai $a$?
+
+(1) Salah satu penyelesaiannya adalah $x=8$.\\
+(2) Salah satu penyelesaian lainnya adalah $x=-2$.
+\begin{choices}
+\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.
+\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.
+\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.
+\item Masing-masing pernyataan cukup.
+\item Kedua pernyataan tidak cukup.
+\end{choices}
+\answer{C}
+\explanation{Dari (1), $|8-a|=5$ memberi $a=3$ atau $a=13$, sehingga belum cukup. Dari (2), $|-2-a|=5$ memberi $a=3$ atau $a=-7$, juga belum cukup. Jika keduanya benar, nilai yang konsisten hanya $a=3$.}
+
+\question{14.} Diketahui persamaan
+\[
+|x-b|=0.
+\]
+Berapakah himpunan penyelesaiannya?
+
+(1) $b=4$.\\
+(2) Persamaan mempunyai tepat satu penyelesaian real.
+\begin{choices}
+\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.
+\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.
+\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.
+\item Masing-masing pernyataan cukup.
+\item Kedua pernyataan tidak cukup.
+\end{choices}
+\answer{A}
+\explanation{Persamaan $|x-b|=0$ selalu memiliki satu solusi, yaitu $x=b$. Pernyataan (1) memberi $b=4$, sehingga HP $=\{4\}$. Pernyataan (2) tidak memberi nilai $b$, jadi tidak cukup menentukan HP secara numerik.}
+
+\question{15.} Apakah persamaan
+\[
+|x+1|=k
+\]
+mempunyai dua penyelesaian real yang berbeda?
+
+(1) $k>0$.\\
+(2) $k\ge0$ dan $k\ne0$.
+\begin{choices}
+\item Pernyataan (1) saja cukup, tetapi (2) saja tidak cukup.
+\item Pernyataan (2) saja cukup, tetapi (1) saja tidak cukup.
+\item Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.
+\item Masing-masing pernyataan cukup.
+\item Kedua pernyataan tidak cukup.
+\end{choices}
+\answer{D}
+\explanation{Persamaan $|x+1|=k$ memiliki dua solusi berbeda tepat ketika $k>0$. Pernyataan (1) langsung menjamin hal itu. Pernyataan (2) juga setara dengan $k>0$. Jadi masing-masing cukup.}
+
+\end{document}
