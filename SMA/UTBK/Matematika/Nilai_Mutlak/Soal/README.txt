@@ -1,0 +1,1 @@
+Soal Nilai Mutlak SMA/UTBK terdiri atas source LaTeX dan PDF final. Format: pilihan berada di bawah soal, ANSWER dan EXPLANATION per nomor, tanpa header/footer.
