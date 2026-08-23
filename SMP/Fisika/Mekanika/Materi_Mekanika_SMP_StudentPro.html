@@ -95,6 +95,46 @@
     .hasil b{font-size:1rem}
     table{font-size:.84rem}
   }
+
+/* ===== penguat-ponsel-studentpro =====
+   Tabel yang tidak menumpuk adalah sebab paling sering halaman materi terpotong di
+   ponsel: satu tabel empat kolom lebih lebar daripada layarnya, dan begitu ada satu
+   elemen yang melebihi lebar, seluruh halaman dapat digeser ke samping — teks biasa
+   pun ikut terpotong saat dibaca. */
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{overflow-wrap:break-word}
+img,canvas,svg,video{max-width:100%; height:auto}
+table{max-width:100%}
+
+/* Rumus baris-tersendiri (\[ ... \] dan $$ ... $$) dirender MathJax sebagai satu blok
+   yang tidak pernah dipatahkan. Rumus panjang karena itu bisa lebih lebar daripada layar
+   ponsel. Yang digulir cukup rumusnya saja, bukan seluruh halaman. */
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto; overflow-y:hidden; padding:2px 0 6px}
+
+@media (max-width:560px){
+  /* Tiap baris menjadi satu kartu, dengan nama kolomnya sendiri. Menggulir mendatar
+     sengaja tidak dipakai: yang tersembunyi biasanya justru kolom terakhir, dan di
+     tabel materi kolom terakhir hampir selalu kolom jawabannya. */
+  table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  table, table tbody, table tr, table td{display:block; width:100%}
+  table tr{border:1px solid var(--garis,#e2e8f0); border-radius:12px;
+           margin-bottom:12px; overflow:hidden; background:#fff}
+  table td{border:0; border-bottom:1px solid var(--garis,#e2e8f0); padding:10px 13px}
+  table tr td:last-child{border-bottom:0}
+  table td[data-kolom]::before{
+    content:attr(data-kolom); display:block; font-size:.68rem; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--redup,#64748b);
+    margin-bottom:3px;
+  }
+}
+
+@media (max-width:380px){
+  body{padding-left:12px; padding-right:12px; font-size:15px}
+  h1{font-size:1.3rem} h2{font-size:1.08rem} h3{font-size:1rem}
+  .kotak{padding:12px 13px}
+}
+/* ===== akhir penguat-ponsel-studentpro ===== */
 </style>
 </head>
 <body>
@@ -118,8 +158,8 @@
 <table>
 <thead><tr><th>Besaran</th><th>Makna</th><th>Contoh</th></tr></thead>
 <tbody>
-<tr><td><b>Jarak</b></td><td>Panjang seluruh lintasan yang ditempuh.</td><td>Berjalan 3 m ke timur lalu 2 m ke barat → jarak 5 m.</td></tr>
-<tr><td><b>Perpindahan</b></td><td>Perubahan posisi dari titik awal ke titik akhir beserta arah.</td><td>Kasus yang sama → perpindahan 1 m ke timur.</td></tr>
+<tr><td data-kolom="Besaran"><b>Jarak</b></td><td data-kolom="Makna">Panjang seluruh lintasan yang ditempuh.</td><td data-kolom="Contoh">Berjalan 3 m ke timur lalu 2 m ke barat → jarak 5 m.</td></tr>
+<tr><td data-kolom="Besaran"><b>Perpindahan</b></td><td data-kolom="Makna">Perubahan posisi dari titik awal ke titik akhir beserta arah.</td><td data-kolom="Contoh">Kasus yang sama → perpindahan 1 m ke timur.</td></tr>
 </tbody>
 </table>
 
@@ -165,9 +205,9 @@ Jika ticker timer bekerja pada frekuensi <b>50 Hz</b>, alat membuat 50 ketukan s
 <table>
 <thead><tr><th>Pola titik pada pita</th><th>Makna gerak</th></tr></thead>
 <tbody>
-<tr><td>Jarak antartitik sama</td><td>Kecepatan tetap (GLB).</td></tr>
-<tr><td>Jarak antartitik makin besar</td><td>Kecepatan bertambah; benda dipercepat.</td></tr>
-<tr><td>Jarak antartitik makin kecil</td><td>Kecepatan berkurang; benda diperlambat.</td></tr>
+<tr><td data-kolom="Pola titik pada pita">Jarak antartitik sama</td><td data-kolom="Makna gerak">Kecepatan tetap (GLB).</td></tr>
+<tr><td data-kolom="Pola titik pada pita">Jarak antartitik makin besar</td><td data-kolom="Makna gerak">Kecepatan bertambah; benda dipercepat.</td></tr>
+<tr><td data-kolom="Pola titik pada pita">Jarak antartitik makin kecil</td><td data-kolom="Makna gerak">Kecepatan berkurang; benda diperlambat.</td></tr>
 </tbody>
 </table>
 <p>Kecepatan rata-rata pada bagian pita dihitung dari panjang pita yang diukur dibagi waktu yang diperlukan untuk membentuk bagian tersebut.</p>
@@ -253,9 +293,9 @@ Jika ticker timer bekerja pada frekuensi <b>50 Hz</b>, alat membuat 50 ketukan s
 <table>
 <thead><tr><th>Hukum</th><th>Inti</th><th>Contoh</th></tr></thead>
 <tbody>
-<tr><td><b>I</b></td><td>Benda cenderung mempertahankan keadaan geraknya jika resultan gaya nol.</td><td>Penumpang terdorong ke depan saat bus direm mendadak.</td></tr>
-<tr><td><b>II</b></td><td>Percepatan bertambah jika gaya resultan membesar, dan berkurang jika massa membesar.</td><td>Troli kosong lebih mudah dipercepat daripada troli penuh.</td></tr>
-<tr><td><b>III</b></td><td>Setiap aksi memiliki reaksi yang sama besar dan berlawanan arah.</td><td>Kaki mendorong tanah ke belakang, tanah mendorong tubuh ke depan.</td></tr>
+<tr><td data-kolom="Hukum"><b>I</b></td><td data-kolom="Inti">Benda cenderung mempertahankan keadaan geraknya jika resultan gaya nol.</td><td data-kolom="Contoh">Penumpang terdorong ke depan saat bus direm mendadak.</td></tr>
+<tr><td data-kolom="Hukum"><b>II</b></td><td data-kolom="Inti">Percepatan bertambah jika gaya resultan membesar, dan berkurang jika massa membesar.</td><td data-kolom="Contoh">Troli kosong lebih mudah dipercepat daripada troli penuh.</td></tr>
+<tr><td data-kolom="Hukum"><b>III</b></td><td data-kolom="Inti">Setiap aksi memiliki reaksi yang sama besar dan berlawanan arah.</td><td data-kolom="Contoh">Kaki mendorong tanah ke belakang, tanah mendorong tubuh ke depan.</td></tr>
 </tbody>
 </table>
 <div class="kotak kotak-rumus">
@@ -405,9 +445,9 @@ Jika ticker timer bekerja pada frekuensi <b>50 Hz</b>, alat membuat 50 ketukan s
 <table>
 <thead><tr><th>Jenis tuas</th><th>Letak bagian di tengah</th><th>Contoh</th></tr></thead>
 <tbody>
-<tr><td>Kelas I</td><td>Titik tumpu</td><td>Jungkat-jungkit, gunting</td></tr>
-<tr><td>Kelas II</td><td>Beban</td><td>Gerobak dorong, pembuka tutup botol</td></tr>
-<tr><td>Kelas III</td><td>Kuasa</td><td>Pinset, lengan bawah manusia</td></tr>
+<tr><td data-kolom="Jenis tuas">Kelas I</td><td data-kolom="Letak bagian di tengah">Titik tumpu</td><td data-kolom="Contoh">Jungkat-jungkit, gunting</td></tr>
+<tr><td data-kolom="Jenis tuas">Kelas II</td><td data-kolom="Letak bagian di tengah">Beban</td><td data-kolom="Contoh">Gerobak dorong, pembuka tutup botol</td></tr>
+<tr><td data-kolom="Jenis tuas">Kelas III</td><td data-kolom="Letak bagian di tengah">Kuasa</td><td data-kolom="Contoh">Pinset, lengan bawah manusia</td></tr>
 </tbody>
 </table>
 
@@ -440,10 +480,10 @@ Jika ticker timer bekerja pada frekuensi <b>50 Hz</b>, alat membuat 50 ketukan s
 <table>
 <thead><tr><th>Besaran</th><th>Lambang</th><th>Makna</th></tr></thead>
 <tbody>
-<tr><td>Berat beban</td><td class="rumus">w</td><td>Gaya gravitasi pada benda, satuannya newton (N).</td></tr>
-<tr><td>Panjang bidang</td><td class="rumus">l</td><td>Panjang lintasan miring yang ditempuh benda.</td></tr>
-<tr><td>Tinggi bidang</td><td class="rumus">h</td><td>Kenaikan vertikal dari dasar ke puncak bidang.</td></tr>
-<tr><td>Gaya kuasa</td><td class="rumus">F</td><td>Gaya ideal yang diperlukan untuk mendorong atau menarik beban sepanjang bidang.</td></tr>
+<tr><td data-kolom="Besaran">Berat beban</td><td class="rumus" data-kolom="Lambang">w</td><td data-kolom="Makna">Gaya gravitasi pada benda, satuannya newton (N).</td></tr>
+<tr><td data-kolom="Besaran">Panjang bidang</td><td class="rumus" data-kolom="Lambang">l</td><td data-kolom="Makna">Panjang lintasan miring yang ditempuh benda.</td></tr>
+<tr><td data-kolom="Besaran">Tinggi bidang</td><td class="rumus" data-kolom="Lambang">h</td><td data-kolom="Makna">Kenaikan vertikal dari dasar ke puncak bidang.</td></tr>
+<tr><td data-kolom="Besaran">Gaya kuasa</td><td class="rumus" data-kolom="Lambang">F</td><td data-kolom="Makna">Gaya ideal yang diperlukan untuk mendorong atau menarik beban sepanjang bidang.</td></tr>
 </tbody>
 </table>
 <div class="kotak kotak-rumus">
@@ -463,10 +503,10 @@ Jika ticker timer bekerja pada frekuensi <b>50 Hz</b>, alat membuat 50 ketukan s
 <table>
 <thead><tr><th>Bentuk</th><th>Cara kerja</th><th>Contoh</th></tr></thead>
 <tbody>
-<tr><td>Ram atau papan miring</td><td>Memperpanjang lintasan agar gaya angkat menjadi lebih kecil.</td><td>Jalur kursi roda, papan ke bak truk.</td></tr>
-<tr><td>Jalan berkelok</td><td>Membuat kenaikan ketinggian terjadi secara bertahap.</td><td>Jalan pegunungan.</td></tr>
-<tr><td>Baji</td><td>Dua bidang miring yang digunakan untuk membelah atau memisahkan benda.</td><td>Kapak, pisau, pahat.</td></tr>
-<tr><td>Sekrup</td><td>Bidang miring yang dililitkan mengelilingi silinder.</td><td>Sekrup kayu, baut berulir.</td></tr>
+<tr><td data-kolom="Bentuk">Ram atau papan miring</td><td data-kolom="Cara kerja">Memperpanjang lintasan agar gaya angkat menjadi lebih kecil.</td><td data-kolom="Contoh">Jalur kursi roda, papan ke bak truk.</td></tr>
+<tr><td data-kolom="Bentuk">Jalan berkelok</td><td data-kolom="Cara kerja">Membuat kenaikan ketinggian terjadi secara bertahap.</td><td data-kolom="Contoh">Jalan pegunungan.</td></tr>
+<tr><td data-kolom="Bentuk">Baji</td><td data-kolom="Cara kerja">Dua bidang miring yang digunakan untuk membelah atau memisahkan benda.</td><td data-kolom="Contoh">Kapak, pisau, pahat.</td></tr>
+<tr><td data-kolom="Bentuk">Sekrup</td><td data-kolom="Cara kerja">Bidang miring yang dililitkan mengelilingi silinder.</td><td data-kolom="Contoh">Sekrup kayu, baut berulir.</td></tr>
 </tbody>
 </table>
 <div class="kotak kotak-awas">
