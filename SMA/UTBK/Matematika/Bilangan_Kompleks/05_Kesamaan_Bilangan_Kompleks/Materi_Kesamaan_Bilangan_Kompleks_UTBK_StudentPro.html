@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kesamaan Bilangan Kompleks</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff;--green:#0f766e;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px}
+h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}
+p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}
+.box,.note,.example,.warning{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}
+.formula{background:var(--soft);text-align:center;font-size:1.06rem}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:1em 0}.card{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}
+ul,ol{padding-left:1.3em}.quiz{border-top:1px solid var(--line);padding:14px 0}.quiz:first-child{border-top:0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}
+button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}
+mjx-mi{font-style:normal!important}
+@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}.grid2{grid-template-columns:1fr}table{font-size:.84rem}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1 id="judul">Kesamaan Bilangan Kompleks</h1><p class="intro">Matematika SMA/UTBK · Bilangan Kompleks · materi 5 dari 6</p>
+
+<div class="note"><div class="label">Prinsip utama</div>Dua bilangan kompleks sama jika dan hanya jika bagian realnya sama dan bagian imajinernya juga sama.</div>
+<h2 id="syarat-kesamaan">1. Syarat Kesamaan</h2>
+<div class="box formula">
+\[a+bi=c+di\iff a=c\text{ dan }b=d\]
+</div>
+<div class="example"><div class="label">Contoh 1</div>
+Jika \((p+2)+(q-1)i=7+4i\), maka:
+\[p+2=7\Rightarrow p=5\]
+\[q-1=4\Rightarrow q=5\]
+Jadi \(p+q=10\).
+</div>
+
+<h2 id="strategi-kesamaan">2. Strategi Menyelesaikan</h2>
+<ol><li>Ubah kedua ruas ke bentuk \(a+bi\).</li><li>Kelompokkan bagian real dan koefisien \(i\).</li><li>Samakan real dengan real.</li><li>Samakan koefisien \(i\) dengan koefisien \(i\).</li><li>Selesaikan sistem persamaan yang diperoleh.</li></ol>
+
+<h2 id="kesamaan-dengan-operasi">3. Kesamaan Setelah Operasi</h2>
+<p>Jika terdapat penjumlahan, perkalian, atau konjugat, sederhanakan terlebih dahulu hingga kedua ruas berbentuk \(a+bi\).</p>
+<div class="example"><div class="label">Contoh 2</div>
+Jika \((1+i)z=5+i\) dan \(z=x+yi\), maka substitusi dan pengelompokan bagian real-imajiner dapat digunakan untuk menentukan \(x\) dan \(y\).
+</div>
+<h2 id="contoh-soal-5">4. Contoh Soal</h2>
+<div class="quiz"><p><b>1.</b> Jika \(a+3i=7+3i\), maka \(a\) adalah ....</p><div class="opts"><div>A. \(3\)</div><div>B. \(4\)</div><div>C. \(7\)</div><div>D. \(10\)</div><div>E. \(-7\)</div></div>
+<button type="button" data-answer="m5-a1">Lihat jawaban</button>
+<div class="answer" id="m5-a1"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> Kesamaan kompleks menuntut bagian real sama: \(a=7\).</div></div><div class="quiz"><p><b>2.</b> Jika \(2a+(b-1)i=8+5i\), maka \(a+b\) adalah ....</p><div class="opts"><div>A. \(8\)</div><div>B. \(9\)</div><div>C. \(10\)</div><div>D. \(11\)</div><div>E. \(12\)</div></div>
+<button type="button" data-answer="m5-a2">Lihat jawaban</button>
+<div class="answer" id="m5-a2"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(2a=8\Rightarrow a=4\), \(b-1=5\Rightarrow b=6\), sehingga \(a+b=10\).</div></div><div class="quiz"><p><b>3.</b> Jika \((x+1)+(2y-3)i=5-7i\), maka \(x-y\) adalah ....</p><div class="opts"><div>A. \(1\)</div><div>B. \(5\)</div><div>C. \(6\)</div><div>D. \(9\)</div><div>E. \(-1\)</div></div>
+<button type="button" data-answer="m5-a3">Lihat jawaban</button>
+<div class="answer" id="m5-a3"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(x+1=5\Rightarrow x=4\), \(2y-3=-7\Rightarrow y=-2\), sehingga \(x-y=4-(-2)=6\).</div></div><div class="quiz"><p><b>4.</b> Jika \(z=a+bi\) dan \(z=4-9i\), maka \(2a-b\) adalah ....</p><div class="opts"><div>A. \(-1\)</div><div>B. \(1\)</div><div>C. \(17\)</div><div>D. \(-17\)</div><div>E. \(13\)</div></div>
+<button type="button" data-answer="m5-a4">Lihat jawaban</button>
+<div class="answer" id="m5-a4"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(a=4\), \(b=-9\), maka \(2a-b=8-(-9)=17\).</div></div><div class="quiz"><p><b>5.</b> Jika \((m-2)+(n+4)i=0\), maka \(m+n\) adalah ....</p><div class="opts"><div>A. \(-2\)</div><div>B. \(2\)</div><div>C. \(4\)</div><div>D. \(-4\)</div><div>E. \(6\)</div></div>
+<button type="button" data-answer="m5-a5">Lihat jawaban</button>
+<div class="answer" id="m5-a5"><b>ANSWER:</b> A<br><b>EXPLANATION:</b> Karena \(0=0+0i\), \(m-2=0\Rightarrow m=2\) dan \(n+4=0\Rightarrow n=-4\), sehingga \(m+n=-2\).</div></div>
+<script>
+(function(){
+'use strict';
+document.querySelectorAll('button[data-answer]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.getAttribute('data-answer'));
+    if(!el)return;
+    el.classList.toggle('show');
+    btn.textContent=el.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';
+  });
+});
+})();
+</script>
+</body></html>
