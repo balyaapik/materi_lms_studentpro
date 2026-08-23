@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bilangan Imajiner dan Akar Bilangan Negatif</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff;--green:#0f766e;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px}
+h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}
+p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}
+.box,.note,.example,.warning{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}
+.formula{background:var(--soft);text-align:center;font-size:1.06rem}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:1em 0}.card{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}
+ul,ol{padding-left:1.3em}.quiz{border-top:1px solid var(--line);padding:14px 0}.quiz:first-child{border-top:0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}
+button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}
+mjx-mi{font-style:normal!important}
+@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}.grid2{grid-template-columns:1fr}table{font-size:.84rem}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1 id="judul">Bilangan Imajiner dan Akar Bilangan Negatif</h1><p class="intro">Matematika SMA/UTBK · Bilangan Kompleks · materi 1 dari 6</p>
+
+<div class="note"><div class="label">Ide utama</div>Bilangan imajiner muncul ketika kita memperluas sistem bilangan real sehingga persamaan seperti \(x^2=-1\) mempunyai solusi.</div>
+<h2 id="definisi-i">1. Definisi Bilangan Imajiner</h2>
+<div class="box formula">\[i=\sqrt{-1}\qquad i^2=-1\]</div>
+<p>Setiap akar kuadrat dari bilangan negatif dapat ditulis menggunakan \(i\).</p>
+<div class="box formula">\[\sqrt{-a}=\sqrt{a}\,i\quad (a>0)\]</div>
+<div class="example"><div class="label">Contoh 1</div>\[\sqrt{-36}=\sqrt{36}\,i=6i\]</div>
+
+<h2 id="menyederhanakan-akar">2. Menyederhanakan Akar Negatif</h2>
+<p>Langkahnya: keluarkan faktor \(-1\), ubah menjadi \(i\), lalu sederhanakan akar positifnya.</p>
+<div class="example"><div class="label">Contoh 2</div>
+\[\sqrt{-72}=\sqrt{72}\,i=\sqrt{36\cdot2}\,i=6\sqrt2\,i\]
+</div>
+<h2 id="operasi-akar-negatif">3. Operasi pada Akar Negatif</h2>
+<p>Setelah setiap akar negatif diubah ke bentuk yang memuat \(i\), operasi penjumlahan dan pengurangan dilakukan seperti suku sejenis.</p>
+<div class="example"><div class="label">Contoh 3</div>
+\[\sqrt{-25}+\sqrt{-9}=5i+3i=8i\]
+</div>
+<div class="warning"><div class="label">Perhatian</div>Jangan menuliskan \(\sqrt{-a}=-\sqrt a\). Tanda negatif berada di dalam akar dan menghasilkan faktor \(i\).</div>
+<h2 id="contoh-soal-1">4. Contoh Soal</h2>
+<div class="quiz"><p><b>1.</b> Nilai dari \(\sqrt{-49}\) adalah ....</p><div class="opts"><div>A. \(7\)</div><div>B. \(-7\)</div><div>C. \(7i\)</div><div>D. \(-49i\)</div><div>E. \(49i\)</div></div>
+<button type="button" data-answer="m1-a1">Lihat jawaban</button>
+<div class="answer" id="m1-a1"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> Karena \(\sqrt{-49}=\sqrt{49}\sqrt{-1}=7i\).</div></div><div class="quiz"><p><b>2.</b> Nilai dari \(\sqrt{-12}\) dalam bentuk sederhana adalah ....</p><div class="opts"><div>A. \(2\sqrt3\)</div><div>B. \(2\sqrt3 i\)</div><div>C. \(6i\)</div><div>D. \(12i\)</div><div>E. \(\sqrt6 i\)</div></div>
+<button type="button" data-answer="m1-a2">Lihat jawaban</button>
+<div class="answer" id="m1-a2"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> \(\sqrt{-12}=\sqrt{12}i=2\sqrt3 i\).</div></div><div class="quiz"><p><b>3.</b> Hasil \(\sqrt{-81}+\sqrt{-16}\) adalah ....</p><div class="opts"><div>A. \(13\)</div><div>B. \(-13\)</div><div>C. \(13i\)</div><div>D. \(5i\)</div><div>E. \(-5i\)</div></div>
+<button type="button" data-answer="m1-a3">Lihat jawaban</button>
+<div class="answer" id="m1-a3"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(9i+4i=13i\).</div></div><div class="quiz"><p><b>4.</b> Jika \(\sqrt{x}=5i\), maka nilai \(x\) adalah ....</p><div class="opts"><div>A. \(25\)</div><div>B. \(-25\)</div><div>C. \(5\)</div><div>D. \(-5\)</div><div>E. \(10\)</div></div>
+<button type="button" data-answer="m1-a4">Lihat jawaban</button>
+<div class="answer" id="m1-a4"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> Kuadratkan kedua ruas: \(x=(5i)^2=25i^2=-25\).</div></div><div class="quiz"><p><b>5.</b> Nilai \(\sqrt{-0{,}09}-\sqrt{-0{,}04}\) adalah ....</p><div class="opts"><div>A. \(0{,}5i\)</div><div>B. \(0{,}1i\)</div><div>C. \(-0{,}1i\)</div><div>D. \(0{,}1\)</div><div>E. \(-0{,}5i\)</div></div>
+<button type="button" data-answer="m1-a5">Lihat jawaban</button>
+<div class="answer" id="m1-a5"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> \(\sqrt{-0{,}09}=0{,}3i\) dan \(\sqrt{-0{,}04}=0{,}2i\), sehingga selisihnya \(0{,}1i\).</div></div>
+<script>
+(function(){
+'use strict';
+document.querySelectorAll('button[data-answer]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.getAttribute('data-answer'));
+    if(!el)return;
+    el.classList.toggle('show');
+    btn.textContent=el.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';
+  });
+});
+})();
+</script>
+</body></html>
