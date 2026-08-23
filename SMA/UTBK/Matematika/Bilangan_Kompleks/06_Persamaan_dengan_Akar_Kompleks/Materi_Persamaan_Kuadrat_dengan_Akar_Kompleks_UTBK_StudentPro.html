@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Persamaan Kuadrat dengan Akar Kompleks</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff;--green:#0f766e;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px}
+h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}
+p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}
+.box,.note,.example,.warning{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}
+.formula{background:var(--soft);text-align:center;font-size:1.06rem}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:1em 0}.card{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}
+ul,ol{padding-left:1.3em}.quiz{border-top:1px solid var(--line);padding:14px 0}.quiz:first-child{border-top:0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}
+button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}
+mjx-mi{font-style:normal!important}
+@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}.grid2{grid-template-columns:1fr}table{font-size:.84rem}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1 id="judul">Persamaan Kuadrat dengan Akar Kompleks</h1><p class="intro">Matematika SMA/UTBK · Bilangan Kompleks · materi 6 dari 6</p>
+
+<div class="note"><div class="label">Kaitan dengan persamaan kuadrat</div>Jika diskriminan negatif, persamaan kuadrat berkoefisien real tidak memiliki akar real, tetapi memiliki dua akar kompleks yang saling berkonjugat.</div>
+<h2 id="diskriminan">1. Diskriminan dan Jenis Akar</h2>
+<div class="box formula">\[ax^2+bx+c=0,\qquad \Delta=b^2-4ac\]</div>
+<table><tr><th>Nilai Δ</th><th>Jenis akar</th></tr><tr><td>\(\Delta>0\)</td><td>dua akar real berbeda</td></tr><tr><td>\(\Delta=0\)</td><td>satu akar real kembar</td></tr><tr><td>\(\Delta<0\)</td><td>dua akar kompleks konjugat</td></tr></table>
+
+<h2 id="rumus-kuadrat-kompleks">2. Rumus Kuadrat untuk Δ &lt; 0</h2>
+<div class="box formula">\[x=\frac{-b\pm\sqrt{\Delta}}{2a}\]</div>
+<p>Jika \(\Delta=-k\) dengan \(k>0\), maka \(\sqrt{\Delta}=i\sqrt{k}\).</p>
+<div class="example"><div class="label">Contoh 1</div>
+Untuk \(x^2-4x+13=0\):
+\[\Delta=16-52=-36\]
+\[x=\frac{4\pm6i}{2}=2\pm3i\]
+</div>
+
+<h2 id="pasangan-konjugat">3. Akar Kompleks Berpasangan</h2>
+<p>Jika polinom memiliki koefisien real dan salah satu akar adalah \(a+bi\), maka \(a-bi\) juga merupakan akar.</p>
+<div class="example"><div class="label">Contoh 2</div>Jika salah satu akar suatu persamaan kuadrat real adalah \(5-2i\), akar lainnya adalah \(5+2i\).</div>
+
+<h2 id="menyusun-persamaan">4. Menyusun Persamaan dari Akar</h2>
+<p>Jika akar-akarnya \(x_1\) dan \(x_2\), persamaan kuadrat monik adalah:</p>
+<div class="box formula">\[x^2-(x_1+x_2)x+x_1x_2=0\]</div>
+<p>Untuk pasangan \(a+bi\) dan \(a-bi\):</p>
+<div class="box formula">
+\[x_1+x_2=2a\]
+\[x_1x_2=a^2+b^2\]
+\[x^2-2ax+(a^2+b^2)=0\]
+</div>
+<div class="example"><div class="label">Contoh 3</div>
+Akar \(1+4i\) dan \(1-4i\) menghasilkan:
+\[x^2-2x+17=0\]
+</div>
+
+<h2 id="akar-polinom-tinggi">5. Pengembangan ke Polinom Derajat Lebih Tinggi</h2>
+<p>Untuk polinom berkoefisien real, setiap akar kompleks nonreal harus ditemani konjugatnya. Jika diketahui akar lain yang real, semua faktor dapat dikalikan untuk membentuk polinom derajat tiga atau empat.</p>
+<div class="example"><div class="label">Contoh 4</div>
+Jika akar polinom kubik adalah \(2+i\), \(2-i\), dan \(1\), maka:
+\[(x-(2+i))(x-(2-i))(x-1)=0\]
+\[((x-2)^2+1)(x-1)=0\]
+</div>
+
+<h2 id="contoh-soal-6">6. Contoh Soal</h2>
+<div class="quiz"><p><b>1.</b> Akar-akar \(x^2-2x+10=0\) adalah ....</p><div class="opts"><div>A. \(1\pm3i\)</div><div>B. \(-1\pm3i\)</div><div>C. \(2\pm3i\)</div><div>D. \(1\pm i\)</div><div>E. \(-2\pm i\)</div></div>
+<button type="button" data-answer="m6-a1">Lihat jawaban</button>
+<div class="answer" id="m6-a1"><b>ANSWER:</b> A<br><b>EXPLANATION:</b> Diskriminan \(4-40=-36\), sehingga \(x=(2\pm6i)/2=1\pm3i\).</div></div><div class="quiz"><p><b>2.</b> Persamaan kuadrat berkoefisien real yang mempunyai salah satu akar \(2-5i\) memiliki akar lainnya ....</p><div class="opts"><div>A. \(-2+5i\)</div><div>B. \(2+5i\)</div><div>C. \(-2-5i\)</div><div>D. \(5+2i\)</div><div>E. \(5-2i\)</div></div>
+<button type="button" data-answer="m6-a2">Lihat jawaban</button>
+<div class="answer" id="m6-a2"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> Akar kompleks dari persamaan berkoefisien real muncul berpasangan konjugat.</div></div><div class="quiz"><p><b>3.</b> Persamaan kuadrat monik dengan akar \(3+i\) dan \(3-i\) adalah ....</p><div class="opts"><div>A. \(x^2-6x+10=0\)</div><div>B. \(x^2+6x+10=0\)</div><div>C. \(x^2-3x+10=0\)</div><div>D. \(x^2-6x+8=0\)</div><div>E. \(x^2+10=0\)</div></div>
+<button type="button" data-answer="m6-a3">Lihat jawaban</button>
+<div class="answer" id="m6-a3"><b>ANSWER:</b> A<br><b>EXPLANATION:</b> Jumlah akar \(6\), hasil kali \((3+i)(3-i)=10\), jadi \(x^2-6x+10=0\).</div></div><div class="quiz"><p><b>4.</b> Jika diskriminan suatu persamaan kuadrat bernilai negatif, maka ....</p><div class="opts"><div>A. mempunyai dua akar real berbeda</div><div>B. mempunyai akar real kembar</div><div>C. tidak mempunyai akar kompleks</div><div>D. mempunyai dua akar kompleks konjugat untuk koefisien real</div><div>E. selalu tidak mempunyai solusi sama sekali</div></div>
+<button type="button" data-answer="m6-a4">Lihat jawaban</button>
+<div class="answer" id="m6-a4"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> Untuk koefisien real dan \(\Delta<0\), akar berbentuk pasangan kompleks konjugat.</div></div><div class="quiz"><p><b>5.</b> Persamaan monik dengan akar \(2+3i\) dan \(2-3i\) adalah ....</p><div class="opts"><div>A. \(x^2-4x+13=0\)</div><div>B. \(x^2+4x+13=0\)</div><div>C. \(x^2-4x-13=0\)</div><div>D. \(x^2-2x+13=0\)</div><div>E. \(x^2+13=0\)</div></div>
+<button type="button" data-answer="m6-a5">Lihat jawaban</button>
+<div class="answer" id="m6-a5"><b>ANSWER:</b> A<br><b>EXPLANATION:</b> Jumlah akar \(4\), hasil kali \(2^2+3^2=13\), sehingga \(x^2-4x+13=0\).</div></div>
+<script>
+(function(){
+'use strict';
+document.querySelectorAll('button[data-answer]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.getAttribute('data-answer'));
+    if(!el)return;
+    el.classList.toggle('show');
+    btn.textContent=el.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';
+  });
+});
+})();
+</script>
+</body></html>
