@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pertidaksamaan Kuadrat — Metode Tabel Tanda</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px;overflow-wrap:break-word}h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}.box,.note,.example,.tip{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.tip{background:#f0fdfa;border-left:5px solid #0f766e}.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.formula{background:var(--soft);text-align:center;font-size:1.06rem}table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.92rem;max-width:100%}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}.quiz{border-top:1px solid var(--line);padding:14px 0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}img,canvas,svg,video{max-width:100%;height:auto}mjx-mi{font-style:normal!important}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}
+/* ===== penguat-ponsel-studentpro ===== */
+@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}}@media(max-width:380px){body{padding-left:12px;padding-right:12px;font-size:15px}h1{font-size:1.3rem}h2{font-size:1.08rem}h3{font-size:1rem}}
+/* ===== akhir penguat-ponsel-studentpro ===== */
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head><body>
+<h1 id="judul">Pertidaksamaan Kuadrat — Metode Tabel Tanda</h1>
+<p class="intro">Matematika SMA/UTBK · pertidaksamaan kuadrat · materi 1</p>
+<div class="note"><div class="label">Ide utama</div>Metode tabel tanda dipakai untuk menentukan interval yang membuat suatu hasil kali atau hasil bagi bernilai positif, negatif, nol, atau tidak terdefinisi.</div>
+<h2 id="bentuk-nol">1. Ubah ke Bentuk Dibandingkan dengan Nol</h2>
+<p>Sebelum membuat tabel tanda, pindahkan semua suku ke satu ruas sehingga bentuknya menjadi \(F(x)>0\), \(F(x)<0\), \(F(x)\ge0\), atau \(F(x)\le0\).</p>
+<div class="example"><div class="label">Contoh</div>\(3x-6<15\Rightarrow3x-21<0\). Titik kritisnya diperoleh dari \(3x-21=0\), yaitu \(x=7\).</div>
+<h2 id="langkah-tabel">2. Langkah Tabel Tanda</h2>
+<ol><li>Faktorkan bentuk aljabar.</li><li>Tentukan semua titik kritis.</li><li>Urutkan titik kritis pada garis bilangan.</li><li>Tentukan tanda setiap faktor pada tiap interval.</li><li>Gabungkan tanda faktor.</li><li>Pilih interval sesuai tanda yang diminta.</li></ol>
+<table><thead><tr><th>Jenis titik</th><th>Masuk solusi?</th><th>Catatan</th></tr></thead><tbody>
+<tr><td data-kolom="Jenis titik">Akar pembilang</td><td data-kolom="Masuk solusi?">Bisa</td><td data-kolom="Catatan">Masuk jika pertidaksamaan memakai tanda \(\ge\) atau \(\le\).</td></tr>
+<tr><td data-kolom="Jenis titik">Akar penyebut</td><td data-kolom="Masuk solusi?">Tidak</td><td data-kolom="Catatan">Selalu dikeluarkan karena membuat bentuk tidak terdefinisi.</td></tr>
+<tr><td data-kolom="Jenis titik">Akar berpangkat ganjil</td><td data-kolom="Masuk solusi?">Sesuai tanda</td><td data-kolom="Catatan">Tanda berubah saat titik dilewati.</td></tr>
+<tr><td data-kolom="Jenis titik">Akar berpangkat genap</td><td data-kolom="Masuk solusi?">Sesuai tanda</td><td data-kolom="Catatan">Tanda tidak berubah saat titik dilewati.</td></tr>
+</tbody></table>
+<h2 id="hasil-kali">3. Pertidaksamaan Hasil Kali</h2>
+<div class="example"><div class="label">Contoh 1</div>Selesaikan \((2x+8)(x-3)<0\). Titik kritis \(-4\) dan \(3\). Tanda hasil kali positif di luar kedua titik dan negatif di antaranya, sehingga \(HP=(-4,3)\).</div>
+<h2 id="rasional">4. Pertidaksamaan Rasional</h2>
+<div class="example"><div class="label">Contoh 2</div>Selesaikan \(\frac{12-2x}{10-5x}\ge0\). Titik kritis: \(x=6\) dari pembilang dan \(x=2\) dari penyebut. Hasil tabel tanda adalah \(( -\infty,2)\cup[6,\infty)\).</div>
+<div class="tip"><div class="label">Strategi cepat</div>Jangan pernah memasukkan akar penyebut ke himpunan penyelesaian. Untuk faktor berpangkat genap, tanda tidak berubah ketika melewati akarnya.</div>
+<h2 id="contoh-soal">5. Contoh Soal</h2>
+<div class="quiz"><p><b>1.</b> Himpunan penyelesaian \((x+2)(x-5)<0\) adalah ....</p><div class="opts"><div>A. \(( -\infty,-2)\)</div><div>B. \((-2,5)\)</div><div>C. \((5,\infty)\)</div><div>D. \(( -\infty,-2)\cup(5,\infty)\)</div><div>E. \([-2,5]\)</div></div><button data-answer="a1">Lihat jawaban</button><div class="answer" id="a1"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> Kedua faktor mempunyai akar \(-2\) dan \(5\). Hasil kali bernilai negatif di antara kedua akar.</div></div>
+<div class="quiz"><p><b>2.</b> Himpunan penyelesaian \(\frac{x-3}{x+1}\ge0\) adalah ....</p><div class="opts"><div>A. \((-1,3)\)</div><div>B. \(( -\infty,-1)\cup[3,\infty)\)</div><div>C. \(( -\infty,-1]\cup[3,\infty)\)</div><div>D. \([-1,3]\)</div><div>E. \(\mathbb R\)</div></div><button data-answer="a2">Lihat jawaban</button><div class="answer" id="a2"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> \(x=-1\) dilarang karena penyebut nol, sedangkan \(x=3\) boleh masuk karena membuat pembilang nol.</div></div>
+<div class="quiz"><p><b>3.</b> Pada faktor \((x-4)^2\), tanda ketika melewati \(x=4\) ....</p><div class="opts"><div>A. selalu berubah</div><div>B. tidak berubah</div><div>C. selalu menjadi negatif</div><div>D. tidak terdefinisi</div><div>E. tidak dapat ditentukan</div></div><button data-answer="a3">Lihat jawaban</button><div class="answer" id="a3"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> Pangkat 2 adalah genap, sehingga tanda faktor tidak berubah saat melewati akar.</div></div>
+<script>(function(){document.querySelectorAll('button[data-answer]').forEach(function(b){b.addEventListener('click',function(){var e=document.getElementById(b.dataset.answer);e.classList.toggle('show');b.textContent=e.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';});});})();</script>
+</body></html>
