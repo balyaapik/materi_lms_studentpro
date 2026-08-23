@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pangkat i dan Operasi Bilangan Kompleks</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff;--green:#0f766e;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px}
+h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}
+p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}
+.box,.note,.example,.warning{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}
+.formula{background:var(--soft);text-align:center;font-size:1.06rem}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:1em 0}.card{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}
+ul,ol{padding-left:1.3em}.quiz{border-top:1px solid var(--line);padding:14px 0}.quiz:first-child{border-top:0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}
+button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}
+mjx-mi{font-style:normal!important}
+@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}.grid2{grid-template-columns:1fr}table{font-size:.84rem}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1 id="judul">Pangkat i dan Operasi Bilangan Kompleks</h1><p class="intro">Matematika SMA/UTBK · Bilangan Kompleks · materi 2 dari 6</p>
+
+<div class="note"><div class="label">Ide utama</div>Pangkat \(i\) berulang setiap empat langkah. Pola ini membuat pangkat yang sangat besar dapat dihitung hanya dengan sisa pembagian eksponen oleh 4.</div>
+<h2 id="siklus-pangkat-i">1. Siklus Pangkat i</h2>
+<table><tr><th>Pangkat</th><th>Nilai</th></tr><tr><td>\(i^1\)</td><td>\(i\)</td></tr><tr><td>\(i^2\)</td><td>\(-1\)</td></tr><tr><td>\(i^3\)</td><td>\(-i\)</td></tr><tr><td>\(i^4\)</td><td>\(1\)</td></tr></table>
+<div class="box formula">\[i^{4k}=1,\quad i^{4k+1}=i,\quad i^{4k+2}=-1,\quad i^{4k+3}=-i\]</div>
+<div class="example"><div class="label">Contoh 1</div>Karena \(37=4(9)+1\), maka \(i^{37}=i\).</div>
+
+<h2 id="penjumlahan-kompleks">2. Penjumlahan dan Pengurangan</h2>
+<div class="box formula">\[(a+bi)\pm(c+di)=(a\pm c)+(b\pm d)i\]</div>
+<div class="example"><div class="label">Contoh 2</div>\[(3+4i)-(1-2i)=2+6i\]</div>
+
+<h2 id="perkalian-kompleks">3. Perkalian</h2>
+<p>Gunakan distributif seperti aljabar biasa, lalu ganti \(i^2\) dengan \(-1\).</p>
+<div class="example"><div class="label">Contoh 3</div>\[(2+i)(3-2i)=6-4i+3i-2i^2=8-i\]</div>
+
+<h2 id="substitusi-fungsi">4. Substitusi ke Fungsi</h2>
+<p>Jika fungsi polinomial dievaluasi pada \(i\), gunakan siklus pangkat \(i\) untuk menyederhanakan.</p>
+<div class="example"><div class="label">Contoh 4</div>
+Jika \(f(x)=x^4+2x^2+3\), maka \(f(i)=1+2(-1)+3=2\).
+</div>
+<h2 id="jumlah-pangkat">5. Jumlah Pangkat Berurutan</h2>
+<div class="box formula">\[i^n+i^{n+1}+i^{n+2}+i^{n+3}=0\]</div>
+<p>Setiap empat pangkat berurutan selalu berjumlah nol.</p>
+<h2 id="contoh-soal-2">6. Contoh Soal</h2>
+<div class="quiz"><p><b>1.</b> Nilai \(i^{27}\) adalah ....</p><div class="opts"><div>A. \(1\)</div><div>B. \(-1\)</div><div>C. \(i\)</div><div>D. \(-i\)</div><div>E. \(27i\)</div></div>
+<button type="button" data-answer="m2-a1">Lihat jawaban</button>
+<div class="answer" id="m2-a1"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> Karena \(27\equiv3\pmod4\), maka \(i^{27}=i^3=-i\).</div></div><div class="quiz"><p><b>2.</b> Nilai \(i^{44}\) adalah ....</p><div class="opts"><div>A. \(1\)</div><div>B. \(-1\)</div><div>C. \(i\)</div><div>D. \(-i\)</div><div>E. \(44i\)</div></div>
+<button type="button" data-answer="m2-a2">Lihat jawaban</button>
+<div class="answer" id="m2-a2"><b>ANSWER:</b> A<br><b>EXPLANATION:</b> \(44\) habis dibagi 4 sehingga \(i^{44}=1\).</div></div><div class="quiz"><p><b>3.</b> Hasil \((2+3i)+(4-5i)\) adalah ....</p><div class="opts"><div>A. \(6+8i\)</div><div>B. \(6-2i\)</div><div>C. \(-2-2i\)</div><div>D. \(2+6i\)</div><div>E. \(6+2i\)</div></div>
+<button type="button" data-answer="m2-a3">Lihat jawaban</button>
+<div class="answer" id="m2-a3"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> Jumlahkan bagian real dan imajiner: \((2+4)+(3-5)i=6-2i\).</div></div><div class="quiz"><p><b>4.</b> Hasil \((1+i)(2-3i)\) adalah ....</p><div class="opts"><div>A. \(-1-i\)</div><div>B. \(5-i\)</div><div>C. \(5+i\)</div><div>D. \(2-2i\)</div><div>E. \(-5+i\)</div></div>
+<button type="button" data-answer="m2-a4">Lihat jawaban</button>
+<div class="answer" id="m2-a4"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> \(2-3i+2i-3i^2=2-i+3=5-i\).</div></div><div class="quiz"><p><b>5.</b> Jika \(f(x)=x^3-2x+4\), maka \(f(i)\) adalah ....</p><div class="opts"><div>A. \(4+i\)</div><div>B. \(4-3i\)</div><div>C. \(4+3i\)</div><div>D. \(-4-3i\)</div><div>E. \(3-4i\)</div></div>
+<button type="button" data-answer="m2-a5">Lihat jawaban</button>
+<div class="answer" id="m2-a5"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> \(i^3=-i\), sehingga \(f(i)=-i-2i+4=4-3i\).</div></div>
+<script>
+(function(){
+'use strict';
+document.querySelectorAll('button[data-answer]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.getAttribute('data-answer'));
+    if(!el)return;
+    el.classList.toggle('show');
+    btn.textContent=el.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';
+  });
+});
+})();
+</script>
+</body></html>
