@@ -5,90 +5,160 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Matematika Energi dan Usaha — TKA SMP</title>
 <style>
-:root{--ink:#162033;--muted:#64748b;--line:#dbe4ef;--brand:#0f5cc0;--soft:#f7fbff}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:20px 18px 56px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px;overflow-wrap:break-word}main{max-width:1000px;margin:auto}h1,h2,h3{line-height:1.28;scroll-margin-top:16px;margin:1.8em 0 .6em}h1{font-size:1.8rem;margin-top:0}h2{font-size:1.32rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}p{margin:.35em 0 1em}.intro,.small{color:var(--muted)}.intro{font-size:.95rem;margin-top:-.3em}.small{font-size:.9rem}.card,.note,.example,.sim,.question,.warning{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:1.1em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fcff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}.sim{background:#f8fbff}.label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4em}.formula{font-size:1.12rem;font-weight:800;text-align:center;background:#eef7ff}.grid2,.grid3,.grid4{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}table{width:100%;border-collapse:collapse;margin:.9em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}ul,ol{padding-left:1.3em}button,input{font:inherit}button{border:1px solid var(--brand);background:#fff;color:var(--brand);font-weight:700;border-radius:9px;padding:8px 12px;cursor:pointer;min-height:40px}input[type=range]{width:100%}.out{font-weight:800;color:var(--brand)}.answer{display:none;margin-top:9px;padding:10px 12px;background:#f0fdf4;border-left:4px solid #16a34a;border-radius:8px}.answer.show{display:block}.qopts div{margin:.22em 0}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.tabs button.active{background:var(--brand);color:#fff}.panel{display:none}.panel.active{display:block}.result{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}.bar{height:18px;border-radius:999px;background:#dbeafe;overflow:hidden}.bar span{display:block;height:100%;background:#2563eb}svg{max-width:100%;height:auto;display:block}
-@media(max-width:780px){.grid4,.grid3{grid-template-columns:1fr 1fr}}@media(max-width:620px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}@media(max-width:560px){body{padding:16px 14px 48px;font-size:15px}h1{font-size:1.46rem}h2{font-size:1.17rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}table td{border:0;border-bottom:1px solid var(--line)}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}}
+:root{--ink:#162033;--muted:#5f6f86;--line:#dbe4ef;--brand:#0f5cc0;--soft:#f7fbff;--soft2:#eef7ff;--ok:#166534;--warn:#b45309;--danger:#b91c1c}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px;overflow-wrap:break-word}
+main{max-width:1020px;margin:0 auto}h1,h2,h3{line-height:1.28;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.82rem;margin-top:0}h2{font-size:1.33rem;border-bottom:2px solid var(--line);padding-bottom:.36em}h3{font-size:1.07rem;color:var(--brand)}
+p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.95rem;margin-top:-.35em}.small{font-size:.91rem;color:var(--muted)}
+.card,.note,.example,.simbox,.question,.warning{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:1.1em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fcff;border-left:5px solid #0284c7}.warning{background:#fff9eb;border-left:5px solid #d97706}.simbox{background:linear-gradient(180deg,#fbfdff,#f4f9ff)}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.formula{font-size:1.15rem;font-weight:800;text-align:center;background:var(--soft2)}
+.grid2,.grid3,.grid4{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tablewrap{overflow:auto;max-width:100%}table{width:100%;border-collapse:collapse;margin:.9em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}ul,ol{padding-left:1.25em}
+button,select,input{font:inherit}button{border:1px solid var(--brand);background:#fff;color:var(--brand);font-weight:700;border-radius:10px;padding:8px 12px;cursor:pointer;min-height:40px}input[type=range]{width:100%}.output{font-weight:800;color:var(--brand)}
+.answer{display:none;margin-top:10px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}.qopts div{margin:.22em 0}.question{border-left:4px solid #cbd5e1}
+mjx-mi{font-style:normal!important}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}svg{max-width:100%;height:auto;display:block}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.tabs button.active{background:var(--brand);color:#fff}.panel{display:none}.panel.active{display:block}.resultbox{padding:12px;border-radius:10px;background:#fff;border:1px solid var(--line);margin-top:10px}
+.bar{height:18px;border-radius:999px;background:#dbeafe;overflow:hidden;border:1px solid #bfdbfe}.bar>span{display:block;height:100%;background:#2563eb}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.center{text-align:center}
+@media(max-width:800px){.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+@media(max-width:560px){body{padding:16px 14px 48px;font-size:15px}h1{font-size:1.48rem}h2{font-size:1.18rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}}
 </style>
+<script>
+window.MathJax={
+  tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},
+  chtml:{scale:1.02},
+  options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body><main>
 <h1 id="judul">Matematika Energi dan Usaha</h1>
-<p class="intro">IPA TKA SMP · Energi dan Usaha · Materi 4 · Fokus perhitungan, grafik, aljabar, rasio, dan soal cerita</p>
-<div class="note"><div class="label">Tujuan belajar</div>Materi ini menghubungkan konsep fisika dengan matematika. Siswa belajar memilih rumus, memindahkan ruas, mengubah satuan, memakai kuadrat dan akar, membandingkan besaran, membaca grafik, dan menyelesaikan soal cerita TKA SMP secara sistematis.</div>
+<p class="intro">IPA TKA SMP · Energi dan Usaha · Materi 4 dari 4 · Fokus perhitungan dan penalaran matematis</p>
 
-<h2 id="peta-rumus">1. Peta Rumus</h2>
+<div class="note"><div class="label">Tujuan belajar</div>
+Materi ini membantu siswa mengubah konsep energi dan usaha menjadi perhitungan matematika. Siswa akan belajar membaca data, memilih rumus, memindahkan ruas, menggunakan kuadrat dan akar kuadrat, membaca hubungan proporsional, serta menyelesaikan soal cerita TKA SMP dengan langkah yang sistematis.</div>
+
+<h2 id="peta-rumus">1. Peta Rumus yang Harus Dikuasai</h2>
 <div class="grid4">
-<div class="card"><b>Usaha</b><div class="formula">W = F × s</div><p class="small">W: joule, F: newton, s: meter.</p></div>
-<div class="card"><b>Energi Potensial</b><div class="formula">E<sub>p</sub> = m × g × h</div><p class="small">m: kg, h: m.</p></div>
-<div class="card"><b>Energi Kinetik</b><div class="formula">E<sub>k</sub> = ½ × m × v²</div><p class="small">v harus dikuadratkan.</p></div>
-<div class="card"><b>Energi Mekanik</b><div class="formula">E<sub>m</sub> = E<sub>p</sub> + E<sub>k</sub></div><p class="small">Tanpa gesekan, E<sub>m</sub> tetap.</p></div>
+<div class="card"><b>Usaha</b><div class="formula">\[W=F\times s\]</div><p class="small">W dalam joule, F dalam newton, s dalam meter.</p></div>
+<div class="card"><b>Energi Potensial</b><div class="formula">\[E_p=mgh\]</div><p class="small">m dalam kg, g dalam m/s², h dalam m.</p></div>
+<div class="card"><b>Energi Kinetik</b><div class="formula">\[E_k=\frac12 mv^2\]</div><p class="small">v harus dikuadratkan.</p></div>
+<div class="card"><b>Energi Mekanik</b><div class="formula">\[E_m=E_p+E_k\]</div><p class="small">Tanpa gesekan, E<sub>m</sub> tetap.</p></div>
 </div>
-<div class="warning"><div class="label">Catatan</div>Jika soal tidak memberi nilai percepatan gravitasi, pada soal SMP sering digunakan <b>g = 10 m/s²</b>. Jika soal memberikan nilai lain, gunakan nilai tersebut.</div>
+<div class="warning"><div class="label">Kesepakatan soal SMP</div>Jika nilai percepatan gravitasi tidak disebutkan, soal SMP sering menggunakan <b>\(g=10\ \mathrm{m/s^2}\)</b>. Selalu ikuti nilai yang diberikan pada soal jika berbeda.</div>
 
-<h2 id="usaha-aljabar">2. Aljabar pada Rumus Usaha</h2>
-<div class="grid3"><div class="card"><b>Mencari W</b><div class="formula">W = F × s</div></div><div class="card"><b>Mencari F</b><div class="formula">F = W ÷ s</div></div><div class="card"><b>Mencari s</b><div class="formula">s = W ÷ F</div></div></div>
-<div class="example"><div class="label">Contoh 1</div>Sebuah kotak menerima usaha 240 J dan berpindah 6 m. Gaya yang bekerja: <b>F = 240 ÷ 6 = 40 N</b>.</div>
-<h3 id="rasio-usaha">Perbandingan pada Usaha</h3>
-<table><thead><tr><th>Perubahan</th><th>Dampak</th></tr></thead><tbody><tr><td data-kolom="Perubahan">F menjadi 2 kali, s tetap</td><td data-kolom="Dampak">W menjadi 2 kali</td></tr><tr><td data-kolom="Perubahan">s menjadi 3 kali, F tetap</td><td data-kolom="Dampak">W menjadi 3 kali</td></tr><tr><td data-kolom="Perubahan">F 2 kali dan s 3 kali</td><td data-kolom="Dampak">W menjadi 6 kali</td></tr><tr><td data-kolom="Perubahan">s = 0</td><td data-kolom="Dampak">W = 0</td></tr></tbody></table>
-
-<h2 id="energi-potensial">3. Matematika Energi Potensial</h2>
-<div class="formula card">E<sub>p</sub> = m × g × h</div>
-<p>Jika g tetap, E<sub>p</sub> berbanding lurus dengan massa dan ketinggian. Massa 2 kali menyebabkan E<sub>p</sub> 2 kali; tinggi 3 kali menyebabkan E<sub>p</sub> 3 kali.</p>
-<div class="grid3"><div class="card"><b>Mencari m</b><div class="formula">m = E<sub>p</sub> ÷ (g × h)</div></div><div class="card"><b>Mencari h</b><div class="formula">h = E<sub>p</sub> ÷ (m × g)</div></div><div class="card"><b>Mencari g</b><div class="formula">g = E<sub>p</sub> ÷ (m × h)</div></div></div>
-<div class="example"><div class="label">Contoh 2</div>Benda 3 kg berada pada ketinggian 8 m. Jika g = 10 m/s², maka E<sub>p</sub> = 3 × 10 × 8 = <b>240 J</b>.</div>
-<div class="example"><div class="label">Contoh 3</div>Benda 5 kg memiliki energi potensial 500 J. Tingginya h = 500 ÷ (5 × 10) = <b>10 m</b>.</div>
-
-<h2 id="energi-kinetik">4. Matematika Energi Kinetik: Kuadrat dan Akar</h2>
-<div class="formula card">E<sub>k</sub> = ½ × m × v²</div>
-<p>Kecepatan muncul sebagai <b>v²</b>. Karena itu, perubahan kecepatan memberikan pengaruh lebih besar terhadap energi kinetik.</p>
-<div class="example"><div class="label">Contoh 4</div>Benda 4 kg bergerak 5 m/s: E<sub>k</sub> = ½ × 4 × 5² = 2 × 25 = <b>50 J</b>.</div>
-<h3 id="mencari-v">Mencari Kecepatan</h3>
-<div class="formula card">v = √((2E<sub>k</sub>) ÷ m)</div>
-<div class="example"><div class="label">Contoh 5</div>Benda 2 kg mempunyai E<sub>k</sub> = 100 J. Maka v = √((2 × 100) ÷ 2) = √100 = <b>10 m/s</b>.</div>
-<table><thead><tr><th>Kecepatan</th><th>Kuadrat kecepatan</th><th>Energi kinetik</th></tr></thead><tbody><tr><td data-kolom="Kecepatan">v</td><td data-kolom="v²">v²</td><td data-kolom="Energi kinetik">1 kali</td></tr><tr><td data-kolom="Kecepatan">2v</td><td data-kolom="v²">4v²</td><td data-kolom="Energi kinetik">4 kali</td></tr><tr><td data-kolom="Kecepatan">3v</td><td data-kolom="v²">9v²</td><td data-kolom="Energi kinetik">9 kali</td></tr></tbody></table>
-<div class="warning"><div class="label">Jebakan</div>Jika kecepatan menjadi 2 kali, energi kinetik menjadi <b>4 kali</b>, bukan 2 kali.</div>
-
-<h2 id="kekekalan">5. Persamaan Kekekalan Energi</h2>
-<div class="formula card">E<sub>p1</sub> + E<sub>k1</sub> = E<sub>p2</sub> + E<sub>k2</sub></div>
-<p>Untuk benda yang dilepas dari keadaan diam pada ketinggian h dan jatuh hingga tanah tanpa gesekan:</p>
-<div class="formula card">mgh = ½mv² → v = √(2gh)</div>
-<div class="example"><div class="label">Contoh 6</div>Bola dilepas dari ketinggian 20 m, g = 10 m/s². Kecepatan tepat sebelum tanah: v = √(2 × 10 × 20) = √400 = <b>20 m/s</b>.</div>
-
-<h2 id="konversi">6. Konversi Satuan</h2>
-<table><thead><tr><th>Besaran</th><th>Satuan SI</th><th>Contoh konversi</th></tr></thead><tbody><tr><td data-kolom="Besaran">Massa</td><td data-kolom="SI">kg</td><td data-kolom="Contoh">500 g = 0,5 kg</td></tr><tr><td data-kolom="Besaran">Panjang/tinggi</td><td data-kolom="SI">m</td><td data-kolom="Contoh">250 cm = 2,5 m</td></tr><tr><td data-kolom="Besaran">Energi/usaha</td><td data-kolom="SI">J</td><td data-kolom="Contoh">1000 J = 1 kJ</td></tr></tbody></table>
-<div class="example"><div class="label">Contoh 7</div>Benda 500 g pada tinggi 4 m: 500 g = 0,5 kg, sehingga E<sub>p</sub> = 0,5 × 10 × 4 = <b>20 J</b>.</div>
-
-<h2 id="grafik">7. Grafik Matematika Energi dan Usaha</h2>
+<h2 id="aljabar-usaha">2. Aljabar pada Rumus Usaha</h2>
+<p>Dari rumus dasar <b>\(W=F\times s\)</b>, kita dapat mencari besaran lain dengan membagi kedua ruas.</p>
 <div class="grid3">
-<div class="card"><b>W terhadap s</b><p class="small">F tetap → garis lurus.</p><svg viewBox="0 0 250 170" aria-label="Grafik usaha terhadap perpindahan"><line x1="30" y1="140" x2="225" y2="140" stroke="#475569"/><line x1="30" y1="140" x2="30" y2="20" stroke="#475569"/><line x1="30" y1="140" x2="210" y2="35" stroke="#2563eb" stroke-width="4"/><text x="215" y="160">s</text><text x="10" y="25">W</text></svg></div>
-<div class="card"><b>E<sub>p</sub> terhadap h</b><p class="small">m dan g tetap → garis lurus.</p><svg viewBox="0 0 250 170" aria-label="Grafik energi potensial terhadap tinggi"><line x1="30" y1="140" x2="225" y2="140" stroke="#475569"/><line x1="30" y1="140" x2="30" y2="20" stroke="#475569"/><line x1="30" y1="140" x2="210" y2="35" stroke="#16a34a" stroke-width="4"/><text x="215" y="160">h</text><text x="4" y="25">Ep</text></svg></div>
-<div class="card"><b>E<sub>k</sub> terhadap v</b><p class="small">Karena v² → grafik melengkung.</p><svg viewBox="0 0 250 170" aria-label="Grafik energi kinetik terhadap kecepatan"><line x1="30" y1="140" x2="225" y2="140" stroke="#475569"/><line x1="30" y1="140" x2="30" y2="20" stroke="#475569"/><path d="M30 140 Q115 138 145 105 T215 30" fill="none" stroke="#e11d48" stroke-width="4"/><text x="215" y="160">v</text><text x="4" y="25">Ek</text></svg></div>
+<div class="card"><b>Mencari usaha</b><div class="formula">\[W=F\times s\]</div></div>
+<div class="card"><b>Mencari gaya</b><div class="formula">\[F=\frac{W}{s}\]</div></div>
+<div class="card"><b>Mencari perpindahan</b><div class="formula">\[s=\frac{W}{F}\]</div></div>
+</div>
+<div class="example"><div class="label">Contoh 1</div><p>Sebuah kotak menerima usaha 240 J dan berpindah 6 m. Tentukan gaya yang bekerja.</p><p><b>Langkah:</b> \(F=\frac{W}{s}=\frac{240}{6}=40\ \mathrm{N}\).</p><p><b>Jadi gaya yang bekerja adalah 40 N.</b></p></div>
+
+<h3 id="perbandingan-usaha">Perbandingan pada Usaha</h3>
+<p>Karena \(W=F\times s\), maka usaha berbanding lurus terhadap gaya dan perpindahan.</p>
+<div class="tablewrap"><table><thead><tr><th>Perubahan</th><th>Akibat pada usaha</th></tr></thead><tbody>
+<tr><td data-kolom="Perubahan">F menjadi 2 kali, s tetap</td><td data-kolom="Akibat">W menjadi 2 kali</td></tr>
+<tr><td data-kolom="Perubahan">s menjadi 3 kali, F tetap</td><td data-kolom="Akibat">W menjadi 3 kali</td></tr>
+<tr><td data-kolom="Perubahan">F menjadi 2 kali dan s menjadi 3 kali</td><td data-kolom="Akibat">W menjadi 6 kali</td></tr>
+<tr><td data-kolom="Perubahan">\(s=0\)</td><td data-kolom="Akibat">\(W=0\)</td></tr>
+</tbody></table></div>
+
+<h2 id="aljabar-ep">3. Matematika Energi Potensial</h2>
+<div class="formula card">\[E_p=mgh\]</div>
+<p>Energi potensial gravitasi dipengaruhi oleh massa, percepatan gravitasi, dan ketinggian. Jika g dianggap tetap, \(E_p\) berbanding lurus dengan m dan h.</p>
+<div class="grid3"><div class="card"><b>Mencari massa</b><div class="formula">\[m=\frac{E_p}{gh}\]</div></div><div class="card"><b>Mencari tinggi</b><div class="formula">\[h=\frac{E_p}{mg}\]</div></div><div class="card"><b>Mencari g</b><div class="formula">\[g=\frac{E_p}{mh}\]</div></div></div>
+<div class="example"><div class="label">Contoh 2</div><p>Benda bermassa 3 kg berada pada ketinggian 8 m. Jika \(g=10\ \mathrm{m/s^2}\), tentukan energi potensialnya.</p><p>\(E_p=3\times10\times8=240\ \mathrm{J}\).</p></div>
+<div class="example"><div class="label">Contoh 3 — mencari tinggi</div><p>Sebuah benda 5 kg memiliki energi potensial 500 J. Jika \(g=10\ \mathrm{m/s^2}\), tinggi benda adalah:</p><p>\(h=\frac{500}{5\times10}=10\ \mathrm{m}\).</p></div>
+
+<h2 id="aljabar-ek">4. Matematika Energi Kinetik: Kuadrat dan Akar</h2>
+<div class="formula card">\[E_k=\frac12 mv^2\]</div>
+<p>Bagian paling penting adalah <b>\(v^2\)</b>. Kecepatan tidak hanya dikalikan satu kali, melainkan dikuadratkan.</p>
+<div class="example"><div class="label">Contoh 4</div><p>Benda 4 kg bergerak dengan kecepatan 5 m/s.</p><p>\(E_k=\frac12\times4\times5^2=2\times25=50\ \mathrm{J}\).</p></div>
+<h3 id="mencari-kecepatan">Mencari Kecepatan dari Energi Kinetik</h3>
+<p>Dari \(E_k=\frac12 mv^2\):</p>
+<div class="formula card">\[v^2=\frac{2E_k}{m}\quad\Rightarrow\quad v=\sqrt{\frac{2E_k}{m}}\]</div>
+<div class="example"><div class="label">Contoh 5</div><p>Benda 2 kg memiliki energi kinetik 100 J.</p><p>\(v^2=\frac{2\times100}{2}=100\), sehingga \(v=\sqrt{100}=10\ \mathrm{m/s}\).</p></div>
+
+<h3 id="pengaruh-kecepatan">Mengapa Kecepatan Sangat Berpengaruh?</h3>
+<div class="tablewrap"><table><thead><tr><th>Kecepatan</th><th>v²</th><th>Faktor energi kinetik</th></tr></thead><tbody>
+<tr><td data-kolom="Kecepatan">\(v\)</td><td data-kolom="v²">\(v^2\)</td><td data-kolom="Faktor">1 kali</td></tr>
+<tr><td data-kolom="Kecepatan">\(2v\)</td><td data-kolom="v²">\(4v^2\)</td><td data-kolom="Faktor">4 kali</td></tr>
+<tr><td data-kolom="Kecepatan">\(3v\)</td><td data-kolom="v²">\(9v^2\)</td><td data-kolom="Faktor">9 kali</td></tr>
+<tr><td data-kolom="Kecepatan">\(\frac12v\)</td><td data-kolom="v²">\(\frac14v^2\)</td><td data-kolom="Faktor">¼ kali</td></tr>
+</tbody></table></div>
+<div class="warning"><div class="label">Jebakan TKA</div>Jika kecepatan menjadi dua kali, energi kinetik <b>bukan</b> menjadi dua kali. Karena \(v\) dikuadratkan, energi kinetik menjadi <b>empat kali</b>.</div>
+
+<h2 id="matematika-kekekalan">5. Persamaan Kekekalan Energi</h2>
+<p>Jika gesekan diabaikan, energi mekanik sebelum dan sesudah tetap sama.</p>
+<div class="formula card">\[E_{p1}+E_{k1}=E_{p2}+E_{k2}\]</div>
+<p>Untuk benda yang dilepas dari keadaan diam di ketinggian h, \(E_{k1}=0\). Jika sampai tanah, kita dapat mengambil \(E_{p2}=0\). Maka:</p>
+<div class="formula card">\[mgh=\frac12 mv^2\]</div>
+<p>Massa \(m\) terdapat di kedua ruas sehingga dapat dicoret:</p>
+<div class="formula card">\[gh=\frac12 v^2\quad\Rightarrow\quad v=\sqrt{2gh}\]</div>
+<div class="example"><div class="label">Contoh 6</div><p>Sebuah bola dilepas dari ketinggian 20 m. Jika g = 10 m/s² dan hambatan udara diabaikan, berapa kecepatannya tepat sebelum menyentuh tanah?</p><p>\(v=\sqrt{2\times10\times20}=\sqrt{400}=20\ \mathrm{m/s}\).</p></div>
+
+<h2 id="satuan-konversi">6. Satuan dan Konversi yang Sering Muncul</h2>
+<div class="tablewrap"><table><thead><tr><th>Besaran</th><th>Satuan SI</th><th>Konversi penting</th></tr></thead><tbody>
+<tr><td data-kolom="Besaran">Massa</td><td data-kolom="SI">kg</td><td data-kolom="Konversi">1 kg = 1000 g; 500 g = 0,5 kg</td></tr>
+<tr><td data-kolom="Besaran">Panjang/tinggi/perpindahan</td><td data-kolom="SI">m</td><td data-kolom="Konversi">1 m = 100 cm; 250 cm = 2,5 m</td></tr>
+<tr><td data-kolom="Besaran">Kecepatan</td><td data-kolom="SI">m/s</td><td data-kolom="Konversi">Untuk soal dasar, pastikan kecepatan sudah m/s sebelum dimasukkan ke rumus</td></tr>
+<tr><td data-kolom="Besaran">Energi/usaha</td><td data-kolom="SI">J</td><td data-kolom="Konversi">1000 J = 1 kJ</td></tr>
+</tbody></table></div>
+<div class="example"><div class="label">Contoh 7 — konversi dulu</div><p>Benda 500 g berada pada ketinggian 4 m. g = 10 m/s².</p><p>\(500\ \mathrm{g}=0{,}5\ \mathrm{kg}\), jadi \(E_p=0{,}5\times10\times4=20\ \mathrm{J}\).</p></div>
+
+<h2 id="grafik">7. Membaca Grafik Energi dan Usaha</h2>
+<div class="grid3">
+<div class="card"><b>W terhadap s</b><p>Jika \(F\) tetap, \(W=F\times s\) menghasilkan garis lurus melalui titik asal.</p><svg viewBox="0 0 260 180" aria-label="Grafik usaha terhadap perpindahan"><line x1="35" y1="145" x2="235" y2="145" stroke="#475569"/><line x1="35" y1="145" x2="35" y2="20" stroke="#475569"/><line x1="35" y1="145" x2="220" y2="35" stroke="#2563eb" stroke-width="4"/><text x="220" y="165" font-size="15">s</text><text x="15" y="25" font-size="15">W</text></svg></div>
+<div class="card"><b>E<sub>p</sub> terhadap h</b><p>Jika \(m\) dan \(g\) tetap, \(E_p=mgh\) juga garis lurus.</p><svg viewBox="0 0 260 180" aria-label="Grafik energi potensial terhadap tinggi"><line x1="35" y1="145" x2="235" y2="145" stroke="#475569"/><line x1="35" y1="145" x2="35" y2="20" stroke="#475569"/><line x1="35" y1="145" x2="220" y2="35" stroke="#16a34a" stroke-width="4"/><text x="220" y="165" font-size="15">h</text><text x="8" y="25" font-size="15">Ep</text></svg></div>
+<div class="card"><b>E<sub>k</sub> terhadap v</b><p>Karena mengandung \(v^2\), grafiknya melengkung ke atas, bukan garis lurus.</p><svg viewBox="0 0 260 180" aria-label="Grafik energi kinetik terhadap kecepatan"><line x1="35" y1="145" x2="235" y2="145" stroke="#475569"/><line x1="35" y1="145" x2="35" y2="20" stroke="#475569"/><path d="M35 145 Q110 140 150 110 T225 30" fill="none" stroke="#e11d48" stroke-width="4"/><text x="220" y="165" font-size="15">v</text><text x="8" y="25" font-size="15">Ek</text></svg></div>
 </div>
 
 <h2 id="simulasi">8. Laboratorium Hitung Interaktif</h2>
-<div class="sim"><div class="tabs"><button type="button" class="tab active" data-tab="wPanel">Usaha</button><button type="button" class="tab" data-tab="epPanel">E Potensial</button><button type="button" class="tab" data-tab="ekPanel">E Kinetik</button><button type="button" class="tab" data-tab="emPanel">Kekekalan</button></div>
-<div id="wPanel" class="panel active"><div class="grid2"><div><label>Gaya: <span id="wfV" class="out">20</span> N</label><input id="wf" type="range" min="0" max="100" value="20"><label>Perpindahan: <span id="wsV" class="out">5</span> m</label><input id="ws" type="range" min="0" max="20" value="5"></div><div class="result"><b>W = F × s</b><p id="wCalc"></p><p>W = <span id="wOut" class="out"></span> J</p><div class="bar"><span id="wBar"></span></div></div></div></div>
-<div id="epPanel" class="panel"><div class="grid2"><div><label>Massa: <span id="epmV" class="out">2</span> kg</label><input id="epm" type="range" min="1" max="10" value="2"><label>Tinggi: <span id="ephV" class="out">5</span> m</label><input id="eph" type="range" min="0" max="20" value="5"></div><div class="result"><b>E<sub>p</sub> = m × 10 × h</b><p id="epCalc"></p><p>E<sub>p</sub> = <span id="epOut" class="out"></span> J</p></div></div></div>
-<div id="ekPanel" class="panel"><div class="grid2"><div><label>Massa: <span id="ekmV" class="out">2</span> kg</label><input id="ekm" type="range" min="1" max="10" value="2"><label>Kecepatan: <span id="ekvV" class="out">4</span> m/s</label><input id="ekv" type="range" min="0" max="20" value="4"></div><div class="result"><b>E<sub>k</sub> = ½mv²</b><p id="ekCalc"></p><p>E<sub>k</sub> = <span id="ekOut" class="out"></span> J</p></div></div></div>
-<div id="emPanel" class="panel"><div class="grid2"><div><label>Tinggi awal: <span id="h0V" class="out">10</span> m</label><input id="h0" type="range" min="1" max="30" value="10"><label>Tinggi saat diamati: <span id="hyV" class="out">5</span> m</label><input id="hy" type="range" min="0" max="10" value="5"></div><div class="result"><b>v = √(2g(h<sub>0</sub> − h))</b><p id="emCalc"></p><p>v = <span id="emOut" class="out"></span> m/s</p></div></div></div>
+<div class="simbox"><div class="label">Simulasi Matematika</div><p>Pilih jenis perhitungan. Ubah parameter dan lihat bagaimana perubahan angka memengaruhi hasil.</p>
+<div class="tabs"><button type="button" class="tabBtn active" data-tab="tabW">Usaha</button><button type="button" class="tabBtn" data-tab="tabEp">Energi Potensial</button><button type="button" class="tabBtn" data-tab="tabEk">Energi Kinetik</button><button type="button" class="tabBtn" data-tab="tabEm">Kekekalan Energi</button></div>
+<div id="tabW" class="panel active"><div class="grid2"><div><label>Gaya F: <span id="wFval" class="output">20</span> N</label><input id="wF" type="range" min="0" max="100" value="20"><label>Perpindahan s: <span id="wSval" class="output">5</span> m</label><input id="wS" type="range" min="0" max="20" value="5"></div><div class="resultbox"><b>\(W=F\times s\)</b><p><span id="wCalc" class="mono"></span></p><p>Usaha = <span id="wOut" class="output"></span> J</p><div class="bar"><span id="wBar"></span></div></div></div></div>
+<div id="tabEp" class="panel"><div class="grid2"><div><label>Massa m: <span id="epMval" class="output">2</span> kg</label><input id="epM" type="range" min="1" max="10" value="2"><label>Tinggi h: <span id="epHval" class="output">5</span> m</label><input id="epH" type="range" min="0" max="20" value="5"></div><div class="resultbox"><b>\(E_p=mgh\)</b><p>Gunakan \(g=10\ \mathrm{m/s^2}\).</p><p><span id="epCalc" class="mono"></span></p><p>\(E_p\) = <span id="epOut" class="output"></span> J</p></div></div></div>
+<div id="tabEk" class="panel"><div class="grid2"><div><label>Massa m: <span id="ekMval" class="output">2</span> kg</label><input id="ekM" type="range" min="1" max="10" value="2"><label>Kecepatan v: <span id="ekVval" class="output">4</span> m/s</label><input id="ekV" type="range" min="0" max="20" value="4"></div><div class="resultbox"><b>\(E_k=\frac12mv^2\)</b><p><span id="ekCalc" class="mono"></span></p><p>\(E_k\) = <span id="ekOut" class="output"></span> J</p><p id="ekRatioNote" class="small"></p></div></div></div>
+<div id="tabEm" class="panel"><div class="grid2"><div><label>Ketinggian awal: <span id="emHval" class="output">10</span> m</label><input id="emH" type="range" min="1" max="30" value="10"><label>Ketinggian saat diamati: <span id="emYval" class="output">5</span> m</label><input id="emY" type="range" min="0" max="10" value="5"><p class="small">Bola dilepas dari keadaan diam. Gunakan \(g=10\ \mathrm{m/s^2}\).</p></div><div class="resultbox"><p>Kecepatan pada ketinggian tersebut:</p><p class="formula">\[v=\sqrt{2g(h_{\text{awal}}-h)}\]</p><p><span id="emCalc" class="mono"></span></p><p>v = <span id="emOut" class="output"></span> m/s</p></div></div></div>
 </div>
 
-<h2 id="strategi">9. Strategi Soal Cerita TKA SMP</h2>
-<ol><li>Tulis semua besaran yang diketahui.</li><li>Tentukan yang ditanya.</li><li>Ubah satuan ke SI sebelum menghitung.</li><li>Pilih rumus yang sesuai.</li><li>Kerjakan kuadrat dan akar dengan teliti.</li><li>Gunakan rasio jika soal hanya menanyakan perubahan relatif.</li><li>Cek kewajaran hasil.</li></ol>
+<h2 id="strategi-tka">9. Strategi Soal Cerita TKA SMP</h2>
+<ol><li><b>Tulis diketahui.</b> Misalnya \(m=2\ \mathrm{kg}\), \(h=5\ \mathrm{m}\), \(g=10\ \mathrm{m/s^2}\).</li><li><b>Tentukan yang ditanya.</b> Apakah \(W\), \(F\), \(s\), \(E_p\), \(E_k\), \(v\), atau \(E_m\)?</li><li><b>Pilih rumus yang tepat.</b> Jangan mencampur rumus usaha dengan energi kinetik.</li><li><b>Konversi satuan.</b> Gram ke kilogram, sentimeter ke meter, jika perlu.</li><li><b>Hitung bertahap.</b> Kerjakan kuadrat sebelum perkalian lain pada \(E_k\).</li><li><b>Cek kewajaran.</b> Jika kecepatan naik dua kali, \(E_k\) seharusnya naik empat kali.</li></ol>
 
-<h2 id="contoh-soal">10. Contoh Soal</h2>
-<div class="question"><p><b>1.</b> Gaya 60 N melakukan usaha 300 J. Perpindahannya adalah ....</p><div class="qopts"><div>A. 3 m</div><div>B. 4 m</div><div>C. 5 m</div><div>D. 6 m</div><div>E. 8 m</div></div><button data-answer="a1">Lihat jawaban</button><div id="a1" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> s = W ÷ F = 300 ÷ 60 = 5 m.</div></div>
-<div class="question"><p><b>2.</b> Benda 2 kg berada pada ketinggian 15 m. g = 10 m/s². E<sub>p</sub> = ....</p><div class="qopts"><div>A. 30 J</div><div>B. 150 J</div><div>C. 200 J</div><div>D. 300 J</div><div>E. 450 J</div></div><button data-answer="a2">Lihat jawaban</button><div id="a2" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> E<sub>p</sub> = 2 × 10 × 15 = 300 J.</div></div>
-<div class="question"><p><b>3.</b> Energi kinetik benda 4 kg yang bergerak 6 m/s adalah ....</p><div class="qopts"><div>A. 24 J</div><div>B. 36 J</div><div>C. 48 J</div><div>D. 72 J</div><div>E. 144 J</div></div><button data-answer="a3">Lihat jawaban</button><div id="a3" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> ½ × 4 × 6² = 2 × 36 = 72 J.</div></div>
-<div class="question"><p><b>4.</b> Kecepatan berubah dari 5 m/s menjadi 10 m/s, massa tetap. Energi kinetik menjadi ....</p><div class="qopts"><div>A. ½ kali</div><div>B. 2 kali</div><div>C. 3 kali</div><div>D. 4 kali</div><div>E. 10 kali</div></div><button data-answer="a4">Lihat jawaban</button><div id="a4" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> Kecepatan menjadi 2 kali, sehingga E<sub>k</sub> menjadi 2² = 4 kali.</div></div>
-<div class="question"><p><b>5.</b> Benda 500 g berada pada ketinggian 2 m. g = 10 m/s². E<sub>p</sub> = ....</p><div class="qopts"><div>A. 1 J</div><div>B. 5 J</div><div>C. 10 J</div><div>D. 20 J</div><div>E. 100 J</div></div><button data-answer="a5">Lihat jawaban</button><div id="a5" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> 500 g = 0,5 kg; E<sub>p</sub> = 0,5 × 10 × 2 = 10 J.</div></div>
-<div class="question"><p><b>6.</b> Bola dilepas dari ketinggian 5 m. g = 10 m/s², tanpa gesekan. Kecepatan sebelum menyentuh tanah adalah ....</p><div class="qopts"><div>A. 5 m/s</div><div>B. 10 m/s</div><div>C. 15 m/s</div><div>D. 20 m/s</div><div>E. 25 m/s</div></div><button data-answer="a6">Lihat jawaban</button><div id="a6" class="answer"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> v = √(2 × 10 × 5) = √100 = 10 m/s.</div></div>
-<div class="question"><p><b>7.</b> Usaha awal 80 J. Gaya menjadi 2 kali dan perpindahan 3 kali. Usaha baru adalah ....</p><div class="qopts"><div>A. 160 J</div><div>B. 240 J</div><div>C. 320 J</div><div>D. 480 J</div><div>E. 640 J</div></div><button data-answer="a7">Lihat jawaban</button><div id="a7" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> Faktor perubahan = 2 × 3 = 6, maka W = 6 × 80 = 480 J.</div></div>
-<div class="question"><p><b>8.</b> Dua benda bermassa sama memiliki kecepatan 2 m/s dan 6 m/s. Perbandingan energi kinetik benda kedua terhadap pertama adalah ....</p><div class="qopts"><div>A. 2 : 1</div><div>B. 3 : 1</div><div>C. 4 : 1</div><div>D. 6 : 1</div><div>E. 9 : 1</div></div><button data-answer="a8">Lihat jawaban</button><div id="a8" class="answer"><b>ANSWER:</b> E<br><b>EXPLANATION:</b> E<sub>k</sub> ∝ v², sehingga 6² : 2² = 36 : 4 = 9 : 1.</div></div>
+<h2 id="contoh-soal">10. Contoh Soal TKA SMP</h2>
+<div class="question"><p><b>1.</b> Sebuah gerobak didorong dengan gaya 60 N dan melakukan usaha 300 J. Perpindahannya adalah ....</p><div class="qopts"><div>A. 3 m</div><div>B. 4 m</div><div>C. 5 m</div><div>D. 6 m</div><div>E. 8 m</div></div><button type="button" data-answer="a1">Lihat jawaban</button><div id="a1" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(s=\frac{W}{F}=\frac{300}{60}=5\ \mathrm{m}\).</div></div>
+<div class="question"><p><b>2.</b> Sebuah benda 2 kg berada pada ketinggian 15 m. Jika \(g=10\ \mathrm{m/s^2}\), energi potensialnya adalah ....</p><div class="qopts"><div>A. 30 J</div><div>B. 150 J</div><div>C. 200 J</div><div>D. 300 J</div><div>E. 450 J</div></div><button type="button" data-answer="a2">Lihat jawaban</button><div id="a2" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> \(E_p=2\times10\times15=300\ \mathrm{J}\).</div></div>
+<div class="question"><p><b>3.</b> Energi kinetik benda bermassa 4 kg yang bergerak 6 m/s adalah ....</p><div class="qopts"><div>A. 24 J</div><div>B. 36 J</div><div>C. 48 J</div><div>D. 72 J</div><div>E. 144 J</div></div><button type="button" data-answer="a3">Lihat jawaban</button><div id="a3" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> \(E_k=\frac12\times4\times6^2=2\times36=72\ \mathrm{J}\).</div></div>
+<div class="question"><p><b>4.</b> Kecepatan benda naik dari 5 m/s menjadi 10 m/s, sedangkan massanya tetap. Energi kinetiknya menjadi ....</p><div class="qopts"><div>A. ½ kali</div><div>B. 2 kali</div><div>C. 3 kali</div><div>D. 4 kali</div><div>E. 10 kali</div></div><button type="button" data-answer="a4">Lihat jawaban</button><div id="a4" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> Kecepatan menjadi 2 kali. Karena \(E_k\propto v^2\), energi kinetik menjadi \(2^2=4\) kali.</div></div>
+<div class="question"><p><b>5.</b> Benda 500 g diletakkan pada rak setinggi 2 m. Jika \(g=10\ \mathrm{m/s^2}\), energi potensialnya adalah ....</p><div class="qopts"><div>A. 1 J</div><div>B. 5 J</div><div>C. 10 J</div><div>D. 20 J</div><div>E. 100 J</div></div><button type="button" data-answer="a5">Lihat jawaban</button><div id="a5" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> 500 g = 0,5 kg. \(E_p=0{,}5\times10\times2=10\ \mathrm{J}\).</div></div>
+<div class="question"><p><b>6.</b> Bola dilepas dari ketinggian 5 m. Jika \(g=10\ \mathrm{m/s^2}\) dan gesekan diabaikan, kecepatan tepat sebelum menyentuh tanah adalah ....</p><div class="qopts"><div>A. 5 m/s</div><div>B. 10 m/s</div><div>C. 15 m/s</div><div>D. 20 m/s</div><div>E. 25 m/s</div></div><button type="button" data-answer="a6">Lihat jawaban</button><div id="a6" class="answer"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> \(v=\sqrt{2gh}=\sqrt{2\times10\times5}=\sqrt{100}=10\ \mathrm{m/s}\).</div></div>
+<div class="question"><p><b>7.</b> Usaha awal sebuah gaya adalah 80 J. Jika gaya dibuat 2 kali dan perpindahan dibuat 3 kali, usaha baru adalah ....</p><div class="qopts"><div>A. 160 J</div><div>B. 240 J</div><div>C. 320 J</div><div>D. 480 J</div><div>E. 640 J</div></div><button type="button" data-answer="a7">Lihat jawaban</button><div id="a7" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> \(W\) berbanding lurus dengan \(F\) dan \(s\). Faktor perubahan \(=2\times3=6\), sehingga \(W_{baru}=6\times80=480\ \mathrm{J}\).</div></div>
+<div class="question"><p><b>8.</b> Dua benda A dan B memiliki massa sama. Kecepatan A = 2 m/s dan B = 6 m/s. Perbandingan energi kinetik B terhadap A adalah ....</p><div class="qopts"><div>A. 2 : 1</div><div>B. 3 : 1</div><div>C. 4 : 1</div><div>D. 6 : 1</div><div>E. 9 : 1</div></div><button type="button" data-answer="a8">Lihat jawaban</button><div id="a8" class="answer"><b>ANSWER:</b> E<br><b>EXPLANATION:</b> Untuk massa sama, \(E_k\propto v^2\). Jadi \(\frac{E_{kB}}{E_{kA}}=\frac{6^2}{2^2}=\frac{36}{4}=9\).</div></div>
 
-<h2 id="rangkuman">11. Rangkuman</h2>
-<table><thead><tr><th>Konsep</th><th>Rumus</th><th>Hubungan</th></tr></thead><tbody><tr><td data-kolom="Konsep">Usaha</td><td data-kolom="Rumus">W = Fs</td><td data-kolom="Hubungan">W ∝ F dan W ∝ s</td></tr><tr><td data-kolom="Konsep">Energi potensial</td><td data-kolom="Rumus">E<sub>p</sub> = mgh</td><td data-kolom="Hubungan">E<sub>p</sub> ∝ m dan h</td></tr><tr><td data-kolom="Konsep">Energi kinetik</td><td data-kolom="Rumus">E<sub>k</sub> = ½mv²</td><td data-kolom="Hubungan">E<sub>k</sub> ∝ m dan v²</td></tr><tr><td data-kolom="Konsep">Kekekalan</td><td data-kolom="Rumus">E<sub>p1</sub>+E<sub>k1</sub>=E<sub>p2</sub>+E<sub>k2</sub></td><td data-kolom="Hubungan">E mekanik tetap tanpa gesekan</td></tr></tbody></table>
+<h2 id="rangkuman">11. Rangkuman Matematika</h2>
+<div class="tablewrap"><table><thead><tr><th>Konsep</th><th>Rumus</th><th>Hubungan penting</th></tr></thead><tbody>
+<tr><td data-kolom="Konsep">Usaha</td><td data-kolom="Rumus">\(W=F\times s\)</td><td data-kolom="Hubungan">\(W\propto F\) dan \(W\propto s\)</td></tr>
+<tr><td data-kolom="Konsep">Energi potensial</td><td data-kolom="Rumus">\(E_p=mgh\)</td><td data-kolom="Hubungan">\(E_p\propto m\) dan \(E_p\propto h\)</td></tr>
+<tr><td data-kolom="Konsep">Energi kinetik</td><td data-kolom="Rumus">\(E_k=\frac12mv^2\)</td><td data-kolom="Hubungan">\(E_k\propto m\) dan \(E_k\propto v^2\)</td></tr>
+<tr><td data-kolom="Konsep">Kekekalan energi</td><td data-kolom="Rumus">\(E_{p1}+E_{k1}=E_{p2}+E_{k2}\)</td><td data-kolom="Hubungan">Energi mekanik tetap jika gesekan diabaikan</td></tr>
+</tbody></table></div>
 
 <script>
-(function(){'use strict';document.querySelectorAll('button[data-answer]').forEach(function(b){b.addEventListener('click',function(){var e=document.getElementById(b.dataset.answer);e.classList.toggle('show');b.textContent=e.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';});});document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active');});});function W(){var f=+wf.value,s=+ws.value,w=f*s;wfV.textContent=f;wsV.textContent=s;wCalc.textContent=w+' = '+f+' × '+s;wOut.textContent=w;wBar.style.width=Math.min(100,w/20)+'%';}function EP(){var m=+epm.value,h=+eph.value,e=m*10*h;epmV.textContent=m;ephV.textContent=h;epCalc.textContent=e+' = '+m+' × 10 × '+h;epOut.textContent=e;}function EK(){var m=+ekm.value,v=+ekv.value,e=.5*m*v*v;ekmV.textContent=m;ekvV.textContent=v;ekCalc.textContent=e+' = ½ × '+m+' × '+v+'²';ekOut.textContent=e.toFixed(1);}function EM(){var a=+h0.value;if(+hy.value>a)hy.value=a;hy.max=a;var y=+hy.value,d=a-y,v=Math.sqrt(20*d);h0V.textContent=a;hyV.textContent=y;emCalc.textContent='√(20 × '+d+') = √'+(20*d);emOut.textContent=v.toFixed(2);}['wf','ws'].forEach(id=>document.getElementById(id).addEventListener('input',W));['epm','eph'].forEach(id=>document.getElementById(id).addEventListener('input',EP));['ekm','ekv'].forEach(id=>document.getElementById(id).addEventListener('input',EK));['h0','hy'].forEach(id=>document.getElementById(id).addEventListener('input',EM));W();EP();EK();EM();})();
+(function(){
+'use strict';
+// jawaban
+ document.querySelectorAll('button[data-answer]').forEach(function(btn){btn.addEventListener('click',function(){var el=document.getElementById(btn.getAttribute('data-answer'));if(!el)return;el.classList.toggle('show');btn.textContent=el.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';});});
+// tabs
+ document.querySelectorAll('.tabBtn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.tabBtn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');});});
+ function math(el, latex){if(window.MathJax&&MathJax.typesetClear){MathJax.typesetClear([el]);}el.innerHTML='\\('+latex+'\\)';if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise([el]);}}
+ function updateW(){const F=+document.getElementById('wF').value,s=+document.getElementById('wS').value,W=F*s;document.getElementById('wFval').textContent=F;document.getElementById('wSval').textContent=s;math(document.getElementById('wCalc'),'W='+F+'\\times'+s+'='+W+'\\ \\mathrm{J}');document.getElementById('wOut').textContent=W;document.getElementById('wBar').style.width=Math.min(100,W/20)+'%';}
+ function updateEp(){const m=+document.getElementById('epM').value,h=+document.getElementById('epH').value,E=m*10*h;document.getElementById('epMval').textContent=m;document.getElementById('epHval').textContent=h;math(document.getElementById('epCalc'),'E_p='+m+'\\times10\\times'+h+'='+E+'\\ \\mathrm{J}');document.getElementById('epOut').textContent=E;}
+ function updateEk(){const m=+document.getElementById('ekM').value,v=+document.getElementById('ekV').value,E=.5*m*v*v;document.getElementById('ekMval').textContent=m;document.getElementById('ekVval').textContent=v;math(document.getElementById('ekCalc'),'E_k=\\frac12\\times'+m+'\\times'+v+'^2='+E.toFixed(1)+'\\ \\mathrm{J}');document.getElementById('ekOut').textContent=E.toFixed(1);document.getElementById('ekRatioNote').textContent='Jika kecepatan '+v+' m/s digandakan menjadi '+(2*v)+' m/s dengan massa tetap, energi kinetik menjadi 4 kali.';}
+ function updateEm(){const h0=+document.getElementById('emH').value;const yEl=document.getElementById('emY');yEl.max=h0;if(+yEl.value>h0)yEl.value=h0;const y=+yEl.value;const drop=h0-y;const v=Math.sqrt(2*10*drop);document.getElementById('emHval').textContent=h0;document.getElementById('emYval').textContent=y;math(document.getElementById('emCalc'),'v=\\sqrt{2\\times10\\times('+h0+'-'+y+')}=\\sqrt{'+(20*drop)+'}='+v.toFixed(2)+'\\ \\mathrm{m/s}');document.getElementById('emOut').textContent=v.toFixed(2);}
+ ['wF','wS'].forEach(id=>document.getElementById(id).addEventListener('input',updateW));['epM','epH'].forEach(id=>document.getElementById(id).addEventListener('input',updateEp));['ekM','ekV'].forEach(id=>document.getElementById(id).addEventListener('input',updateEk));['emH','emY'].forEach(id=>document.getElementById(id).addEventListener('input',updateEm));
+ updateW();updateEp();updateEk();updateEm();
+})();
 </script>
 </main></body></html>
