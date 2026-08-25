@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hubungan Energi dengan GLB dan GLBB — TKA SMP</title>
+<style>
+:root{
+ --ink:#172033;--muted:#64748b;--line:#dbe4ef;--brand:#0f5cc0;
+ --soft:#f7fbff;--soft2:#eef7ff;--ok:#15803d;--warn:#b45309;--danger:#b91c1c;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px;overflow-wrap:break-word}
+main{max-width:1040px;margin:auto}
+h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}
+h1{font-size:1.85rem;margin-top:0}
+h2{font-size:1.34rem;border-bottom:2px solid var(--line);padding-bottom:.36em}
+h3{font-size:1.08rem;color:var(--brand)}
+p{margin:.35em 0 1em}.intro{font-size:.95rem;color:var(--muted);margin-top:-.35em}.small{font-size:.91rem;color:var(--muted)}
+.card,.note,.warning,.example,.simbox,.question{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:1.1em 0;background:#fff}
+.note{background:var(--soft);border-left:5px solid var(--brand)}
+.warning{background:#fff9eb;border-left:5px solid #d97706}
+.example{background:#f8fcff;border-left:5px solid #0284c7}
+.simbox{background:linear-gradient(180deg,#fbfdff,#f4f9ff)}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}
+.formula{background:var(--soft2);font-size:1.12rem;font-weight:800;text-align:center}
+.grid2,.grid3,.grid4{display:grid;gap:12px}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+table{width:100%;border-collapse:collapse;margin:.9em 0;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f8fafc}
+ul,ol{padding-left:1.25em}
+button,input{font:inherit}
+button{border:1px solid var(--brand);background:#fff;color:var(--brand);font-weight:700;border-radius:10px;padding:8px 12px;cursor:pointer;min-height:40px}
+input[type=range]{width:100%}
+.output{font-weight:800;color:var(--brand)}
+.answer{display:none;margin-top:10px;padding:10px 12px;background:#f0fdf4;border-left:4px solid #16a34a;border-radius:8px}
+.answer.show{display:block}
+.qopts div{margin:.23em 0}
+svg{max-width:100%;height:auto;display:block}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button.active{background:var(--brand);color:#fff}
+.panel{display:none}.panel.active{display:block}
+.resultbox{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff;margin-top:10px}
+.bar{height:18px;border-radius:999px;background:#dbeafe;overflow:hidden;border:1px solid #bfdbfe}
+.bar>span{display:block;height:100%;background:#2563eb}
+mjx-mi{font-style:normal!important}
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}
+@media(max-width:800px){.grid4,.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+@media(max-width:560px){
+ body{padding:16px 14px 48px;font-size:15px}
+ h1{font-size:1.48rem}h2{font-size:1.18rem}
+ table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ table,table tbody,table tr,table td{display:block;width:100%}
+ table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}
+ table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}
+ table tr td:last-child{border-bottom:0}
+ table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+}
+</style>
+<script>
+window.MathJax={
+ tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},
+ chtml:{scale:1.02},
+ options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<h1 id="judul">Hubungan Energi dengan GLB dan GLBB</h1>
+<p class="intro">IPA TKA SMP · Energi dan Usaha · Materi 5 · Menghubungkan kinematika dengan energi</p>
+
+<div class="note">
+<div class="label">Gagasan Utama</div>
+Gerak dan energi sebenarnya membahas benda yang sama dari dua sudut pandang. <b>Kinematika</b> menjelaskan posisi, kecepatan, percepatan, dan waktu. <b>Energi</b> menjelaskan kemampuan benda melakukan kerja. Hubungan terpentingnya adalah: ketika kecepatan berubah, energi kinetik juga berubah.
+</div>
+
+<h2 id="pengantar">1. Apa Hubungan Gerak dengan Energi?</h2>
+<p>Benda bermassa \(m\) yang bergerak dengan kecepatan \(v\) memiliki energi kinetik:</p>
+<div class="formula card">\[E_k=\frac12mv^2\]</div>
+<p>Karena energi kinetik bergantung pada \(v^2\), jenis gerak sangat menentukan perilaku energi kinetiknya.</p>
+
+<div class="grid2">
+<div class="card">
+<b>GLB</b>
+<p>Kecepatan konstan.</p>
+\[
+a=0,\qquad v=\text{konstan}
+\]
+<p>Akibatnya energi kinetik juga konstan.</p>
+</div>
+<div class="card">
+<b>GLBB</b>
+<p>Percepatan konstan.</p>
+\[
+a=\text{konstan},\qquad v=v_0+at
+\]
+<p>Kecepatan berubah, sehingga energi kinetik berubah.</p>
+</div>
+</div>
+
+<h2 id="glb">2. Energi pada Gerak Lurus Beraturan (GLB)</h2>
+<p>GLB adalah gerak dengan kecepatan tetap. Persamaan posisi GLB adalah:</p>
+<div class="formula card">\[x=x_0+vt\]</div>
+<p>Karena \(v\) tetap, maka:</p>
+<div class="formula card">\[E_k=\frac12mv^2=\text{konstan}\]</div>
+<p>Perubahan energi kinetiknya:</p>
+<div class="formula card">\[\Delta E_k=E_{k2}-E_{k1}=0\]</div>
+<p>Berdasarkan teorema usaha–energi:</p>
+<div class="formula card">\[W_{\text{net}}=\Delta E_k\]</div>
+<p>sehingga pada GLB:</p>
+<div class="formula card">\[W_{\text{net}}=0\]</div>
+
+<div class="warning">
+<div class="label">Penting</div>
+\(W_{\text{net}}=0\) berarti <b>usaha total oleh semua gaya</b> sama dengan nol. Ini tidak selalu berarti tidak ada gaya sama sekali. Contohnya, mobil bergerak dengan kecepatan tetap karena gaya mesin dapat menyeimbangkan gaya hambat.
+</div>
+
+<h3 id="contoh-glb">Contoh GLB</h3>
+<div class="example">
+<div class="label">Contoh 1</div>
+<p>Sebuah benda 4 kg bergerak dengan kecepatan tetap 5 m/s selama 10 s.</p>
+<p>Energi kinetiknya:</p>
+\[
+E_k=\frac12(4)(5^2)=50\ \mathrm{J}
+\]
+<p>Setelah 10 s, kecepatannya masih 5 m/s, sehingga \(E_k\) tetap 50 J. Jadi \(\Delta E_k=0\) dan \(W_{\text{net}}=0\).</p>
+</div>
+
+<h2 id="glbb">3. Energi pada Gerak Lurus Berubah Beraturan (GLBB)</h2>
+<p>Pada GLBB, percepatan bernilai tetap. Persamaan dasarnya:</p>
+<div class="grid3">
+<div class="card"><b>Kecepatan</b>\[v=v_0+at\]</div>
+<div class="card"><b>Perpindahan</b>\[s=v_0t+\frac12at^2\]</div>
+<div class="card"><b>Tanpa waktu</b>\[v^2=v_0^2+2as\]</div>
+</div>
+
+<p>Karena \(v\) berubah, energi kinetik juga berubah:</p>
+<div class="formula card">\[E_k(t)=\frac12m(v_0+at)^2\]</div>
+
+<h3 id="hubungan-usaha-energi-glbb">Hubungan GLBB dengan Usaha</h3>
+<p>Dari persamaan kinematika:</p>
+\[
+v^2=v_0^2+2as
+\]
+<p>Pindahkan \(v_0^2\):</p>
+\[
+v^2-v_0^2=2as
+\]
+<p>Kalikan kedua ruas dengan \(\frac12m\):</p>
+\[
+\frac12m(v^2-v_0^2)=mas
+\]
+<p>Ruas kiri adalah perubahan energi kinetik:</p>
+\[
+\Delta E_k=\frac12mv^2-\frac12mv_0^2
+\]
+<p>Karena \(F_{\text{net}}=ma\), maka:</p>
+<div class="formula card">
+\[
+\boxed{\Delta E_k=F_{\text{net}}s=W_{\text{net}}}
+\]
+</div>
+<p>Jadi persamaan GLBB dan teorema usaha–energi sebenarnya konsisten satu sama lain.</p>
+
+<h2 id="dipercepat-diperlambat">4. Dipercepat dan Diperlambat</h2>
+<div class="grid2">
+<div class="card">
+<b>Gerak dipercepat</b>
+<p>Jika besar kecepatan bertambah:</p>
+\[
+E_{k2}>E_{k1}
+\]
+\[
+\Delta E_k>0
+\]
+<p>Maka usaha total bernilai positif.</p>
+</div>
+<div class="card">
+<b>Gerak diperlambat</b>
+<p>Jika besar kecepatan berkurang:</p>
+\[
+E_{k2}<E_{k1}
+\]
+\[
+\Delta E_k<0
+\]
+<p>Maka usaha total bernilai negatif.</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Contoh 2 — dipercepat</div>
+<p>Benda 2 kg bergerak dari 4 m/s menjadi 10 m/s.</p>
+\[
+E_{k1}=\frac12(2)(4^2)=16\ \mathrm{J}
+\]
+\[
+E_{k2}=\frac12(2)(10^2)=100\ \mathrm{J}
+\]
+\[
+\Delta E_k=100-16=84\ \mathrm{J}
+\]
+<p>Jadi usaha total yang dilakukan pada benda adalah 84 J.</p>
+</div>
+
+<div class="example">
+<div class="label">Contoh 3 — diperlambat</div>
+<p>Mobil mainan 1 kg melambat dari 8 m/s menjadi 2 m/s.</p>
+\[
+\Delta E_k=\frac12(1)(2^2)-\frac12(1)(8^2)
+=2-32=-30\ \mathrm{J}
+\]
+<p>Usaha total bernilai \(-30\) J. Tanda negatif menunjukkan gaya total mengurangi energi kinetik benda.</p>
+</div>
+
+<h2 id="rasio">5. Perbandingan Energi pada Perubahan Kecepatan</h2>
+<p>Jika massa tetap:</p>
+\[
+E_k\propto v^2
+\]
+<div class="tablewrap">
+<table>
+<thead><tr><th>Perubahan kecepatan</th><th>Energi kinetik baru</th></tr></thead>
+<tbody>
+<tr><td data-kolom="Kecepatan">\(v\to2v\)</td><td data-kolom="Energi">4 kali</td></tr>
+<tr><td data-kolom="Kecepatan">\(v\to3v\)</td><td data-kolom="Energi">9 kali</td></tr>
+<tr><td data-kolom="Kecepatan">\(v\to\frac12v\)</td><td data-kolom="Energi">\(\frac14\) kali</td></tr>
+<tr><td data-kolom="Kecepatan">\(v\to4v\)</td><td data-kolom="Energi">16 kali</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="grafik">6. Membaca Grafik Gerak dan Energi</h2>
+
+<div class="grid3">
+<div class="card">
+<b>GLB: grafik \(x-t\)</b>
+<svg viewBox="0 0 260 190" aria-label="Grafik posisi terhadap waktu pada GLB">
+<line x1="35" y1="155" x2="235" y2="155" stroke="#475569"/>
+<line x1="35" y1="155" x2="35" y2="25" stroke="#475569"/>
+<line x1="35" y1="145" x2="220" y2="45" stroke="#2563eb" stroke-width="4"/>
+<text x="230" y="176">t</text><text x="15" y="30">x</text>
+</svg>
+<p class="small">Posisi berubah linier terhadap waktu.</p>
+</div>
+
+<div class="card">
+<b>GLB: grafik \(E_k-t\)</b>
+<svg viewBox="0 0 260 190" aria-label="Grafik energi kinetik terhadap waktu pada GLB">
+<line x1="35" y1="155" x2="235" y2="155" stroke="#475569"/>
+<line x1="35" y1="155" x2="35" y2="25" stroke="#475569"/>
+<line x1="40" y1="85" x2="220" y2="85" stroke="#16a34a" stroke-width="4"/>
+<text x="230" y="176">t</text><text x="4" y="30">Ek</text>
+</svg>
+<p class="small">Energi kinetik tetap karena kecepatan tetap.</p>
+</div>
+
+<div class="card">
+<b>GLBB: grafik \(E_k-t\)</b>
+<svg viewBox="0 0 260 190" aria-label="Grafik energi kinetik terhadap waktu pada GLBB dari keadaan diam">
+<line x1="35" y1="155" x2="235" y2="155" stroke="#475569"/>
+<line x1="35" y1="155" x2="35" y2="25" stroke="#475569"/>
+<path d="M38 153 Q95 145 130 120 Q180 85 220 40" fill="none" stroke="#f59e0b" stroke-width="4"/>
+<text x="230" y="176">t</text><text x="4" y="30">Ek</text>
+</svg>
+<p class="small">Jika \(v_0=0\), maka \(v=at\) sehingga \(E_k\propto t^2\).</p>
+</div>
+</div>
+
+<h2 id="simulasi">7. Simulasi GLB dan GLBB</h2>
+<div class="simbox">
+<div class="label">Simulasi Interaktif</div>
+<div class="tabs">
+<button type="button" class="tab active" data-panel="panelGLB">GLB</button>
+<button type="button" class="tab" data-panel="panelGLBB">GLBB</button>
+</div>
+
+<div id="panelGLB" class="panel active">
+<h3 id="simulasi-glb">Simulasi GLB — Energi Kinetik Tetap</h3>
+<div class="grid2">
+<div>
+<label for="glbMass"><b>Massa:</b> <span id="glbMassV" class="output">2</span> kg</label>
+<input id="glbMass" type="range" min="1" max="10" value="2">
+<label for="glbVel"><b>Kecepatan:</b> <span id="glbVelV" class="output">5</span> m/s</label>
+<input id="glbVel" type="range" min="1" max="20" value="5">
+<label for="glbTime"><b>Waktu:</b> <span id="glbTimeV" class="output">0.0</span> s</label>
+<input id="glbTime" type="range" min="0" max="10" value="0" step="0.1">
+<p><button id="glbPlay" type="button">Jalankan</button> <button id="glbReset" type="button">Reset</button></p>
+<div class="resultbox">
+<p>\(s=vt\) = <span id="glbS" class="output">0.00</span> m</p>
+<p>\(E_k=\frac12mv^2\) = <span id="glbEk" class="output">25.00</span> J</p>
+<p>\(W_{\text{net}}=\Delta E_k\) = <span class="output">0 J</span></p>
+<div class="bar"><span id="glbBar" style="width:50%"></span></div>
+<p class="small">Walaupun benda terus berpindah, energi kinetiknya tetap karena kecepatan tidak berubah.</p>
+</div>
+</div>
+<div>
+<svg viewBox="0 0 600 250" aria-label="Animasi GLB">
+<line x1="40" y1="180" x2="560" y2="180" stroke="#64748b" stroke-width="5"/>
+<rect id="glbCar" x="50" y="135" width="70" height="40" rx="10" fill="#60a5fa" stroke="#1d4ed8"/>
+<circle cx="68" cy="180" r="10" fill="#334155"/><circle cx="102" cy="180" r="10" fill="#334155"/>
+<line x1="50" y1="205" x2="550" y2="205" stroke="#cbd5e1" stroke-dasharray="7 6"/>
+<text x="250" y="235" font-size="17">Kecepatan konstan → energi kinetik konstan</text>
+</svg>
+</div>
+</div>
+</div>
+
+<div id="panelGLBB" class="panel">
+<h3 id="simulasi-glbb">Simulasi GLBB — Energi Kinetik Berubah</h3>
+<div class="grid2">
+<div>
+<label for="glbbMass"><b>Massa:</b> <span id="glbbMassV" class="output">2</span> kg</label>
+<input id="glbbMass" type="range" min="1" max="10" value="2">
+<label for="glbbV0"><b>Kecepatan awal:</b> <span id="glbbV0V" class="output">2</span> m/s</label>
+<input id="glbbV0" type="range" min="0" max="15" value="2">
+<label for="glbbA"><b>Percepatan:</b> <span id="glbbAV" class="output">2</span> m/s²</label>
+<input id="glbbA" type="range" min="-4" max="5" value="2" step="0.5">
+<label for="glbbTime"><b>Waktu:</b> <span id="glbbTimeV" class="output">0.0</span> s</label>
+<input id="glbbTime" type="range" min="0" max="8" value="0" step="0.05">
+<p><button id="glbbPlay" type="button">Jalankan</button> <button id="glbbReset" type="button">Reset</button></p>
+<div class="resultbox">
+<p>Kecepatan \(v=v_0+at\): <span id="glbbV" class="output">2.00</span> m/s</p>
+<p>Perpindahan \(s=v_0t+\frac12at^2\): <span id="glbbS" class="output">0.00</span> m</p>
+<p>\(E_{k0}\): <span id="glbbEk0" class="output">4.00</span> J</p>
+<p>\(E_k\): <span id="glbbEk" class="output">4.00</span> J</p>
+<p>\(\Delta E_k\): <span id="glbbDEk" class="output">0.00</span> J</p>
+<p>\(W_{\text{net}}=F_{\text{net}}s=ma\,s\): <span id="glbbW" class="output">0.00</span> J</p>
+<div class="bar"><span id="glbbEkBar" style="width:10%;background:#f59e0b"></span></div>
+<p id="glbbComment" class="small"></p>
+</div>
+</div>
+<div>
+<svg viewBox="0 0 600 290" aria-label="Animasi GLBB">
+<defs><marker id="accArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0,0 8,4 0,8" fill="#ef4444"/></marker></defs>
+<line x1="40" y1="190" x2="560" y2="190" stroke="#64748b" stroke-width="5"/>
+<rect id="glbbCar" x="50" y="145" width="70" height="40" rx="10" fill="#fdba74" stroke="#ea580c"/>
+<circle cx="68" cy="190" r="10" fill="#334155"/><circle cx="102" cy="190" r="10" fill="#334155"/>
+<line id="glbbArrow" x1="135" y1="155" x2="200" y2="155" stroke="#ef4444" stroke-width="6" marker-end="url(#accArrow)"/>
+<text id="glbbArrowText" x="210" y="160" font-size="17" fill="#b91c1c">a = 2 m/s²</text>
+<text x="195" y="235" font-size="17">Percepatan mengubah kecepatan → energi kinetik berubah</text>
+</svg>
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="strategi">8. Strategi Soal TKA SMP</h2>
+<ol>
+<li>Identifikasi apakah geraknya GLB atau GLBB.</li>
+<li>Jika kecepatan tetap, pikirkan \(E_k\) tetap dan \(\Delta E_k=0\).</li>
+<li>Jika percepatan tetap, cari kecepatan akhir dengan \(v=v_0+at\) atau \(v^2=v_0^2+2as\).</li>
+<li>Hitung \(E_{k1}\) dan \(E_{k2}\) jika diperlukan.</li>
+<li>Gunakan \(W_{\text{net}}=\Delta E_k\) untuk menghubungkan usaha dengan perubahan gerak.</li>
+<li>Periksa tanda: \(\Delta E_k>0\) berarti energi bertambah; \(\Delta E_k<0\) berarti energi berkurang.</li>
+</ol>
+
+<h2 id="contoh-soal">9. Contoh Soal</h2>
+
+<div class="question">
+<p><b>1.</b> Benda 3 kg bergerak GLB dengan kecepatan 4 m/s. Energi kinetiknya adalah ....</p>
+<div class="qopts"><div>A. 6 J</div><div>B. 12 J</div><div>C. 24 J</div><div>D. 36 J</div><div>E. 48 J</div></div>
+<button data-answer="a1">Lihat jawaban</button>
+<div id="a1" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(E_k=\frac12(3)(4^2)=24\) J.</div>
+</div>
+
+<div class="question">
+<p><b>2.</b> Sebuah benda bergerak GLB. Pernyataan yang benar adalah ....</p>
+<div class="qopts"><div>A. percepatan selalu bertambah</div><div>B. energi kinetik selalu bertambah</div><div>C. energi kinetik tetap jika massa tetap</div><div>D. usaha total selalu positif</div><div>E. kecepatan berubah setiap sekon</div></div>
+<button data-answer="a2">Lihat jawaban</button>
+<div id="a2" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> GLB memiliki kecepatan tetap, sehingga \(E_k=\frac12mv^2\) juga tetap.</div>
+</div>
+
+<div class="question">
+<p><b>3.</b> Benda 2 kg mula-mula diam lalu mengalami percepatan 3 m/s² selama 4 s. Energi kinetiknya setelah 4 s adalah ....</p>
+<div class="qopts"><div>A. 36 J</div><div>B. 72 J</div><div>C. 108 J</div><div>D. 144 J</div><div>E. 288 J</div></div>
+<button data-answer="a3">Lihat jawaban</button>
+<div id="a3" class="answer"><b>ANSWER:</b> D<br><b>EXPLANATION:</b> \(v=0+3(4)=12\) m/s. Maka \(E_k=\frac12(2)(12^2)=144\) J.</div>
+</div>
+
+<div class="question">
+<p><b>4.</b> Kecepatan benda meningkat dari 5 m/s menjadi 10 m/s, massa tetap. Energi kinetik akhirnya menjadi .... kali energi kinetik awal.</p>
+<div class="qopts"><div>A. 2</div><div>B. 3</div><div>C. 4</div><div>D. 5</div><div>E. 10</div></div>
+<button data-answer="a4">Lihat jawaban</button>
+<div id="a4" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> Kecepatan menjadi 2 kali, sehingga energi kinetik menjadi \(2^2=4\) kali.</div>
+</div>
+
+<div class="question">
+<p><b>5.</b> Benda 4 kg berubah kecepatan dari 3 m/s menjadi 7 m/s. Usaha total pada benda adalah ....</p>
+<div class="qopts"><div>A. 40 J</div><div>B. 60 J</div><div>C. 80 J</div><div>D. 100 J</div><div>E. 120 J</div></div>
+<button data-answer="a5">Lihat jawaban</button>
+<div id="a5" class="answer"><b>ANSWER:</b> C<br><b>EXPLANATION:</b> \(W_{\text{net}}=\Delta E_k=\frac12(4)(7^2-3^2)=2(49-9)=80\) J.</div>
+</div>
+
+<div class="question">
+<p><b>6.</b> Benda bergerak dengan perlambatan sehingga kecepatan berkurang. Tanda usaha totalnya adalah ....</p>
+<div class="qopts"><div>A. positif</div><div>B. negatif</div><div>C. nol selalu</div><div>D. tak hingga</div><div>E. tidak terkait energi</div></div>
+<button data-answer="a6">Lihat jawaban</button>
+<div id="a6" class="answer"><b>ANSWER:</b> B<br><b>EXPLANATION:</b> Jika kecepatan berkurang, \(E_k\) berkurang sehingga \(\Delta E_k<0\). Karena \(W_{\text{net}}=\Delta E_k\), usaha total negatif.</div>
+</div>
+
+<h2 id="rangkuman">10. Rangkuman</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Konsep</th><th>GLB</th><th>GLBB</th></tr></thead>
+<tbody>
+<tr><td data-kolom="Konsep">Percepatan</td><td data-kolom="GLB">\(a=0\)</td><td data-kolom="GLBB">\(a=\text{konstan}\)</td></tr>
+<tr><td data-kolom="Konsep">Kecepatan</td><td data-kolom="GLB">tetap</td><td data-kolom="GLBB">berubah linier terhadap waktu</td></tr>
+<tr><td data-kolom="Konsep">Energi kinetik</td><td data-kolom="GLB">tetap</td><td data-kolom="GLBB">berubah</td></tr>
+<tr><td data-kolom="Konsep">Usaha total</td><td data-kolom="GLB">\(W_{\text{net}}=0\)</td><td data-kolom="GLBB">\(W_{\text{net}}=\Delta E_k\)</td></tr>
+<tr><td data-kolom="Konsep">Persamaan utama</td><td data-kolom="GLB">\(x=x_0+vt\)</td><td data-kolom="GLBB">\(v^2=v_0^2+2as\)</td></tr>
+</tbody>
+</table>
+</div>
+
+<script>
+(function(){
+'use strict';
+document.querySelectorAll('button[data-answer]').forEach(function(b){
+ b.addEventListener('click',function(){
+  const e=document.getElementById(b.dataset.answer);
+  e.classList.toggle('show');
+  b.textContent=e.classList.contains('show')?'Sembunyikan jawaban':'Lihat jawaban';
+ });
+});
+document.querySelectorAll('.tab').forEach(function(b){
+ b.addEventListener('click',function(){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.panel).classList.add('active');
+ });
+});
+
+const glbMass=document.getElementById('glbMass');
+const glbVel=document.getElementById('glbVel');
+const glbTime=document.getElementById('glbTime');
+let glbAnim=null;
+function renderGLB(){
+ const m=+glbMass.value,v=+glbVel.value,t=+glbTime.value;
+ const s=v*t, ek=.5*m*v*v;
+ glbMassV.textContent=m;glbVelV.textContent=v;glbTimeV.textContent=t.toFixed(1);
+ glbS.textContent=s.toFixed(2);glbEk.textContent=ek.toFixed(2);
+ glbBar.style.width=Math.min(100,ek/5)+'%';
+ const x=50+(Math.min(500,s*5)%480);
+ glbCar.setAttribute('x',x);
+}
+function playGLB(){
+ if(glbAnim) cancelAnimationFrame(glbAnim);
+ function step(){
+  let t=+glbTime.value+0.025;
+  if(t>+glbTime.max)t=0;
+  glbTime.value=t;renderGLB();glbAnim=requestAnimationFrame(step);
+ }
+ glbAnim=requestAnimationFrame(step);
+}
+glbMass.addEventListener('input',renderGLB);glbVel.addEventListener('input',renderGLB);glbTime.addEventListener('input',renderGLB);
+glbPlay.addEventListener('click',playGLB);
+glbReset.addEventListener('click',function(){if(glbAnim)cancelAnimationFrame(glbAnim);glbTime.value=0;renderGLB();});
+renderGLB();
+
+const gm=document.getElementById('glbbMass'),gv0=document.getElementById('glbbV0'),ga=document.getElementById('glbbA'),gt=document.getElementById('glbbTime');
+let gAnim=null;
+function renderGLBB(){
+ const m=+gm.value,v0=+gv0.value,a=+ga.value,t=+gt.value;
+ const v=v0+a*t;
+ const s=v0*t+.5*a*t*t;
+ const ek0=.5*m*v0*v0;
+ const ek=.5*m*v*v;
+ const de=ek-ek0;
+ const w=m*a*s;
+ glbbMassV.textContent=m;glbbV0V.textContent=v0;glbbAV.textContent=a;glbbTimeV.textContent=t.toFixed(2);
+ glbbV.textContent=v.toFixed(2);glbbS.textContent=s.toFixed(2);glbbEk0.textContent=ek0.toFixed(2);glbbEk.textContent=ek.toFixed(2);glbbDEk.textContent=de.toFixed(2);glbbW.textContent=w.toFixed(2);
+ glbbEkBar.style.width=Math.min(100,Math.abs(ek)/5)+'%';
+ const xpos=50+Math.max(0,Math.min(470,s*5));
+ glbbCar.setAttribute('x',xpos);
+ const ax=xpos+85, len=Math.max(10,Math.min(95,Math.abs(a)*17));
+ glbbArrow.setAttribute('x1',ax);
+ glbbArrow.setAttribute('x2',a>=0?ax+len:ax-len);
+ glbbArrowText.setAttribute('x',a>=0?ax+len+10:Math.max(20,ax-len-85));
+ glbbArrowText.textContent='a = '+a+' m/s²';
+ if(Math.abs(de-w)<0.05){
+  glbbComment.textContent='Terlihat ΔEk ≈ Wnet. Ini adalah teorema usaha–energi.';
+ }else{
+  glbbComment.textContent='Perbedaan kecil dapat muncul dari pembulatan angka pada tampilan.';
+ }
+}
+function playGLBB(){
+ if(gAnim)cancelAnimationFrame(gAnim);
+ function step(){
+  let t=+gt.value+0.02;
+  if(t>+gt.max)t=0;
+  gt.value=t;renderGLBB();gAnim=requestAnimationFrame(step);
+ }
+ gAnim=requestAnimationFrame(step);
+}
+[gm,gv0,ga,gt].forEach(el=>el.addEventListener('input',renderGLBB));
+glbbPlay.addEventListener('click',playGLBB);
+glbbReset.addEventListener('click',function(){if(gAnim)cancelAnimationFrame(gAnim);gt.value=0;renderGLBB();});
+renderGLBB();
+})();
+</script>
+</main>
+</body>
+</html>
