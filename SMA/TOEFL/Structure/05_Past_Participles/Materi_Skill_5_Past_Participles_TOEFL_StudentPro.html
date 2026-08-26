@@ -6,23 +6,63 @@
 <title>Skill 5 — Past Participles | TOEFL Structure</title>
 <style>
 :root{--amber:#b45309;--deep:#78350f;--ink:#1e293b;--muted:#64748b;--line:#eadfcd;--soft:#fffbf5;--green:#15803d}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:20px 18px 64px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.72;font-size:16px;overflow-wrap:break-word}.wrap{max-width:900px;margin:auto}.hero{padding:26px 24px;border-radius:20px;background:linear-gradient(135deg,var(--deep),var(--amber));color:#fff;box-shadow:0 12px 30px #78350f22}.eyebrow{font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.82}.hero h1{margin:.25em 0 .3em;font-size:clamp(1.65rem,5vw,2.35rem);line-height:1.2}.hero p{margin:0;opacity:.9}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.chip{padding:5px 10px;border-radius:99px;background:#ffffff1c;border:1px solid #ffffff48;font-size:.8rem;font-weight:700}h2,h3{line-height:1.3;scroll-margin-top:16px}h2{font-size:1.35rem;margin:2em 0 .7em;padding-bottom:.35em;border-bottom:2px solid var(--line);color:var(--deep)}h3{font-size:1.08rem;margin:1.4em 0 .45em}.lead{font-size:1.04rem}.box,.example,.warning,.formula{border:1px solid var(--line);border-radius:14px;padding:15px 17px;margin:1.2em 0}.box{background:var(--soft)}.example{background:#fff8eb;border-left:5px solid #d97706}.warning{background:#fff1f2;border-left:5px solid #e11d48}.formula{background:#fffbeb;border-left:5px solid #f59e0b;text-align:center;font-weight:800;font-size:1.05rem}.label{font-size:.72rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.sentence{font-size:1.08rem;margin:.35em 0}.noun{color:#1d4ed8;text-decoration:underline 3px #93c5fd;text-underline-offset:4px;font-weight:750}.aux{color:#7c3aed;font-weight:800}.part{color:#b45309;background:#fef3c7;padding:1px 5px;border-radius:5px;font-weight:800}.bad{color:#b91c1c;font-weight:750}.good{color:#166534;font-weight:750}table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.94rem}th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:#fff7e6;color:var(--deep)}ul,ol{padding-left:1.35em}.steps{counter-reset:step;list-style:none;padding:0}.steps li{counter-increment:step;position:relative;padding:0 0 13px 45px;min-height:36px}.steps li:before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:#fff;font-weight:800}.quiz{border-top:1px solid var(--line);padding:17px 0}.quiz:first-child{border-top:0}.options{margin:.55em 0}.options div{margin:.25em 0}.answer{display:none;margin-top:10px;padding:11px 13px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:9px}.answer.show{display:block}.answer b:first-child{color:var(--green)}button{font:inherit;font-weight:750;border:1px solid #b7a78e;background:#fff;color:#92400e;border-radius:9px;padding:8px 13px;cursor:pointer;min-height:42px}button:hover{background:#fffbeb}.footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}@media(max-width:560px){body{padding:13px 12px 48px;font-size:15px}.hero{padding:21px 17px;border-radius:16px}h2{font-size:1.18rem}.box,.example,.warning,.formula{padding:13px 14px}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}table td{border:0;border-bottom:1px solid var(--line)}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}}
+
+/* ===== penguat-ponsel-studentpro =====
+   Tabel yang tidak menumpuk adalah sebab paling sering halaman materi terpotong di
+   ponsel: satu tabel empat kolom lebih lebar daripada layarnya, dan begitu ada satu
+   elemen yang melebihi lebar, seluruh halaman dapat digeser ke samping — teks biasa
+   pun ikut terpotong saat dibaca. */
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{overflow-wrap:break-word}
+img,canvas,svg,video{max-width:100%; height:auto}
+table{max-width:100%}
+
+/* Rumus baris-tersendiri (\[ ... \] dan $$ ... $$) dirender MathJax sebagai satu blok
+   yang tidak pernah dipatahkan. Rumus panjang karena itu bisa lebih lebar daripada layar
+   ponsel. Yang digulir cukup rumusnya saja, bukan seluruh halaman. */
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto; overflow-y:hidden; padding:2px 0 6px}
+
+@media (max-width:560px){
+  /* Tiap baris menjadi satu kartu, dengan nama kolomnya sendiri. Menggulir mendatar
+     sengaja tidak dipakai: yang tersembunyi biasanya justru kolom terakhir, dan di
+     tabel materi kolom terakhir hampir selalu kolom jawabannya. */
+  table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  table, table tbody, table tr, table td{display:block; width:100%}
+  table tr{border:1px solid var(--garis,#e2e8f0); border-radius:12px;
+           margin-bottom:12px; overflow:hidden; background:#fff}
+  table td{border:0; border-bottom:1px solid var(--garis,#e2e8f0); padding:10px 13px}
+  table tr td:last-child{border-bottom:0}
+  table td[data-kolom]::before{
+    content:attr(data-kolom); display:block; font-size:.68rem; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--redup,#64748b);
+    margin-bottom:3px;
+  }
+}
+
+@media (max-width:380px){
+  body{padding-left:12px; padding-right:12px; font-size:15px}
+  h1{font-size:1.3rem} h2{font-size:1.08rem} h3{font-size:1rem}
+  .kotak{padding:12px 13px}
+}
+/* ===== akhir penguat-ponsel-studentpro ===== */
 </style>
 </head>
 <body>
 <main class="wrap">
 <header class="hero">
   <div class="eyebrow">TOEFL Structure · Skill 5</div>
-  <h1>Waspadai Past Participles</h1>
+  <h1 id="judul">Waspadai Past Participles</h1>
   <p>Bentuk ketiga verb dapat menjadi bagian verb atau adjective—kenali auxiliary yang menyertainya.</p>
   <div class="chips"><span class="chip">Verb 3</span><span class="chip">Perfect &amp; Passive</span><span class="chip">Adjective</span></div>
 </header>
 
-<h2>Tujuan Pembelajaran</h2>
+<h2 id="tujuan-pembelajaran">Tujuan Pembelajaran</h2>
 <p class="lead">Kamu akan mengenali bentuk past participle, membedakan fungsinya dalam perfect tense, passive voice, dan adjective phrase, serta menghindari anggapan bahwa setiap bentuk <i>-ed</i> adalah past-tense verb.</p>
 
 <div class="formula">HAVE + V3 = PERFECT &nbsp; | &nbsp; BE + V3 = PASSIVE &nbsp; | &nbsp; V3 tanpa auxiliary = sering ADJECTIVE</div>
 
-<h2>1. Apa Itu Past Participle?</h2>
+<h2 id="apa-itu-past-participle">1. Apa Itu Past Participle?</h2>
 <p><i>Past participle</i> adalah bentuk ketiga verb (V3). Untuk regular verbs, bentuknya biasanya berakhir <i>-ed</i>. Irregular verbs memiliki perubahan yang beragam dan perlu dihafalkan.</p>
 
 <table>
@@ -36,7 +76,7 @@
   </tbody>
 </table>
 
-<h2>2. Tiga Fungsi Penting Past Participle</h2>
+<h2 id="tiga-fungsi-penting-past-participle">2. Tiga Fungsi Penting Past Participle</h2>
 <table>
   <thead><tr><th>Fungsi</th><th>Pola</th><th>Contoh</th><th>Analisis</th></tr></thead>
   <tbody>
@@ -54,7 +94,7 @@
   <p>Pada kalimat ketiga, <i>painted by Sari</i> tidak menjadi finite verb; finite verb-nya adalah <i>is</i>.</p>
 </div>
 
-<h2>3. Past Tense atau Past Participle?</h2>
+<h2 id="past-tense-atau-past-participle">3. Past Tense atau Past Participle?</h2>
 <p>Pada regular verbs, V2 dan V3 memiliki bentuk sama. Fungsinya hanya dapat dipastikan melalui struktur kalimat.</p>
 
 <table>
@@ -73,7 +113,7 @@
   <ul><li><span class="good">The documents were signed by the director yesterday.</span></li><li><span class="good">The documents signed by the director arrived yesterday.</span></li></ul>
 </div>
 
-<h2>4. Reduced Passive Adjective Clause</h2>
+<h2 id="reduced-passive-adjective-clause">4. Reduced Passive Adjective Clause</h2>
 <p>Past participle sebagai adjective sering berasal dari adjective clause pasif yang dipendekkan.</p>
 <div class="example">
   <div class="label">Perubahan bentuk</div>
@@ -82,7 +122,7 @@
   <p><i>That were</i> dihapus. Frasa <i>mailed this morning</i> menerangkan <i>packages</i>, sedangkan verb utama ialah <i>will arrive</i>.</p>
 </div>
 
-<h3>Makna pasif</h3>
+<h3 id="makna-pasif">Makna pasif</h3>
 <p>Dalam reduced clause, noun biasanya <b>menerima</b> tindakan V3.</p>
 <ul>
   <li>The books <b>written in the nineteenth century</b> are fragile. (books menerima tindakan <i>write</i>)</li>
@@ -90,7 +130,7 @@
   <li>The data <b>collected from five cities</b> support the hypothesis. (data menerima tindakan <i>collect</i>)</li>
 </ul>
 
-<h2>5. Present Participle vs Past Participle</h2>
+<h2 id="present-participle-vs-past-participle">5. Present Participle vs Past Participle</h2>
 <table>
   <thead><tr><th>Bentuk adjective</th><th>Makna</th><th>Contoh</th></tr></thead>
   <tbody>
@@ -99,7 +139,7 @@
   </tbody>
 </table>
 
-<h2>6. Strategi Cepat Mengerjakan Soal</h2>
+<h2 id="strategi-cepat-mengerjakan-soal">6. Strategi Cepat Mengerjakan Soal</h2>
 <ol class="steps">
   <li><b>Tandai bentuk V3.</b> Waspadai regular <i>-ed</i> dan irregular seperti <i>written, built, chosen</i>.</li>
   <li><b>Cari auxiliary di depannya.</b> <i>Have</i> membentuk perfect; <i>be</i> membentuk passive.</li>
@@ -118,7 +158,7 @@
   </ul>
 </div>
 
-<h2>7. Latihan Mandiri</h2>
+<h2 id="latihan-mandiri">7. Latihan Mandiri</h2>
 <section aria-label="Latihan Skill 5">
   <div class="quiz"><p><b>1.</b> The packages _____ at the central office will arrive tomorrow.</p><div class="options"><div>A. mailing</div><div>B. mailed</div><div>C. were mailed</div><div>D. have mail</div></div><button type="button" data-target="s5-a1">Lihat jawaban</button><div class="answer" id="s5-a1"><b>ANSWER: B</b><br><b>EXPLANATION:</b> <i>Will arrive</i> sudah menjadi verb utama. <i>Mailed at the central office</i> adalah reduced passive adjective clause yang menerangkan <i>packages</i>.</div></div>
   <div class="quiz"><p><b>2.</b> The packages _____ at the central office yesterday.</p><div class="options"><div>A. mailed</div><div>B. were mailed</div><div>C. mailing</div><div>D. have mailing</div></div><button type="button" data-target="s5-a2">Lihat jawaban</button><div class="answer" id="s5-a2"><b>ANSWER: B</b><br><b>EXPLANATION:</b> Kalimat belum memiliki finite verb. Karena packages menerima tindakan, gunakan passive verb <i>were mailed</i>.</div></div>

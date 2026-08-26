@@ -2,7 +2,48 @@
 :root{--ink:#172033;--muted:#64748b;--line:#dbe4ef;--brand:#4f46e5;--soft:#f8fafc;--soft2:#eef2ff;--ok:#166534;--warn:#b45309}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.75;font-size:16px;overflow-wrap:break-word}
-main{max-width:1020px;margin:auto}h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.82rem;margin-top:0}h2{font-size:1.32rem;border-bottom:2px solid var(--line);padding-bottom:.36em}h3{font-size:1.06rem;color:var(--brand)}p{margin:.35em 0 1em}.intro,.small{color:var(--muted)}.intro{font-size:.95rem;margin-top:-.35em}.small{font-size:.9rem}.card,.note,.example,.warning,.question{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:1.1em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#fbfdff;border-left:5px solid #0284c7}.warning{background:#fff9eb;border-left:5px solid #d97706}.formula{font-size:1.12rem;font-weight:800;text-align:center;background:var(--soft2)}.label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.grid2,.grid3{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}table{width:100%;border-collapse:collapse;margin:.9em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}ul,ol{padding-left:1.25em}.answer{display:none;margin-top:9px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}.qopts div{margin:.22em 0}button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:9px;padding:8px 12px;min-height:40px;cursor:pointer}svg{max-width:100%;height:auto;display:block;margin:auto}mjx-mi{font-style:normal!important}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}}@media(max-width:560px){body{padding:16px 14px 48px;font-size:15px}h1{font-size:1.46rem}h2{font-size:1.17rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},chtml:{scale:1.02},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><main><h1 id="judul">Limit pada Fungsi Potongan</h1><p class="intro">Matematika SMA/UTBK · Limit dan Kontinuitas · Materi 3</p>
+main{max-width:1020px;margin:auto}h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.82rem;margin-top:0}h2{font-size:1.32rem;border-bottom:2px solid var(--line);padding-bottom:.36em}h3{font-size:1.06rem;color:var(--brand)}p{margin:.35em 0 1em}.intro,.small{color:var(--muted)}.intro{font-size:.95rem;margin-top:-.35em}.small{font-size:.9rem}.card,.note,.example,.warning,.question{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:1.1em 0;background:#fff}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#fbfdff;border-left:5px solid #0284c7}.warning{background:#fff9eb;border-left:5px solid #d97706}.formula{font-size:1.12rem;font-weight:800;text-align:center;background:var(--soft2)}.label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.grid2,.grid3{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}table{width:100%;border-collapse:collapse;margin:.9em 0;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}ul,ol{padding-left:1.25em}.answer{display:none;margin-top:9px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}.qopts div{margin:.22em 0}button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:9px;padding:8px 12px;min-height:40px;cursor:pointer}svg{max-width:100%;height:auto;display:block;margin:auto}mjx-mi{font-style:normal!important}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}}@media(max-width:560px){body{padding:16px 14px 48px;font-size:15px}h1{font-size:1.46rem}h2{font-size:1.17rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}}
+
+/* ===== penguat-ponsel-studentpro =====
+   Tabel yang tidak menumpuk adalah sebab paling sering halaman materi terpotong di
+   ponsel: satu tabel empat kolom lebih lebar daripada layarnya, dan begitu ada satu
+   elemen yang melebihi lebar, seluruh halaman dapat digeser ke samping — teks biasa
+   pun ikut terpotong saat dibaca. */
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{overflow-wrap:break-word}
+img,canvas,svg,video{max-width:100%; height:auto}
+table{max-width:100%}
+
+/* Rumus baris-tersendiri (\[ ... \] dan $$ ... $$) dirender MathJax sebagai satu blok
+   yang tidak pernah dipatahkan. Rumus panjang karena itu bisa lebih lebar daripada layar
+   ponsel. Yang digulir cukup rumusnya saja, bukan seluruh halaman. */
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto; overflow-y:hidden; padding:2px 0 6px}
+
+@media (max-width:560px){
+  /* Tiap baris menjadi satu kartu, dengan nama kolomnya sendiri. Menggulir mendatar
+     sengaja tidak dipakai: yang tersembunyi biasanya justru kolom terakhir, dan di
+     tabel materi kolom terakhir hampir selalu kolom jawabannya. */
+  table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  table, table tbody, table tr, table td{display:block; width:100%}
+  table tr{border:1px solid var(--garis,#e2e8f0); border-radius:12px;
+           margin-bottom:12px; overflow:hidden; background:#fff}
+  table td{border:0; border-bottom:1px solid var(--garis,#e2e8f0); padding:10px 13px}
+  table tr td:last-child{border-bottom:0}
+  table td[data-kolom]::before{
+    content:attr(data-kolom); display:block; font-size:.68rem; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--redup,#64748b);
+    margin-bottom:3px;
+  }
+}
+
+@media (max-width:380px){
+  body{padding-left:12px; padding-right:12px; font-size:15px}
+  h1{font-size:1.3rem} h2{font-size:1.08rem} h3{font-size:1rem}
+  .kotak{padding:12px 13px}
+}
+/* ===== akhir penguat-ponsel-studentpro ===== */
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},chtml:{scale:1.02},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><main><h1 id="judul">Limit pada Fungsi Potongan</h1><p class="intro">Matematika SMA/UTBK · Limit dan Kontinuitas · Materi 3</p>
 <div class="note"><div class="label">Inti materi</div>Pada fungsi potongan, aturan yang dipakai bergantung pada posisi x. Titik batas antarpotongan adalah titik kritis; di sana limit kiri dan kanan harus diperiksa secara terpisah.</div>
 <h2 id="fungsi-potongan">1. Membaca Fungsi Potongan</h2><p>Contoh:</p><div class="formula card">\[f(x)=\begin{cases}x+2,&x<1\\4,&x=1\\2x+1,&x>1\end{cases}\]</div><p>Untuk \(x<1\), gunakan rumus \(x+2\). Untuk \(x>1\), gunakan \(2x+1\). Nilai tepat di \(x=1\) adalah 4, tetapi limit di \(x=1\) ditentukan oleh perilaku dari kiri dan kanan.</p>
 <h2 id="titik-kritis">2. Titik Kritis</h2><p>Titik kritis adalah titik tempat aturan fungsi berubah. Pada contoh di atas, titik kritisnya adalah \(x=1\).</p><div class="grid2"><div class="card">\[\lim_{x\to1^-}f(x)=\lim_{x\to1^-}(x+2)=3\]</div><div class="card">\[\lim_{x\to1^+}f(x)=\lim_{x\to1^+}(2x+1)=3\]</div></div><p>Karena keduanya sama, limit dua sisi ada dan bernilai 3, walaupun \(f(1)=4\).</p>

@@ -40,6 +40,46 @@ img,canvas,svg,video{max-width:100%;height:auto}
  body{padding-left:12px;padding-right:12px;font-size:15px}
  h1{font-size:1.3rem}h2{font-size:1.08rem}h3{font-size:1rem}
 }
+
+/* ===== penguat-ponsel-studentpro =====
+   Tabel yang tidak menumpuk adalah sebab paling sering halaman materi terpotong di
+   ponsel: satu tabel empat kolom lebih lebar daripada layarnya, dan begitu ada satu
+   elemen yang melebihi lebar, seluruh halaman dapat digeser ke samping — teks biasa
+   pun ikut terpotong saat dibaca. */
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{overflow-wrap:break-word}
+img,canvas,svg,video{max-width:100%; height:auto}
+table{max-width:100%}
+
+/* Rumus baris-tersendiri (\[ ... \] dan $$ ... $$) dirender MathJax sebagai satu blok
+   yang tidak pernah dipatahkan. Rumus panjang karena itu bisa lebih lebar daripada layar
+   ponsel. Yang digulir cukup rumusnya saja, bukan seluruh halaman. */
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto; overflow-y:hidden; padding:2px 0 6px}
+
+@media (max-width:560px){
+  /* Tiap baris menjadi satu kartu, dengan nama kolomnya sendiri. Menggulir mendatar
+     sengaja tidak dipakai: yang tersembunyi biasanya justru kolom terakhir, dan di
+     tabel materi kolom terakhir hampir selalu kolom jawabannya. */
+  table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  table, table tbody, table tr, table td{display:block; width:100%}
+  table tr{border:1px solid var(--garis,#e2e8f0); border-radius:12px;
+           margin-bottom:12px; overflow:hidden; background:#fff}
+  table td{border:0; border-bottom:1px solid var(--garis,#e2e8f0); padding:10px 13px}
+  table tr td:last-child{border-bottom:0}
+  table td[data-kolom]::before{
+    content:attr(data-kolom); display:block; font-size:.68rem; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--redup,#64748b);
+    margin-bottom:3px;
+  }
+}
+
+@media (max-width:380px){
+  body{padding-left:12px; padding-right:12px; font-size:15px}
+  h1{font-size:1.3rem} h2{font-size:1.08rem} h3{font-size:1rem}
+  .kotak{padding:12px 13px}
+}
+/* ===== akhir penguat-ponsel-studentpro ===== */
 </style>
 <script>
 window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};

@@ -6,23 +6,63 @@
 <title>Skill 2 — Object of Preposition | TOEFL Structure</title>
 <style>
 :root{--navy:#172554;--blue:#2563eb;--ink:#1e293b;--muted:#64748b;--line:#dbe4f0;--soft:#f8fafc;--green:#15803d}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:20px 18px 64px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.72;font-size:16px;overflow-wrap:break-word}.wrap{max-width:900px;margin:auto}.hero{padding:26px 24px;border-radius:20px;background:linear-gradient(135deg,#0f3d4c,#0f766e);color:#fff;box-shadow:0 12px 30px #134e4a22}.eyebrow{font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.82}.hero h1{margin:.25em 0 .3em;font-size:clamp(1.65rem,5vw,2.35rem);line-height:1.2}.hero p{margin:0;opacity:.9}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.chip{padding:5px 10px;border-radius:99px;background:#ffffff1c;border:1px solid #ffffff48;font-size:.8rem;font-weight:700}h2,h3{line-height:1.3;scroll-margin-top:16px}h2{font-size:1.35rem;margin:2em 0 .7em;padding-bottom:.35em;border-bottom:2px solid var(--line);color:#134e4a}h3{font-size:1.08rem;margin:1.4em 0 .45em}.lead{font-size:1.04rem}.box,.example,.warning,.formula{border:1px solid var(--line);border-radius:14px;padding:15px 17px;margin:1.2em 0}.box{background:var(--soft)}.example{background:#effcf9;border-left:5px solid #0d9488}.warning{background:#fff7ed;border-left:5px solid #f97316}.formula{background:#ecfdf5;border-left:5px solid #10b981;text-align:center;font-weight:800;font-size:1.05rem}.label{font-size:.72rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.sentence{font-size:1.08rem;margin:.35em 0}.prep{color:#0f766e;font-weight:800}.object{color:#1d4ed8;text-decoration:underline 3px #93c5fd;text-underline-offset:4px;font-weight:750}.subject{color:#7c3aed;text-decoration:underline 3px #c4b5fd;text-underline-offset:4px;font-weight:750}.verb{color:#b45309;text-decoration:underline double #f59e0b;text-underline-offset:4px;font-weight:750}.bad{color:#b91c1c;font-weight:750}.good{color:#166534;font-weight:750}table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.94rem}th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:#eafaf6;color:#134e4a}ul,ol{padding-left:1.35em}.steps{counter-reset:step;list-style:none;padding:0}.steps li{counter-increment:step;position:relative;padding:0 0 13px 45px;min-height:36px}.steps li:before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#0f766e;color:#fff;font-weight:800}.quiz{border-top:1px solid var(--line);padding:17px 0}.quiz:first-child{border-top:0}.options{margin:.55em 0}.options div{margin:.25em 0}.answer{display:none;margin-top:10px;padding:11px 13px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:9px}.answer.show{display:block}.answer b:first-child{color:var(--green)}button{font:inherit;font-weight:750;border:1px solid #94a3b8;background:#fff;color:#115e59;border-radius:9px;padding:8px 13px;cursor:pointer;min-height:42px}button:hover{background:#f0fdfa}.footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}@media(max-width:560px){body{padding:13px 12px 48px;font-size:15px}.hero{padding:21px 17px;border-radius:16px}h2{font-size:1.18rem}.box,.example,.warning,.formula{padding:13px 14px}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}table td{border:0;border-bottom:1px solid var(--line)}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}}
+
+/* ===== penguat-ponsel-studentpro =====
+   Tabel yang tidak menumpuk adalah sebab paling sering halaman materi terpotong di
+   ponsel: satu tabel empat kolom lebih lebar daripada layarnya, dan begitu ada satu
+   elemen yang melebihi lebar, seluruh halaman dapat digeser ke samping — teks biasa
+   pun ikut terpotong saat dibaca. */
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{overflow-wrap:break-word}
+img,canvas,svg,video{max-width:100%; height:auto}
+table{max-width:100%}
+
+/* Rumus baris-tersendiri (\[ ... \] dan $$ ... $$) dirender MathJax sebagai satu blok
+   yang tidak pernah dipatahkan. Rumus panjang karena itu bisa lebih lebar daripada layar
+   ponsel. Yang digulir cukup rumusnya saja, bukan seluruh halaman. */
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto; overflow-y:hidden; padding:2px 0 6px}
+
+@media (max-width:560px){
+  /* Tiap baris menjadi satu kartu, dengan nama kolomnya sendiri. Menggulir mendatar
+     sengaja tidak dipakai: yang tersembunyi biasanya justru kolom terakhir, dan di
+     tabel materi kolom terakhir hampir selalu kolom jawabannya. */
+  table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  table, table tbody, table tr, table td{display:block; width:100%}
+  table tr{border:1px solid var(--garis,#e2e8f0); border-radius:12px;
+           margin-bottom:12px; overflow:hidden; background:#fff}
+  table td{border:0; border-bottom:1px solid var(--garis,#e2e8f0); padding:10px 13px}
+  table tr td:last-child{border-bottom:0}
+  table td[data-kolom]::before{
+    content:attr(data-kolom); display:block; font-size:.68rem; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--redup,#64748b);
+    margin-bottom:3px;
+  }
+}
+
+@media (max-width:380px){
+  body{padding-left:12px; padding-right:12px; font-size:15px}
+  h1{font-size:1.3rem} h2{font-size:1.08rem} h3{font-size:1rem}
+  .kotak{padding:12px 13px}
+}
+/* ===== akhir penguat-ponsel-studentpro ===== */
 </style>
 </head>
 <body>
 <main class="wrap">
 <header class="hero">
   <div class="eyebrow">TOEFL Structure · Skill 2</div>
-  <h1>Waspadai Object of Preposition</h1>
+  <h1 id="judul">Waspadai Object of Preposition</h1>
   <p>Jangan keliru menganggap noun setelah preposition sebagai subject utama kalimat.</p>
   <div class="chips"><span class="chip">Preposition</span><span class="chip">Object</span><span class="chip">Subject Finder</span></div>
 </header>
 
-<h2>Tujuan Pembelajaran</h2>
+<h2 id="tujuan-pembelajaran">Tujuan Pembelajaran</h2>
 <p class="lead">Kamu akan mengenali frasa preposisi, menemukan object of preposition, dan memisahkannya dari subject utama—keterampilan penting ketika subject dan verb berjauhan.</p>
 
 <div class="formula">PREPOSITION + NOUN / PRONOUN / GERUND / NOUN CLAUSE = PREPOSITIONAL PHRASE</div>
 
-<h2>1. Pengertian Object of Preposition</h2>
+<h2 id="pengertian-object-of-preposition">1. Pengertian Object of Preposition</h2>
 <p><i>Object of preposition</i> adalah kata atau kelompok kata yang hadir setelah preposition. Object tersebut melengkapi makna preposition, tetapi <b>bukan subject utama</b> dari klausa.</p>
 
 <div class="example">
@@ -31,7 +71,7 @@
   <p><i>The final exam</i> adalah object dari preposition <i>after</i>. Subject utama tetap <i>the students</i>; verb utamanya <i>will take</i>.</p>
 </div>
 
-<h3>Bentuk object yang mungkin</h3>
+<h3 id="bentuk-object-yang-mungkin">Bentuk object yang mungkin</h3>
 <table>
   <thead><tr><th>Bentuk object</th><th>Contoh frasa preposisi</th><th>Keterangan</th></tr></thead>
   <tbody>
@@ -42,7 +82,7 @@
   </tbody>
 </table>
 
-<h2>2. Preposition yang Sering Muncul</h2>
+<h2 id="preposition-yang-sering-muncul">2. Preposition yang Sering Muncul</h2>
 <table>
   <thead><tr><th>Makna</th><th>Preposition umum</th><th>Contoh</th></tr></thead>
   <tbody>
@@ -59,7 +99,7 @@
   <p class="sentence">(<span class="prep">In</span> <span class="object">the corner</span>) (<span class="prep">of</span> <span class="object">the large room</span>), <span class="subject">a wooden cabinet</span> <span class="verb">stands</span>.</p>
 </div>
 
-<h2>3. Jebakan Subject Palsu</h2>
+<h2 id="jebakan-subject-palsu">3. Jebakan Subject Palsu</h2>
 <p>Noun yang paling dekat dengan verb belum tentu subject. Perhatikan batas frasa preposisinya.</p>
 
 <div class="example">
@@ -77,7 +117,7 @@
   </tbody>
 </table>
 
-<h2>4. Jebakan Pronoun Setelah Preposition</h2>
+<h2 id="jebakan-pronoun-setelah-preposition">4. Jebakan Pronoun Setelah Preposition</h2>
 <p>Setelah preposition, gunakan <i>object pronoun</i>.</p>
 <table>
   <thead><tr><th>Subject pronoun</th><th>Object pronoun</th><th>Contoh setelah preposition</th></tr></thead>
@@ -88,7 +128,7 @@
   </tbody>
 </table>
 
-<h2>5. Strategi Cepat Mengerjakan Soal</h2>
+<h2 id="strategi-cepat-mengerjakan-soal">5. Strategi Cepat Mengerjakan Soal</h2>
 <ol class="steps">
   <li><b>Lingkari preposition.</b> Cari kata seperti <i>of, in, at, with, from, before</i>, dan <i>after</i>.</li>
   <li><b>Kurung frasanya.</b> Tentukan object dan semua kata yang menerangkannya.</li>
@@ -107,7 +147,7 @@
   </ul>
 </div>
 
-<h2>6. Latihan Mandiri</h2>
+<h2 id="latihan-mandiri">6. Latihan Mandiri</h2>
 <section aria-label="Latihan Skill 2">
   <div class="quiz"><p><b>1.</b> With several senior researchers, _____ conducted the field study.</p><div class="options"><div>A. the new assistant</div><div>B. the new assistant was</div><div>C. during July</div><div>D. carefully</div></div><button type="button" data-target="s2-a1">Lihat jawaban</button><div class="answer" id="s2-a1"><b>ANSWER: A</b><br><b>EXPLANATION:</b> <i>With several senior researchers</i> adalah frasa preposisi. <i>Conducted</i> sudah menjadi verb, sehingga dibutuhkan subject <i>the new assistant</i>.</div></div>
   <div class="quiz"><p><b>2.</b> The condition of the laboratory equipment _____ checked every morning.</p><div class="options"><div>A. are</div><div>B. is</div><div>C. have</div><div>D. were</div></div><button type="button" data-target="s2-a2">Lihat jawaban</button><div class="answer" id="s2-a2"><b>ANSWER: B</b><br><b>EXPLANATION:</b> Subject-nya <i>the condition</i> (tunggal). <i>Equipment</i> berada di dalam frasa <i>of the laboratory equipment</i>.</div></div>

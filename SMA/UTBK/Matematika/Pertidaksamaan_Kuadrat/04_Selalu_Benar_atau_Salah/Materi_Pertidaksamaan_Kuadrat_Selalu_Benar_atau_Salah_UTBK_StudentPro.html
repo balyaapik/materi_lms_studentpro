@@ -1,6 +1,47 @@
 <!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pertidaksamaan Kuadrat — Selalu Benar atau Selalu Salah</title>
-<style>:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px;overflow-wrap:break-word}h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}.note,.box,.example,.warning{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.formula{background:var(--soft);text-align:center}table{width:100%;border-collapse:collapse;margin:1em 0;max-width:100%}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}.quiz{border-top:1px solid var(--line);padding:14px 0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}img,canvas,svg,video{max-width:100%;height:auto}mjx-mi{font-style:normal!important}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}}@media(max-width:380px){body{padding-left:12px;padding-right:12px;font-size:15px}h1{font-size:1.3rem}h2{font-size:1.08rem}h3{font-size:1rem}}</style>
+<style>:root{--ink:#172033;--muted:#64748b;--line:#dbe3ee;--brand:#3158d4;--soft:#f5f8ff}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:20px 18px 60px;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.72;font-size:16px;overflow-wrap:break-word}h1,h2,h3{line-height:1.3;scroll-margin-top:16px;margin:1.9em 0 .6em}h1{font-size:1.7rem;margin-top:0}h2{font-size:1.3rem;border-bottom:2px solid var(--line);padding-bottom:.35em}h3{font-size:1.06rem;color:var(--brand)}p{margin:.35em 0 1em}.intro{color:var(--muted);font-size:.94rem;margin-top:-.4em}.note,.box,.example,.warning{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.3em 0}.note{background:var(--soft);border-left:5px solid var(--brand)}.example{background:#f8fbff;border-left:5px solid #0284c7}.warning{background:#fff8e8;border-left:5px solid #d97706}.label{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.45em}.formula{background:var(--soft);text-align:center}table{width:100%;border-collapse:collapse;margin:1em 0;max-width:100%}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#f8fafc}.quiz{border-top:1px solid var(--line);padding:14px 0}.opts div{margin:.25em 0}.answer{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.show{display:block}button{font:inherit;font-weight:700;border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px;margin-top:7px}img,canvas,svg,video{max-width:100%;height:auto}mjx-mi{font-style:normal!important}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0 6px}@media(max-width:560px){body{padding:16px 14px 50px;font-size:15px}h1{font-size:1.45rem}h2{font-size:1.16rem}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table,table tbody,table tr,table td{display:block;width:100%}table tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}table td{border:0;border-bottom:1px solid var(--line);padding:10px 13px}table tr td:last-child{border-bottom:0}table td[data-kolom]::before{content:attr(data-kolom);display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}}@media(max-width:380px){body{padding-left:12px;padding-right:12px;font-size:15px}h1{font-size:1.3rem}h2{font-size:1.08rem}h3{font-size:1rem}}
+
+/* ===== penguat-ponsel-studentpro =====
+   Tabel yang tidak menumpuk adalah sebab paling sering halaman materi terpotong di
+   ponsel: satu tabel empat kolom lebih lebar daripada layarnya, dan begitu ada satu
+   elemen yang melebihi lebar, seluruh halaman dapat digeser ke samping — teks biasa
+   pun ikut terpotong saat dibaca. */
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{overflow-wrap:break-word}
+img,canvas,svg,video{max-width:100%; height:auto}
+table{max-width:100%}
+
+/* Rumus baris-tersendiri (\[ ... \] dan $$ ... $$) dirender MathJax sebagai satu blok
+   yang tidak pernah dipatahkan. Rumus panjang karena itu bisa lebih lebar daripada layar
+   ponsel. Yang digulir cukup rumusnya saja, bukan seluruh halaman. */
+mjx-container{max-width:100%}
+mjx-container[display="true"]{overflow-x:auto; overflow-y:hidden; padding:2px 0 6px}
+
+@media (max-width:560px){
+  /* Tiap baris menjadi satu kartu, dengan nama kolomnya sendiri. Menggulir mendatar
+     sengaja tidak dipakai: yang tersembunyi biasanya justru kolom terakhir, dan di
+     tabel materi kolom terakhir hampir selalu kolom jawabannya. */
+  table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  table, table tbody, table tr, table td{display:block; width:100%}
+  table tr{border:1px solid var(--garis,#e2e8f0); border-radius:12px;
+           margin-bottom:12px; overflow:hidden; background:#fff}
+  table td{border:0; border-bottom:1px solid var(--garis,#e2e8f0); padding:10px 13px}
+  table tr td:last-child{border-bottom:0}
+  table td[data-kolom]::before{
+    content:attr(data-kolom); display:block; font-size:.68rem; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--redup,#64748b);
+    margin-bottom:3px;
+  }
+}
+
+@media (max-width:380px){
+  body{padding-left:12px; padding-right:12px; font-size:15px}
+  h1{font-size:1.3rem} h2{font-size:1.08rem} h3{font-size:1rem}
+  .kotak{padding:12px 13px}
+}
+/* ===== akhir penguat-ponsel-studentpro ===== */
+</style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1.02}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body>
 <h1 id="judul">Pertidaksamaan Kuadrat — Selalu Benar atau Selalu Salah</h1><p class="intro">Matematika SMA/UTBK · pertidaksamaan kuadrat · materi 4</p>
 <div class="note"><div class="label">Inti materi</div>Pada soal parameter, pertidaksamaan sering diminta benar untuk semua \(x\in\mathbb R\) atau justru tidak benar untuk satu pun nilai real. Kuncinya adalah arah parabola dan diskriminan.</div>
