@@ -1,0 +1,60 @@
+from pathlib import Path
+import json, html, re, sys
+
+TOPICS = [
+('01_am_is_are.html','Am, Is, Are','Gunakan am/is/are untuk menyatakan identitas, keadaan, usia, lokasi, dan deskripsi pada present tense.',[
+('I ___ ready for the English test.','am',['is','are','be']),('The library ___ open today.','is',['am','are','be']),('The students ___ in the hall.','are',['am','is','be'])]),
+('02_this_that_these_those.html','This, That, These, Those','Demonstratives menunjukkan benda berdasarkan jumlah dan jarak dari pembicara.',[
+('___ book in my hand is mine.','This',['That','These','Those']),('___ buildings across the river are old.','Those',['This','That','These']),('___ chairs beside me are empty.','These',['This','That','Those'])]),
+('03_possessive_adjectives_subject_pronouns.html','Possessive Adjectives & Subject Pronouns','Subject pronouns menjadi subjek; possessive adjectives menunjukkan kepemilikan sebelum noun.',[
+('Maya is my friend. ___ is very diligent.','She',['Her','He','They']),('We bring ___ books to class.','our',['we','ours','us']),('Rafi has a bicycle. ___ bicycle is new.','His',['He','Him','Her'])]),
+('04_a_an_plurals.html','A, An & Plurals','Gunakan a/an untuk satu benda countable yang belum spesifik; bentuk plural untuk jumlah lebih dari satu.',[
+('She has ___ umbrella.','an',['a','the','some']),('I need ___ pencil for the test.','a',['an','some','any']),('Two ___ are waiting outside.','students',['student','studentes','a student'])]),
+('05_adjectives.html','Adjectives','Adjectives menerangkan noun atau mengikuti linking verb dan tidak berubah menurut jumlah.',[
+('The classroom is very ___.','clean',['cleanly','cleaned','cleans']),('They bought a ___ table.','wooden',['wood','woodenly','woods']),('The two tasks are ___.','difficult',['difficults','difficulty','difficultly'])]),
+('06_present_simple.html','Present Simple','Present simple dipakai untuk kebiasaan, fakta, dan jadwal; verb mendapat -s/-es untuk he/she/it.',[
+('Rina ___ English every evening.','studies',['study','studying','studied']),('They ___ to school by bus.','go',['goes','going','went']),('The train ___ at seven.','leaves',['leave','leaving','left'])]),
+('07_questions_word_order.html','Questions: Word Order','Pertanyaan present simple umumnya memakai do/does + subject + base verb; be berpindah sebelum subject.',[
+('___ you like English?','Do',['Does','Are','Is']),('Where ___ she live?','does',['do','is','are']),('___ they ready?','Are',['Do','Does','Is'])]),
+('08_adverbs_frequency.html','Adverbs of Frequency','Adverbs of frequency biasanya sebelum main verb tetapi sesudah be.',[
+('I ___ read before bed.','usually',['am usually','usual','usually am']),('She is ___ late.','never',['never is','does never','not never']),('They ___ play football on Sundays.','often',['are often','often are','do often'])]),
+('09_object_subject_pronouns.html','Subject & Object Pronouns','Subject pronouns berfungsi sebagai pelaku; object pronouns muncul setelah verb atau preposition.',[
+('___ called me yesterday.','She',['Her','Hers','Him']),('The teacher helped ___.','us',['we','our','ours']),('I spoke to ___.','him',['he','his','himselfs'])]),
+('10_whose_possessive_s.html','Whose & Possessive ’s','Whose menanyakan kepemilikan; possessive ’s menunjukkan pemilik.',[
+('___ bag is this?','Whose',['Who','Who’s','Which']),('This is ___ notebook.','Rina’s',['Rina','Rinas','Rina is']),('The ___ room is upstairs.','teachers’',['teachers','teacher are','teacher'])]),
+('11_prepositions_time.html','Prepositions of Time','Gunakan at untuk waktu spesifik, on untuk hari/tanggal, dan in untuk bulan/tahun/periode.',[
+('The class starts ___ 8 a.m.','at',['on','in','by']),('We meet ___ Monday.','on',['at','in','for']),('School begins ___ July.','in',['at','on','from'])]),
+('12_prepositions_place.html','Prepositions of Place','At menandai titik, in area/ruang, dan on permukaan.',[
+('She is ___ the library.','in',['on','atop','to']),('Meet me ___ the bus stop.','at',['in','on','from']),('The book is ___ the table.','on',['in','at','to'])]),
+('13_can_cant.html','Can & Can’t','Can/can’t menyatakan kemampuan, kemungkinan, atau izin dan diikuti base verb.',[
+('She ___ swim very well.','can',['cans','can to','is can']),('You ___ use your phone during the test.','can’t',['don’t can','can’t to','not can']),('___ I open the window?','Can',['Do','Am','Does'])]),
+('14_present_continuous.html','Present Continuous','Present continuous memakai am/is/are + verb-ing untuk aksi yang sedang berlangsung atau sementara.',[
+('Maya ___ studying now.','is',['does','are','be']),('They are ___ a project.','doing',['do','does','did']),('I ___ waiting for the teacher.','am',['is','are','do'])]),
+('15_present_simple_vs_continuous.html','Present Simple vs Present Continuous','Present simple untuk rutinitas/fakta; present continuous untuk kegiatan yang berlangsung sekarang/sementara.',[
+('Rafi usually ___ by bus.','goes',['is going','go','went']),('Look! The students ___ outside.','are running',['run','runs','ran']),('I ___ English every day.','study',['am studying now','studies','studied'])]),
+('16_imperative.html','Imperative','Imperative memakai base verb tanpa subject untuk instruksi; negative memakai don’t + base verb.',[
+('___ the door, please.','Close',['Closes','Closing','To close']),('___ talk during the test.','Don’t',['Doesn’t','Not','No']),('Please ___ your name here.','write',['writes','writing','wrote'])]),
+('17_was_were.html','Was & Were','Was/were adalah bentuk lampau be: was untuk I/he/she/it, were untuk you/we/they.',[
+('She ___ absent yesterday.','was',['were','is','be']),('They ___ at school last Saturday.','were',['was','are','be']),('I ___ tired after the trip.','was',['were','am','be'])]),
+('18_past_simple_regular_irregular.html','Past Simple: Regular & Irregular Verbs','Past simple menyatakan kejadian selesai di masa lampau; verb memakai bentuk V2.',[
+('We ___ the museum yesterday.','visited',['visit','visits','visiting']),('She ___ a new book last week.','bought',['buy','buys','buyed']),('They ___ home early.','went',['go','goes','goed'])]),
+('19_past_simple_negatives_questions.html','Past Simple: Negatives & Questions','Negative dan question past simple memakai did/didn’t + base verb.',[
+('She ___ go to class yesterday.','didn’t',['doesn’t','wasn’t','not']),('___ you see the notice?','Did',['Do','Does','Were']),('Where did they ___?','go',['went','goes','going'])]),
+('20_infinitive_gerund.html','Infinitive & Gerund','Beberapa verb diikuti to-infinitive, sementara yang lain lazim diikuti gerund.',[
+('I want ___ English abroad.','to study',['studying','study to','studied']),('She enjoys ___ novels.','reading',['to readed','read to','reads']),('They decided ___ early.','to leave',['leaving to','left','leave to'])]),
+('21_would_you_like.html','Would You Like…?','Would you like dipakai untuk menawarkan atau mengundang secara sopan; diikuti noun atau to-infinitive.',[
+('Would you like ___ some tea?','to have',['having to','have to','had']),('___ you like to join us?','Would',['Do','Are','Will do']),('I’d like ___ the museum.','to visit',['visiting to','visit to','visited'])]),
+('22_have_got.html','Have Got','Have/has got menyatakan kepemilikan atau ciri; has got untuk he/she/it.',[
+('She ___ a new laptop.','has got',['have got','got has','is got']),('They ___ two bicycles.','have got',['has got','are got','got have']),('___ you got a dictionary?','Have',['Has','Do have','Are'])]),
+('23_some_any_countable_uncountable.html','Some, Any & Countable/Uncountable Nouns','Some umum pada affirmative; any pada negatives/questions; countable dapat dihitung, uncountable tidak.',[
+('We need ___ water.','some',['a','many','an']),('Do you have ___ questions?','any',['some','a','much']),('There aren’t ___ chairs left.','any',['some','much','a'])]),
+('24_there_is_are_was_were.html','There Is/Are & There Was/Were','There is/are menyatakan keberadaan sekarang; there was/were untuk masa lampau.',[
+('___ a book on the desk.','There is',['There are','It is there','There were']),('___ many students outside.','There are',['There is','There was','It are']),('___ two meetings yesterday.','There were',['There was','There are','It were'])]),
+('25_there_or_it.html','There or It','There memperkenalkan keberadaan; it merujuk sesuatu yang sudah diketahui atau menyatakan cuaca/waktu/jarak.',[
+('___ is a problem with the printer.','There',['It','This it','They']),('___ is very hot today.','It',['There','They','This are']),('___ are two cafés near school.','There',['It','This','That'])]),
+('26_prepositions_position.html','Prepositions of Position','Prepositions of position menjelaskan posisi relatif seperti next to, between, opposite, behind, in front of.',[
+('The bank is ___ the post office and the café.','between',['under','during','into']),('The chair is ___ the desk.','next to',['between of','at front','during']),('The bus stop is ___ the school.','opposite',['until','during','inside of time'])]),
+('27_quantifiers.html','Quantifiers','Gunakan many/few untuk countable plural dan much/little untuk uncountable; a lot of dapat untuk keduanya.',[
+('There are ___ students in the hall.','many',['much','little','a little']),('We don’t have ___ time.','much',['many','few','a few']),('She has ___ close friends.','a few',['a little','much','little'])]),
+('28_comparative_adjectives.html','Comparative Adjectives','Comparatives membandingkan dua hal: adjective-er atau more + adjective, biasanya diikuti than.',[
+('This book is ___ than that one.','cheaper',['cheapest','more cheap','cheap']),('English is ___ for me than physics.','easier',['easy','easiest','more easiest']),('This task is ___ than the previous one.','more difficult',['difficulter','most difficult','difficulty'])]),
