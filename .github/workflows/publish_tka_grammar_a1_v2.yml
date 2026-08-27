@@ -1,0 +1,68 @@
+name: Publish TKA Grammar A1 v2
+
+on:
+  push:
+    branches:
+      - tka-english-grammar-a1
+    paths:
+      - '.github/workflows/publish_tka_grammar_a1_v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: tka-english-grammar-a1
+          path: source
+
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: repo
+
+      - name: Build 36 HTML grammar materials
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat "$GITHUB_WORKSPACE/source/.github/a1_generator/generate_a1.part1.pyfrag" \
+              "$GITHUB_WORKSPACE/source/.github/a1_generator/generate_a1.part2.pyfrag" \
+              > /tmp/generate_a1.py
+          python3 -m py_compile /tmp/generate_a1.py
+          TARGET="$GITHUB_WORKSPACE/repo/SMA/TKA/Bahasa_Inggris_Wajib_dan_Lanjut/Grammar_A1"
+          rm -rf "$TARGET"
+          python3 /tmp/generate_a1.py "$TARGET"
+
+      - name: Validate output
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('repo/SMA/TKA/Bahasa_Inggris_Wajib_dan_Lanjut/Grammar_A1')
+          files=sorted(root.glob('[0-9][0-9]_*.html'))
+          assert len(files)==36, f'expected 36 grammar files, got {len(files)}'
+          assert (root/'index.html').exists()
+          for p in files:
+              s=p.read_text(encoding='utf-8')
+              for marker in ('Grammar A1','Latihan TKA','Pilihan Ganda','Pilihan Ganda Kompleks','ANSWER:','EXPLANATION:','for(let g=0;g<4;g++)','for(let z=0;z<3;z++)','for(let k=0;k<2;k++)'):
+                  assert marker in s, f'{p.name}: missing {marker}'
+          print('OK: 36 HTML + index; 20 questions each = 720 questions')
+          PY
+
+      - name: Commit directly to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd repo
+          git config user.name "Davinga Balya Rochmadi"
+          git config user.email "balyarochmadie@gmail.com"
+          git add SMA/TKA/Bahasa_Inggris_Wajib_dan_Lanjut/Grammar_A1
+          git diff --cached --quiet && exit 0
+          git commit -m "Add TKA English Grammar A1 materials and 720 questions"
+          git push origin HEAD:main
