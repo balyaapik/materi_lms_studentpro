@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulasi Hukum Archimedes | StudentPro</title>
+<style>
+:root{--navy:#172554;--blue:#2563eb;--sky:#e0f2fe;--line:#cbd5e1;--text:#1e293b;--muted:#64748b;--green:#15803d;--red:#b91c1c;--amber:#b45309;--card:#f8fafc}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;padding:14px 10px 48px;font:15.5px/1.6 system-ui,-apple-system,"Segoe UI",Arial;color:var(--text);background:#fff;overflow-wrap:anywhere}main{max-width:1180px;margin:auto}header{padding:22px 20px;border-radius:18px;background:linear-gradient(135deg,var(--navy),#1d4ed8);color:#fff}h1{margin:.15em 0;font-size:clamp(1.65rem,4.8vw,2.45rem);line-height:1.15}h2{color:var(--navy);font-size:1.25rem;margin:1.5em 0 .6em;border-bottom:2px solid #dbeafe;padding-bottom:.3em}.sub{opacity:.92;max-width:800px}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,.9fr);gap:15px;margin-top:16px}.card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:14px}.simcard{background:linear-gradient(180deg,#f8fbff,#f8fafc)}.tankwrap{position:relative;width:100%;aspect-ratio:16/10;min-height:360px}.tankwrap svg{width:100%;height:100%;display:block}.controls{display:grid;gap:12px}.control{border:1px solid #dbe3ed;border-radius:11px;padding:10px;background:var(--card)}.control label{display:flex;justify-content:space-between;gap:10px;font-weight:750}.control input[type=range]{width:100%;margin-top:7px}.preset{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.preset button,.actions button{border:1px solid #94a3b8;border-radius:8px;background:#fff;padding:7px 9px;font:inherit;font-weight:700;cursor:pointer}.preset button:hover,.actions button:hover{background:#eff6ff}.actions{display:flex;gap:8px;flex-wrap:wrap}.primary{background:#2563eb!important;color:#fff!important;border-color:#1d4ed8!important}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.stat{border:1px solid var(--line);border-radius:11px;padding:10px;background:#fff}.stat small{display:block;color:var(--muted);font-weight:700}.stat b{font-size:1.05rem}.status{margin-top:10px;border-radius:12px;padding:12px;font-weight:800;text-align:center}.float{background:#ecfdf5;color:#166534;border:1px solid #86efac}.neutral{background:#eff6ff;color:#1d4ed8;border:1px solid #93c5fd}.sink{background:#fef2f2;color:#991b1b;border:1px solid #fca5a5}.formula{display:block;text-align:center;font-weight:800;font-size:1.1rem;padding:10px;border-radius:10px;background:#eef2ff;color:#1e3a8a;margin:.7em 0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{border-left:5px solid #f59e0b;background:#fff7ed;border-radius:10px;padding:11px 13px}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.88rem;margin-top:8px}.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:4px}.challenge{border:1px solid var(--line);border-radius:14px;padding:14px;background:#f8fafc}.challenge select,.challenge input{font:inherit;padding:7px;border:1px solid #94a3b8;border-radius:8px}.challenge button{margin-top:9px;border:0;border-radius:8px;padding:8px 11px;background:#2563eb;color:#fff;font:inherit;font-weight:800}.feedback{margin-top:9px;font-weight:750}.foot{margin-top:24px;border-top:1px solid var(--line);padding-top:10px;color:var(--muted);font-size:.84rem}a{color:#1d4ed8}.small{font-size:.86rem;color:var(--muted)}@media(max-width:850px){.layout{grid-template-columns:1fr}.tankwrap{min-height:330px}}@media(max-width:580px){body{font-size:15px;padding:8px 7px 38px}header,.card{padding:12px}.stats,.grid2{grid-template-columns:1fr}.tankwrap{min-height:285px;aspect-ratio:4/3}.control label{font-size:.94rem}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<small>StudentPro · Fisika · Fluida Statis</small>
+<h1>Simulasi Hukum Archimedes</h1>
+<p class="sub">Ubah massa jenis benda, massa jenis fluida, volume, dan gravitasi. Amati benda bergerak menuju kondisi terapung, melayang, atau tenggelam sambil melihat gaya berat dan gaya apung secara real time.</p>
+</header>
+
+<div class="layout">
+<section class="card simcard">
+<h2 style="margin-top:0">Tangki Fluida</h2>
+<div class="tankwrap">
+<svg id="scene" viewBox="0 0 800 500" role="img" aria-label="Simulasi benda di dalam fluida">
+<defs>
+<linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7dd3fc" stop-opacity=".72"/><stop offset="1" stop-color="#0284c7" stop-opacity=".5"/></linearGradient>
+<linearGradient id="objG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fcd34d"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-opacity=".18"/></filter>
+<marker id="upArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,8 L4,0 L8,8 Z" fill="#15803d"/></marker>
+<marker id="downArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L4,8 L8,0 Z" fill="#b91c1c"/></marker>
+</defs>
+<rect x="70" y="55" width="660" height="390" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="4"/>
+<rect id="fluid" x="73" y="145" width="654" height="297" rx="0" fill="url(#waterG)"/>
+<path id="wave" d="M73 145 Q120 135 165 145 T255 145 T345 145 T435 145 T525 145 T615 145 T727 145" fill="none" stroke="#0284c7" stroke-width="4"/>
+<g id="depthMarks" opacity=".65" font-size="13" fill="#334155">
+<line x1="84" y1="220" x2="104" y2="220" stroke="#475569"/><text x="109" y="225">lebih dalam → tekanan lebih besar</text>
+<line x1="84" y1="360" x2="104" y2="360" stroke="#475569"/>
+</g>
+<g id="object" filter="url(#shadow)">
+<rect id="objectRect" x="337" y="100" width="126" height="100" rx="12" fill="url(#objG)" stroke="#92400e" stroke-width="3"/>
+<text id="objectLabel" x="400" y="155" text-anchor="middle" font-size="18" font-weight="800" fill="#78350f">BENDA</text>
+</g>
+<g id="vectors">
+<line id="faLine" x1="400" y1="110" x2="400" y2="55" stroke="#15803d" stroke-width="6" marker-end="url(#upArrow)"/>
+<text id="faText" x="418" y="72" font-size="17" font-weight="800" fill="#166534">Fₐ</text>
+<line id="wLine" x1="400" y1="190" x2="400" y2="245" stroke="#b91c1c" stroke-width="6" marker-end="url(#downArrow)"/>
+<text id="wText" x="418" y="240" font-size="17" font-weight="800" fill="#991b1b">W</text>
+</g>
+<text id="surfaceLabel" x="620" y="132" font-size="15" fill="#0369a1" font-weight="700">permukaan fluida</text>
+<text id="stateSvg" x="400" y="474" text-anchor="middle" font-size="18" font-weight="800" fill="#172554">Klik LEPASKAN</text>
+</svg>
+</div>
+<div class="legend"><span><i class="dot" style="background:#15803d"></i>Gaya Archimedes</span><span><i class="dot" style="background:#b91c1c"></i>Berat benda</span><span><i class="dot" style="background:#0284c7"></i>Fluida</span></div>
+<div class="actions" style="margin-top:12px"><button id="release" class="primary">▶ Lepaskan</button><button id="reset">↺ Reset posisi</button><button id="vectorsBtn">Sembunyikan vektor gaya</button></div>
+</section>
+
+<aside class="card">
+<h2 style="margin-top:0">Parameter</h2>
+<div class="controls">
+<div class="control"><label>Massa jenis benda <span><b id="rhoObjVal">800</b> kg/m³</span></label><input id="rhoObj" type="range" min="200" max="2500" value="800" step="10"><div class="preset"><button data-rhoobj="500">Kayu 500</button><button data-rhoobj="900">Es/plastik 900</button><button data-rhoobj="2500">Kaca 2500</button></div></div>
+<div class="control"><label>Massa jenis fluida <span><b id="rhoFluidVal">1000</b> kg/m³</span></label><input id="rhoFluid" type="range" min="600" max="1400" value="1000" step="10"><div class="preset"><button data-rhof="800">Minyak 800</button><button data-rhof="1000">Air 1000</button><button data-rhof="1030">Air laut 1030</button><button data-rhof="1260">Gliserin 1260</button></div></div>
+<div class="control"><label>Volume benda <span><b id="volumeVal">5.0</b> L</span></label><input id="volume" type="range" min="1" max="20" value="5" step=".5"></div>
+<div class="control"><label>Gravitasi <span><b id="gVal">9.8</b> m/s²</span></label><input id="gravity" type="range" min="1.6" max="15" value="9.8" step=".1"><div class="preset"><button data-g="1.6">Bulan 1,6</button><button data-g="9.8">Bumi 9,8</button></div></div>
+</div>
+<div id="status" class="status float">Prediksi: TERAPUNG</div>
+<div class="stats">
+<div class="stat"><small>Massa benda</small><b id="massOut">4.00 kg</b></div>
+<div class="stat"><small>Berat W</small><b id="weightOut">39.2 N</b></div>
+<div class="stat"><small>Volume tercelup</small><b id="subVolOut">4.00 L</b></div>
+<div class="stat"><small>Gaya apung Fₐ</small><b id="buoyOut">39.2 N</b></div>
+<div class="stat"><small>Fraksi tercelup</small><b id="fractionOut">80.0%</b></div>
+<div class="stat"><small>Resultan vertikal</small><b id="netOut">0.0 N</b></div>
+</div>
+</aside>
+</div>
+
+<section class="card">
+<h2 style="margin-top:0">Apa yang sedang dihitung?</h2>
+<div class="grid2">
+<div><span class="formula">F<sub>A</sub> = ρ<sub>fluida</sub> · g · V<sub>tercelup</sub></span><p>Gaya apung sama dengan berat fluida yang dipindahkan. Pada benda terapung setimbang, gaya apung otomatis sama dengan berat benda.</p></div>
+<div><span class="formula">W = m g = ρ<sub>benda</sub> V<sub>benda</sub> g</span><p>Jika ρ benda lebih kecil daripada ρ fluida, benda hanya perlu mencelupkan sebagian volumenya untuk memperoleh gaya apung sebesar beratnya.</p></div>
+</div>
+<div class="note"><b>Eksperimen yang bagus:</b> pertahankan massa jenis benda dan fluida, lalu ubah gravitasi. Perhatikan bahwa kondisi terapung/melayang/tenggelam tidak berubah karena W dan Fₐ sama-sama sebanding dengan g.</div>
+</section>
+
+<section class="card challenge">
+<h2 style="margin-top:0">Tantangan Prediksi</h2>
+<p>Sebelum menekan <b>Lepaskan</b>, tebak apa yang akan terjadi pada parameter saat ini.</p>
+<select id="guess"><option value="">— pilih prediksi —</option><option value="float">Terapung</option><option value="neutral">Melayang</option><option value="sink">Tenggelam</option></select>
+<button id="checkGuess">Cek Prediksi</button>
+<div id="feedback" class="feedback"></div>
+</section>
+
+<section class="card">
+<h2 style="margin-top:0">Panduan Eksperimen</h2>
+<ol>
+<li>Set benda 800 kg/m³ dan air 1000 kg/m³. Benda seharusnya terapung dengan sekitar 80% volume tercelup.</li>
+<li>Samakan kedua massa jenis menjadi 1000 kg/m³. Benda akan melayang karena W = Fₐ ketika seluruh volumenya tercelup.</li>
+<li>Naikkan massa jenis benda menjadi 1200 kg/m³. Gaya apung maksimum tidak mampu menahan berat benda sehingga benda tenggelam.</li>
+<li>Ganti fluida dari minyak 800 kg/m³ ke gliserin 1260 kg/m³ dan bandingkan posisi benda.</li>
+<li>Ubah gravitasi Bumi ke Bulan. Besar kedua gaya berubah, tetapi perbandingan massa jenis tetap menentukan keadaan akhir.</li>
+</ol>
+<p><a href="Hukum_Archimedes.html">← Kembali ke materi Hukum Archimedes</a></p>
+</section>
+
+<div class="foot">StudentPro · Simulasi dibuat dengan HTML, SVG, CSS, dan JavaScript murni; tidak memerlukan library eksternal.</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const rhoObj=$('rhoObj'),rhoFluid=$('rhoFluid'),volume=$('volume'),gravity=$('gravity');
+const obj=$('object'),rect=$('objectRect'),label=$('objectLabel'),vectors=$('vectors');
+let y=95,vy=0,running=false,last=0,showVectors=true;
+const surface=145,bottom=442,baseH=100,baseW=126;
+function vals(){return {ro:+rhoObj.value,rf:+rhoFluid.value,V:+volume.value/1000,g:+gravity.value}}
+function outcome(){const {ro,rf}=vals();if(Math.abs(ro-rf)<1)return 'neutral';return ro<rf?'float':'sink'}
+function objectDims(){const scale=Math.pow((+volume.value)/5,1/3);return {w:Math.max(86,Math.min(165,baseW*scale)),h:Math.max(68,Math.min(132,baseH*scale))}}
+function submergedFractionAt(pos,h){const top=pos,b=pos+h;if(top>=surface)return 1;if(b<=surface)return 0;return Math.max(0,Math.min(1,(b-surface)/h))}
+function equilibriumY(h){const {ro,rf}=vals();if(ro<rf){const frac=ro/rf;return surface-frac*h}if(Math.abs(ro-rf)<1)return 250;return bottom-h}
+function updateOutputs(currentY=y){const {ro,rf,V,g}=vals(),d=objectDims(),fracNow=submergedFractionAt(currentY,d.h),state=outcome();const m=ro*V,W=m*g;let displaced;if(state==='float'&&!running){displaced=V*ro/rf}else displaced=V*fracNow;displaced=Math.min(V,Math.max(0,displaced));const FA=rf*g*displaced,net=FA-W;const eqFrac=state==='float'?ro/rf:1;$('massOut').textContent=m.toFixed(2)+' kg';$('weightOut').textContent=W.toFixed(1)+' N';$('subVolOut').textContent=(displaced*1000).toFixed(2)+' L';$('buoyOut').textContent=FA.toFixed(1)+' N';$('fractionOut').textContent=((running?fracNow:eqFrac)*100).toFixed(1)+'%';$('netOut').textContent=(Math.abs(net)<.05?'0.0':net.toFixed(1))+' N';$('rhoObjVal').textContent=ro;$('rhoFluidVal').textContent=rf;$('volumeVal').textContent=(V*1000).toFixed(1);$('gVal').textContent=g.toFixed(1);const st=$('status');st.className='status '+state;st.textContent='Prediksi: '+(state==='float'?'TERAPUNG':state==='neutral'?'MELAYANG':'TENGGELAM');$('stateSvg').textContent=state==='float'?'Benda cenderung terapung':state==='neutral'?'Benda melayang':'Benda cenderung tenggelam';const maxF=Math.max(W,FA,1),faLen=38+Math.min(85,FA/maxF*72),wLen=38+Math.min(85,W/maxF*72);const cx=400,cy=currentY+d.h/2;$('faLine').setAttribute('x1',cx);$('faLine').setAttribute('y1',cy-5);$('faLine').setAttribute('x2',cx);$('faLine').setAttribute('y2',cy-faLen);$('faText').setAttribute('x',cx+18);$('faText').setAttribute('y',cy-faLen+10);$('faText').textContent='Fₐ '+FA.toFixed(1)+' N';$('wLine').setAttribute('x1',cx);$('wLine').setAttribute('y1',cy+5);$('wLine').setAttribute('x2',cx);$('wLine').setAttribute('y2',cy+wLen);$('wText').setAttribute('x',cx+18);$('wText').setAttribute('y',cy+wLen-4);$('wText').textContent='W '+W.toFixed(1)+' N'}
+function draw(){const d=objectDims();rect.setAttribute('width',d.w);rect.setAttribute('height',d.h);rect.setAttribute('x',400-d.w/2);rect.setAttribute('y',y);label.setAttribute('y',y+d.h/2+6);obj.setAttribute('transform','translate(0,0)');updateOutputs(y)}
+function resetPos(){running=false;vy=0;y=75;draw();$('release').textContent='▶ Lepaskan'}
+function settle(){const d=objectDims();y=equilibriumY(d.h);if(outcome()==='float')y=Math.max(70,y);if(outcome()==='sink')y=bottom-d.h;vy=0;running=false;$('release').textContent='▶ Lepaskan';draw()}
+function animate(t){if(!running)return;const dt=Math.min(.035,(t-last||16)/1000);last=t;const {ro,rf,V,g}=vals(),d=objectDims(),frac=submergedFractionAt(y,d.h),m=ro*V,W=m*g,FA=rf*g*V*frac;let a=(W-FA)/Math.max(m,.001);a*=22;vy+=a*dt;vy*=Math.pow(.82,dt*60);y+=vy*dt;if(y<55){y=55;vy=Math.max(0,vy)*.2}if(y+d.h>bottom){y=bottom-d.h;vy=0;if(outcome()==='sink'){running=false;$('release').textContent='▶ Lepaskan'}}draw();const ey=equilibriumY(d.h);if(outcome()!=='sink'&&Math.abs(y-ey)<.7&&Math.abs(vy)<1.2){settle();return}requestAnimationFrame(animate)}
+function start(){if(running){running=false;$('release').textContent='▶ Lanjutkan';return}running=true;last=performance.now();$('release').textContent='⏸ Jeda';requestAnimationFrame(animate)}
+[rhoObj,rhoFluid,volume,gravity].forEach(el=>el.addEventListener('input',()=>{running=false;vy=0;const d=objectDims();y=equilibriumY(d.h);draw();$('release').textContent='▶ Lepaskan'}));
+document.querySelectorAll('[data-rhoobj]').forEach(b=>b.onclick=()=>{rhoObj.value=b.dataset.rhoobj;rhoObj.dispatchEvent(new Event('input'))});document.querySelectorAll('[data-rhof]').forEach(b=>b.onclick=()=>{rhoFluid.value=b.dataset.rhof;rhoFluid.dispatchEvent(new Event('input'))});document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{gravity.value=b.dataset.g;gravity.dispatchEvent(new Event('input'))});
+$('release').onclick=start;$('reset').onclick=resetPos;$('vectorsBtn').onclick=()=>{showVectors=!showVectors;vectors.style.display=showVectors?'':'none';$('vectorsBtn').textContent=showVectors?'Sembunyikan vektor gaya':'Tampilkan vektor gaya'};$('checkGuess').onclick=()=>{const g=$('guess').value,ans=outcome(),f=$('feedback');if(!g){f.textContent='Pilih prediksi terlebih dahulu.';f.style.color='#b45309';return}if(g===ans){f.textContent='Benar! Bandingkan massa jenis benda dan fluida untuk menentukan keadaan akhir.';f.style.color='#15803d'}else{f.textContent='Belum tepat. Coba bandingkan ρ benda dengan ρ fluida, lalu perhatikan apakah gaya apung maksimum dapat menahan berat.';f.style.color='#b91c1c'}};
+settle();
+</script>
+</body>
+</html>
