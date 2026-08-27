@@ -1,0 +1,80 @@
+name: Publish TKA Grammar A1 to main
+
+on:
+  push:
+    branches:
+      - tka-english-grammar-a1
+    paths:
+      - '.github/workflows/publish_tka_grammar_a1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: tka-english-grammar-a1
+          path: source
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: repo
+
+      - name: Extract grammar materials
+        shell: bash
+        run: |
+          set -euo pipefail
+          TARGET="$GITHUB_WORKSPACE/repo/SMA/TKA/Bahasa_Inggris_Wajib_dan_Lanjut/Grammar_A1"
+          mkdir -p "$TARGET"
+          cat "$GITHUB_WORKSPACE"/source/.github/a1_payload/part*.txt \
+            | tr -d '[:space:]' \
+            | base64 -d > /tmp/grammar_a1.tar.gz
+          tar -xzf /tmp/grammar_a1.tar.gz -C "$TARGET"
+
+      - name: Validate 36 grammar HTML files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('repo/SMA/TKA/Bahasa_Inggris_Wajib_dan_Lanjut/Grammar_A1')
+          files = sorted(root.glob('[0-9][0-9]_*.html'))
+          assert len(files) == 36, f'Expected 36 grammar HTML files, found {len(files)}'
+          for p in files:
+              s = p.read_text(encoding='utf-8')
+              required = [
+                  'Grammar A1',
+                  'Latihan TKA',
+                  'Pilihan Ganda',
+                  'Pilihan Ganda Kompleks',
+                  'ANSWER:',
+                  'EXPLANATION:',
+                  'for(let g=0;g<4;g++)',
+                  'for(let z=0;z<3;z++)',
+                  'for(let k=0;k<2;k++)',
+              ]
+              missing = [x for x in required if x not in s]
+              assert not missing, f'{p.name}: missing {missing}'
+          print(f'Validated {len(files)} grammar files; each generates 20 TKA questions.')
+          PY
+
+      - name: Commit and push to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd repo
+          git config user.name "Davinga Balya Rochmadi"
+          git config user.email "balyarochmadie@gmail.com"
+          git add SMA/TKA/Bahasa_Inggris_Wajib_dan_Lanjut/Grammar_A1
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git commit -m "Add TKA English Grammar A1 materials and 720 questions"
+          git push origin HEAD:main
