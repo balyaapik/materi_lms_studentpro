@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hukum Archimedes | StudentPro</title>
+<style>
+:root{--n:#172554;--b:#2563eb;--l:#cbd5e1;--t:#1e293b;--g:#15803d;--r:#b91c1c}*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;padding:16px 12px 50px;font:16px/1.7 system-ui,-apple-system,"Segoe UI",Arial;color:var(--t);overflow-wrap:anywhere}main{max-width:960px;margin:auto}header{padding:26px 22px;border-radius:20px;background:linear-gradient(135deg,var(--n),#1d4ed8);color:#fff}h1{margin:.2em 0;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15}h2{margin:1.8em 0 .65em;border-bottom:2px solid #dbeafe;padding-bottom:.35em;color:var(--n);font-size:1.35rem;scroll-margin-top:12px}h3{color:#1e3a8a}.box,.ex,.sim,.quiz,.note{border:1px solid var(--l);border-radius:14px;padding:15px 17px;margin:1em 0}.box{background:#f8fafc}.note{background:#fff7ed;border-left:5px solid #f59e0b}.ex{background:#eff6ff;border-left:5px solid var(--b)}.sim{background:linear-gradient(180deg,#eff6ff,#f8fafc)}table{width:100%;border-collapse:collapse;margin:.8em 0}th,td{border:1px solid var(--l);padding:9px;vertical-align:top}th{background:#eff6ff}.formula{display:block;text-align:center;padding:13px;margin:12px 0;border-radius:12px;background:#eef2ff;font-size:1.18rem;font-weight:800;color:#1e3a8a}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini{border:1px solid var(--l);border-radius:12px;padding:12px;background:#fff}.diagram{width:100%;max-width:700px;margin:14px auto;display:block;border:1px solid #dbeafe;border-radius:16px;background:#f8fbff}label{font-weight:700}input[type=range]{width:100%}.result{padding:14px;border-radius:12px;background:#fff;border:1px solid var(--l);margin-top:12px;font-weight:700}button{border:1px solid #94a3b8;background:#fff;border-radius:9px;padding:8px 11px;font:inherit;font-weight:700;cursor:pointer}.ans{display:none;margin-top:8px;padding:10px 12px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.ans.on{display:block}.foot{margin-top:30px;padding-top:12px;border-top:1px solid var(--l);color:#64748b;font-size:.85rem}@media(max-width:680px){body{font-size:15px;padding:10px 8px 42px}.grid{grid-template-columns:1fr}table{display:block;overflow-x:auto}header,.box,.ex,.sim,.quiz,.note{padding:13px}}
+</style>
+</head>
+<body><main>
+<header><small>Fisika · Fluida Statis · StudentPro</small><h1 id="judul">Hukum Archimedes</h1><p>Gaya apung, volume fluida yang dipindahkan, kondisi terapung–melayang–tenggelam, berat semu, dan penerapannya.</p></header>
+
+<div class="box"><b>Daftar Isi</b><ol><li><a href="#konsep">Konsep dasar</a></li><li><a href="#rumus">Rumus</a></li><li><a href="#asal">Asal gaya apung</a></li><li><a href="#kondisi">Terapung, melayang, tenggelam</a></li><li><a href="#volume">Fraksi volume tercelup</a></li><li><a href="#contoh">Contoh soal</a></li><li><a href="#aplikasi">Penerapan</a></li><li><a href="#simulasi">Simulasi</a></li><li><a href="#latihan">Latihan</a></li></ol></div>
+
+<h2 id="konsep">1. Konsep Dasar</h2>
+<p>Ketika benda dimasukkan ke dalam fluida, fluida menekan seluruh permukaan benda. Karena tekanan hidrostatis bertambah dengan kedalaman, tekanan pada bagian bawah benda lebih besar daripada pada bagian atas. Selisih gaya akibat tekanan ini menghasilkan <b>gaya ke atas</b> yang disebut <b>gaya Archimedes</b> atau <b>gaya apung</b>.</p>
+<div class="note"><b>Hukum Archimedes:</b> benda yang dicelupkan sebagian atau seluruhnya ke dalam fluida mengalami gaya ke atas sebesar <b>berat fluida yang dipindahkan</b>.</div>
+
+<svg class="diagram" viewBox="0 0 760 430" role="img" aria-label="Diagram gaya Archimedes">
+<rect width="760" height="430" fill="#f8fbff"/><rect x="35" y="120" width="690" height="270" rx="16" fill="#bae6fd"/><line x1="35" y1="120" x2="725" y2="120" stroke="#0284c7" stroke-width="5"/><rect x="285" y="175" width="190" height="135" rx="12" fill="#fbbf24" stroke="#92400e" stroke-width="3"/><line x1="380" y1="175" x2="380" y2="90" stroke="#15803d" stroke-width="7"/><polygon points="380,72 367,96 393,96" fill="#15803d"/><text x="400" y="100" font-size="22" fill="#166534" font-weight="700">Fₐ</text><line x1="380" y1="310" x2="380" y2="385" stroke="#b91c1c" stroke-width="7"/><polygon points="380,405 367,381 393,381" fill="#b91c1c"/><text x="400" y="385" font-size="22" fill="#991b1b" font-weight="700">W = mg</text><text x="55" y="154" font-size="20" fill="#075985">Fluida</text><text x="315" y="250" font-size="22" fill="#78350f" font-weight="700">BENDA</text>
+</svg>
+
+<h2 id="rumus">2. Rumus Hukum Archimedes</h2>
+<span class="formula">F<sub>A</sub> = ρ<sub>f</sub> g V<sub>tercelup</sub></span>
+<table><tr><th>Besaran</th><th>Arti</th><th>Satuan SI</th></tr><tr><td>F<sub>A</sub></td><td>Gaya apung</td><td>N</td></tr><tr><td>ρ<sub>f</sub></td><td>Massa jenis fluida</td><td>kg/m³</td></tr><tr><td>g</td><td>Percepatan gravitasi</td><td>m/s²</td></tr><tr><td>V<sub>tercelup</sub></td><td>Volume bagian benda yang tercelup</td><td>m³</td></tr></table>
+<p><b>Catatan penting:</b> gunakan volume yang benar-benar berada di dalam fluida. Jika benda tercelup seluruhnya, V<sub>tercelup</sub> = V<sub>benda</sub>.</p>
+
+<h2 id="asal">3. Mengapa Gaya Apung Muncul?</h2>
+<p>Tekanan hidrostatis mengikuti <b>P = ρgh</b>. Makin dalam suatu titik, makin besar tekanannya. Untuk balok dengan luas penampang atas dan bawah A:</p>
+<div class="grid"><div class="mini"><b>Atas:</b><br>F<sub>atas</sub> = ρgh<sub>atas</sub>A</div><div class="mini"><b>Bawah:</b><br>F<sub>bawah</sub> = ρgh<sub>bawah</sub>A</div></div>
+<span class="formula">F<sub>A</sub> = F<sub>bawah</sub> − F<sub>atas</sub> = ρgA(h<sub>bawah</sub>−h<sub>atas</sub>)</span>
+<p>Karena A(h<sub>bawah</sub>−h<sub>atas</sub>) adalah volume fluida yang dipindahkan, diperoleh kembali F<sub>A</sub> = ρgV.</p>
+
+<h2 id="kondisi">4. Terapung, Melayang, Tenggelam</h2>
+<table><tr><th>Kondisi</th><th>Massa jenis</th><th>Gaya</th></tr><tr><td><b>Terapung</b></td><td>ρ<sub>benda</sub> &lt; ρ<sub>fluida</sub></td><td>Pada setimbang F<sub>A</sub> = W; hanya sebagian volume tercelup</td></tr><tr><td><b>Melayang</b></td><td>ρ<sub>benda</sub> = ρ<sub>fluida</sub></td><td>F<sub>A</sub> = W; benda seluruhnya berada dalam fluida</td></tr><tr><td><b>Tenggelam</b></td><td>ρ<sub>benda</sub> &gt; ρ<sub>fluida</sub></td><td>W &gt; F<sub>A</sub></td></tr></table>
+<div class="ex"><b>Jangan tertipu oleh massa.</b> Benda besar belum tentu tenggelam. Yang menentukan kecenderungan terapung atau tenggelam adalah <b>massa jenis rata-rata benda dibandingkan massa jenis fluida</b>.</div>
+
+<h2 id="volume">5. Fraksi Volume Tercelup</h2>
+<p>Untuk benda terapung setimbang:</p><span class="formula">ρ<sub>benda</sub>V<sub>benda</sub>g = ρ<sub>fluida</sub>V<sub>tercelup</sub>g</span>
+<span class="formula">V<sub>tercelup</sub>/V<sub>benda</sub> = ρ<sub>benda</sub>/ρ<sub>fluida</sub></span>
+<div class="ex">Benda bermassa jenis 800 kg/m³ terapung di air (1000 kg/m³). Maka 80% volume benda tercelup dan 20% berada di atas permukaan.</div>
+
+<h2 id="contoh">6. Contoh Soal</h2>
+<div class="ex"><h3>Contoh 1 — Gaya Apung</h3><p>Volume benda 0,004 m³ tercelup seluruhnya dalam air. Dengan ρ = 1000 kg/m³ dan g = 10 m/s²:</p><p><b>F<sub>A</sub> = 1000 × 10 × 0,004 = 40 N.</b></p></div>
+<div class="ex"><h3>Contoh 2 — Berat Semu</h3><p>Berat benda di udara 60 N dan gaya apung ketika dicelupkan 25 N.</p><span class="formula">W<sub>semu</sub> = W − F<sub>A</sub> = 60 − 25 = 35 N</span></div>
+<div class="ex"><h3>Contoh 3 — Volume Tercelup</h3><p>Balok bermassa jenis 750 kg/m³ terapung di air. Fraksi tercelup = 750/1000 = 0,75. Jadi <b>75%</b> volumenya berada di dalam air.</p></div>
+<div class="ex"><h3>Contoh 4 — Dua Fluida</h3><p>Benda yang sama tercelup seluruhnya dalam air (1000 kg/m³) dan minyak (800 kg/m³). Karena V dan g sama, gaya apung lebih besar di <b>air</b>.</p></div>
+
+<h2 id="aplikasi">7. Penerapan</h2>
+<div class="grid"><div class="mini"><b>Kapal laut</b><br>Bentuk berongga memperbesar volume air yang dipindahkan dan menurunkan massa jenis rata-rata kapal.</div><div class="mini"><b>Kapal selam</b><br>Tangki ballast mengubah massa dan massa jenis rata-rata kapal selam.</div><div class="mini"><b>Hidrometer</b><br>Semakin besar massa jenis cairan, semakin sedikit hidrometer yang tercelup.</div><div class="mini"><b>Balon udara</b><br>Prinsip Archimedes juga berlaku pada gas. Balon dapat naik jika gaya apung udara melebihi berat totalnya.</div></div>
+
+<h2 id="simulasi">8. Simulasi Interaktif</h2>
+<div class="sim"><p>Ubah massa jenis fluida, massa jenis benda, dan volume benda.</p>
+<label>Massa jenis fluida: <span id="rfv">1000</span> kg/m³</label><input id="rf" type="range" min="600" max="1400" value="1000" step="10">
+<label>Massa jenis benda: <span id="rbv">800</span> kg/m³</label><input id="rb" type="range" min="300" max="1800" value="800" step="10">
+<label>Volume benda: <span id="vv">0.005</span> m³</label><input id="v" type="range" min="0.001" max="0.020" value="0.005" step="0.001">
+<div class="result" id="hasil"></div></div>
+
+<h2 id="latihan">9. Latihan Mandiri</h2>
+<div class="quiz"><p><b>1.</b> Sebuah benda volume 0,002 m³ tercelup seluruhnya dalam air. Jika g = 10 m/s², gaya apungnya ...</p><p>A. 2 N &nbsp; B. 10 N &nbsp; C. 20 N &nbsp; D. 200 N</p><button onclick="ans(this)">Lihat Jawaban</button><div class="ans"><b>Jawaban: C.</b> F<sub>A</sub> = 1000×10×0,002 = 20 N.</div></div>
+<div class="quiz"><p><b>2.</b> Benda bermassa jenis 900 kg/m³ dimasukkan ke air. Keadaannya ...</p><p>A. tenggelam &nbsp; B. terapung &nbsp; C. melayang &nbsp; D. tidak dapat ditentukan</p><button onclick="ans(this)">Lihat Jawaban</button><div class="ans"><b>Jawaban: B.</b> Massa jenis benda lebih kecil daripada massa jenis air.</div></div>
+<div class="quiz"><p><b>3.</b> Balok terapung dengan 60% volumenya tercelup di air. Massa jenis balok ...</p><p>A. 400 &nbsp; B. 600 &nbsp; C. 1000 &nbsp; D. 1600 kg/m³</p><button onclick="ans(this)">Lihat Jawaban</button><div class="ans"><b>Jawaban: B.</b> ρ benda = 0,60×1000 = 600 kg/m³.</div></div>
+<div class="quiz"><p><b>4.</b> Berat benda 50 N dan gaya apung 18 N. Berat semunya ...</p><p>A. 18 N &nbsp; B. 32 N &nbsp; C. 50 N &nbsp; D. 68 N</p><button onclick="ans(this)">Lihat Jawaban</button><div class="ans"><b>Jawaban: B.</b> W<sub>semu</sub> = 50−18 = 32 N.</div></div>
+<div class="quiz"><p><b>5.</b> Untuk benda yang sama dan tercelup seluruhnya, gaya apung lebih besar pada fluida yang ...</p><p>A. massanya kecil &nbsp; B. volumenya kecil &nbsp; C. massa jenisnya besar &nbsp; D. suhunya rendah</p><button onclick="ans(this)">Lihat Jawaban</button><div class="ans"><b>Jawaban: C.</b> F<sub>A</sub> sebanding dengan massa jenis fluida.</div></div>
+
+<div class="foot">StudentPro · Materi Fisika — Hukum Archimedes.</div>
+</main>
+<script>
+function ans(b){let a=b.nextElementSibling;a.classList.toggle('on');b.textContent=a.classList.contains('on')?'Sembunyikan Jawaban':'Lihat Jawaban'}
+const rf=document.getElementById('rf'),rb=document.getElementById('rb'),v=document.getElementById('v');function calc(){let a=+rf.value,b=+rb.value,c=+v.value,g=10;rfv.textContent=a;rbv.textContent=b;vv.textContent=c.toFixed(3);let w=b*c*g,faFull=a*c*g,state,frac,fa;if(b<a){state='TERAPUNG';frac=b/a;fa=w}else if(b===a){state='MELAYANG';frac=1;fa=faFull}else{state='TENGGELAM';frac=1;fa=faFull}hasil.innerHTML='Keadaan: <b>'+state+'</b><br>Berat benda: '+w.toFixed(1)+' N<br>Gaya apung: '+fa.toFixed(1)+' N<br>Volume tercelup: '+(frac*100).toFixed(1)+'%'}[rf,rb,v].forEach(x=>x.addEventListener('input',calc));calc();
+</script>
+</body></html>
