@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Determinan Kelas 12 | StudentPro</title>
+<style>
+:root{--navy:#172554;--blue:#2563eb;--line:#cbd5e1;--text:#1e293b;--muted:#64748b;--green:#15803d;--red:#b91c1c;--amber:#b45309;--soft:#f8fafc}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;padding:14px 10px 48px;background:#fff;color:var(--text);font:16px/1.68 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;overflow-wrap:anywhere}main{max-width:1060px;margin:auto}header{padding:26px 22px;border-radius:20px;color:#fff;background:linear-gradient(135deg,var(--navy),#1d4ed8)}h1{margin:.2em 0;font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.15}h2{margin:1.8em 0 .65em;padding-bottom:.35em;border-bottom:2px solid #dbeafe;color:var(--navy);font-size:1.35rem;scroll-margin-top:10px}h3{color:#1e3a8a}.box,.note,.example,.tip,.calc,.quiz{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:1em 0}.box{background:var(--soft)}.note{background:#fff7ed;border-left:5px solid #f59e0b}.example{background:#eff6ff;border-left:5px solid var(--blue)}.tip{background:#f0fdf4;border-left:5px solid #16a34a}.formula{display:block;text-align:center;padding:12px;margin:12px 0;border-radius:11px;background:#eef2ff;color:#1e3a8a;font-size:1.12rem;font-weight:800}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{border:1px solid var(--line);border-radius:11px;padding:11px;background:#fff}table{width:100%;border-collapse:collapse;margin:.8em 0}th,td{border:1px solid var(--line);padding:9px;vertical-align:top}th{background:#eff6ff}.matrix{display:inline-grid;gap:3px 12px;grid-template-columns:repeat(var(--n),auto);padding:7px 12px;margin:0 4px;position:relative;vertical-align:middle}.matrix:before,.matrix:after{content:"";position:absolute;top:0;bottom:0;width:2px;background:#0f172a}.matrix:before{left:0}.matrix:after{right:0}.matrix span{text-align:center;min-width:20px}.signs{font-weight:800;letter-spacing:.22em;color:#7c3aed}.calc{background:linear-gradient(180deg,#f8fbff,#f8fafc)}.calcgrid{display:grid;grid-template-columns:repeat(3,72px);gap:7px;justify-content:start}.calc input{width:72px;padding:8px;border:1px solid #94a3b8;border-radius:8px;font:inherit;text-align:center}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}button{border:1px solid #94a3b8;background:#fff;border-radius:8px;padding:8px 11px;font:inherit;font-weight:750;cursor:pointer}button:hover{background:#eff6ff}.result{margin-top:10px;padding:11px;border-radius:10px;background:#fff;border:1px solid var(--line);font-weight:750}.answer{display:none;margin-top:8px;padding:10px;border-left:4px solid #16a34a;background:#f0fdf4;border-radius:8px}.answer.on{display:block}.good{color:var(--green);font-weight:700}.bad{color:var(--red);font-weight:700}.small{font-size:.86rem;color:var(--muted)}.foot{margin-top:28px;border-top:1px solid var(--line);padding-top:10px;color:var(--muted);font-size:.83rem}@media(max-width:720px){.grid{grid-template-columns:1fr}}@media(max-width:560px){body{font-size:15px;padding:8px 7px 38px}header,.box,.note,.example,.tip,.calc,.quiz{padding:12px}table{display:block;overflow-x:auto}.calcgrid{grid-template-columns:repeat(3,minmax(58px,1fr))}.calc input{width:100%}}
+</style>
+</head>
+<body><main>
+<header><small>StudentPro · Matematika Kelas 12 · TKA/JEE Foundation</small><h1>Determinan Matriks</h1><p>Definisi, rumus 2×2 dan 3×3, minor–kofaktor, sifat-sifat penting, invers, aturan Cramer, luas segitiga, serta strategi cepat untuk soal seleksi.</p></header>
+
+<div class="box"><b>Daftar Isi</b><ol><li><a href="#konsep">Konsep & notasi</a></li><li><a href="#ordo2">Determinan 2×2</a></li><li><a href="#ordo3">Determinan 3×3</a></li><li><a href="#minor">Minor & kofaktor</a></li><li><a href="#sifat">Sifat-sifat determinan</a></li><li><a href="#inverse">Adjoint & invers</a></li><li><a href="#cramer">Aturan Cramer</a></li><li><a href="#geometri">Luas segitiga & kolinearitas</a></li><li><a href="#tips">Tips TKA/JEE</a></li><li><a href="#kalkulator">Kalkulator 3×3</a></li><li><a href="#latihan">Latihan singkat</a></li></ol></div>
+
+<h2 id="konsep">1. Konsep dan Notasi</h2>
+<p>Determinan adalah <b>nilai skalar</b> yang dikaitkan dengan sebuah matriks persegi. Jadi matriks dan determinan bukan hal yang sama: matriks adalah susunan elemen, sedangkan determinan adalah satu bilangan yang dihitung dari matriks tersebut.</p>
+<table><tr><th>Istilah</th><th>Makna</th></tr><tr><td>Matriks A</td><td>Susunan bilangan berbentuk persegi, misalnya 2×2 atau 3×3.</td></tr><tr><td>det(A), |A|, Δ</td><td>Nilai determinan dari matriks A.</td></tr><tr><td>Singular</td><td>det(A)=0, sehingga A tidak memiliki invers.</td></tr><tr><td>Non-singular</td><td>det(A)≠0, sehingga A memiliki invers.</td></tr></table>
+<div class="note"><b>Kesalahan umum:</b> menulis matriks dengan tanda garis vertikal lalu memperlakukannya sebagai matriks. Tanda kurung [ ] atau ( ) menyatakan matriks; garis | | menyatakan determinan.</div>
+
+<h2 id="ordo2">2. Determinan Matriks 2×2</h2>
+<p>Untuk A = <span class="matrix" style="--n:2"><span>a</span><span>b</span><span>c</span><span>d</span></span>, maka:</p>
+<span class="formula">det(A) = ad − bc</span>
+<div class="example"><b>Contoh:</b> A = <span class="matrix" style="--n:2"><span>3</span><span>5</span><span>2</span><span>4</span></span><br>det(A)=3·4−5·2=12−10=<b>2</b>.</div>
+
+<h2 id="ordo3">3. Determinan Matriks 3×3</h2>
+<p>Misalkan:</p>
+<div class="formula">A = <span class="matrix" style="--n:3"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span></span></div>
+<h3>3.1 Ekspansi kofaktor baris pertama</h3>
+<span class="formula">det(A)=a(ei−fh) − b(di−fg) + c(dh−eg)</span>
+<p>Pola tanda pada kofaktor adalah:</p>
+<div class="formula signs">+ − +<br>− + −<br>+ − +</div>
+<h3>3.2 Aturan Sarrus</h3>
+<p>Untuk matriks 3×3, salin dua kolom pertama di sebelah kanan. Jumlahkan tiga hasil kali diagonal turun, lalu kurangi tiga hasil kali diagonal naik.</p>
+<span class="formula">det(A)=aei+bfg+cdh − ceg−bdi−afh</span>
+<div class="tip"><b>Strategi:</b> Sarrus cepat untuk angka sederhana. Ekspansi kofaktor lebih fleksibel, terutama jika terdapat banyak nol pada suatu baris atau kolom.</div>
+
+<h2 id="minor">4. Minor dan Kofaktor</h2>
+<p><b>Minor M<sub>ij</sub></b> dari elemen a<sub>ij</sub> adalah determinan submatriks yang diperoleh dengan menghapus baris i dan kolom j.</p>
+<span class="formula">C<sub>ij</sub> = (−1)<sup>i+j</sup>M<sub>ij</sub></span>
+<p>C<sub>ij</sub> disebut <b>kofaktor</b>. Determinan dapat diekspansi melalui baris atau kolom mana pun:</p>
+<span class="formula">det(A)=a<sub>i1</sub>C<sub>i1</sub>+a<sub>i2</sub>C<sub>i2</sub>+⋯+a<sub>in</sub>C<sub>in</sub></span>
+<div class="example"><b>Contoh:</b> untuk elemen a<sub>12</sub>, tanda kofaktornya negatif karena (−1)<sup>1+2</sup>=−1. Jadi C<sub>12</sub>=−M<sub>12</sub>.</div>
+
+<h2 id="sifat">5. Sifat-Sifat Determinan yang Wajib Dikuasai</h2>
+<table><tr><th>No.</th><th>Sifat</th><th>Konsekuensi cepat</th></tr>
+<tr><td>1</td><td>det(A<sup>T</sup>)=det(A)</td><td>Sifat baris dan kolom dapat dipertukarkan.</td></tr>
+<tr><td>2</td><td>Menukar dua baris/kolom mengubah tanda determinan.</td><td>Jika D lama = k, setelah satu swap menjadi −k.</td></tr>
+<tr><td>3</td><td>Dua baris/kolom identik ⇒ determinan 0.</td><td>Langsung berhenti, tidak perlu ekspansi.</td></tr>
+<tr><td>4</td><td>Dua baris/kolom proporsional ⇒ determinan 0.</td><td>Cari faktor kelipatan sebelum menghitung.</td></tr>
+<tr><td>5</td><td>Satu baris/kolom semuanya nol ⇒ determinan 0.</td><td>Langsung singular.</td></tr>
+<tr><td>6</td><td>Jika satu baris dikalikan k, determinan juga dikalikan k.</td><td>Faktor persekutuan dapat dikeluarkan.</td></tr>
+<tr><td>7</td><td>R<sub>i</sub>→R<sub>i</sub>+kR<sub>j</sub> tidak mengubah determinan.</td><td>Sangat berguna membuat nol.</td></tr>
+<tr><td>8</td><td>Determinan linear terhadap satu baris/kolom.</td><td>Jika satu baris adalah jumlah dua vektor, determinan dapat dipecah menjadi jumlah dua determinan.</td></tr>
+<tr><td>9</td><td>Matriks segitiga: det(A)=hasil kali diagonal utama.</td><td>Gunakan eliminasi baris untuk membentuk segitiga.</td></tr>
+<tr><td>10</td><td>det(AB)=det(A)det(B)</td><td>Tak perlu mengalikan matriks jika hanya diminta determinannya.</td></tr>
+<tr><td>11</td><td>det(kA)=k<sup>n</sup>det(A) untuk A berordo n.</td><td>Ingat faktor k muncul n kali.</td></tr>
+<tr><td>12</td><td>Jika det(A)≠0, det(A<sup>−1</sup>)=1/det(A).</td><td>Hubungan langsung dengan invers.</td></tr>
+<tr><td>13</td><td>det(A<sup>m</sup>)=[det(A)]<sup>m</sup></td><td>Berguna untuk pangkat matriks.</td></tr>
+</table>
+
+<div class="example"><b>Contoh trik sifat:</b><br>Jika suatu determinan memiliki R<sub>2</sub>=2R<sub>1</sub>, maka determinannya <b>0</b> tanpa perlu dihitung. Jika R<sub>3</sub>→R<sub>3</sub>−4R<sub>1</sub>, nilainya tetap sama.</div>
+
+<h2 id="inverse">6. Adjoint dan Invers Matriks</h2>
+<p>Matriks kofaktor dibentuk dari semua C<sub>ij</sub>. Adjoint adalah transpose dari matriks kofaktor.</p>
+<span class="formula">adj(A) = [C<sub>ij</sub>]<sup>T</sup></span>
+<p>Jika det(A)≠0:</p>
+<span class="formula">A<sup>−1</sup> = adj(A) / det(A)</span>
+<div class="note"><b>Syarat utama:</b> jika det(A)=0, invers tidak ada. Jadi saat soal meminta invers, cek determinan terlebih dahulu.</div>
+
+<h2 id="cramer">7. Sistem Persamaan Linear dan Aturan Cramer</h2>
+<p>Untuk sistem AX=B dengan jumlah persamaan sama dengan jumlah variabel, Aturan Cramer berlaku jika D=det(A)≠0.</p>
+<span class="formula">x=D<sub>x</sub>/D, &nbsp; y=D<sub>y</sub>/D, &nbsp; z=D<sub>z</sub>/D</span>
+<p>D<sub>x</sub> diperoleh dengan mengganti kolom x pada A dengan kolom konstanta B, dan seterusnya.</p>
+<div class="example"><b>Contoh 2 variabel:</b><br>2x+y=7 dan x−y=2.<br>D=<span class="matrix" style="--n:2"><span>2</span><span>1</span><span>1</span><span>−1</span></span>=−3.<br>D<sub>x</sub>=<span class="matrix" style="--n:2"><span>7</span><span>1</span><span>2</span><span>−1</span></span>=−9, sehingga x=3. D<sub>y</sub>=<span class="matrix" style="--n:2"><span>2</span><span>7</span><span>1</span><span>2</span></span>=−3, sehingga y=1.</div>
+
+<h2 id="geometri">8. Luas Segitiga dan Kolinearitas</h2>
+<p>Untuk titik (x<sub>1</sub>,y<sub>1</sub>), (x<sub>2</sub>,y<sub>2</sub>), (x<sub>3</sub>,y<sub>3</sub>):</p>
+<span class="formula">Luas = ½ | det <span class="matrix" style="--n:3"><span>x₁</span><span>y₁</span><span>1</span><span>x₂</span><span>y₂</span><span>1</span><span>x₃</span><span>y₃</span><span>1</span></span> |</span>
+<p>Jika determinan tersebut 0, luas segitiga 0 sehingga ketiga titik <b>kolinear</b>.</p>
+
+<h2 id="tips">9. Tips Cepat TKA/JEE</h2>
+<div class="tip"><ol><li><b>Jangan langsung ekspansi.</b> Cari pola identik, proporsional, faktor persekutuan, atau baris yang bisa dibuat nol.</li><li><b>Pilih baris/kolom dengan nol terbanyak</b> untuk ekspansi kofaktor.</li><li><b>Gunakan operasi R<sub>i</sub>→R<sub>i</sub>+kR<sub>j</sub></b> untuk menyederhanakan tanpa mengubah nilai determinan.</li><li><b>Waspadai swap.</b> Setiap pertukaran dua baris/kolom mengalikan determinan dengan −1.</li><li><b>Untuk det(kA)</b>, jangan hanya mengalikan dengan k. Pada matriks n×n, faktornya k<sup>n</sup>.</li><li><b>Untuk det(AB)</b>, biasanya lebih cepat pakai det(A)det(B) daripada menghitung AB.</li><li><b>Jika ada parameter</b>, cari nilai parameter yang membuat dua baris proporsional atau determinan nol.</li><li><b>Gunakan bentuk segitiga</b> bila angka besar: setelah eliminasi, determinan = produk diagonal dengan memperhitungkan swap dan faktor skala.</li></ol></div>
+
+<h3>Pola JEE yang sering muncul</h3>
+<div class="grid"><div class="mini"><b>Vandermonde 3×3</b><br><span class="matrix" style="--n:3"><span>1</span><span>1</span><span>1</span><span>a</span><span>b</span><span>c</span><span>a²</span><span>b²</span><span>c²</span></span><br>det = (b−a)(c−a)(c−b), dengan tanda menyesuaikan urutan kolom.</div><div class="mini"><b>Skew-symmetric</b><br>Untuk matriks skew-symmetric berordo ganjil, det(A)=0. Ini sering menjadi jalan pintas.</div></div>
+
+<h2 id="kalkulator">10. Kalkulator Determinan 3×3</h2>
+<div class="calc"><p>Masukkan elemen matriks 3×3:</p><div class="calcgrid" id="matrixInputs">
+<input value="1" aria-label="a11"><input value="2" aria-label="a12"><input value="3" aria-label="a13">
+<input value="0" aria-label="a21"><input value="1" aria-label="a22"><input value="4" aria-label="a23">
+<input value="5" aria-label="a31"><input value="6" aria-label="a32"><input value="0" aria-label="a33">
+</div><div class="actions"><button type="button" id="calcBtn">Hitung Determinan</button><button type="button" id="resetBtn">Reset Contoh</button></div><div class="result" id="calcResult">det(A) = —</div><div class="small">Kalkulator ini menggunakan rumus ekspansi 3×3 secara langsung.</div></div>
+
+<h2 id="latihan">11. Latihan Singkat</h2>
+<div class="quiz"><p><b>1.</b> Jika det(A)=−3 untuk matriks 3×3, tentukan det(2A).</p><button type="button" class="showAns">Lihat Jawaban</button><div class="answer"><b>Jawaban: −24.</b> Karena det(kA)=k³det(A), maka det(2A)=8(−3)=−24.</div></div>
+<div class="quiz"><p><b>2.</b> Sebuah matriks memiliki dua baris identik. Berapa determinannya?</p><button type="button" class="showAns">Lihat Jawaban</button><div class="answer"><b>Jawaban: 0.</b> Dua baris identik membuat determinan nol.</div></div>
+<div class="quiz"><p><b>3.</b> Jika det(A)=5 dan det(B)=−2, berapa det(AB)?</p><button type="button" class="showAns">Lihat Jawaban</button><div class="answer"><b>Jawaban: −10.</b> Gunakan det(AB)=det(A)det(B).</div></div>
+<div class="quiz"><p><b>4.</b> Jika A singular, apakah A memiliki invers?</p><button type="button" class="showAns">Lihat Jawaban</button><div class="answer"><b>Tidak.</b> Matriks singular memiliki det(A)=0, sehingga rumus A⁻¹=adj(A)/det(A) tidak terdefinisi.</div></div>
+<div class="quiz"><p><b>5.</b> Tiga titik menghasilkan determinan koordinat sama dengan 0. Apa artinya secara geometri?</p><button type="button" class="showAns">Lihat Jawaban</button><div class="answer"><b>Ketiga titik kolinear.</b> Determinan 0 membuat luas segitiga sama dengan 0.</div></div>
+
+<div class="foot">StudentPro · Materi determinan ditulis ulang secara orisinal berdasarkan cakupan konsep Class 12/JEE: determinan, sifat, minor–kofaktor, invers, sistem persamaan, dan aplikasi geometri.</div>
+
+<script>
+(function(){
+  const inputs=[...document.querySelectorAll('#matrixInputs input')];
+  const result=document.getElementById('calcResult');
+  function num(i){const v=parseFloat(inputs[i].value);return Number.isFinite(v)?v:0}
+  function det(){const a=num(0),b=num(1),c=num(2),d=num(3),e=num(4),f=num(5),g=num(6),h=num(7),i=num(8);return a*(e*i-f*h)-b*(d*i-f*g)+c*(d*h-e*g)}
+  document.getElementById('calcBtn').addEventListener('click',()=>{const D=det();result.innerHTML='det(A) = <b>'+D+'</b>'+(D===0?' &nbsp;→ matriks singular':' &nbsp;→ matriks non-singular')});
+  document.getElementById('resetBtn').addEventListener('click',()=>{const v=[1,2,3,0,1,4,5,6,0];inputs.forEach((x,j)=>x.value=v[j]);result.textContent='det(A) = —'});
+  document.querySelectorAll('.showAns').forEach(btn=>btn.addEventListener('click',()=>{const a=btn.nextElementSibling;a.classList.toggle('on');btn.textContent=a.classList.contains('on')?'Sembunyikan Jawaban':'Lihat Jawaban'}));
+})();
+</script>
+</main></body></html>
