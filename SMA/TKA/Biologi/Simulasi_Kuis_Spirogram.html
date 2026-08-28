@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulasi Kuis Spirogram | StudentPro</title>
+<style>
+:root{
+  --navy:#172554;--blue:#2563eb;--blue2:#1d4ed8;--line:#cbd5e1;
+  --text:#1e293b;--muted:#64748b;--green:#15803d;--red:#b91c1c;
+  --cream:#fff7bf;--panel:#f8fafc;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;padding:14px 10px 44px;background:#fff;color:var(--text);
+  font:15.5px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+main{max-width:1120px;margin:auto}
+header{
+  padding:20px 20px;border-radius:18px;background:linear-gradient(135deg,var(--navy),#1d4ed8);
+  color:#fff;margin-bottom:14px
+}
+header h1{margin:.2em 0;font-size:clamp(1.7rem,5vw,2.45rem)}
+header p{margin:.35em 0 0;max-width:850px}
+.toolbar{
+  display:grid;grid-template-columns:110px 1fr 80px 120px;gap:8px;align-items:stretch;
+  margin:12px 0
+}
+.scorebox,.timerbox,.progressbox{
+  border:1px solid var(--line);border-radius:8px;background:#f8fafc;padding:8px 10px;
+  display:flex;align-items:center;justify-content:center;font-weight:800
+}
+.prompt{
+  border:1px solid #facc15;border-radius:8px;background:var(--cream);
+  display:flex;align-items:center;justify-content:center;padding:8px 12px;
+  font-weight:800;text-align:center;min-height:48px
+}
+.quit{
+  border:0;border-radius:8px;background:#ef4444;color:#fff;font-weight:800;
+  font:inherit;cursor:pointer
+}
+.panel{
+  border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px;margin:12px 0
+}
+.graphwrap{
+  position:relative;width:100%;overflow:auto;border:1px solid #e2e8f0;border-radius:10px;background:#fff
+}
+svg{display:block;width:100%;min-width:760px;height:auto}
+.hotspot{
+  cursor:pointer;transition:.15s;filter:drop-shadow(0 1px 1px rgba(0,0,0,.15))
+}
+.hotspot:hover{r:9}
+.hotspot.correct{fill:#16a34a!important;stroke:#14532d!important}
+.hotspot.wrong{fill:#dc2626!important;stroke:#7f1d1d!important}
+.hotspot.used{opacity:.55}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button.action{
+  border:1px solid #94a3b8;border-radius:8px;background:#fff;padding:8px 11px;
+  font:inherit;font-weight:750;cursor:pointer
+}
+button.action:hover{background:#eff6ff}
+.legend{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px
+}
+.legend div{border:1px solid var(--line);border-radius:9px;padding:8px;background:#f8fafc}
+.legend b{color:#1e3a8a}
+.feedback{
+  min-height:42px;border-radius:9px;padding:9px 11px;margin-top:10px;background:#f8fafc;
+  border:1px solid var(--line);font-weight:700
+}
+.feedback.ok{background:#f0fdf4;border-color:#86efac;color:#166534}
+.feedback.no{background:#fef2f2;border-color:#fca5a5;color:#991b1b}
+.note{
+  border-left:5px solid #f59e0b;background:#fff7ed;border-radius:10px;padding:11px 13px;margin-top:12px
+}
+.small{font-size:.86rem;color:var(--muted)}
+@media(max-width:760px){
+  .toolbar{grid-template-columns:1fr 1fr}
+  .prompt{grid-column:1/-1;order:-1}
+  .legend{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  body{font-size:15px;padding:8px 6px 34px}
+  header,.panel{padding:11px}
+  .legend{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <small>StudentPro · Sistem Respirasi · Interactive Quiz</small>
+  <h1>Spirometry Graph</h1>
+  <p>Klik titik biru yang paling sesuai dengan volume atau kapasitas paru yang ditanyakan. Grafik dirancang seperti spirogram klasik: napas tidal, inspirasi maksimal, ekspirasi maksimal, dan batas volume paru.</p>
+</header>
+
+<div class="toolbar">
+  <div class="scorebox" id="scoreBox">Benar 0<br>Salah 0</div>
+  <div class="prompt" id="prompt">Residual Volume</div>
+  <div class="progressbox" id="progressBox">0%</div>
+  <div class="timerbox" id="timerBox">00:00</div>
+  <button class="quit" id="quitBtn" type="button">Selesai</button>
+</div>
+
+<div class="panel">
+  <div class="graphwrap">
+    <svg id="spirometer" viewBox="0 0 980 610" role="img" aria-label="Grafik spirogram dengan titik kuis interaktif">
+      <rect x="92" y="58" width="760" height="470" fill="#fff" stroke="#111827" stroke-width="2"/>
+      
+      <g stroke="#64748b" stroke-width="1.4">
+        <line x1="92" y1="116" x2="852" y2="116"/>
+        <line x1="92" y1="262" x2="852" y2="262"/>
+        <line x1="92" y1="304" x2="852" y2="304"/>
+        <line x1="92" y1="418" x2="852" y2="418"/>
+        <line x1="92" y1="494" x2="852" y2="494"/>
+      </g>
+
+      <g fill="#334155" font-size="16" font-family="system-ui, sans-serif">
+        <text x="50" y="121">6000</text>
+        <text x="50" y="194">5000</text>
+        <text x="50" y="267">4000</text>
+        <text x="50" y="309">3500</text>
+        <text x="50" y="382">2500</text>
+        <text x="50" y="423">2000</text>
+        <text x="50" y="499">1000</text>
+        <text x="27" y="343" transform="rotate(-90 27 343)">Lung Volume (mL)</text>
+      </g>
+
+      <path d="
+        M115 304
+        C125 286,135 286,145 304
+        C155 324,165 324,175 304
+        C185 286,195 286,205 304
+        C215 324,225 324,235 304
+        C245 286,255 286,265 304
+        C275 324,285 324,295 304
+        C305 286,315 286,325 304
+        C335 324,345 324,355 304
+
+        C370 270,380 205,392 116
+        C405 200,415 270,425 304
+        C435 324,445 324,455 304
+        C465 286,475 286,485 304
+        C495 324,505 324,515 304
+
+        C530 345,540 418,552 494
+        C563 418,575 350,585 304
+        C595 286,605 286,615 304
+        C625 324,635 324,645 304
+        C655 286,665 286,675 304
+        C685 324,695 324,705 304
+
+        C720 265,733 200,746 116
+        C759 205,770 270,782 304
+        C792 324,802 324,812 304
+        C822 286,832 286,842 304"
+        fill="none" stroke="#111827" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <g stroke="#111827" stroke-width="2.3" fill="none">
+        <line x1="185" y1="286" x2="185" y2="324"/>
+        <line x1="176" y1="286" x2="194" y2="286"/>
+        <line x1="176" y1="324" x2="194" y2="324"/>
+
+        <line x1="392" y1="116" x2="392" y2="286"/>
+        <line x1="383" y1="116" x2="401" y2="116"/>
+        <line x1="383" y1="286" x2="401" y2="286"/>
+
+        <line x1="552" y1="324" x2="552" y2="418"/>
+        <line x1="543" y1="324" x2="561" y2="324"/>
+        <line x1="543" y1="418" x2="561" y2="418"/>
+
+        <line x1="623" y1="418" x2="623" y2="494"/>
+        <line x1="614" y1="418" x2="632" y2="418"/>
+        <line x1="614" y1="494" x2="632" y2="494"/>
+
+        <line x1="746" y1="116" x2="746" y2="304"/>
+        <line x1="737" y1="116" x2="755" y2="116"/>
+        <line x1="737" y1="304" x2="755" y2="304"/>
+
+        <line x1="802" y1="304" x2="802" y2="494"/>
+        <line x1="793" y1="304" x2="811" y2="304"/>
+        <line x1="793" y1="494" x2="811" y2="494"/>
+
+        <line x1="860" y1="116" x2="860" y2="418"/>
+        <line x1="851" y1="116" x2="869" y2="116"/>
+        <line x1="851" y1="418" x2="869" y2="418"/>
+
+        <line x1="910" y1="116" x2="910" y2="494"/>
+        <line x1="901" y1="116" x2="919" y2="116"/>
+        <line x1="901" y1="494" x2="919" y2="494"/>
+      </g>
+
+      <g id="hotspots">
+        <circle class="hotspot" data-key="TV" cx="185" cy="305" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="IRV" cx="392" cy="201" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="ERV" cx="552" cy="371" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="RV" cx="623" cy="456" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="IC" cx="746" cy="210" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="FRC" cx="802" cy="399" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="VC" cx="860" cy="267" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+        <circle class="hotspot" data-key="TLC" cx="910" cy="305" r="7" fill="#0d6efd" stroke="#0b3d91" stroke-width="2"/>
+      </g>
+
+      <g id="revealLabels" fill="#1e293b" font-size="15" font-weight="700" font-family="system-ui, sans-serif" opacity="0">
+        <text x="145" y="345">TV</text>
+        <text x="360" y="190">IRV</text>
+        <text x="518" y="365">ERV</text>
+        <text x="590" y="465">RV</text>
+        <text x="716" y="205">IC</text>
+        <text x="770" y="410">FRC</text>
+        <text x="828" y="260">VC</text>
+        <text x="880" y="305">TLC</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="controls">
+    <button type="button" class="action" id="newBtn">Mulai Ulang</button>
+    <button type="button" class="action" id="skipBtn">Lewati Soal</button>
+    <button type="button" class="action" id="revealBtn">Tampilkan Label</button>
+  </div>
+
+  <div class="feedback" id="feedback">Klik titik biru yang sesuai dengan istilah pada kotak kuning di atas.</div>
+
+  <div class="legend">
+    <div><b>TV</b><br>Tidal Volume</div>
+    <div><b>IRV</b><br>Inspiratory Reserve Volume</div>
+    <div><b>ERV</b><br>Expiratory Reserve Volume</div>
+    <div><b>RV</b><br>Residual Volume</div>
+    <div><b>IC</b><br>Inspiratory Capacity = TV + IRV</div>
+    <div><b>FRC</b><br>Functional Residual Capacity = ERV + RV</div>
+    <div><b>VC</b><br>Vital Capacity = IRV + TV + ERV</div>
+    <div><b>TLC</b><br>Total Lung Capacity = VC + RV</div>
+  </div>
+
+  <div class="note">
+    <b>Catatan:</b> angka volume pada grafik merupakan nilai contoh pendidikan. Nilai aktual bervariasi menurut usia, jenis kelamin, tinggi badan, kebugaran, posisi tubuh, dan kondisi kesehatan.
+  </div>
+</div>
+
+<script>
+(function(){
+  const questions = [
+    {key:'RV', name:'Residual Volume'},
+    {key:'TV', name:'Tidal Volume'},
+    {key:'IRV', name:'Inspiratory Reserve Volume'},
+    {key:'ERV', name:'Expiratory Reserve Volume'},
+    {key:'IC', name:'Inspiratory Capacity'},
+    {key:'FRC', name:'Functional Residual Capacity'},
+    {key:'VC', name:'Vital Capacity'},
+    {key:'TLC', name:'Total Lung Capacity'}
+  ];
+
+  const prompt = document.getElementById('prompt');
+  const scoreBox = document.getElementById('scoreBox');
+  const progressBox = document.getElementById('progressBox');
+  const timerBox = document.getElementById('timerBox');
+  const feedback = document.getElementById('feedback');
+  const hotspots = Array.from(document.querySelectorAll('.hotspot'));
+  const revealLabels = document.getElementById('revealLabels');
+
+  let order = [];
+  let index = 0;
+  let correct = 0;
+  let wrong = 0;
+  let start = Date.now();
+  let done = false;
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+  }
+
+  function current(){ return order[index]; }
+
+  function updateTop(){
+    scoreBox.innerHTML = 'Benar ' + correct + '<br>Salah ' + wrong;
+    const pct = Math.round((index/questions.length)*100);
+    progressBox.textContent = pct + '%';
+    if(!done && current()) prompt.textContent = current().name;
+  }
+
+  function resetHotspots(){
+    hotspots.forEach(h=>{
+      h.classList.remove('correct','wrong','used');
+      h.style.pointerEvents='auto';
+    });
+  }
+
+  function next(){
+    index++;
+    if(index >= order.length){
+      done = true;
+      prompt.textContent = 'Selesai!';
+      progressBox.textContent = '100%';
+      feedback.className = 'feedback ok';
+      feedback.textContent = 'Kuis selesai. Skor: ' + correct + ' benar, ' + wrong + ' salah.';
+      hotspots.forEach(h=>h.style.pointerEvents='none');
+      return;
+    }
+    resetHotspots();
+    updateTop();
+    feedback.className='feedback';
+    feedback.textContent='Pilih titik biru yang sesuai dengan ' + current().name + '.';
+  }
+
+  function startQuiz(){
+    order = shuffle(questions);
+    index=0; correct=0; wrong=0; done=false;
+    start=Date.now();
+    revealLabels.setAttribute('opacity','0');
+    document.getElementById('revealBtn').textContent='Tampilkan Label';
+    resetHotspots();
+    updateTop();
+    feedback.className='feedback';
+    feedback.textContent='Pilih titik biru yang sesuai dengan ' + current().name + '.';
+  }
+
+  hotspots.forEach(h=>{
+    h.addEventListener('click', ()=>{
+      if(done) return;
+      const key = h.dataset.key;
+      if(key === current().key){
+        h.classList.add('correct');
+        h.style.pointerEvents='none';
+        correct++;
+        feedback.className='feedback ok';
+        feedback.textContent='Benar! ' + current().name + ' ditunjukkan oleh titik tersebut.';
+        updateTop();
+        setTimeout(next,650);
+      }else{
+        h.classList.add('wrong','used');
+        h.style.pointerEvents='none';
+        wrong++;
+        feedback.className='feedback no';
+        feedback.textContent='Belum tepat. Coba titik lain untuk ' + current().name + '.';
+        updateTop();
+      }
+    });
+  });
+
+  document.getElementById('skipBtn').addEventListener('click', ()=>{
+    if(done) return;
+    wrong++;
+    feedback.className='feedback no';
+    feedback.textContent='Soal dilewati. Jawaban yang benar adalah ' + current().key + '.';
+    const ans = hotspots.find(h=>h.dataset.key===current().key);
+    if(ans) ans.classList.add('correct');
+    updateTop();
+    setTimeout(next,800);
+  });
+
+  document.getElementById('newBtn').addEventListener('click', startQuiz);
+
+  document.getElementById('revealBtn').addEventListener('click', function(){
+    const shown = revealLabels.getAttribute('opacity')==='1';
+    revealLabels.setAttribute('opacity',shown?'0':'1');
+    this.textContent = shown ? 'Tampilkan Label' : 'Sembunyikan Label';
+  });
+
+  document.getElementById('quitBtn').addEventListener('click', ()=>{
+    done=true;
+    prompt.textContent='Kuis dihentikan';
+    feedback.className='feedback';
+    feedback.textContent='Kuis dihentikan. Tekan "Mulai Ulang" untuk mengulang.';
+    hotspots.forEach(h=>h.style.pointerEvents='none');
+  });
+
+  setInterval(()=>{
+    if(done) return;
+    const sec = Math.floor((Date.now()-start)/1000);
+    const mm = String(Math.floor(sec/60)).padStart(2,'0');
+    const ss = String(sec%60).padStart(2,'0');
+    timerBox.textContent = mm+':'+ss;
+  },500);
+
+  startQuiz();
+})();
+</script>
+</main>
+</body>
+</html>
