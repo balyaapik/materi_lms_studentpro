@@ -1,38 +1,32 @@
-name: Unpack PAPS Verbal bank
+name: Generate PAPS Verbal bank
 
 on:
   push:
     branches: [main]
     paths:
-      - 'SMA/PAPS/Verbal/Bank_Soal/.paps_10_paket_5_opsi.tar.xz.b64'
+      - 'tools/generate_paps_verbal_10_packages.py'
 
 permissions:
   contents: write
 
 jobs:
-  unpack:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Expand PAPS HTML bank
+      - name: Generate 10 HTML packages
         shell: bash
         run: |
           set -euo pipefail
-          PAYLOAD='SMA/PAPS/Verbal/Bank_Soal/.paps_10_paket_5_opsi.tar.xz.b64'
-          TARGET='SMA/PAPS/Verbal/Bank_Soal'
-          if [ ! -f "$PAYLOAD" ]; then
-            echo 'Payload already processed; nothing to do.'
-            exit 0
-          fi
-          mkdir -p /tmp/paps_unpack "$TARGET"
-          base64 -d "$PAYLOAD" > /tmp/paps.tar.xz
-          tar -xJf /tmp/paps.tar.xz -C /tmp/paps_unpack
-          cp /tmp/paps_unpack/PAPS_Verbal_10_Paket_5_Opsi_compact/PAPS_Verbal_Paket_*.html "$TARGET"/
-          rm -f "$PAYLOAD"
+          python tools/generate_paps_verbal_10_packages.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A "$TARGET"
+          git add SMA/PAPS/Verbal/Bank_Soal/PAPS_Verbal_Paket_*.html
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
           git commit -m 'Tambah 10 paket soal PAPS Verbal 5 opsi'
           git push origin HEAD:main
