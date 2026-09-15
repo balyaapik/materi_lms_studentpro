@@ -8,66 +8,64 @@
 .topnav,.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0}.topnav a,.pager a,.button{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#fff;text-decoration:none;font-weight:750;border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:0 3px 10px #10233c0c}.topnav a:hover,.pager a:hover{border-color:var(--blue);color:var(--blue)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,36px);box-shadow:0 10px 30px #10233c0d;margin-top:14px}.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 24px}.focus span{padding:10px 11px;background:var(--soft);border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:.86rem;font-weight:750;text-align:center}
 h2,h3{color:var(--navy);line-height:1.28;scroll-margin-top:14px}h2{font-size:1.45rem;border-bottom:2px solid var(--line);padding-bottom:.38em;margin:2em 0 .7em}h3{font-size:1.1rem;margin:1.55em 0 .55em}p{margin:.4em 0 1.05em}.prose strong{color:var(--navy)}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.1em 0}.concept-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.concept{border:1px solid #c7dceb;border-radius:13px;padding:15px;background:linear-gradient(145deg,#f8fcff,#eef7fc)}.concept b{display:block;color:var(--navy);font-size:1.04rem}.concept span{display:block;color:var(--blue);font-weight:850;margin:.2em 0}.concept p{font-size:.9rem;color:var(--muted);margin:.35em 0 0}.example,.warning{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0;background:#f6fbff}.example.good{border-left-color:var(--good);background:#f1fbf6}.warning{border-color:#f1d4a8;border-left-color:#df7b08;background:#fff9ef;color:#68400d}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px}.steps li{position:relative;padding:11px 13px 11px 50px;border:1px solid var(--line);border-radius:11px;background:#fafcff}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1em 0}.compare>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcfe}.compare>div:first-child{border-left:4px solid #d65353}.compare>div:last-child{border-left:4px solid var(--good)}.compare p{margin:.35em 0}.compare small{color:var(--muted)}.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:1.2em 0}.flow span{background:var(--navy);color:#fff;border-radius:10px;padding:9px 14px;font-weight:850}.flow b{color:var(--blue);font-size:1.3rem}.mini{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}.mini ol{margin-bottom:0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.1em 0;font-size:.92rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tbody tr:last-child td{border-bottom:0}th{background:#eaf4fa;color:var(--navy);font-weight:850}tbody tr:nth-child(even){background:#f9fbfd}ul,ol{padding-left:1.35em}li{margin:.35em 0}
 .source-table{white-space:pre-wrap;overflow-x:auto;background:#f8fbfd;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:14px;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:1em 0}.callout{background:#edf8ff;border:1px solid #b9def5;border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0}.bullet-list{margin:.5em 0 1.2em;padding-left:1.25em}.bullet-list li{margin:.34em 0}
 .question{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:13px;padding:14px 16px;margin:16px 0;background:#fff}.question p{margin:0 0 .65em}.options{display:grid;gap:6px}.option{background:var(--soft);border-radius:8px;padding:7px 10px}.option b{color:var(--blue);margin-right:5px}.reading{background:#f8fbfd;border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.1em 0}.reading-label{font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.45em}
 details.answer-key{margin-top:28px;border:1px solid #b8dfd0;border-radius:14px;background:#f0fbf6;overflow:hidden}details.answer-key summary{cursor:pointer;padding:14px 17px;font-weight:850;color:var(--good);list-style:none}details.answer-key summary::-webkit-details-marker{display:none}details.answer-key summary:after{content:"+";float:right;font-size:1.2rem}details.answer-key[open] summary:after{content:"-"}.answer-body{padding:4px 17px 18px;border-top:1px solid #cbe7dc}.practice-note{background:#fff8ed;border:1px solid #f5d3a2;border-left:5px solid #e58a11;border-radius:12px;padding:13px 15px;margin-bottom:20px;color:#70420d}
 footer{color:var(--muted);font-size:.86rem;text-align:center;margin-top:22px}.pager{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
-@media(max-width:760px){.focus{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
+@media(max-width:760px){.focus,.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr 1fr}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
 @media(max-width:430px){body{font-size:15px}.focus{grid-template-columns:1fr}.hero h1{font-size:1.82rem}.hero{padding:25px 18px}.topnav a{width:100%;justify-content:center}.source-table{font-size:12px}}
+@media(max-width:600px){.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table{border:0;background:transparent}tbody tr{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff!important}td{border:0;border-bottom:1px solid var(--line);padding:9px 12px}td:last-child{border-bottom:0}td[data-label]::before{content:attr(data-label);display:block;color:var(--blue);font-size:.69rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;margin-bottom:2px}}
 @media print{body{background:#fff}.shell{max-width:none}.hero,.card{box-shadow:none}.topnav,.pager{display:none}details.answer-key:not([open]) .answer-body{display:block}details.answer-key summary{display:none}}
 </style></head>
 <body><main class="shell"><header class="hero"><div class="eyebrow">StudentPro · UTBK SNBT · Pengetahuan dan Pemahaman Umum</div>
 <h1>Konjungsi dan Makna Kata</h1><p>Jenis konjungsi berdasarkan hubungan sintaktis serta pembedaan makna leksikal, gramatikal, asosiasi, dan relasi makna.</p><div class="meta"><span class="pill">Materi</span><span class="pill">Bahasa Indonesia</span><span class="pill">Balya Rochmadi</span></div></header>
 <nav class="topnav"><a href="00_INDEX.html">← Indeks PPU</a><a href="#materi">Mulai belajar ↓</a></nav>
-<article class="card prose" id="materi"><div class="focus"><span>Koordinatif</span><span>Korelatif</span><span>Subordinatif</span><span>Relasi makna</span></div><div class="question"><p>1</p><div class="options"><div class="option"><b>A.</b>Konjungsi (Kata Hubung) Konjungsi adalah kata tugas yang menghubungkan dua satuan bahasa yang sederajat: antarkata, antarfrasa, antarklausa, atau antarkalimat.</div></div></div>
-<h3>1.1 1. Konjungsi Koordinatif</h3><p>Menghubungkan dua unsur atau lebih yang setara. Konjungsi ini tidak boleh diletakkan di awal kalimat.</p>
-<ul class="bullet-list"><li>Penambahan: dan, serta.</li></ul>
-<ul class="bullet-list"><li>Pemilihan: atau.</li></ul>
-<ul class="bullet-list"><li>Pertentangan: sedangkan, padahal.</li></ul>
-<ul class="bullet-list"><li>Perlawanan: tetapi, melainkan.</li></ul>
-<ul class="bullet-list"><li>Pendampingan: serta.</li></ul>
-<h3>Ingat!</h3>
-<ul class="bullet-list"><li>Tetapi: Digunakan untuk klausa yang berseberangan namun masih berkaitan. Biasanya didahului koma. Contoh: Dia kaya, tetapi pelit.</li></ul>
-<ul class="bullet-list"><li>Melainkan: Pasangan setia dari kata "bukan". Contoh: Ini bukan rotiku, melainkan rotimu.</li></ul>
-<ul class="bullet-list"><li>Sedangkan: Membandingkan dua hal yang berbeda. Contoh: Ibu memasak, sedangkan Ayah membaca koran.</li></ul>
-<h3>1.2 2. Konjungsi Korelatif</h3><p>Konjungsi yang menghubungkan dua unsur setara dan terdiri dari dua bagian yang terpisah (berpasangan). Pasangan ini tidak boleh tertukar.</p>
-<pre class="source-table">Bagian 1     Bagian 2
-                          Baik ...                maupun ...
-                          Tidak ...               tetapi ...
-                          Bukan ...               melainkan ...
-                          Tidak hanya ...         tetapi juga ...
-                          Bukan hanya ...         melainkan juga ...
-                          Jangankan ...           ... pun ...
-                          Entah ...               entah ...</pre>
-<h3>1.3 3. Konjungsi Subordinatif</h3><p>Menghubungkan dua klausa yang tidak setara (Induk Kalimat dan Anak Kalimat).</p>
-<p>1. Waktu: sejak, ketika, tatkala, sementara, sambil, seraya, sebelum, sesudah, hingga.</p>
-<p>2. Syarat: jika, kalau, jikalau, asalkan, manakala, apabila.</p>
-<p>3. Pengandaian: andaikan, seandainya, umpamanya, sekiranya.</p>
-<p>4. Tujuan: agar, supaya, biar.</p>
-<p>5. Konsesif (Perlawanan): biarpun, meskipun, walaupun, kendatipun.</p>
-<p>6. Sebab: sebab, karena.</p>
-<p>7. Akibat: sehingga, sampai, makanya.</p>
-<p>8. Atributif : yang.</p>
-<p>9. Penjelas: bahwa.</p>
-<h3>1.4 4. Konjungsi Antarkalimat</h3><p>Menghubungkan satu kalimat dengan kalimat lain. Letaknya selalu di awal kalimat (setelah tanda titik), diawali huruf kapital, dan selalu diikuti tanda koma.</p>
-<p>Jenis Konjungsi Antarkalimat</p>
-<ul class="bullet-list"><li>Pertentangan: Akan tetapi, Namun, Sebaliknya.</li></ul>
-<ul class="bullet-list"><li>Lanjutan/Urutan: Setelah itu, Kemudian, Selanjutnya, Sesudah itu.</li></ul>
-<ul class="bullet-list"><li>Penambahan: Selain itu, Di samping itu, Lagi pula.</li></ul>
-<ul class="bullet-list"><li>Sebab-Akibat: Oleh karena itu, Oleh sebab itu, Akibatnya, Maka dari itu.</li></ul>
-<ul class="bullet-list"><li>Penegasan: Bahkan, Malah(an), Sesungguhnya, Sebenarnya.</li></ul>
-<ul class="bullet-list"><li>Keadaan Sebelumnya: Sebelum itu.</li></ul>
-<p>Contoh Kalimat</p><ul class="bullet-list"><li>Banjir melanda Kota Tasik. Oleh karena itu, ratusan rumah rusak parah.</li></ul>
-<ul class="bullet-list"><li>Kakak belum memberi kabar. Akibatnya, kami semua khawatir.</li></ul>
-<ul class="bullet-list"><li>Dia sangat pandai. Bahkan, dia selalu juara satu di kelasnya.</li></ul>
-<div class="question"><p>2</p><div class="options"><div class="option"><b>B.</b>Semantik (Pengayaan Makna Kata) 2.1 1. Makna Leksikal vs Gramatikal • Leksikal: Makna dasar/kamus. Contoh: Kuda (hewan).</div></div></div>
-<ul class="bullet-list"><li>Gramatikal: Makna akibat proses gramatika (afiksasi/reduplikasi). Contoh: Berkuda (menunggang kuda).</li></ul>
-<h3>2.2 2. Makna Asosiasi</h3><p>Makna yang muncul karena persamaan sifat (perumpamaan/lambang).</p>
-<ul class="bullet-list"><li>"Bisnisnya makin menggurita." (Banyak cabang seperti kaki gurita).</li></ul>
-<ul class="bullet-list"><li>"Antrean mengular." (Panjang meliuk seperti ular).</li></ul>
-<ul class="bullet-list"><li>"Kursi basah." (Jabatan yang mendatangkan banyak uang).</li></ul>
-<h3>2.3 3. Relasi Makna</h3><ul class="bullet-list"><li>Hiponim: Kata khusus. (Mawar, Melati).</li></ul>
-<ul class="bullet-list"><li>Hipernim: Kata umum. (Bunga).</li></ul>
-<ul class="bullet-list"><li>Sinonim: Persamaan makna. (Laris = Laku).</li></ul>
-<ul class="bullet-list"><li>Antonim: Lawan makna. (Canggih &gt;&lt; Kuno).</li></ul><nav class="pager" aria-label="Navigasi materi"><a href="03_Kalimat_Tidak_Logis.html">← Kalimat Tidak Logis</a><a href="05_Morfologi.html">Morfologi →</a></nav></article>
+<article class="card prose" id="materi"><div class="focus"><span>Koordinatif</span><span>Korelatif</span><span>Subordinatif</span><span>Relasi makna</span></div>
+<section><h2>1. Fungsi Konjungsi</h2><p>Konjungsi menghubungkan kata, frasa, klausa, atau kalimat. Pemilihan konjungsi harus sesuai dengan <strong>kedudukan unsur</strong> dan <strong>hubungan makna</strong> yang ingin disampaikan.</p>
+<div class="concept-grid"><div class="concept"><b>Dalam kalimat</b><span>kata, frasa, klausa</span><p>Koordinatif, korelatif, subordinatif.</p></div><div class="concept"><b>Antarkalimat</b><span>kalimat dengan kalimat</span><p>Diletakkan di awal kalimat dan diikuti koma.</p></div></div></section>
+
+<section><h2>2. Konjungsi Koordinatif</h2><p>Konjungsi koordinatif menghubungkan unsur yang sederajat. Kedua unsur mempunyai kedudukan sintaktis yang sama.</p>
+<table><thead><tr><th>Hubungan</th><th>Konjungsi</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Hubungan">penambahan</td><td data-label="Konjungsi"><em>dan, serta</em></td><td data-label="Contoh">Rina membaca dan Dodi menulis.</td></tr>
+<tr><td data-label="Hubungan">pemilihan</td><td data-label="Konjungsi"><em>atau</em></td><td data-label="Contoh">Kamu dapat belajar pagi atau malam.</td></tr>
+<tr><td data-label="Hubungan">perlawanan</td><td data-label="Konjungsi"><em>tetapi, melainkan</em></td><td data-label="Contoh">Ia bukan dokter, melainkan perawat.</td></tr>
+<tr><td data-label="Hubungan">perbandingan keadaan</td><td data-label="Konjungsi"><em>sedangkan, padahal</em></td><td data-label="Contoh">Ibu memasak, sedangkan Ayah membaca.</td></tr>
+</tbody></table>
+<div class="warning"><b>Bedakan:</b> <em>tetapi</em> menyatakan perlawanan biasa; <em>melainkan</em> lazim berpasangan dengan <em>bukan</em>; <em>sedangkan</em> membandingkan dua keadaan.</div></section>
+
+<section><h2>3. Konjungsi Korelatif</h2><p>Konjungsi korelatif hadir berpasangan. Unsur sesudah bagian pertama dan kedua harus sejajar.</p>
+<table><thead><tr><th>Pasangan baku</th><th>Contoh sejajar</th></tr></thead><tbody>
+<tr><td data-label="Pasangan baku">baik ... maupun ...</td><td data-label="Contoh sejajar">Baik guru maupun siswa mengikuti upacara.</td></tr>
+<tr><td data-label="Pasangan baku">tidak hanya ... tetapi juga ...</td><td data-label="Contoh sejajar">Ia tidak hanya membaca, tetapi juga menulis.</td></tr>
+<tr><td data-label="Pasangan baku">bukan ... melainkan ...</td><td data-label="Contoh sejajar">Masalahnya bukan biaya, melainkan waktu.</td></tr>
+<tr><td data-label="Pasangan baku">entah ... entah ...</td><td data-label="Contoh sejajar">Entah hari ini entah besok, ia akan datang.</td></tr>
+</tbody></table></section>
+
+<section><h2>4. Konjungsi Subordinatif</h2><p>Konjungsi subordinatif menghubungkan induk kalimat dengan anak kalimat. Anak kalimat menerangkan waktu, sebab, syarat, tujuan, atau hubungan lain.</p>
+<table><thead><tr><th>Makna</th><th>Konjungsi umum</th><th>Pertanyaan bantu</th></tr></thead><tbody>
+<tr><td data-label="Makna">waktu</td><td data-label="Konjungsi umum">ketika, sejak, setelah, sebelum, selama</td><td data-label="Pertanyaan bantu">kapan?</td></tr>
+<tr><td data-label="Makna">sebab</td><td data-label="Konjungsi umum">karena, sebab</td><td data-label="Pertanyaan bantu">mengapa?</td></tr>
+<tr><td data-label="Makna">akibat</td><td data-label="Konjungsi umum">sehingga, sampai</td><td data-label="Pertanyaan bantu">apa hasilnya?</td></tr>
+<tr><td data-label="Makna">syarat</td><td data-label="Konjungsi umum">jika, apabila, asalkan</td><td data-label="Pertanyaan bantu">dengan syarat apa?</td></tr>
+<tr><td data-label="Makna">tujuan</td><td data-label="Konjungsi umum">agar, supaya</td><td data-label="Pertanyaan bantu">untuk apa?</td></tr>
+<tr><td data-label="Makna">konsesif</td><td data-label="Konjungsi umum">meskipun, walaupun, kendatipun</td><td data-label="Pertanyaan bantu">walau keadaan apa?</td></tr>
+</tbody></table>
+<div class="example"><b>Urutan anak-induk:</b> Karena hujan deras, pertandingan ditunda.<br><b>Urutan induk-anak:</b> Pertandingan ditunda karena hujan deras.</div></section>
+
+<section><h2>5. Konjungsi Antarkalimat</h2><p>Konjungsi antarkalimat menghubungkan gagasan dalam dua kalimat yang berbeda. Penulisannya diawali huruf kapital dan diikuti koma.</p><ul><li><b>Penambahan:</b> Selain itu, Di samping itu,</li><li><b>Pertentangan:</b> Namun, Akan tetapi, Meskipun demikian,</li><li><b>Akibat/simpulan:</b> Oleh karena itu, Dengan demikian,</li><li><b>Urutan:</b> Setelah itu, Selanjutnya,</li><li><b>Penegasan:</b> Bahkan, Sesungguhnya,</li></ul>
+<div class="compare"><div><b>✕ Salah</b><p>Hujan deras. Tetapi pertandingan berlanjut.</p></div><div><b>✓ Benar</b><p>Hujan deras. Namun, pertandingan berlanjut.</p></div></div></section>
+
+<section><h2>6. Makna Kata</h2><table><thead><tr><th>Jenis</th><th>Penjelasan</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Jenis"><b>leksikal</b></td><td data-label="Penjelasan">makna dasar yang dimiliki kata</td><td data-label="Contoh"><em>rumah</em> = bangunan tempat tinggal</td></tr>
+<tr><td data-label="Jenis"><b>gramatikal</b></td><td data-label="Penjelasan">makna yang muncul akibat proses tata bahasa</td><td data-label="Contoh"><em>berumah</em> = mempunyai/menempati rumah</td></tr>
+<tr><td data-label="Jenis"><b>denotatif</b></td><td data-label="Penjelasan">makna lugas dan objektif</td><td data-label="Contoh"><em>kursi kayu</em> = tempat duduk</td></tr>
+<tr><td data-label="Jenis"><b>konotatif</b></td><td data-label="Penjelasan">makna tambahan atau nilai rasa</td><td data-label="Contoh"><em>kursi kekuasaan</em> = jabatan</td></tr>
+<tr><td data-label="Jenis"><b>asosiatif</b></td><td data-label="Penjelasan">makna kias karena persamaan sifat</td><td data-label="Contoh"><em>benalu</em> = orang yang merugikan</td></tr>
+</tbody></table></section>
+
+<section><h2>7. Relasi Makna</h2><ul><li><b>Sinonim:</b> kemiripan makna, misalnya <em>cermat-teliti</em>.</li><li><b>Antonim:</b> pertentangan makna, misalnya <em>hidup-mati</em>.</li><li><b>Hipernim:</b> kata yang cakupannya umum, misalnya <em>kendaraan</em>.</li><li><b>Hiponim:</b> anggota dari hipernim, misalnya <em>mobil, sepeda, bus</em>.</li><li><b>Homonim:</b> bentuk dan lafal sama, makna tidak berhubungan, misalnya <em>bisa</em> (mampu/racun).</li><li><b>Homograf:</b> ejaan sama, lafal dan makna berbeda, misalnya <em>apel</em>.</li><li><b>Polisemi:</b> satu kata memiliki beberapa makna yang masih berhubungan, misalnya <em>kepala</em> tubuh dan <em>kepala</em> organisasi.</li></ul>
+<details class="answer-key"><summary>Buka strategi soal rumpang</summary><div class="answer-body"><ol><li>Tentukan hubungan gagasan sebelum melihat pilihan.</li><li>Periksa apakah penghubung berada dalam satu kalimat atau mengawali kalimat baru.</li><li>Uji tanda baca.</li><li>Baca kembali kalimat lengkap untuk memastikan hubungan maknanya konsisten.</li></ol></div></details></section>
+<nav class="pager" aria-label="Navigasi materi"><a href="03_Kalimat_Tidak_Logis.html">← Kalimat Tidak Logis</a><a href="05_Morfologi.html">Morfologi →</a></nav></article>
 <footer>© 2026 Balya Rochmadi · StudentPro · UTBK SNBT PPU</footer></main></body></html>

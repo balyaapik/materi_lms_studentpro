@@ -8,89 +8,57 @@
 .topnav,.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0}.topnav a,.pager a,.button{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#fff;text-decoration:none;font-weight:750;border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:0 3px 10px #10233c0c}.topnav a:hover,.pager a:hover{border-color:var(--blue);color:var(--blue)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,36px);box-shadow:0 10px 30px #10233c0d;margin-top:14px}.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 24px}.focus span{padding:10px 11px;background:var(--soft);border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:.86rem;font-weight:750;text-align:center}
 h2,h3{color:var(--navy);line-height:1.28;scroll-margin-top:14px}h2{font-size:1.45rem;border-bottom:2px solid var(--line);padding-bottom:.38em;margin:2em 0 .7em}h3{font-size:1.1rem;margin:1.55em 0 .55em}p{margin:.4em 0 1.05em}.prose strong{color:var(--navy)}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.1em 0}.concept-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.concept{border:1px solid #c7dceb;border-radius:13px;padding:15px;background:linear-gradient(145deg,#f8fcff,#eef7fc)}.concept b{display:block;color:var(--navy);font-size:1.04rem}.concept span{display:block;color:var(--blue);font-weight:850;margin:.2em 0}.concept p{font-size:.9rem;color:var(--muted);margin:.35em 0 0}.example,.warning{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0;background:#f6fbff}.example.good{border-left-color:var(--good);background:#f1fbf6}.warning{border-color:#f1d4a8;border-left-color:#df7b08;background:#fff9ef;color:#68400d}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px}.steps li{position:relative;padding:11px 13px 11px 50px;border:1px solid var(--line);border-radius:11px;background:#fafcff}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1em 0}.compare>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcfe}.compare>div:first-child{border-left:4px solid #d65353}.compare>div:last-child{border-left:4px solid var(--good)}.compare p{margin:.35em 0}.compare small{color:var(--muted)}.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:1.2em 0}.flow span{background:var(--navy);color:#fff;border-radius:10px;padding:9px 14px;font-weight:850}.flow b{color:var(--blue);font-size:1.3rem}.mini{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}.mini ol{margin-bottom:0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.1em 0;font-size:.92rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tbody tr:last-child td{border-bottom:0}th{background:#eaf4fa;color:var(--navy);font-weight:850}tbody tr:nth-child(even){background:#f9fbfd}ul,ol{padding-left:1.35em}li{margin:.35em 0}
 .source-table{white-space:pre-wrap;overflow-x:auto;background:#f8fbfd;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:14px;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:1em 0}.callout{background:#edf8ff;border:1px solid #b9def5;border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0}.bullet-list{margin:.5em 0 1.2em;padding-left:1.25em}.bullet-list li{margin:.34em 0}
 .question{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:13px;padding:14px 16px;margin:16px 0;background:#fff}.question p{margin:0 0 .65em}.options{display:grid;gap:6px}.option{background:var(--soft);border-radius:8px;padding:7px 10px}.option b{color:var(--blue);margin-right:5px}.reading{background:#f8fbfd;border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.1em 0}.reading-label{font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.45em}
 details.answer-key{margin-top:28px;border:1px solid #b8dfd0;border-radius:14px;background:#f0fbf6;overflow:hidden}details.answer-key summary{cursor:pointer;padding:14px 17px;font-weight:850;color:var(--good);list-style:none}details.answer-key summary::-webkit-details-marker{display:none}details.answer-key summary:after{content:"+";float:right;font-size:1.2rem}details.answer-key[open] summary:after{content:"-"}.answer-body{padding:4px 17px 18px;border-top:1px solid #cbe7dc}.practice-note{background:#fff8ed;border:1px solid #f5d3a2;border-left:5px solid #e58a11;border-radius:12px;padding:13px 15px;margin-bottom:20px;color:#70420d}
 footer{color:var(--muted);font-size:.86rem;text-align:center;margin-top:22px}.pager{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
-@media(max-width:760px){.focus{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
+@media(max-width:760px){.focus,.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr 1fr}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
 @media(max-width:430px){body{font-size:15px}.focus{grid-template-columns:1fr}.hero h1{font-size:1.82rem}.hero{padding:25px 18px}.topnav a{width:100%;justify-content:center}.source-table{font-size:12px}}
+@media(max-width:600px){.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table{border:0;background:transparent}tbody tr{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff!important}td{border:0;border-bottom:1px solid var(--line);padding:9px 12px}td:last-child{border-bottom:0}td[data-label]::before{content:attr(data-label);display:block;color:var(--blue);font-size:.69rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;margin-bottom:2px}}
 @media print{body{background:#fff}.shell{max-width:none}.hero,.card{box-shadow:none}.topnav,.pager{display:none}details.answer-key:not([open]) .answer-body{display:block}details.answer-key summary{display:none}}
 </style></head>
 <body><main class="shell"><header class="hero"><div class="eyebrow">StudentPro · UTBK SNBT · Pengetahuan dan Pemahaman Umum</div>
 <h1>Kalimat Efektif</h1><p>Kelengkapan struktur, kelogisan, kesejajaran, kehematan, kecermatan, semantik, dan pemakaian konjungsi.</p><div class="meta"><span class="pill">Materi</span><span class="pill">Bahasa Indonesia</span><span class="pill">Balya Rochmadi</span></div></header>
 <nav class="topnav"><a href="00_INDEX.html">← Indeks PPU</a><a href="#materi">Mulai belajar ↓</a></nav>
-<article class="card prose" id="materi"><div class="focus"><span>Subjek-predikat</span><span>Logika bahasa</span><span>Paralelisme</span><span>Kehematan dan kecermatan</span></div><pre class="source-table">1     Kelengkapan Struktur dan Kelogisan
-1.1    1. Kelengkapan Struktur (Subjek &amp; Predikat)
-Sebuah kalimat dikatakan efektif jika memiliki struktur minimal yang lengkap, yakni Subjek
-(S) dan Predikat (P). Namun, ada beberapa kesalahan umum yang sering terjadi:</pre>
-<p>a. Tidak Adanya Subjek (Akibat Preposisi) Kalimat tidak memiliki subjek jika di depan kata benda terdapat kata depan (preposisi ) seper- ti dalam, bagi, untuk, pada, di, mengenai. Hal ini membuat subjek berubah fungsi menjadi Keterangan. Contoh Perbaikan Salah: Dalam rapat itu membahas pemilihan ketua RT. (Keterangan - Predikat - Objek → Subjek Hilang) Perbaikan 1 (Hapus Preposisi): Rapat itu (S) membahas (P) pemilihan ketua RT (O). Perbaikan 2 (Ubah jadi Pasif ): Dalam rapat itu (K) dibahas (P) pemilihan ketua RT (S).</p>
-<p>b. Tidak Adanya Predikat (Akibat kata "Yang") Kata yang berfungsi memperluas unsur sebelumnya. Jika diletakkan di antara Subjek dan Pre- dikat, maka Predikat akan hilang. Contoh Perbaikan</p>
-<p>Salah: Para mahasiswa yang memakai toga. (Ini bukan kalimat, tapi Frasa Nomina). Benar: Para mahasiswa memakai toga. (S - P - O)</p>
-<p>c. Tidak Adanya Objek (Verba Transitif ) Kata kerja aktif transitif (berawalan me-) wajib diikuti objek. Jangan menyisipkan kata depan (seperti tentang) di antara Predikat dan Objek. Contoh Perbaikan Salah: Dia menceritakan tentang kisahnya. Benar: Dia menceritakan kisahnya. (S - P - O)</p>
-<h3>1.2 2. Kelogisan (Logika Bahasa)</h3><p>Kalimat efektif harus masuk akal atau bernalar.</p>
-<p>Kesalahan Penggunaan Kata</p>
-<p>Contoh kesalahan logika pada kata mempersingkat waktu. Waktu tidak bisa dipendekkan.</p>
-<ul class="bullet-list"><li>Salah: Untuk mempersingkat waktu, kita mulai acara ini.</li></ul>
-<ul class="bullet-list"><li>Benar: Untuk mengefisienkan/menghemat waktu, kita mulai acara ini.</li></ul>
-<h3>1.3 3. Kesejajaran (Paralelisme)</h3><p>Kalimat efektif mensyaratkan kesejajaran bentuk kata dan struktur imbuhan. Contoh Perbaikan Salah: Langkah tersebut adalah memahami, menghayati, dan pengamalan. (Tidak sejajar: me- vs pe-an) Benar: Langkah tersebut adalah memahami, menghayati, dan mengamalkan.</p>
-<pre class="source-table">2     Kehematan dan Kecermatan
-2.1    1. Kehematan (Tidak Boros Kata)
-Hindari penggunaan kata yang berlebihan atau tumpang tindih.</pre>
-<ul class="bullet-list"><li>Sinonim: Jangan gunakan dua kata yang maknanya sama sekaligus.</li></ul>
-<ul class="bullet-list"><li>hanya = saja (Pilih satu: "Hanya 5 ribu" atau "5 ribu saja").</li><li>agar = supaya.</li><li>adalah = merupakan.</li></ul>
-<ul class="bullet-list"><li>Pleonasme: Penjelasan yang tidak perlu karena sudah terkandung dalam kata sifatnya.</li></ul>
-<ul class="bullet-list"><li>Mundur (pasti ke belakang). → Salah: Mundur ke belakang.</li><li>Naik (pasti ke atas). → Salah: Naik ke atas.</li></ul>
-<ul class="bullet-list"><li>Reduplikasi (Jamak): Jangan jamakkan kata yang sudah jamak.</li></ul>
-<ul class="bullet-list"><li>Salah: Banyak pepohonan, Para hadirin.</li><li>Benar: Banyak pohon, Hadirin, atau Pepohonan.</li></ul>
-<h3>2.2 2. Kecermatan (Tidak Ambigu)</h3><p>Kalimat tidak boleh menimbulkan tafsiran ganda (multitafsir). Contoh Perbaikan Ambigu: Istri lurah yang baru itu cantik. (Siapa yang baru? Istrinya atau Pak Lurahnya?) Perbaikan:</p>
-<ul class="bullet-list"><li>Istri dari lurah yang baru itu... (Lurahnya baru).</li></ul>
-<ul class="bullet-list"><li>Istri baru pak lurah itu... (Istrinya baru).</li></ul>
-<pre class="source-table">3     Semantik: Makna Kata
-3.1   1. Jenis Makna</pre>
-<p>Leksikal vs Gramatikal</p><ul class="bullet-list"><li>Makna Leksikal: Makna dasar/kamus. Belum mengalami pengimbuhan. Contoh: Kaca, Lari, Makan.</li></ul>
-<ul class="bullet-list"><li>Makna Gramatikal: Makna yang muncul akibat proses gramatika (afiksasi/reduplikasi). Contoh: Berkaca (melakukan), Berkaca-kaca (kiasan/kondisi mata).</li></ul>
-<p>Denotasi vs Konotasi</p><ul class="bullet-list"><li>Denotasi: Makna sebenarnya (lugas). Contoh: Bunga mawar (tanaman).</li></ul>
-<ul class="bullet-list"><li>Konotasi: Makna kias (nilai rasa). Contoh: Bunga desa (gadis cantik), Bunga bank (riba/untung).</li></ul>
-<h3>3.2 2. Hubungan Makna</h3><ul class="bullet-list"><li>Sinonim: Persamaan makna. (Laris = Laku, Paras = Wajah).</li></ul>
-<ul class="bullet-list"><li>Antonim: Perlawanan makna. (Canggih &gt;&lt; Kuno, Panjang &gt;&lt; Pendek ).</li></ul>
-<ul class="bullet-list"><li>Hiponim: Kata khusus. (Kucing, Anjing, Kuda).</li></ul>
-<ul class="bullet-list"><li>Hipernim: Kata umum. (Hewan).</li></ul>
-<h3>Ingat!</h3>
-<ul class="bullet-list"><li>Bisnis menggurita (banyak cabang).</li></ul>
-<ul class="bullet-list"><li>Antrean mengular (panjang).</li></ul>
-<ul class="bullet-list"><li>Amplop (suap).</li></ul>
-<pre class="source-table">4     Konjungsi (Kata Hubung)
-4.1    1. Konjungsi Koordinatif (Setara)
-Menghubungkan dua unsur yang setara. Tidak boleh di awal kalimat.</pre>
-<pre class="source-table">Hubungan        Konjungsi            Contoh Kalimat
-    Penambahan                 dan, serta           Saya dan adik makan.
-    Pemilihan                  atau                 Kamu atau dia?
-    Pertentangan               sedangkan, padahal   Adik bermain, sedangkan kakak belajar.
-    Perlawanan                 tetapi, melainkan    Tidak kaya, tetapi dermawan.</pre>
-<h3>Ingat!</h3>
-<ul class="bullet-list"><li>... tidak ..., tetapi ...</li></ul>
-<ul class="bullet-list"><li>... bukan ..., melainkan ...</li></ul>
-<h3>4.2 2. Konjungsi Korelatif (Berpasangan)</h3><ul class="bullet-list"><li>Baik ... maupun ...</li></ul>
-<ul class="bullet-list"><li>Tidak hanya ..., tetapi juga ...</li></ul>
-<ul class="bullet-list"><li>Bukan hanya ..., melainkan juga ...</li></ul>
-<ul class="bullet-list"><li>Jangankan ..., ... pun ...</li></ul>
-<ul class="bullet-list"><li>Entah ... entah ...</li></ul>
-<h3>4.3 3. Konjungsi Subordinatif (Bertingkat)</h3><p>Menghubungkan induk kalimat dan anak kalimat.</p>
-<ul class="bullet-list"><li>Waktu: sejak, ketika, sebelum, sesudah, tatkala.</li></ul>
-<ul class="bullet-list"><li>Syarat: jika, kalau, asalkan, apabila.</li></ul>
-<ul class="bullet-list"><li>Pengandaian: andaikan, seumpama.</li></ul>
-<ul class="bullet-list"><li>Tujuan: agar, supaya, biar.</li></ul>
-<ul class="bullet-list"><li>Konsesif: walaupun, meskipun, biarpun.</li></ul>
-<ul class="bullet-list"><li>Sebab: sebab, karena.</li></ul>
-<ul class="bullet-list"><li>Akibat: sehingga, sampai, makanya.</li></ul>
-<ul class="bullet-list"><li>Penjelas: bahwa.</li></ul>
-<ul class="bullet-list"><li>Atributif: yang.</li></ul>
-<h3>4.4 4. Konjungsi Antarkalimat</h3><p>Letaknya di awal kalimat (setelah titik), diawali huruf kapital, dan diikuti tanda koma.</p>
-<p>Contoh Konjungsi Antarkalimat</p>
-<ul class="bullet-list"><li>Pertentangan: Akan tetapi, Namun, Sebaliknya.</li></ul>
-<ul class="bullet-list"><li>Lanjutan: Kemudian, Setelah itu, Selanjutnya.</li></ul>
-<ul class="bullet-list"><li>Penambahan: Selain itu, Di samping itu, Lagipula.</li></ul>
-<ul class="bullet-list"><li>Akibat: Oleh karena itu, Oleh sebab itu, Akibatnya.</li></ul>
-<ul class="bullet-list"><li>Penegasan: Bahkan, Malah(an), Sesungguhnya.</li></ul>
-<ul class="bullet-list"><li>Eksklusif/Inklusif: Kecuali itu.</li></ul><nav class="pager" aria-label="Navigasi materi"><a href="01_Generalisasi_dan_Spesialisasi.html">← Generalisasi dan Spesialisasi</a><a href="03_Kalimat_Tidak_Logis.html">Kalimat Tidak Logis →</a></nav></article>
+<article class="card prose" id="materi"><div class="focus"><span>Subjek-predikat</span><span>Logika bahasa</span><span>Paralelisme</span><span>Kehematan dan kecermatan</span></div>
+<section><h2>1. Apa yang Dimaksud Kalimat Efektif?</h2><p>Kalimat efektif menyampaikan satu gagasan secara <strong>jelas, tepat, logis, dan hemat</strong>. Kalimat tidak cukup hanya terdengar lancar. Strukturnya harus lengkap, hubungan antarunsurnya masuk akal, dan pilihan katanya tidak menimbulkan tafsir yang tidak dikehendaki.</p>
+<div class="concept-grid three"><div class="concept"><b>Struktur</b><span>S dan P jelas</span></div><div class="concept"><b>Makna</b><span>masuk akal</span></div><div class="concept"><b>Bentuk</b><span>sejajar dan hemat</span></div></div></section>
+
+<section><h2>2. Kelengkapan Struktur</h2><h3>2.1 Subjek dan predikat harus jelas</h3><p>Subjek biasanya berupa nomina atau frasa nominal, sedangkan predikat menerangkan tindakan, keadaan, atau identitas subjek. Preposisi di depan calon subjek dapat mengubahnya menjadi keterangan.</p>
+<table><thead><tr><th>Kalimat bermasalah</th><th>Masalah</th><th>Perbaikan</th></tr></thead><tbody>
+<tr><td data-label="Kalimat bermasalah">Dalam rapat itu membahas program kerja.</td><td data-label="Masalah">Frasa <em>dalam rapat itu</em> menjadi keterangan; subjek hilang.</td><td data-label="Perbaikan">Rapat itu membahas program kerja.</td></tr>
+<tr><td data-label="Kalimat bermasalah">Para peserta yang memakai seragam biru.</td><td data-label="Masalah">Kata <em>yang</em> membentuk frasa; predikat utama tidak ada.</td><td data-label="Perbaikan">Para peserta memakai seragam biru.</td></tr>
+<tr><td data-label="Kalimat bermasalah">Ia membicarakan tentang rencana itu.</td><td data-label="Masalah">Verba transitif <em>membicarakan</em> harus langsung diikuti objek.</td><td data-label="Perbaikan">Ia membicarakan rencana itu.</td></tr>
+</tbody></table>
+<div class="callout"><b>Tes cepat subjek:</b> tanyakan “siapa atau apa yang melakukan/dijelaskan oleh predikat?” Jika jawabannya diawali <em>di, dalam, bagi, untuk, pada, kepada</em>, periksa kembali strukturnya.</div></section>
+
+<section><h2>3. Kelogisan dan Kesatuan Gagasan</h2><p>Hubungan makna dalam kalimat harus dapat diterima oleh nalar. Pelaku harus mampu melakukan tindakan yang dinyatakan predikat, dan setiap unsur harus mendukung satu gagasan utama.</p>
+<table><thead><tr><th>Kurang logis</th><th>Mengapa?</th><th>Logis</th></tr></thead><tbody>
+<tr><td data-label="Kurang logis">Waktu dan tempat kami persilakan.</td><td data-label="Mengapa?">Waktu dan tempat tidak dapat dipersilakan berbicara.</td><td data-label="Logis">Kepada narasumber, kami persilakan.</td></tr>
+<tr><td data-label="Kurang logis">Untuk mempersingkat waktu, acara dimulai.</td><td data-label="Mengapa?">Waktu tidak dapat dipendekkan; yang dapat dihemat adalah penggunaan waktu.</td><td data-label="Logis">Untuk menghemat waktu, acara dimulai.</td></tr>
+<tr><td data-label="Kurang logis">Pencuri itu berhasil ditangkap polisi.</td><td data-label="Mengapa?">Kata <em>berhasil</em> seolah-olah menerangkan pencuri.</td><td data-label="Logis">Polisi berhasil menangkap pencuri itu.</td></tr>
+</tbody></table></section>
+
+<section><h2>4. Kesejajaran Bentuk</h2><p>Unsur yang dirinci atau dihubungkan harus memiliki bentuk gramatikal yang sama. Jika unsur pertama berupa kata kerja berimbuhan <em>meN-</em>, unsur berikutnya sebaiknya memakai pola yang setara.</p>
+<div class="example"><b>Tidak sejajar:</b> Program itu bertujuan meningkatkan disiplin, pembentukan karakter, dan agar siswa bertanggung jawab.</div>
+<div class="example good"><b>Sejajar:</b> Program itu bertujuan meningkatkan disiplin, membentuk karakter, dan menumbuhkan tanggung jawab siswa.</div>
+<p>Ketiga unsur pada kalimat perbaikan sama-sama berupa verba aktif: <em>meningkatkan, membentuk, menumbuhkan</em>.</p></section>
+
+<section><h2>5. Kehematan dan Kecermatan</h2><h3>5.1 Kehematan</h3><p>Kehematan berarti menghilangkan unsur yang tidak menambah makna. Penghematan tidak boleh menghapus informasi penting.</p>
+<table><thead><tr><th>Pola boros</th><th>Contoh</th><th>Perbaikan</th></tr></thead><tbody>
+<tr><td data-label="Pola boros">jamak ganda</td><td data-label="Contoh">para siswa-siswa</td><td data-label="Perbaikan">para siswa / siswa-siswa</td></tr>
+<tr><td data-label="Pola boros">sinonim berulang</td><td data-label="Contoh">naik ke atas</td><td data-label="Perbaikan">naik</td></tr>
+<tr><td data-label="Pola boros">subjek diulang</td><td data-label="Contoh">Karena Rina sakit, Rina tidak hadir.</td><td data-label="Perbaikan">Karena sakit, Rina tidak hadir.</td></tr>
+</tbody></table>
+<h3>5.2 Kecermatan</h3><p>Kecermatan mencegah ambiguitas. Letakkan keterangan dekat dengan unsur yang diterangkan.</p>
+<div class="warning"><b>Ambigu:</b> “Guru baru datang kemarin.” Apakah guru itu baru, atau kegiatan datangnya baru terjadi? Perjelas menjadi “Guru baru itu datang kemarin” atau “Guru itu baru datang kemarin”.</div></section>
+
+<section><h2>6. Konjungsi dan Tanda Baca</h2><ul><li><b>Koordinatif</b> menghubungkan unsur setara: <em>dan, atau, tetapi, sedangkan</em>.</li><li><b>Korelatif</b> harus hadir sebagai pasangan lengkap: <em>baik ... maupun ...</em>, <em>tidak hanya ... tetapi juga ...</em>.</li><li><b>Subordinatif</b> menghubungkan induk dan anak kalimat: <em>karena, jika, ketika, agar, meskipun</em>.</li><li><b>Antarkalimat</b> berada pada awal kalimat baru dan diikuti koma: <em>Namun, Selain itu, Oleh karena itu,</em>.</li></ul>
+<div class="example"><b>Salah:</b> Karena hujan deras. Pertandingan ditunda.<br><b>Benar:</b> Karena hujan deras, pertandingan ditunda.</div></section>
+
+<section><h2>7. Prosedur Penyuntingan UTBK</h2><ol class="steps"><li>Cari predikat utama, lalu tentukan subjeknya.</li><li>Periksa kebutuhan objek atau pelengkap.</li><li>Uji apakah hubungan pelaku, tindakan, dan sasaran masuk akal.</li><li>Samakan bentuk unsur dalam perincian.</li><li>Hapus pengulangan yang tidak diperlukan.</li><li>Periksa ambiguitas, konjungsi, dan tanda baca.</li></ol>
+<details class="answer-key"><summary>Buka contoh analisis lengkap</summary><div class="answer-body"><p><b>Kalimat:</b> “Bagi peserta yang terlambat tidak diperbolehkan memasuki ruangan.”</p><p><b>Masalah:</b> frasa <em>bagi peserta yang terlambat</em> berfungsi sebagai keterangan, sehingga kalimat tidak memiliki subjek yang jelas.</p><p><b>Perbaikan:</b> “Peserta yang terlambat tidak diperbolehkan memasuki ruangan.”</p></div></details></section>
+<nav class="pager" aria-label="Navigasi materi"><a href="01_Generalisasi_dan_Spesialisasi.html">← Generalisasi dan Spesialisasi</a><a href="03_Kalimat_Tidak_Logis.html">Kalimat Tidak Logis →</a></nav></article>
 <footer>© 2026 Balya Rochmadi · StudentPro · UTBK SNBT PPU</footer></main></body></html>

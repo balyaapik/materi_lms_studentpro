@@ -8,76 +8,60 @@
 .topnav,.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0}.topnav a,.pager a,.button{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#fff;text-decoration:none;font-weight:750;border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:0 3px 10px #10233c0c}.topnav a:hover,.pager a:hover{border-color:var(--blue);color:var(--blue)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,36px);box-shadow:0 10px 30px #10233c0d;margin-top:14px}.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 24px}.focus span{padding:10px 11px;background:var(--soft);border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:.86rem;font-weight:750;text-align:center}
 h2,h3{color:var(--navy);line-height:1.28;scroll-margin-top:14px}h2{font-size:1.45rem;border-bottom:2px solid var(--line);padding-bottom:.38em;margin:2em 0 .7em}h3{font-size:1.1rem;margin:1.55em 0 .55em}p{margin:.4em 0 1.05em}.prose strong{color:var(--navy)}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.1em 0}.concept-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.concept{border:1px solid #c7dceb;border-radius:13px;padding:15px;background:linear-gradient(145deg,#f8fcff,#eef7fc)}.concept b{display:block;color:var(--navy);font-size:1.04rem}.concept span{display:block;color:var(--blue);font-weight:850;margin:.2em 0}.concept p{font-size:.9rem;color:var(--muted);margin:.35em 0 0}.example,.warning{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0;background:#f6fbff}.example.good{border-left-color:var(--good);background:#f1fbf6}.warning{border-color:#f1d4a8;border-left-color:#df7b08;background:#fff9ef;color:#68400d}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px}.steps li{position:relative;padding:11px 13px 11px 50px;border:1px solid var(--line);border-radius:11px;background:#fafcff}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1em 0}.compare>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcfe}.compare>div:first-child{border-left:4px solid #d65353}.compare>div:last-child{border-left:4px solid var(--good)}.compare p{margin:.35em 0}.compare small{color:var(--muted)}.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:1.2em 0}.flow span{background:var(--navy);color:#fff;border-radius:10px;padding:9px 14px;font-weight:850}.flow b{color:var(--blue);font-size:1.3rem}.mini{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}.mini ol{margin-bottom:0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.1em 0;font-size:.92rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tbody tr:last-child td{border-bottom:0}th{background:#eaf4fa;color:var(--navy);font-weight:850}tbody tr:nth-child(even){background:#f9fbfd}ul,ol{padding-left:1.35em}li{margin:.35em 0}
 .source-table{white-space:pre-wrap;overflow-x:auto;background:#f8fbfd;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:14px;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:1em 0}.callout{background:#edf8ff;border:1px solid #b9def5;border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0}.bullet-list{margin:.5em 0 1.2em;padding-left:1.25em}.bullet-list li{margin:.34em 0}
 .question{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:13px;padding:14px 16px;margin:16px 0;background:#fff}.question p{margin:0 0 .65em}.options{display:grid;gap:6px}.option{background:var(--soft);border-radius:8px;padding:7px 10px}.option b{color:var(--blue);margin-right:5px}.reading{background:#f8fbfd;border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.1em 0}.reading-label{font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.45em}
 details.answer-key{margin-top:28px;border:1px solid #b8dfd0;border-radius:14px;background:#f0fbf6;overflow:hidden}details.answer-key summary{cursor:pointer;padding:14px 17px;font-weight:850;color:var(--good);list-style:none}details.answer-key summary::-webkit-details-marker{display:none}details.answer-key summary:after{content:"+";float:right;font-size:1.2rem}details.answer-key[open] summary:after{content:"-"}.answer-body{padding:4px 17px 18px;border-top:1px solid #cbe7dc}.practice-note{background:#fff8ed;border:1px solid #f5d3a2;border-left:5px solid #e58a11;border-radius:12px;padding:13px 15px;margin-bottom:20px;color:#70420d}
 footer{color:var(--muted);font-size:.86rem;text-align:center;margin-top:22px}.pager{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
-@media(max-width:760px){.focus{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
+@media(max-width:760px){.focus,.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr 1fr}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
 @media(max-width:430px){body{font-size:15px}.focus{grid-template-columns:1fr}.hero h1{font-size:1.82rem}.hero{padding:25px 18px}.topnav a{width:100%;justify-content:center}.source-table{font-size:12px}}
+@media(max-width:600px){.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table{border:0;background:transparent}tbody tr{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff!important}td{border:0;border-bottom:1px solid var(--line);padding:9px 12px}td:last-child{border-bottom:0}td[data-label]::before{content:attr(data-label);display:block;color:var(--blue);font-size:.69rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;margin-bottom:2px}}
 @media print{body{background:#fff}.shell{max-width:none}.hero,.card{box-shadow:none}.topnav,.pager{display:none}details.answer-key:not([open]) .answer-body{display:block}details.answer-key summary{display:none}}
 </style></head>
 <body><main class="shell"><header class="hero"><div class="eyebrow">StudentPro · UTBK SNBT · Pengetahuan dan Pemahaman Umum</div>
 <h1>Perubahan Makna</h1><p>Generalisasi, spesialisasi, ameliorasi, peyorasi, sinestesia, asosiasi, dan apelativa dalam konteks UTBK.</p><div class="meta"><span class="pill">Materi</span><span class="pill">Bahasa Indonesia</span><span class="pill">Balya Rochmadi</span></div></header>
 <nav class="topnav"><a href="00_INDEX.html">← Indeks PPU</a><a href="#materi">Mulai belajar ↓</a></nav>
-<article class="card prose" id="materi"><div class="focus"><span>Perubahan cakupan</span><span>Perubahan nilai rasa</span><span>Pertukaran indra</span><span>Asosiasi dan apelativa</span></div><p>1 Perubahan Makna Perubahan makna terjadi karena perkembangan bahasa, sosial, budaya, dan tanggapan indra. Berikut adalah jenis-jenis perubahan makna yang sering muncul dalam UTBK.</p>
-<h3>1.1 1. Meluas (Generalisasi) &amp; Menyempit (Spesialisasi)</h3>
-<p>a. Meluas (Generalisasi)</p>
-<p>Cakupan makna kata saat ini lebih luas daripada makna asalnya.</p>
-<ul class="bullet-list"><li>Bapak: (Asal: Ayah kandung) → (Sekarang: Semua laki-laki yang dihormati).</li></ul>
-<ul class="bullet-list"><li>Saudara: (Asal: Satu darah) → (Sekarang: Kata sapaan untuk siapa saja).</li></ul>
-<ul class="bullet-list"><li>Papan: (Asal: Kayu) → (Sekarang: Tempat tinggal/Rumah).</li></ul>
-<p>b. Menyempit (Spesialisasi)</p>
-<p>Cakupan makna kata saat ini lebih sempit/khusus daripada makna asalnya.</p>
-<ul class="bullet-list"><li>Sarjana: (Asal: Orang pandai) → (Sekarang: Lulusan S1).</li></ul>
-<ul class="bullet-list"><li>Madrasah: (Asal: Sekolah) → (Sekarang: Sekolah Islam).</li></ul>
-<ul class="bullet-list"><li>Sastra: (Asal: Tulisan) → (Sekarang: Karya seni bahasa).</li></ul>
-<h3>Latihan Soal 1</h3>
-<p>Manakah kalimat di bawah ini yang mengalami perubahan makna menyempit (spesialisasi)?</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Para bapak sedang berkumpul di balai desa.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>B.</b>Kita harus menghormati saudara sebangsa dan setanah air.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>C.</b>Ia bercita-cita menjadi seorang sarjana hukum.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>D.</b>Papan merupakan kebutuhan primer manusia selain pangan.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>E.</b>Ibu guru sedang rapat di kantor.</div></div></div>
-<p>Kunci &amp; Pembahasan: (C) Kata sarjana dulunya bermakna orang pandai (umum), kini khusus untuk lulusan universitas. Opsi A, B, D, E adalah generalisasi.</p>
-<h3>1.2 2. Ameliorasi &amp; Peyorasi</h3><p>Perubahan makna yang berhubungan dengan nilai rasa (sopan/kasar).</p>
-<ul class="bullet-list"><li>Ameliorasi (Membaik): Makna baru dirasakan lebih sopan/halus.</li></ul>
-<ul class="bullet-list"><li>Buta → Tunanetra</li><li>Penjara → Lembaga Pemasyarakatan</li><li>Gelandangan → Tunawisma</li></ul>
-<ul class="bullet-list"><li>Peyorasi (Memburuk): Makna baru dirasakan lebih kasar/rendah.</li></ul>
-<ul class="bullet-list"><li>Suami → Laki ("Lakinya mana?")</li><li>Meninggal → Mampus</li><li>Karyawan → Kacung/Buruh</li></ul>
-<h3>Latihan Soal 2</h3>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Rombongan turis mancanegara mengunjungi Bali.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>B.</b>Para tunawisma diberi pelatihan kerja oleh dinas sosial.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>C.</b>Gerombolan kaki tangan musuh berhasil ditangkap.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>D.</b>Putra beliau baru saja diwisuda kemarin.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>E.</b>Wanita karier masa kini sangat mandiri.</div></div></div>
-<p>Kunci &amp; Pembahasan: (C) Kata kaki tangan bermakna negatif (antek-antek/bawahan jahat), padahal asalnya netral (pembantu). Ini adalah peyorasi.</p>
-<h3>1.3 3. Sinestesia &amp; Asosiasi</h3><p>a. Sinestesia (Pertukaran Indra) Perubahan makna akibat pertukaran tanggapan antara dua indra yang berbeda.</p>
-<pre class="source-table">Indra Asal → Tujuan          Contoh Kalimat                Makna
-         Pengecap → Pendengaran       Kata-katanya sangat pedas.    Menyakitkan hati
-         Pengecap → Penglihatan       Senyumnya manis sekali.       Menarik hati
-         Peraba → Pendengaran         Suaranya berat.               Rendah (nada)
-         Penciuman → Penglihatan      Namanya harum.                Terkenal baik</pre>
-<p>b. Asosiasi (Perumpamaan) Perubahan makna karena persamaan sifat (kiasan) antara dua hal.</p>
-<ul class="bullet-list"><li>Amplop: (Bungkus surat → Uang sogokan).</li></ul>
-<ul class="bullet-list"><li>Kursi: (Tempat duduk → Jabatan/Kedudukan).</li></ul>
-<ul class="bullet-list"><li>Benalu: (Parasit → Orang yang merugikan).</li></ul>
-<h3>Latihan Soal 3</h3>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Hati-hati, jangan sampai terseret kasus meja hijau.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>B.</b>Wajahnya masam ketika mendengar berita itu.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>C.</b>Bisnis kulinernya sedang menggurita ke berbagai kota.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>D.</b>Ia memberi amplop agar urusannya lancar.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>E.</b>Kursi parlemen diperebutkan banyak partai.</div></div></div>
-<p>Kunci &amp; Pembahasan: (B) "Wajahnya masam". Masam seharusnya indra pengecap, tapi digunakan untuk ekspresi wajah (penglihatan).</p>
-<h3>1.4 4. Apelativa (Penyebutan)</h3><p>Apelativa adalah penggunaan kata-kata tertentu (nama diri, pangkat, istilah kekerabatan, merek) yang digunakan sebagai kata sapaan atau sebutan umum.</p>
-<h3>Ingat!</h3>
-<ul class="bullet-list"><li>"Apa kabar, Ibu?" (Benar, sapaan langsung).</li></ul>
-<ul class="bullet-list"><li>"Saya punya ibu yang baik." (Benar, bukan sapaan, huruf kecil).</li></ul>
-<ul class="bullet-list"><li>"Siap, Komandan!" (Benar, sapaan pengganti nama).</li></ul>
-<h3>Latihan Soal 4</h3>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>"Kapan bapak akan berangkat ke Jakarta?" tanya Andi.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>B.</b>"Mohon izin, komandan, pasukan sudah siap."</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>C.</b>Silakan dimakan kuenya, Dik.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>D.</b>Semua Siswa wajib mengikuti upacara bendera.</div></div></div>
-<div class="question"><p></p><div class="options"><div class="option"><b>E.</b>"Apakah saudara sudah mengisi formulir?" tanya petugas.</div></div></div>
-<p>Kunci &amp; Pembahasan: (C) Kata Dik adalah sapaan (apelativa) sebagai pengganti nama orang, maka harus kapital. Opsi A, B, E salah karena sapaan ditulis huruf kecil.</p><nav class="pager" aria-label="Navigasi materi"><a href="05_Morfologi.html">← Morfologi</a><a href="07_Sintaksis.html">Sintaksis →</a></nav></article>
+<article class="card prose" id="materi"><div class="focus"><span>Perubahan cakupan</span><span>Perubahan nilai rasa</span><span>Pertukaran indra</span><span>Asosiasi dan apelativa</span></div>
+<section><h2>1. Mengapa Makna Berubah?</h2><p>Bahasa mengikuti perubahan masyarakat. Teknologi, hubungan sosial, kesopanan, kebiasaan, dan cara manusia membandingkan pengalaman dapat mengubah pemakaian sebuah kata. Dalam soal PPU, perubahan makna ditentukan dari <strong>hubungan antara makna dasar dan makna dalam konteks</strong>.</p>
+<div class="concept-grid three"><div class="concept"><b>Cakupan</b><span>meluas/menyempit</span></div><div class="concept"><b>Nilai rasa</b><span>membaik/memburuk</span></div><div class="concept"><b>Pemindahan</b><span>indra/asosiasi</span></div></div></section>
+
+<section><h2>2. Perubahan Cakupan</h2><table><thead><tr><th>Jenis</th><th>Arah</th><th>Contoh</th><th>Penjelasan</th></tr></thead><tbody>
+<tr><td data-label="Jenis"><b>Generalisasi</b></td><td data-label="Arah">khusus → umum</td><td data-label="Contoh"><em>bapak</em>: ayah kandung → sapaan hormat</td><td data-label="Penjelasan">jumlah acuan bertambah</td></tr>
+<tr><td data-label="Jenis"><b>Spesialisasi</b></td><td data-label="Arah">umum → khusus</td><td data-label="Contoh"><em>sarjana</em>: orang pandai → lulusan S1</td><td data-label="Penjelasan">jumlah acuan berkurang</td></tr>
+</tbody></table></section>
+
+<section><h2>3. Perubahan Nilai Rasa</h2><h3>3.1 Ameliorasi</h3><p>Ameliorasi terjadi ketika bentuk baru dirasakan lebih halus, sopan, atau terhormat.</p><ul><li><em>buta</em> → <b>tunanetra</b></li><li><em>gelandangan</em> → <b>tunawisma</b></li><li><em>penjara</em> → <b>lembaga pemasyarakatan</b></li><li><em>dipecat</em> → <b>dirumahkan</b> dalam konteks tertentu</li></ul>
+<h3>3.2 Peyorasi</h3><p>Peyorasi terjadi ketika bentuk baru bernilai lebih rendah, kasar, atau negatif.</p><ul><li><em>istri</em> → <b>bini</b> dalam ragam yang dianggap kasar</li><li><em>meninggal</em> → <b>mampus</b></li><li><em>kelompok</em> → <b>gerombolan</b> ketika mengacu pada pengacau</li></ul>
+<div class="warning"><b>Fokus nilai rasa:</b> ameliorasi dan peyorasi tidak ditentukan dari banyak-sedikitnya acuan, melainkan dari penilaian sopan, halus, kasar, atau merendahkan.</div></section>
+
+<section><h2>4. Sinestesia</h2><p>Sinestesia adalah pemindahan tanggapan dari satu indra ke indra lain atau ke perasaan. Kata yang secara dasar berkaitan dengan rasa, sentuhan, bunyi, warna, atau bau dipakai untuk pengalaman berbeda.</p>
+<table><thead><tr><th>Ungkapan</th><th>Indra asal</th><th>Pemakaian baru</th></tr></thead><tbody>
+<tr><td data-label="Ungkapan">kritiknya pedas</td><td data-label="Indra asal">pengecap</td><td data-label="Pemakaian baru">perkataan yang menyakitkan</td></tr>
+<tr><td data-label="Ungkapan">senyumnya manis</td><td data-label="Indra asal">pengecap</td><td data-label="Pemakaian baru">tampilan yang menarik</td></tr>
+<tr><td data-label="Ungkapan">suaranya berat</td><td data-label="Indra asal">peraba/ukuran beban</td><td data-label="Pemakaian baru">bunyi bernada rendah</td></tr>
+<tr><td data-label="Ungkapan">namanya harum</td><td data-label="Indra asal">penciuman</td><td data-label="Pemakaian baru">reputasi yang baik</td></tr>
+</tbody></table>
+<div class="callout"><b>Tes sinestesia:</b> tanyakan indra apa yang secara dasar menangkap kata tersebut, lalu lihat apakah kalimat memindahkannya ke indra atau pengalaman lain.</div></section>
+
+<section><h2>5. Asosiasi</h2><p>Asosiasi memindahkan makna karena dua hal dianggap memiliki sifat, fungsi, atau hubungan yang mirip. Hubungannya dapat menjadi sangat umum sehingga terasa seperti makna biasa.</p>
+<table><thead><tr><th>Kata</th><th>Makna dasar</th><th>Makna asosiasi</th><th>Hubungan</th></tr></thead><tbody>
+<tr><td data-label="Kata">amplop</td><td data-label="Makna dasar">pembungkus surat</td><td data-label="Makna asosiasi">uang suap</td><td data-label="Hubungan">uang lazim diberikan dalam amplop</td></tr>
+<tr><td data-label="Kata">kursi</td><td data-label="Makna dasar">tempat duduk</td><td data-label="Makna asosiasi">jabatan</td><td data-label="Hubungan">jabatan dilambangkan tempat duduk</td></tr>
+<tr><td data-label="Kata">benalu</td><td data-label="Makna dasar">tumbuhan parasit</td><td data-label="Makna asosiasi">orang yang merugikan</td><td data-label="Hubungan">sama-sama hidup dengan merugikan pihak lain</td></tr>
+<tr><td data-label="Kata">hijau</td><td data-label="Makna dasar">warna</td><td data-label="Makna asosiasi">belum berpengalaman</td><td data-label="Hubungan">buah hijau dianggap belum matang</td></tr>
+</tbody></table></section>
+
+<section><h2>6. Apelativa dan Penyebutan</h2><p>Apelativa berkaitan dengan pemakaian nama diri, gelar, pangkat, atau istilah kekerabatan sebagai sapaan atau sebutan. Dalam ejaan, sapaan langsung yang menggantikan nama ditulis dengan huruf kapital.</p>
+<div class="compare"><div><b>Sapaan langsung</b><p>“Silakan duduk, <b>Ibu</b>.”</p><small>Huruf kapital karena menggantikan nama lawan bicara.</small></div><div><b>Makna umum</b><p>“Saya tinggal bersama <b>ibu</b>.”</p><small>Huruf kecil karena menyatakan hubungan kekerabatan.</small></div></div>
+<p>Nama merek yang dipakai untuk menyebut jenis barang sering pula dibahas sebagai penyebutan atau metonimia, misalnya menyebut merek tertentu untuk air minum atau pompa air. Bacalah istilah yang dipakai dalam pilihan jawaban dan ikuti fokus soal.</p></section>
+
+<section><h2>7. Tabel Pembeda Cepat</h2><table><thead><tr><th>Jika yang berubah ...</th><th>Pertanyaan diagnosis</th><th>Kemungkinan jawaban</th></tr></thead><tbody>
+<tr><td data-label="Jika yang berubah">jumlah acuan</td><td data-label="Pertanyaan diagnosis">makin luas atau sempit?</td><td data-label="Kemungkinan jawaban">generalisasi/spesialisasi</td></tr>
+<tr><td data-label="Jika yang berubah">kesopanan</td><td data-label="Pertanyaan diagnosis">makin halus atau kasar?</td><td data-label="Kemungkinan jawaban">ameliorasi/peyorasi</td></tr>
+<tr><td data-label="Jika yang berubah">tanggapan indra</td><td data-label="Pertanyaan diagnosis">indra asal berpindah ke mana?</td><td data-label="Kemungkinan jawaban">sinestesia</td></tr>
+<tr><td data-label="Jika yang berubah">persamaan sifat/fungsi</td><td data-label="Pertanyaan diagnosis">apa kemiripan dua acuannya?</td><td data-label="Kemungkinan jawaban">asosiasi</td></tr>
+</tbody></table>
+<details class="answer-key"><summary>Buka contoh penalaran</summary><div class="answer-body"><p><b>Kalimat:</b> “Kritik pedas itu membuat pejabat tersebut tersinggung.”</p><p><b>Analisis:</b> <em>pedas</em> secara dasar dirasakan lidah, tetapi digunakan untuk perkataan yang didengar dan dirasakan secara emosional. Jadi, perubahan itu berupa sinestesia.</p></div></details></section>
+<nav class="pager" aria-label="Navigasi materi"><a href="05_Morfologi.html">← Morfologi</a><a href="07_Sintaksis.html">Sintaksis →</a></nav></article>
 <footer>© 2026 Balya Rochmadi · StudentPro · UTBK SNBT PPU</footer></main></body></html>

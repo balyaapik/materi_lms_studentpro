@@ -8,122 +8,78 @@
 .topnav,.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0}.topnav a,.pager a,.button{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#fff;text-decoration:none;font-weight:750;border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:0 3px 10px #10233c0c}.topnav a:hover,.pager a:hover{border-color:var(--blue);color:var(--blue)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,36px);box-shadow:0 10px 30px #10233c0d;margin-top:14px}.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 24px}.focus span{padding:10px 11px;background:var(--soft);border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:.86rem;font-weight:750;text-align:center}
 h2,h3{color:var(--navy);line-height:1.28;scroll-margin-top:14px}h2{font-size:1.45rem;border-bottom:2px solid var(--line);padding-bottom:.38em;margin:2em 0 .7em}h3{font-size:1.1rem;margin:1.55em 0 .55em}p{margin:.4em 0 1.05em}.prose strong{color:var(--navy)}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.1em 0}.concept-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.concept{border:1px solid #c7dceb;border-radius:13px;padding:15px;background:linear-gradient(145deg,#f8fcff,#eef7fc)}.concept b{display:block;color:var(--navy);font-size:1.04rem}.concept span{display:block;color:var(--blue);font-weight:850;margin:.2em 0}.concept p{font-size:.9rem;color:var(--muted);margin:.35em 0 0}.example,.warning{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0;background:#f6fbff}.example.good{border-left-color:var(--good);background:#f1fbf6}.warning{border-color:#f1d4a8;border-left-color:#df7b08;background:#fff9ef;color:#68400d}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px}.steps li{position:relative;padding:11px 13px 11px 50px;border:1px solid var(--line);border-radius:11px;background:#fafcff}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1em 0}.compare>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcfe}.compare>div:first-child{border-left:4px solid #d65353}.compare>div:last-child{border-left:4px solid var(--good)}.compare p{margin:.35em 0}.compare small{color:var(--muted)}.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:1.2em 0}.flow span{background:var(--navy);color:#fff;border-radius:10px;padding:9px 14px;font-weight:850}.flow b{color:var(--blue);font-size:1.3rem}.mini{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}.mini ol{margin-bottom:0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.1em 0;font-size:.92rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tbody tr:last-child td{border-bottom:0}th{background:#eaf4fa;color:var(--navy);font-weight:850}tbody tr:nth-child(even){background:#f9fbfd}ul,ol{padding-left:1.35em}li{margin:.35em 0}
 .source-table{white-space:pre-wrap;overflow-x:auto;background:#f8fbfd;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:14px;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:1em 0}.callout{background:#edf8ff;border:1px solid #b9def5;border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0}.bullet-list{margin:.5em 0 1.2em;padding-left:1.25em}.bullet-list li{margin:.34em 0}
 .question{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:13px;padding:14px 16px;margin:16px 0;background:#fff}.question p{margin:0 0 .65em}.options{display:grid;gap:6px}.option{background:var(--soft);border-radius:8px;padding:7px 10px}.option b{color:var(--blue);margin-right:5px}.reading{background:#f8fbfd;border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.1em 0}.reading-label{font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.45em}
 details.answer-key{margin-top:28px;border:1px solid #b8dfd0;border-radius:14px;background:#f0fbf6;overflow:hidden}details.answer-key summary{cursor:pointer;padding:14px 17px;font-weight:850;color:var(--good);list-style:none}details.answer-key summary::-webkit-details-marker{display:none}details.answer-key summary:after{content:"+";float:right;font-size:1.2rem}details.answer-key[open] summary:after{content:"-"}.answer-body{padding:4px 17px 18px;border-top:1px solid #cbe7dc}.practice-note{background:#fff8ed;border:1px solid #f5d3a2;border-left:5px solid #e58a11;border-radius:12px;padding:13px 15px;margin-bottom:20px;color:#70420d}
 footer{color:var(--muted);font-size:.86rem;text-align:center;margin-top:22px}.pager{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
-@media(max-width:760px){.focus{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
+@media(max-width:760px){.focus,.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr 1fr}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
 @media(max-width:430px){body{font-size:15px}.focus{grid-template-columns:1fr}.hero h1{font-size:1.82rem}.hero{padding:25px 18px}.topnav a{width:100%;justify-content:center}.source-table{font-size:12px}}
+@media(max-width:600px){.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table{border:0;background:transparent}tbody tr{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff!important}td{border:0;border-bottom:1px solid var(--line);padding:9px 12px}td:last-child{border-bottom:0}td[data-label]::before{content:attr(data-label);display:block;color:var(--blue);font-size:.69rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;margin-bottom:2px}}
 @media print{body{background:#fff}.shell{max-width:none}.hero,.card{box-shadow:none}.topnav,.pager{display:none}details.answer-key:not([open]) .answer-body{display:block}details.answer-key summary{display:none}}
 </style></head>
 <body><main class="shell"><header class="hero"><div class="eyebrow">StudentPro · UTBK SNBT · Pengetahuan dan Pemahaman Umum</div>
 <h1>Sintaksis</h1><p>Hierarki kata-frasa-klausa-kalimat, klasifikasi frasa, fungsi S-P-O-Pel-K, transformasi, aktif-pasif, dan ragam kalimat.</p><div class="meta"><span class="pill">Materi</span><span class="pill">Bahasa Indonesia</span><span class="pill">Balya Rochmadi</span></div></header>
 <nav class="topnav"><a href="00_INDEX.html">← Indeks PPU</a><a href="#materi">Mulai belajar ↓</a></nav>
-<article class="card prose" id="materi"><div class="focus"><span>Satuan sintaksis</span><span>Jenis frasa</span><span>Fungsi kalimat</span><span>Aktif, pasif, versi, inversi</span></div><pre class="source-table">1   Hierarki Sintaksis                                                                                   2
-    1.1 1. Konsep Dasar Satuan Bahasa . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        2</pre>
-<pre class="source-table">2   Klasifikasi Frasa                                                                                    3
-    2.1 1. Berdasarkan Distribusi Unsur . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      3
-    2.2 2. Berdasarkan Kategori &amp; Pola . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       3</pre>
-<pre class="source-table">3   Unsur dan Jenis Kalimat                                                                              5
-    3.1 1. Analisis Unsur Kalimat (S-P-O-Pel-K) . . . . . . . . . . . . . . . . . . . . . . . . .        5
-    3.2 2. Kalimat Inti Transformasi . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     5</pre>
-<pre class="source-table">4   Ragam Struktur Kalimat                                                                               6
-    4.1 1. Kalimat Aktif (Transitivitas) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-    4.2 2. Kalimat Pasif (Kanonis vs Persona) . . . . . . . . . . . . . . . . . . . . . . . . . . .      6</pre>
-<pre class="source-table">5   Pendalaman Jenis Kalimat                                                                             6
-    5.1 1. Kalimat Versi dan Inversi . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     6
-    5.2 2. Kalimat Mayor dan Minor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       7
-    5.3 3. Kalimat Verbal dan Nominal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      8</pre>
-<pre class="source-table">1      Hierarki Sintaksis
-1.1     1. Konsep Dasar Satuan Bahasa</pre>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Kata: Kata merupakan satuan bahasa terkecil dalam sintaksis yang dapat berdiri sendiri dan memiliki makna bebas. Dalam konteks kalimat, sebuah kata dapat menduduki satu fungsi sintaksis (S/P/O/K) atau menjadi bagian dari frasa. Kata dibedakan menjadi kata penuh (memiliki makna leksikal seperti ’makan’) dan kata tugas (hanya memiliki makna gramatikal seperti ’dan’, ’yang’).</li></ul>
-<ul class="bullet-list"><li>Frasa: Frasa adalah satuan gramatikal yang terbentuk dari gabungan dua kata atau lebih yang bersifat non-predikatif. Artinya, dalam gabungan kata tersebut tidak terdapat hubungan antara Subjek dan Predikat. Ciri utama frasa adalah tidak bisa dipisahkan fungsinya; seluruh rangkaian kata dalam frasa hanya menduduki satu slot fungsi (misalnya hanya sebagai Subjek saja).</li></ul>
-<ul class="bullet-list"><li>Klausa: Klausa adalah satuan gramatikal yang sekurang-kurangnya terdiri dari satu Subjek dan satu Predikat. Klausa berpotensi menjadi kalimat, namun belum memiliki intonasi final (tanda titik, tanya, atau seru). Dalam kalimat majemuk, klausa sering disebut sebagai anak kalimat atau induk kalimat yang menjadi bagian dari struktur yang lebih besar.</li></ul>
-<ul class="bullet-list"><li>Kalimat: Kalimat adalah satuan bahasa terlengkap yang memuat pikiran yang utuh. Secara lisan, kalimat diiringi oleh alunan nada, disela oleh jeda, dan diakhiri oleh intonasi final. Secara tertulis, kalimat dimulai dengan huruf kapital dan diakhiri dengan tanda baca penutup. Kalimat tersusun atas klausa-klausa yang dirangkai.</li></ul>
-<h3>Ilustrasi Analisis</h3>
-<ul class="bullet-list"><li>Kata: "Adik"</li></ul>
-<ul class="bullet-list"><li>Frasa: "Adik saya yang lucu" (Hanya menduduki fungsi Subjek, tidak ada predikat di dalamnya).</li></ul>
-<ul class="bullet-list"><li>Klausa: "adik sedang tidur" (Ada S + P, tapi belum ada titik).</li></ul>
-<ul class="bullet-list"><li>Kalimat: "Ketika hujan turun, adik sedang tidur." (Pikiran utuh, diakhiri titik).</li></ul>
-<pre class="source-table">2      Klasifikasi Frasa
-2.1     1. Berdasarkan Distribusi Unsur</pre>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Frasa Endosentris Koordinatif (Setara): Frasa ini terdiri dari unsur-unsur yang memiliki kedudukan sama atau sederajat. Antara unsur-unsurnya dapat disisipkan kata hubung (konjungsi) koordinatif seperti "dan" atau "atau". Tidak ada unsur yang berstatus sebagai penjelas bagi unsur lainnya; keduanya sama-sama merupakan inti. Jika salah satu unsur dihilangkan, frasa ini masih memiliki potensi makna yang mirip meskipun tidak lengkap.</li></ul>
-<ul class="bullet-list"><li>Frasa Endosentris Atributif (Bertingkat): Frasa ini memiliki pola Diterangkan (D) dan Menerangkan (M). Terdapat satu unsur yang menjadi "Inti" (pusat makna) dan unsur lain sebagai "Atribut" (penjelas). Unsur atribut berfungsi membatasi makna unsur inti. Unsur atribut biasanya tidak dapat menggantikan kedudukan frasa tersebut secara keseluruhan dalam kalimat.</li></ul>
-<ul class="bullet-list"><li>Frasa Eksosentris (Tak Berpusat): Frasa eksosentris adalah frasa yang tidak memiliki unsur inti (pusat) yang dapat mewakili seluruh frasa. Frasa ini terbentuk dari gabungan kata depan (preposisi) atau kata tugas lainnya dengan kata benda. Strukturnya terdiri dari Perangkai (Preposisi) + Sumbu (Nomina). Jika preposisinya dihilangkan, maka frasa tersebut akan kehilangan fungsi sintaksisnya (menjadi rancu).</li></ul>
-<h3>Ilustrasi Analisis</h3>
-<ul class="bullet-list"><li>Setara: "Suami istri" (Suami dan istri). Keduanya inti.</li></ul>
-<ul class="bullet-list"><li>Bertingkat: "Buku sejarah" (Buku = Inti, Sejarah = Penjelas). Tidak bisa dibalik menjadi "Sejarah buku".</li></ul>
-<ul class="bullet-list"><li>Eksosentris: "Di pasar". Kata "di" adalah perangkai, "pasar" adalah sumbu. Tidak ada inti yang dominan, keduanya wajib ada.</li></ul>
-<h3>2.2 2. Berdasarkan Kategori &amp; Pola</h3><h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Frasa Verbal, Nominal, Adjektival, Numeralia: Penamaan jenis frasa ini didasarkan pada kategori kata yang menjadi "Inti" (Head) dari frasa tersebut. Frasa Verbal berinti kata kerja (predikatif), Frasa Nominal berinti kata benda (substantif), Frasa Adjektival berinti kata sifat, dan Frasa Numeralia berinti kata bilangan. Fungsi sintaksisnya dalam kalimat akan mengikuti fungsi kategori kata intinya.</li></ul>
-<ul class="bullet-list"><li>Frasa Ambigu vs Idiomatis: Frasa Ambigu adalah frasa yang memiliki makna ganda tergantung pada jeda atau konteks kalimat, sering kali disebabkan oleh struktur Menerangkan- Diterangkan yang kurang jelas. Sedangkan Frasa Idiomatis adalah konstruksi yang maknanya sudah menyimpang jauh dari makna leksikal kata-kata pembentuknya (makna kiasan) dan sudah menjadi kesepakatan sosial.</li></ul>
-<ul class="bullet-list"><li>Frasa Sepola (Sebentuk) &amp; Semakna: Frasa Sepola adalah dua frasa atau lebih yang memiliki urutan kategori kata yang sama persis (misalnya Noun + Adjective). Frasa Semakna</li></ul>
-<p>adalah frasa yang terdiri dari kata-kata yang bersinonim (Tautologi) untuk tujuan penegasan atau efek puitis, sehingga maknanya menjadi sangat kuat.</p>
-<h3>Ilustrasi Analisis</h3>
-<ul class="bullet-list"><li>Ambigu: "Kucing makan tikus mati." (Kucing makan bangkai tikus? ATAU Kucing makan tikus, lalu kucingnya mati?).</li></ul>
-<ul class="bullet-list"><li>Idiomatis: "Gulung tikar" (Bangkrut). Tidak ada hubungannya dengan tikar fisik.</li></ul>
-<ul class="bullet-list"><li>Sepola: "Gadis cantik" (N+Adj) sepola dengan "Rumah mewah" (N+Adj).</li></ul>
-<ul class="bullet-list"><li>Semakna: "Hancur lebur", "Segar bugar", "Sopan santun".</li></ul>
-<pre class="source-table">3      Unsur dan Jenis Kalimat
-3.1     1. Analisis Unsur Kalimat (S-P-O-Pel-K)</pre>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Subjek (S): Bagian kalimat yang menunjukkan pelaku, tokoh, sosok, atau hal yang menjadi pokok pembicaraan. Subjek biasanya berupa Nomina atau Frasa Nominal. Cara mengidentifikasinya adalah dengan bertanya "Apa" atau "Siapa" yang ada di depan Predikat. Subjek tidak boleh didahului kata depan (preposisi).</li></ul>
-<ul class="bullet-list"><li>Predikat (P): Bagian kalimat yang memberitahukan apa yang dilakukan oleh Subjek atau bagaimana keadaan Subjek. Predikat dapat berupa Verba, Adjektiva, Nomina, atau Numeralia. Cara mengidentifikasinya adalah dengan bertanya "Mengapa" atau "Bagaimana". Predikat dapat diingkarkan dengan kata "tidak" atau "bukan".</li></ul>
-<ul class="bullet-list"><li>Objek (O) vs Pelengkap (Pel): Objek adalah sasaran tindakan yang wajib hadir pada kalimat aktif transitif dan letaknya langsung di belakang Predikat. Ciri utamanya: Objek dapat berubah menjadi Subjek jika kalimat dipasifkan. Sebaliknya, Pelengkap berfungsi melengkapi Predikat (biasanya pada verba berawalan ber- atau dwitransitif) namun tidak dapat menjadi Subjek pasif.</li></ul>
-<ul class="bullet-list"><li>Keterangan (K): Unsur kalimat yang memberikan informasi tambahan (waktu, tempat, cara, tujuan). Keterangan bersifat manasuka (bisa dihilangkan tanpa merusak struktur inti) dan posisinya bebas (bisa di awal, tengah, atau akhir kalimat). Keterangan biasanya ditandai dengan preposisi.</li></ul>
-<h3>3.2 2. Kalimat Inti Transformasi</h3>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Kalimat Inti: Kalimat inti adalah bentuk kalimat yang paling sederhana dan mendasar. Syarat kalimat inti adalah: (1) Hanya terdiri dari unsur pusat S dan P (ditambah O jika transitif), (2) Urutannya harus S-P (bukan inversi), (3) Berintonsasi berita (netral), dan (4) Tidak mengandung unsur keterangan atau pelengkap yang tidak wajib.</li></ul>
-<ul class="bullet-list"><li>Transformasi Kalimat: Transformasi adalah proses pengubahan struktur kalimat inti menjadi struktur lain tanpa mengubah makna dasarnya secara total (hanya menambah nuansa). Jenis transformasi meliputi: Perluasan (menambah anak kalimat/keterangan), Permutasian (mengubah urutan kata/inversi), dan Pengubahan Status (Aktif menjadi Pasif atau Berita menjadi Tanya).</li></ul>
-<h3>Ilustrasi Analisis</h3>
-<ul class="bullet-list"><li>Kalimat Luas: "Mahasiswa baru yang rajin itu sedang membaca buku di perpustakaan."</li></ul>
-<ul class="bullet-list"><li>Analisis: S (Mahasiswa baru yang rajin itu) + P (sedang membaca) + O (buku) + K (di perpustakaan).</li></ul>
-<ul class="bullet-list"><li>Kalimat Inti: "Mahasiswa membaca buku." (Buang ’yang rajin’, ’sedang’, ’di perpustakaan’).</li></ul>
-<pre class="source-table">4      Ragam Struktur Kalimat
-4.1     1. Kalimat Aktif (Transitivitas)</pre>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Aktif Ekatransitif &amp; Dwitransitif: Ekatransitif adalah kalimat aktif yang predikatnya memerlukan satu objek saja (S-P-O). Sedangkan Dwitransitif adalah kalimat yang predikatnya memerlukan dua unsur di belakangnya, yaitu Objek dan Pelengkap (S-P-O-Pel). Biasanya predikat dwitransitif berakhiran -kan atau -i (contoh: membelikan, mengirimi).</li></ul>
-<ul class="bullet-list"><li>Aktif Intransitif &amp; Semitransitif: Intransitif murni adalah kalimat aktif yang tidak memerlukan objek maupun pelengkap (S-P saja atau S-P-K), contoh: "Adik tidur". Semitransitif adalah kalimat aktif yang tidak boleh ada objek, tetapi wajib ada Pelengkap (S-P-Pel), contoh: "Pancasila berlandaskan hukum". Keduanya tidak bisa dipasifkan.</li></ul>
-<h3>4.2 2. Kalimat Pasif (Kanonis vs Persona)</h3>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Pasif Kanonis (Bentuk ’Di-’): Ini adalah bentuk pasif standar di mana objek pada kalimat aktif berubah menjadi subjek. Predikatnya menggunakan imbuhan di- atau ter-. Pelaku tindakan (agen) bisa dimunculkan dengan kata "oleh" atau bisa juga dihilangkan jika tidak penting. Struktur ini dipakai untuk pelaku orang ketiga atau nama orang.</li></ul>
-<ul class="bullet-list"><li>Pasif Persona (Bentuk Pronomina): Bentuk pasif khusus yang digunakan ketika pelakunya adalah kata ganti orang (aku, saya, kamu, engkau, dia, mereka, kita, kami). Strukturnya sangat ketat: Objek + Pelaku + Verba Dasar. Antara pelaku dan verba dasar tidak boleh disisipi kata lain (seperti "akan", "telah"). Konstruksi "di- ... oleh [ganti orang]" dianggap tidak baku dalam ragam formal.</li></ul>
-<h3>Ilustrasi Analisis</h3>
-<ul class="bullet-list"><li>Aktif: "Saya sudah membaca buku itu."</li></ul>
-<ul class="bullet-list"><li>Pasif Salah: "Buku itu sudah dibaca oleh saya." (Tidak efektif/Tidak baku).</li></ul>
-<ul class="bullet-list"><li>Pasif Benar: "Buku itu sudah saya baca."</li></ul>
-<pre class="source-table">5      Pendalaman Jenis Kalimat
-5.1     1. Kalimat Versi dan Inversi
-      Penjelasan Detail</pre>
-<ul class="bullet-list"><li>Kalimat Versi (Susunan Biasa): Ini adalah pola kalimat standar dalam bahasa Indonesia di mana unsur Subjek selalu mendahului Predikat (S-P). Pola ini digunakan dalam ragam bahasa resmi, berita, dan komunikasi sehari-hari yang bersifat netral atau informatif. Dalam pola ini, tekanan makna terbagi rata atau fokus pada pelaku (Subjek). Sebagian besar kalimat yang kita temui di buku teks adalah kalimat versi.</li></ul>
-<ul class="bullet-list"><li>Kalimat Inversi (Susunan Balik): Kalimat inversi adalah kalimat yang mengalami perubahan urutan fungsi sintaksis, di mana Predikat diletakkan mendahului Subjek (P-S). Tujuan utama pembalikan ini adalah untuk memberikan penekanan (emfasis) yang kuat pada unsur predikat atau aktivitas yang dilakukan. Kalimat inversi sangat sering ditemukan dalam kalimat perintah (imperatif), kalimat seruan, atau dalam karya sastra (novel/puisi) untuk memperindah irama dan menonjolkan suasana.</li></ul>
-<h3>Ilustrasi Analisis</h3>
-<p>1. Kasus Kalimat Berita (Deklaratif):</p>
-<ul class="bullet-list"><li>Versi: "Kambing itu(S) mati(P) di kandang." (Fokus pada Kambing).</li><li>Inversi: "Matilah(P) kambing itu(S) di kandang." (Fokus pada kematiannya/dramatis).</li></ul>
-<p>2. Kasus Kalimat Perintah:</p>
-<ul class="bullet-list"><li>Versi: "Kamu(S) pergi(P) dari sini!" (Kurang lazim/datar).</li><li>Inversi: "Pergilah(P) kamu(S) dari sini!" (Lebih tegas/natural).</li></ul>
-<h3>5.2 2. Kalimat Mayor dan Minor</h3>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Kalimat Mayor (Lengkap): Kalimat mayor adalah kalimat yang struktur sintaksisnya lengkap, sekurang-kurangnya mengandung unsur Subjek dan Predikat (S-P). Kalimat ini dapat berdiri sendiri sebagai pesan yang utuh tanpa memerlukan bantuan konteks luar atau kalimat sebelumnya. Dalam ragam tulis formal atau akademik, hampir seluruh kalimat yang digunakan wajib berbentuk kalimat mayor agar informasi tersampaikan dengan jelas dan tidak ambigu.</li></ul>
-<ul class="bullet-list"><li>Kalimat Minor (Tak Lengkap): Kalimat minor adalah kalimat yang struktur intinya tidak lengkap (mungkin hanya terdiri dari Subjek saja, Predikat saja, atau Keterangan saja). Meskipun tidak lengkap secara gramatikal, kalimat ini tetap bermakna dan komunikatif karena dibantu oleh konteks pembicaraan, intonasi, atau situasi fisik. Kalimat minor sering muncul dalam bentuk jawaban singkat, salam, seruan, atau slogan iklan.</li></ul>
-<h3>Ilustrasi Analisis</h3>
-<ul class="bullet-list"><li>Konteks Percakapan: "Kapan ayah pulang?"</li></ul>
-<ul class="bullet-list"><li>Jawaban Mayor: "Ayah pulang nanti sore." (Lengkap S-P-K).</li></ul>
-<ul class="bullet-list"><li>Jawaban Minor: "Nanti sore." (Hanya Keterangan Waktu). Meskipun hanya satu frasa, ini dianggap satu kalimat (minor) karena diakhiri intonasi final.</li></ul>
-<ul class="bullet-list"><li>Contoh Lain:</li></ul>
-<ul class="bullet-list"><li>"Selamat pagi!" (Minor - Salam).</li><li>"Awas!" (Minor - Seruan).</li></ul>
-<ul class="bullet-list"><li>"Pergi!" (Minor - Perintah tanpa subjek).</li></ul>
-<h3>5.3 3. Kalimat Verbal dan Nominal</h3>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Kalimat Verbal: Kalimat verbal adalah kalimat yang unsur Predikat-nya diduduki oleh Kata Kerja (Verba) atau Frasa Verbal. Predikat ini menyatakan suatu perbuatan, proses, atau keadaan yang dinamis. Kalimat verbal bisa berupa aktif (me-/ber-) maupun pasif (di- /ter-). Ciri utamanya adalah predikatnya dapat diingkarkan dengan kata "tidak" (contoh: tidak makan).</li></ul>
-<ul class="bullet-list"><li>Kalimat Nominal (Non-Verbal): Dalam pengertian luas, kalimat nominal adalah kalimat yang Predikat-nya bukan Kata Kerja. Predikatnya bisa berupa:</li></ul>
-<ul class="bullet-list"><li>Nomina (Benda): Menyatakan identitas.</li><li>Adjektiva (Sifat): Menyatakan kualitas/sifat.</li><li>Numeralia (Bilangan): Menyatakan jumlah.</li></ul>
-<p>Ciri utama kalimat nominal (terutama nomina dan numeralia) adalah predikatnya sering diingkarkan dengan kata "bukan", sedangkan adjektiva dengan "tidak".</p>
-<h3>Ilustrasi Analisis</h3>
-<p>1. Kalimat Verbal:</p>
-<ul class="bullet-list"><li>"Ibu sedang memasak di dapur." (P = Memasak/Verba).</li><li>"Adik menangis tersedu-sedu." (P = Menangis/Verba).</li></ul>
-<p>2. Kalimat Nominal (Luas):</p>
-<ul class="bullet-list"><li>Tipe Nomina: "Ayah saya seorang guru." (P = Guru/Benda). → Ingkar: Ayah saya bukan guru.</li><li>Tipe Adjektiva: "Rumah itu sangat besar." (P = Besar/Sifat).</li><li>Tipe Numeralia: "Kambing kurban Pak Haji dua ekor." (P = Dua ekor/Bilangan).</li><li>Tipe Preposisional: "Ibu di pasar." (P = Di pasar/Ket. Tempat).</li></ul><nav class="pager" aria-label="Navigasi materi"><a href="06_Perubahan_Makna.html">← Perubahan Makna</a><a href="08_Latihan_Hubungan_Makna_dan_Majas.html">Latihan Hubungan Makna dan Majas →</a></nav></article>
+<article class="card prose" id="materi"><div class="focus"><span>Satuan sintaksis</span><span>Jenis frasa</span><span>Fungsi kalimat</span><span>Aktif, pasif, versi, inversi</span></div>
+<section><h2>1. Hierarki Satuan Bahasa</h2><p>Sintaksis mempelajari hubungan antarkata dalam satuan yang lebih besar. Urutannya dapat dipahami sebagai berikut.</p>
+<div class="flow"><span>Kata</span><b>→</b><span>Frasa</span><b>→</b><span>Klausa</span><b>→</b><span>Kalimat</span></div>
+<table><thead><tr><th>Satuan</th><th>Ciri</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Satuan"><b>kata</b></td><td data-label="Ciri">satuan mandiri; dapat mengisi fungsi atau menjadi bagian frasa</td><td data-label="Contoh">adik</td></tr>
+<tr><td data-label="Satuan"><b>frasa</b></td><td data-label="Ciri">gabungan nonpredikatif; menempati satu fungsi</td><td data-label="Contoh">adik saya yang lucu</td></tr>
+<tr><td data-label="Satuan"><b>klausa</b></td><td data-label="Ciri">memiliki hubungan subjek-predikat</td><td data-label="Contoh">adik sedang tidur</td></tr>
+<tr><td data-label="Satuan"><b>kalimat</b></td><td data-label="Ciri">menyampaikan pikiran utuh dan memiliki intonasi final</td><td data-label="Contoh">Ketika hujan turun, adik sedang tidur.</td></tr>
+</tbody></table></section>
+
+<section><h2>2. Jenis Frasa Berdasarkan Distribusi</h2><h3>2.1 Endosentris koordinatif</h3><p>Kedua unsur setara dan dapat dihubungkan dengan <em>dan</em> atau <em>atau</em>: <em>suami istri</em> = suami dan istri.</p>
+<h3>2.2 Endosentris atributif</h3><p>Salah satu unsur menjadi inti, unsur lain menjadi atribut: <em>buku sejarah</em>. Kata <em>buku</em> merupakan inti; <em>sejarah</em> membatasi jenis buku.</p>
+<h3>2.3 Eksosentris</h3><p>Tidak ada satu unsur yang dapat menggantikan seluruh frasa. Bentuk yang umum ialah preposisi + nomina: <em>di pasar, ke sekolah, dari rumah</em>.</p>
+<div class="callout"><b>Tes frasa:</b> gabungan kata tidak memiliki hubungan S-P dan keseluruhannya hanya menempati satu fungsi dalam kalimat.</div></section>
+
+<section><h2>3. Jenis Frasa Berdasarkan Inti</h2><table><thead><tr><th>Jenis</th><th>Inti</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Jenis">frasa nominal</td><td data-label="Inti">nomina</td><td data-label="Contoh">rumah besar</td></tr>
+<tr><td data-label="Jenis">frasa verbal</td><td data-label="Inti">verba</td><td data-label="Contoh">sedang belajar</td></tr>
+<tr><td data-label="Jenis">frasa adjektival</td><td data-label="Inti">adjektiva</td><td data-label="Contoh">sangat indah</td></tr>
+<tr><td data-label="Jenis">frasa numeralia</td><td data-label="Inti">numeralia</td><td data-label="Contoh">tiga orang</td></tr>
+<tr><td data-label="Jenis">frasa preposisional</td><td data-label="Inti/perangkai">preposisi</td><td data-label="Contoh">di perpustakaan</td></tr>
+</tbody></table>
+<p><b>Frasa idiomatis</b> memiliki makna yang tidak dapat ditebak langsung dari unsur pembentuknya, misalnya <em>gulung tikar</em> yang berarti bangkrut. <b>Frasa ambigu</b> memiliki lebih dari satu tafsir karena batas unsur atau keterangannya tidak jelas.</p></section>
+
+<section><h2>4. Fungsi S-P-O-Pel-K</h2><table><thead><tr><th>Fungsi</th><th>Ciri utama</th><th>Tes</th></tr></thead><tbody>
+<tr><td data-label="Fungsi"><b>Subjek (S)</b></td><td data-label="Ciri utama">pokok pembicaraan; umumnya nomina</td><td data-label="Tes">siapa/apa yang diterangkan predikat?</td></tr>
+<tr><td data-label="Fungsi"><b>Predikat (P)</b></td><td data-label="Ciri utama">tindakan, keadaan, identitas, atau jumlah subjek</td><td data-label="Tes">apa yang dilakukan/bagaimana subjek?</td></tr>
+<tr><td data-label="Fungsi"><b>Objek (O)</b></td><td data-label="Ciri utama">langsung sesudah verba transitif; tanpa preposisi</td><td data-label="Tes">dapat menjadi subjek pada bentuk pasif</td></tr>
+<tr><td data-label="Fungsi"><b>Pelengkap (Pel)</b></td><td data-label="Ciri utama">melengkapi predikat tetapi tidak menjadi subjek pasif</td><td data-label="Tes">tidak dapat dipasifkan sebagai subjek</td></tr>
+<tr><td data-label="Fungsi"><b>Keterangan (K)</b></td><td data-label="Ciri utama">informasi waktu, tempat, cara, sebab, tujuan</td><td data-label="Tes">posisinya relatif bebas dan sering dapat dihilangkan</td></tr>
+</tbody></table>
+<div class="example"><b>Analisis:</b> “Rina mengirimi adiknya sebuah paket kemarin.”<br><b>Rina</b> = S; <b>mengirimi</b> = P; <b>adiknya</b> = O; <b>sebuah paket</b> = Pel; <b>kemarin</b> = K.</div></section>
+
+<section><h2>5. Objek dan Pelengkap</h2><p>Keduanya sering berada di belakang predikat, tetapi perilakunya berbeda.</p>
+<div class="compare"><div><b>Objek</b><p>Rina membaca <u>buku itu</u>.</p><small>Pasif: <u>Buku itu</u> dibaca Rina. Objek berubah menjadi subjek.</small></div><div><b>Pelengkap</b><p>Rina menjadi <u>ketua kelas</u>.</p><small>Bentuk “Ketua kelas dijadi Rina” tidak dapat diterima. Unsur tersebut adalah pelengkap/predikat nominal sesuai analisis.</small></div></div>
+<div class="warning"><b>Jebakan:</b> unsur berpreposisi biasanya bukan objek. Pada “Rina berbicara tentang ujian”, frasa <em>tentang ujian</em> tidak dapat menjadi subjek pasif.</div></section>
+
+<section><h2>6. Kalimat Inti dan Transformasi</h2><p>Kalimat inti adalah bentuk paling sederhana: susunan biasa S-P, bernada berita, aktif, dan afirmatif. Transformasi mengubah bentuk tanpa menghilangkan gagasan dasarnya.</p>
+<table><thead><tr><th>Bentuk</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Bentuk">kalimat luas</td><td data-label="Contoh">Mahasiswa baru yang rajin itu sedang membaca buku di perpustakaan.</td></tr>
+<tr><td data-label="Bentuk">kalimat inti</td><td data-label="Contoh">Mahasiswa membaca buku.</td></tr>
+<tr><td data-label="Bentuk">transformasi pasif</td><td data-label="Contoh">Buku dibaca mahasiswa.</td></tr>
+<tr><td data-label="Bentuk">transformasi tanya</td><td data-label="Contoh">Apakah mahasiswa membaca buku?</td></tr>
+</tbody></table></section>
+
+<section><h2>7. Aktif dan Pasif</h2><ul><li><b>Aktif transitif:</b> memerlukan objek dan dapat dipasifkan. Contoh: <em>Ibu memasak nasi</em>.</li><li><b>Aktif intransitif:</b> tidak memerlukan objek. Contoh: <em>Adik tidur</em>.</li><li><b>Dwitransitif:</b> memiliki objek dan pelengkap. Contoh: <em>Ayah membelikan Adik sepatu</em>.</li><li><b>Pasif kanonis:</b> umumnya memakai <em>di-</em> atau <em>ter-</em>. Contoh: <em>Nasi dimasak Ibu</em>.</li><li><b>Pasif persona:</b> objek + pelaku pronomina + verba dasar. Contoh: <em>Buku itu sudah saya baca</em>.</li></ul>
+<div class="compare"><div><b>✕ Kurang efektif</b><p>Buku itu sudah dibaca oleh saya.</p></div><div><b>✓ Pasif persona</b><p>Buku itu sudah saya baca.</p></div></div></section>
+
+<section><h2>8. Ragam Susunan dan Kelengkapan</h2><table><thead><tr><th>Jenis</th><th>Pola</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Jenis">versi</td><td data-label="Pola">S-P</td><td data-label="Contoh">Kambing itu mati.</td></tr>
+<tr><td data-label="Jenis">inversi</td><td data-label="Pola">P-S</td><td data-label="Contoh">Matilah kambing itu.</td></tr>
+<tr><td data-label="Jenis">mayor</td><td data-label="Pola">sekurang-kurangnya S-P</td><td data-label="Contoh">Ayah pulang nanti sore.</td></tr>
+<tr><td data-label="Jenis">minor</td><td data-label="Pola">unsur inti tidak lengkap, dipahami dari konteks</td><td data-label="Contoh">Nanti sore. / Awas!</td></tr>
+<tr><td data-label="Jenis">verbal</td><td data-label="Pola">predikat berupa verba</td><td data-label="Contoh">Ibu memasak.</td></tr>
+<tr><td data-label="Jenis">nonverbal</td><td data-label="Pola">predikat berupa nomina, adjektiva, numeralia, atau frasa preposisional</td><td data-label="Contoh">Ayah saya guru. Rumah itu besar.</td></tr>
+</tbody></table></section>
+
+<section><h2>9. Urutan Analisis Sintaksis</h2><ol class="steps"><li>Cari predikat utama.</li><li>Tentukan subjek dengan menanyakan siapa/apa yang diterangkan.</li><li>Jika predikat transitif, cari objek tepat sesudah predikat.</li><li>Uji objek melalui perubahan aktif-pasif.</li><li>Tentukan pelengkap yang wajib dan keterangan yang sifatnya tambahan.</li><li>Baru tentukan pola dan jenis kalimat.</li></ol>
+<details class="answer-key"><summary>Buka contoh analisis lengkap</summary><div class="answer-body"><p><b>Kalimat:</b> “Kemarin, guru baru itu menjelaskan materi sintaksis kepada siswa.”</p><p><b>Analisis:</b> <em>Kemarin</em> = K waktu; <em>guru baru itu</em> = S; <em>menjelaskan</em> = P; <em>materi sintaksis</em> = O; <em>kepada siswa</em> = K penerima. Bentuk pasifnya: “Kemarin, materi sintaksis dijelaskan oleh guru baru itu kepada siswa.”</p></div></details></section>
+<nav class="pager" aria-label="Navigasi materi"><a href="06_Perubahan_Makna.html">← Perubahan Makna</a><a href="08_Latihan_Hubungan_Makna_dan_Majas.html">Latihan Hubungan Makna dan Majas →</a></nav></article>
 <footer>© 2026 Balya Rochmadi · StudentPro · UTBK SNBT PPU</footer></main></body></html>

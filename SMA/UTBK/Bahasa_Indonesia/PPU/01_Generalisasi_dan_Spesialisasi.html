@@ -8,83 +8,54 @@
 .topnav,.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0}.topnav a,.pager a,.button{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#fff;text-decoration:none;font-weight:750;border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:0 3px 10px #10233c0c}.topnav a:hover,.pager a:hover{border-color:var(--blue);color:var(--blue)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,36px);box-shadow:0 10px 30px #10233c0d;margin-top:14px}.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 24px}.focus span{padding:10px 11px;background:var(--soft);border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:.86rem;font-weight:750;text-align:center}
 h2,h3{color:var(--navy);line-height:1.28;scroll-margin-top:14px}h2{font-size:1.45rem;border-bottom:2px solid var(--line);padding-bottom:.38em;margin:2em 0 .7em}h3{font-size:1.1rem;margin:1.55em 0 .55em}p{margin:.4em 0 1.05em}.prose strong{color:var(--navy)}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.1em 0}.concept-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.concept{border:1px solid #c7dceb;border-radius:13px;padding:15px;background:linear-gradient(145deg,#f8fcff,#eef7fc)}.concept b{display:block;color:var(--navy);font-size:1.04rem}.concept span{display:block;color:var(--blue);font-weight:850;margin:.2em 0}.concept p{font-size:.9rem;color:var(--muted);margin:.35em 0 0}.example,.warning{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0;background:#f6fbff}.example.good{border-left-color:var(--good);background:#f1fbf6}.warning{border-color:#f1d4a8;border-left-color:#df7b08;background:#fff9ef;color:#68400d}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px}.steps li{position:relative;padding:11px 13px 11px 50px;border:1px solid var(--line);border-radius:11px;background:#fafcff}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1em 0}.compare>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcfe}.compare>div:first-child{border-left:4px solid #d65353}.compare>div:last-child{border-left:4px solid var(--good)}.compare p{margin:.35em 0}.compare small{color:var(--muted)}.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:1.2em 0}.flow span{background:var(--navy);color:#fff;border-radius:10px;padding:9px 14px;font-weight:850}.flow b{color:var(--blue);font-size:1.3rem}.mini{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}.mini ol{margin-bottom:0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.1em 0;font-size:.92rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tbody tr:last-child td{border-bottom:0}th{background:#eaf4fa;color:var(--navy);font-weight:850}tbody tr:nth-child(even){background:#f9fbfd}ul,ol{padding-left:1.35em}li{margin:.35em 0}
 .source-table{white-space:pre-wrap;overflow-x:auto;background:#f8fbfd;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:14px;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:1em 0}.callout{background:#edf8ff;border:1px solid #b9def5;border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0}.bullet-list{margin:.5em 0 1.2em;padding-left:1.25em}.bullet-list li{margin:.34em 0}
 .question{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:13px;padding:14px 16px;margin:16px 0;background:#fff}.question p{margin:0 0 .65em}.options{display:grid;gap:6px}.option{background:var(--soft);border-radius:8px;padding:7px 10px}.option b{color:var(--blue);margin-right:5px}.reading{background:#f8fbfd;border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.1em 0}.reading-label{font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.45em}
 details.answer-key{margin-top:28px;border:1px solid #b8dfd0;border-radius:14px;background:#f0fbf6;overflow:hidden}details.answer-key summary{cursor:pointer;padding:14px 17px;font-weight:850;color:var(--good);list-style:none}details.answer-key summary::-webkit-details-marker{display:none}details.answer-key summary:after{content:"+";float:right;font-size:1.2rem}details.answer-key[open] summary:after{content:"-"}.answer-body{padding:4px 17px 18px;border-top:1px solid #cbe7dc}.practice-note{background:#fff8ed;border:1px solid #f5d3a2;border-left:5px solid #e58a11;border-radius:12px;padding:13px 15px;margin-bottom:20px;color:#70420d}
 footer{color:var(--muted);font-size:.86rem;text-align:center;margin-top:22px}.pager{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
-@media(max-width:760px){.focus{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
+@media(max-width:760px){.focus,.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr 1fr}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
 @media(max-width:430px){body{font-size:15px}.focus{grid-template-columns:1fr}.hero h1{font-size:1.82rem}.hero{padding:25px 18px}.topnav a{width:100%;justify-content:center}.source-table{font-size:12px}}
+@media(max-width:600px){.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table{border:0;background:transparent}tbody tr{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff!important}td{border:0;border-bottom:1px solid var(--line);padding:9px 12px}td:last-child{border-bottom:0}td[data-label]::before{content:attr(data-label);display:block;color:var(--blue);font-size:.69rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;margin-bottom:2px}}
 @media print{body{background:#fff}.shell{max-width:none}.hero,.card{box-shadow:none}.topnav,.pager{display:none}details.answer-key:not([open]) .answer-body{display:block}details.answer-key summary{display:none}}
 </style></head>
 <body><main class="shell"><header class="hero"><div class="eyebrow">StudentPro · UTBK SNBT · Pengetahuan dan Pemahaman Umum</div>
 <h1>Generalisasi dan Spesialisasi</h1><p>Pergeseran cakupan makna dari khusus ke umum dan dari umum ke khusus, lengkap dengan strategi identifikasi konteks.</p><div class="meta"><span class="pill">Materi</span><span class="pill">Bahasa Indonesia</span><span class="pill">Balya Rochmadi</span></div></header>
 <nav class="topnav"><a href="00_INDEX.html">← Indeks PPU</a><a href="#materi">Mulai belajar ↓</a></nav>
-<article class="card prose" id="materi"><div class="focus"><span>Makna asal dan makna baru</span><span>Generalisasi</span><span>Spesialisasi</span><span>Jebakan nilai rasa</span></div><pre class="source-table">1   Perluasan Makna (Generalisasi)                                                                   2
-    1.1 Konsep Dasar Mekanisme . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     2
-    1.2 Tabel Analisis Perluasan Makna . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   2</pre>
-<pre class="source-table">2   Penyempitan Makna (Spesialisasi)                                                                 4
-    2.1 Konsep Dasar Mekanisme . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     4
-    2.2 Tabel Analisis Penyempitan Makna . . . . . . . . . . . . . . . . . . . . . . . . . . . .     4</pre>
-<pre class="source-table">1      Perluasan Makna (Generalisasi)
-1.1     Konsep Dasar Mekanisme</pre>
-<h3>Definisi</h3>
-<p>Fenomena ini sering terjadi karena faktor sosial (kesopanan/tata krama) atau perkembangan tekno- logi. Kata-kata kekerabatan adalah kelompok yang paling sering mengalami generalisasi.</p>
-<h3>1.2 Tabel Analisis Perluasan Makna</h3>
-<pre class="source-table">Kata      Makna Asal (Sempit)                      Makna Baru (Luas/Generalisasi)
- Bapak                Orang tua kandung laki-laki (Ayah bio-   Sebutan hormat untuk laki-laki yang lelogis).                                  bih tua atau memiliki jabatan (siapa saja).
- Ibu                  Orang tua kandung perempuan (Ibu bi-     Sebutan hormat untuk wanita dewasa
-                      ologis).                                 atau istri pejabat.
- Saudara              Orang yang se-udiro (satu kandung-       Kata sapaan formal untuk orang kedua
-                      an/darah).                               (Anda/Kamu) dalam pidato/surat.
- Putra/i              Anak kandung raja atau bangsawan.        Anak laki-laki/perempuan dari siapa
-                                                               saja (umum).
- Papan                Kayu lembaran/lempengan kayu.            Tempat tinggal/Rumah (dalam konsep
-                                                               Sandang, Pangan, Papan).
- Berlayar             Mengarungi laut menggunakan layar        Mengarungi laut dengan kendaraan apa
-                      (tenaga angin).                          saja (mesin, uap, nuklir).
- Kepala               Bagian tubuh paling atas.                Pemimpin organisasi (Kepala Sekolah,
-                                                               Kepala Desa).</pre>
-<h3>Analisis Mendalam</h3>
-<ul class="bullet-list"><li>"Ayah saya bernama Budi." → Makna Asal (Ayah kandung).</li></ul>
-<ul class="bullet-list"><li>"Apakah Bapak sudah makan?" (tanya pelayan ke pelanggan). → Generalisasi.</li></ul>
-<p>Latihan Literasi: Generalisasi</p>
-<div class="reading"><div class="reading-label">Bacaan untuk soal</div><p>Teks berikut digunakan untuk menjawab soal nomor 1 dan 2.</p></div>
-<p>Dalam sebuah seminar nasional yang dihadiri oleh ratusan peserta, sang moderator membuka acara dengan sapaan hangat. "Selamat pagi, Saudara-saudara sekalian. Terima kasih telah hadir di sini." Di barisan depan, duduk seorang pria paruh baya yang merupakan pejabat tinggi</p>
-<p>negara. Moderator pun menyapanya secara khusus, "Selamat datang, Bapak Menteri, terima kasih atas kesediaannya meluangkan waktu." Penggunaan kata sapaan dalam forum resmi seperti ini menunjukkan betapa fleksibelnya bahasa Indonesia. Kata yang semula hanya merujuk pada hubungan darah kini bertransformasi menjadi penanda status sosial dan etika kesopanan. Bayangkan jika moderator menyapa menteri tersebut dengan sebutan "Kamu" atau "Anda", tentu akan terasa kurang takzim. Fenomena kebahasaan ini membuktikan bahwa budaya feodalisme halus masih mengakar, di mana diksi dipilih bukan hanya berdasarkan makna leksikal, tetapi juga strata sosial.</p>
-<p>1. Kata Saudara pada kalimat pembuka moderator mengalami generalisasi. Makna asal kata tersebut sebelum mengalami perluasan adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Teman sejawat atau rekan kerja.</div><div class="option"><b>B.</b>Orang yang memiliki satu pertalian darah/kandungan.</div><div class="option"><b>C.</b>Hadirin atau peserta rapat.</div><div class="option"><b>D.</b>Orang yang memiliki derajat sosial yang sama.</div><div class="option"><b>E.</b>Anggota keluarga jauh.</div></div></div>
-<p>2. Berdasarkan teks, alasan utama terjadinya generalisasi pada kata Bapak saat menyapa menteri adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Menunjukkan hubungan kekerabatan antara moderator dan menteri.</div><div class="option"><b>B.</b>Mengikuti aturan tata bahasa baku yang kaku.</div><div class="option"><b>C.</b>Sebagai bentuk penghormatan dan penanda strata sosial.</div><div class="option"><b>D.</b>Karena menteri tersebut sudah berusia lanjut.</div><div class="option"><b>E.</b>Karena moderator tidak mengetahui nama asli menteri.</div></div></div>
-<p>Kunci &amp; Pembahasan 1. Jawaban: B (Satu pertalian darah) Secara etimologi, "saudara" berasal dari kata "se-udiro" (satu perut/kandungan). Makna asalnya adalah adik/kakak kandung, namun meluas menjadi sapaan umum. 2. Jawaban: C (Penghormatan) Teks menyebutkan: "...bertransformasi menjadi penanda status sosial dan etika kesopanan." Kata Bapak digunakan untuk menghormati jabatan, bukan karena hubungan ayah-anak.</p>
-<pre class="source-table">2      Penyempitan Makna (Spesialisasi)
-2.1     Konsep Dasar Mekanisme</pre>
-<h3>Definisi</h3>
-<p>Penyempitan makna sering terjadi pada istilah-istilah serapan (Sanskerta/Arab) yang masuk ke dalam bahasa Indonesia, atau istilah profesi.</p>
-<h3>2.2 Tabel Analisis Penyempitan Makna</h3>
-<pre class="source-table">Kata            Makna Asal (Luas)                            Makna Baru (Spesialisasi)
- Sarjana         Orang yang pandai / cendekiawan (bahasa      Gelar kelulusan Strata 1 (S1) dari perguru-
-                 Sanskerta).                                  an tinggi.
- Madrasah        Sekolah (tempat belajar apa saja, dari ba-   Sekolah yang berbasis kurikulum agama
-                 hasa Arab).                                  Islam.
- Sastra          Tulisan / Huruf / Buku.                      Karya seni bahasa yang imajinatif (novel,
-                                                              puisi, drama).
- Pendeta         Orang yang berilmu / pandai.                 Pemuka agama Kristen/Katolik.
- Pembantu        Orang yang membantu (siapa saja yang         Asisten Rumah Tangga / Pekerja domestik
-                 menolong).                                   (konotasi rendah).
- Kitab           Buku (buku apa saja).                        Buku suci agama (Al-Quran, Injil) atau
-                                                              buku hukum (KUHP).
- Guru            Pengajar / Orang yang digugu dan ditiru      Pengajar formal di sekolah (SD-SMA).
-                 (Sanskerta: berat/berbobot).                 Dosen tidak disebut guru.</pre>
-<h3>Analisis Mendalam</h3>
-<ul class="bullet-list"><li>Jika konteks soal menanyakan perubahan lingkup makna → Spesialisasi (Penolong umum jadi PRT).</li></ul>
-<ul class="bullet-list"><li>Jika konteks soal menanyakan nilai rasa → Peyorasi (Dianggap rendah/kasar).</li></ul>
-<p>Latihan Literasi: Spesialisasi</p>
-<div class="reading"><div class="reading-label">Bacaan untuk soal</div><p>Teks berikut digunakan untuk menjawab soal nomor 3 dan 4.</p></div>
-<p>Sejarah pendidikan di Indonesia mencatat evolusi makna kata yang menarik. Dahulu, siapa pun yang memiliki kepandaian luar biasa dan wawasan luas disebut sebagai sarjana, tanpa peduli apakah ia pernah duduk di bangku kuliah atau tidak. Para empu pembuat keris dan pujangga keraton adalah sarjana di masanya. Namun, kini gelar tersebut menjadi eksklusif. Seseorang</p>
-<p>baru sah dipanggil sarjana jika telah menyelesaikan skripsi dan diwisuda dari universitas. Hal serupa terjadi pada kata madrasah. Di negara asalnya, kata ini berarti sekolah secara umum, tempat siswa belajar matematika, sains, atau sejarah. Namun, dalam serapan bahasa Indonesia, madrasah mengalami penyempitan makna yang signifikan. Ia diidentikkan hanya sebagai lembaga pendidikan yang berafiliasi dengan agama Islam, berbeda dengan "sekolah" yang dianggap bermuatan umum atau sekuler.</p>
-<p>1. Berdasarkan teks, perubahan makna kata sarjana dikategorikan sebagai spesialisasi karena...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Maknanya meluas mencakup semua orang pandai.</div><div class="option"><b>B.</b>Maknanya berubah nilai rasanya menjadi lebih tinggi (ameliorasi).</div><div class="option"><b>C.</b>Maknanya menyempit dari orang pandai umum menjadi lulusan universitas.</div><div class="option"><b>D.</b>Maknanya berubah total menjadi nama jabatan di keraton.</div><div class="option"><b>E.</b>Maknanya menjadi kasar atau tidak sopan.</div></div></div>
-<p>2. Pernyataan berikut yang benar mengenai kata madrasah sesuai teks adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Dalam bahasa asalnya, madrasah hanya mengajarkan ilmu agama.</div><div class="option"><b>B.</b>Di Indonesia, madrasah bermakna sekolah umum non-agama.</div><div class="option"><b>C.</b>Kata madrasah mengalami generalisasi makna di Indonesia.</div><div class="option"><b>D.</b>Makna madrasah di Indonesia lebih sempit dibandingkan makna di bahasa asalnya.</div><div class="option"><b>E.</b>Madrasah dan sekolah adalah sinonim mutlak tanpa perbedaan makna.</div></div></div>
-<p>Kunci &amp; Pembahasan 3. Jawaban: C (Menyempit jadi lulusan universitas) Teks menjelaskan: "Dahulu... siapa pun yang memiliki kepandaian... disebut sarjana. Kini... eksklusif... jika telah diwisuda." Ini adalah definisi spesialisasi. 4. Jawaban: D (Lebih sempit) Bahasa asal: Sekolah umum. Bahasa Indonesia: Sekolah Islam. Lingkupnya mengecil/menyempit.</p><nav class="pager" aria-label="Navigasi materi"><span></span><a href="02_Kalimat_Efektif.html">Kalimat Efektif →</a></nav></article>
+<article class="card prose" id="materi"><div class="focus"><span>Makna asal dan makna baru</span><span>Generalisasi</span><span>Spesialisasi</span><span>Jebakan nilai rasa</span></div>
+<section><h2>1. Gagasan Utama: Cakupan Makna</h2>
+<p>Makna sebuah kata dapat berubah ketika masyarakat memakainya dalam konteks baru. Untuk topik ini, yang diperhatikan adalah <strong>luas atau sempitnya kelompok acuan</strong>. Bayangkan makna sebagai lingkaran: generalisasi membuat lingkarannya membesar, sedangkan spesialisasi membuat lingkarannya mengecil.</p>
+<div class="concept-grid"><div class="concept"><b>Generalisasi</b><span>khusus → umum</span><p>Makna baru mencakup lebih banyak orang, benda, atau keadaan.</p></div><div class="concept"><b>Spesialisasi</b><span>umum → khusus</span><p>Makna baru terbatas pada kelompok, bidang, atau keadaan tertentu.</p></div></div>
+<div class="callout"><b>Pertanyaan kunci:</b> “Apakah acuan kata sekarang bertambah banyak atau justru semakin terbatas?”</div></section>
+
+<section><h2>2. Generalisasi: Makna Menjadi Lebih Luas</h2>
+<p>Generalisasi terjadi apabila kata yang dahulu hanya menunjuk satu kelompok khusus kemudian dapat dipakai untuk kelompok yang lebih luas. Perubahan ini sering dipengaruhi kesopanan, perkembangan teknologi, dan perubahan kebiasaan sosial.</p>
+<table><thead><tr><th>Kata</th><th>Makna lebih dahulu</th><th>Makna yang lebih luas</th><th>Alasan</th></tr></thead><tbody>
+<tr><td data-label="Kata"><b>bapak</b></td><td data-label="Makna lebih dahulu">ayah kandung</td><td data-label="Makna yang lebih luas">sapaan hormat untuk laki-laki dewasa</td><td data-label="Alasan">acuan tidak terbatas pada hubungan keluarga</td></tr>
+<tr><td data-label="Kata"><b>ibu</b></td><td data-label="Makna lebih dahulu">orang tua kandung perempuan</td><td data-label="Makna yang lebih luas">sapaan hormat untuk perempuan dewasa</td><td data-label="Alasan">dipakai kepada orang yang bukan ibu kandung</td></tr>
+<tr><td data-label="Kata"><b>saudara</b></td><td data-label="Makna lebih dahulu">orang yang memiliki pertalian darah</td><td data-label="Makna yang lebih luas">sapaan resmi kepada orang lain</td><td data-label="Alasan">mencakup hadirin atau penerima surat</td></tr>
+<tr><td data-label="Kata"><b>berlayar</b></td><td data-label="Makna lebih dahulu">melaut dengan kapal layar</td><td data-label="Makna yang lebih luas">melakukan perjalanan di laut dengan kapal apa pun</td><td data-label="Alasan">alat geraknya tidak harus berupa layar</td></tr>
+<tr><td data-label="Kata"><b>papan</b></td><td data-label="Makna lebih dahulu">lembaran kayu</td><td data-label="Makna yang lebih luas">tempat tinggal dalam ungkapan sandang, pangan, papan</td><td data-label="Alasan">rumah dapat dibuat dari berbagai bahan</td></tr>
+</tbody></table>
+<div class="example"><b>Analisis contoh</b><p>“Selamat pagi, <em>Saudara-saudara</em>.” Penutur tidak sedang menyapa saudara kandung. Acuan <em>saudara</em> meluas menjadi seluruh peserta, sehingga terjadi generalisasi.</p></div></section>
+
+<section><h2>3. Spesialisasi: Makna Menjadi Lebih Sempit</h2>
+<p>Spesialisasi terjadi ketika kata yang dahulu bersifat umum kemudian hanya dipakai pada bidang atau kelompok tertentu. Istilah pendidikan, agama, profesi, dan kebudayaan sering mengalami proses ini.</p>
+<table><thead><tr><th>Kata</th><th>Makna lebih dahulu</th><th>Makna yang lebih khusus</th><th>Batas baru</th></tr></thead><tbody>
+<tr><td data-label="Kata"><b>sarjana</b></td><td data-label="Makna lebih dahulu">orang pandai atau cendekiawan</td><td data-label="Makna yang lebih khusus">lulusan program strata satu</td><td data-label="Batas baru">gelar pendidikan formal</td></tr>
+<tr><td data-label="Kata"><b>madrasah</b></td><td data-label="Makna lebih dahulu">sekolah atau tempat belajar</td><td data-label="Makna yang lebih khusus">sekolah berciri pendidikan Islam</td><td data-label="Batas baru">jenis lembaga tertentu</td></tr>
+<tr><td data-label="Kata"><b>sastra</b></td><td data-label="Makna lebih dahulu">tulisan atau buku</td><td data-label="Makna yang lebih khusus">karya bahasa yang bernilai estetis</td><td data-label="Batas baru">karya kreatif, seperti puisi dan novel</td></tr>
+<tr><td data-label="Kata"><b>pendeta</b></td><td data-label="Makna lebih dahulu">orang berilmu</td><td data-label="Makna yang lebih khusus">pemuka agama tertentu</td><td data-label="Batas baru">fungsi keagamaan</td></tr>
+<tr><td data-label="Kata"><b>kitab</b></td><td data-label="Makna lebih dahulu">buku</td><td data-label="Makna yang lebih khusus">buku suci atau buku hukum tertentu</td><td data-label="Batas baru">jenis buku khusus</td></tr>
+</tbody></table>
+<div class="example"><b>Analisis contoh</b><p>“Rina telah resmi menjadi <em>sarjana</em> setelah diwisuda.” Kata tersebut hanya mengacu pada lulusan jenjang tertentu, bukan setiap orang pandai. Cakupannya menyempit, sehingga terjadi spesialisasi.</p></div></section>
+
+<section><h2>4. Cara Menjawab Soal</h2><ol class="steps"><li><b>Tandai kata yang diuji.</b> Jangan langsung menebak jenis perubahan.</li><li><b>Tentukan makna dalam kalimat.</b> Gunakan informasi sebelum dan sesudah kata.</li><li><b>Ingat makna yang lebih dahulu.</b> Bandingkan kelompok acuannya.</li><li><b>Uji arah perubahan.</b> Khusus ke umum berarti generalisasi; umum ke khusus berarti spesialisasi.</li><li><b>Periksa fokus pertanyaan.</b> Jika soal menanyakan halus-kasar, topiknya nilai rasa, bukan cakupan.</li></ol>
+<div class="warning"><b>Jebakan umum:</b> kata <em>pembantu</em> dapat dibahas sebagai spesialisasi jika fokusnya “penolong umum menjadi pekerja domestik”. Kata yang sama dapat dibahas sebagai peyorasi jika fokusnya penurunan nilai rasa. Dasar penentuan selalu ada pada pertanyaan dan konteks.</div></section>
+
+<section><h2>5. Cek Pemahaman</h2>
+<div class="mini"><p><b>1.</b> Kata yang mengalami generalisasi terdapat pada kalimat ...</p><ol type="A"><li>Ia memperoleh gelar sarjana ekonomi.</li><li>Bapak dimohon memasuki ruang rapat.</li><li>Madrasah itu membuka kelas sains.</li><li>Pendeta memimpin ibadah.</li><li>Novel itu termasuk karya sastra.</li></ol></div>
+<div class="mini"><p><b>2.</b> Kata <em>madrasah</em> mengalami spesialisasi karena ...</p><ol type="A"><li>nilai rasanya menjadi lebih sopan</li><li>dipakai untuk semua tempat belajar</li><li>acuannya terbatas pada sekolah berciri Islam</li><li>mengalami pertukaran tanggapan indra</li><li>dipakai sebagai kata sapaan resmi</li></ol></div>
+<details class="answer-key"><summary>Buka jawaban cek pemahaman</summary><div class="answer-body"><p><b>1. B.</b> <em>Bapak</em> dipakai kepada orang yang bukan ayah kandung, sehingga acuannya meluas.</p><p><b>2. C.</b> Makna “sekolah” yang umum menjadi jenis sekolah tertentu.</p></div></details></section>
+<nav class="pager" aria-label="Navigasi materi"><span></span><a href="02_Kalimat_Efektif.html">Kalimat Efektif →</a></nav></article>
 <footer>© 2026 Balya Rochmadi · StudentPro · UTBK SNBT PPU</footer></main></body></html>

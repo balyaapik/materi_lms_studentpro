@@ -8,115 +8,65 @@
 .topnav,.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0}.topnav a,.pager a,.button{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#fff;text-decoration:none;font-weight:750;border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:0 3px 10px #10233c0c}.topnav a:hover,.pager a:hover{border-color:var(--blue);color:var(--blue)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,36px);box-shadow:0 10px 30px #10233c0d;margin-top:14px}.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 24px}.focus span{padding:10px 11px;background:var(--soft);border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:.86rem;font-weight:750;text-align:center}
 h2,h3{color:var(--navy);line-height:1.28;scroll-margin-top:14px}h2{font-size:1.45rem;border-bottom:2px solid var(--line);padding-bottom:.38em;margin:2em 0 .7em}h3{font-size:1.1rem;margin:1.55em 0 .55em}p{margin:.4em 0 1.05em}.prose strong{color:var(--navy)}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.1em 0}.concept-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.concept{border:1px solid #c7dceb;border-radius:13px;padding:15px;background:linear-gradient(145deg,#f8fcff,#eef7fc)}.concept b{display:block;color:var(--navy);font-size:1.04rem}.concept span{display:block;color:var(--blue);font-weight:850;margin:.2em 0}.concept p{font-size:.9rem;color:var(--muted);margin:.35em 0 0}.example,.warning{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0;background:#f6fbff}.example.good{border-left-color:var(--good);background:#f1fbf6}.warning{border-color:#f1d4a8;border-left-color:#df7b08;background:#fff9ef;color:#68400d}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px}.steps li{position:relative;padding:11px 13px 11px 50px;border:1px solid var(--line);border-radius:11px;background:#fafcff}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1em 0}.compare>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcfe}.compare>div:first-child{border-left:4px solid #d65353}.compare>div:last-child{border-left:4px solid var(--good)}.compare p{margin:.35em 0}.compare small{color:var(--muted)}.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:1.2em 0}.flow span{background:var(--navy);color:#fff;border-radius:10px;padding:9px 14px;font-weight:850}.flow b{color:var(--blue);font-size:1.3rem}.mini{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}.mini ol{margin-bottom:0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.1em 0;font-size:.92rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tbody tr:last-child td{border-bottom:0}th{background:#eaf4fa;color:var(--navy);font-weight:850}tbody tr:nth-child(even){background:#f9fbfd}ul,ol{padding-left:1.35em}li{margin:.35em 0}
 .source-table{white-space:pre-wrap;overflow-x:auto;background:#f8fbfd;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:14px;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:1em 0}.callout{background:#edf8ff;border:1px solid #b9def5;border-left:5px solid var(--blue);border-radius:12px;padding:14px 16px;margin:1em 0}.bullet-list{margin:.5em 0 1.2em;padding-left:1.25em}.bullet-list li{margin:.34em 0}
 .question{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:13px;padding:14px 16px;margin:16px 0;background:#fff}.question p{margin:0 0 .65em}.options{display:grid;gap:6px}.option{background:var(--soft);border-radius:8px;padding:7px 10px}.option b{color:var(--blue);margin-right:5px}.reading{background:#f8fbfd;border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:1.1em 0}.reading-label{font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.45em}
 details.answer-key{margin-top:28px;border:1px solid #b8dfd0;border-radius:14px;background:#f0fbf6;overflow:hidden}details.answer-key summary{cursor:pointer;padding:14px 17px;font-weight:850;color:var(--good);list-style:none}details.answer-key summary::-webkit-details-marker{display:none}details.answer-key summary:after{content:"+";float:right;font-size:1.2rem}details.answer-key[open] summary:after{content:"-"}.answer-body{padding:4px 17px 18px;border-top:1px solid #cbe7dc}.practice-note{background:#fff8ed;border:1px solid #f5d3a2;border-left:5px solid #e58a11;border-radius:12px;padding:13px 15px;margin-bottom:20px;color:#70420d}
 footer{color:var(--muted);font-size:.86rem;text-align:center;margin-top:22px}.pager{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
-@media(max-width:760px){.focus{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
+@media(max-width:760px){.focus,.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr 1fr}.hero{border-radius:16px}.card{padding:18px 15px}.shell{padding:10px 10px 40px}.pager a{flex:1;justify-content:center}}
 @media(max-width:430px){body{font-size:15px}.focus{grid-template-columns:1fr}.hero h1{font-size:1.82rem}.hero{padding:25px 18px}.topnav a{width:100%;justify-content:center}.source-table{font-size:12px}}
+@media(max-width:600px){.concept-grid,.concept-grid.three,.compare{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}table{border:0;background:transparent}tbody tr{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff!important}td{border:0;border-bottom:1px solid var(--line);padding:9px 12px}td:last-child{border-bottom:0}td[data-label]::before{content:attr(data-label);display:block;color:var(--blue);font-size:.69rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;margin-bottom:2px}}
 @media print{body{background:#fff}.shell{max-width:none}.hero,.card{box-shadow:none}.topnav,.pager{display:none}details.answer-key:not([open]) .answer-body{display:block}details.answer-key summary{display:none}}
 </style></head>
 <body><main class="shell"><header class="hero"><div class="eyebrow">StudentPro · UTBK SNBT · Pengetahuan dan Pemahaman Umum</div>
 <h1>Morfologi</h1><p>Morfem, afiksasi, hukum peluluhan K-T-S-P, makna imbuhan, kata majemuk, dan reduplikasi.</p><div class="meta"><span class="pill">Materi</span><span class="pill">Bahasa Indonesia</span><span class="pill">Balya Rochmadi</span></div></header>
 <nav class="topnav"><a href="00_INDEX.html">← Indeks PPU</a><a href="#materi">Mulai belajar ↓</a></nav>
-<article class="card prose" id="materi"><div class="focus"><span>Morfem dan afiksasi</span><span>Peluluhan K-T-S-P</span><span>Makna imbuhan</span><span>Komposisi dan reduplikasi</span></div><pre class="source-table">1   Konsep Dasar &amp; Morfofonemik                                                                       2
-    1.1 1. Morfem dan Proses Morfologis . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     2
-    1.2 2. Hukum K-T-S-P (Peleburan Fonem) . . . . . . . . . . . . . . . . . . . . . . . . . . .      2</pre>
-<pre class="source-table">2   Makna Gramatikal Imbuhan                                                                          4
-    2.1 1. Makna Awalan (Prefiks) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
-    2.2 2. Makna Akhiran (Sufiks) -kan dan -i . . . . . . . . . . . . . . . . . . . . . . . . . . .   4</pre>
-<pre class="source-table">3   Kata Majemuk &amp; Reduplikasi                                                                        6
-    3.1 1. Kata Majemuk (Komposisi) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     6
-    3.2 2. Reduplikasi (Kata Ulang) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   6</pre>
-<h2>4. Kunci Jawaban dan Pembahasan                                                                      8</h2>
-<pre class="source-table">1      Konsep Dasar &amp; Morfofonemik
-1.1     1. Morfem dan Proses Morfologis</pre>
-<h3>Definisi</h3>
-<ul class="bullet-list"><li>Morfem Bebas: Dapat berdiri sendiri (Kata Dasar). Contoh: makan, rumah.</li></ul>
-<ul class="bullet-list"><li>Morfem Terikat: Tidak dapat berdiri sendiri (Imbuhan/Afiks). Contoh: ber-, me-, -an.</li></ul>
-<ul class="bullet-list"><li>Proses Morfologis:</li></ul>
-<p>1. Afiksasi: Pengimbuhan (lari → berlari). 2. Reduplikasi: Pengulangan (anak → anak-anak). 3. Komposisi: Pemajemukan (tanda + tangan → tanda tangan).</p>
-<h3>1.2 2. Hukum K-T-S-P (Peleburan Fonem)</h3><p>Ini adalah materi paling sering muncul dalam soal ejaan dan pembentukan kata.</p>
-<h3>Aturan Krusial Utbk (K-T-S-P)</h3>
-<p>1. Huruf pertama adalah K, T, S, P.</p>
-<p>2. Huruf kedua adalah Vokal (a, i, u, e, o).</p>
-<p>3. Kata dasar tersebut adalah kata asli (bukan gugus konsonan asing).</p>
-<p>Rumus:</p>
-<ul class="bullet-list"><li>MeN- + Kait → Mengait (K luluh).</li></ul>
-<ul class="bullet-list"><li>MeN- + Tulis → Menulis (T luluh).</li></ul>
-<ul class="bullet-list"><li>MeN- + Sapu → Menyapu (S luluh).</li></ul>
-<ul class="bullet-list"><li>MeN- + Pakai → Memakai (P luluh).</li></ul>
-<h3>Pengecualian (Tidak Luluh)</h3>
-<ul class="bullet-list"><li>Kata Suku Kata Satu (Monosilaba): Awalan menjadi Menge-. Contoh: Cat → Mengecat, Bom → Mengebom.</li></ul>
-<ul class="bullet-list"><li>Kata Asing yang Belum Baku Sepenuhnya: Contoh: Kaji (agama) → Mengkaji (Beda dengan Mengaji Quran).</li></ul>
-<p>Latihan Literasi 1: Pembentukan Kata</p>
-<p>Teks Latihan: Teknologi</p>
-<p>Perkembangan teknologi digital menuntut kita untuk mampu menterjemahkan peluang menjadi keuntungan ekonomi. Banyak pemuda yang kini sukses mempopulerkan produk lokal melalui media sosial. Mereka tidak ragu untuk mengkreasi konten-konten menarik yang viral. Namun, kita juga harus hati-hati agar tidak mempengarui orang lain dengan berita bohong. Pemerintah pun terus mensosialisasikan undang-undang ITE agar ruang digital tetap kondusif.</p>
-<p>1. Manakah kata berimbuhan dalam teks di atas yang penulisannya TIDAK BAKU?</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>menterjemahkan dan mensosialisasikan</div><div class="option"><b>B.</b>mempopulerkan dan mengkreasi</div><div class="option"><b>C.</b>menterjemahkan, mempopulerkan, mempengarui, mensosialisasikan</div><div class="option"><b>D.</b>mengkreasi dan mempengarui</div><div class="option"><b>E.</b>semua kata berimbuhan sudah baku</div></div></div>
-<p>2. Perbaikan yang tepat untuk kata mengkreasi dan mempengarui adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>mengkreasikan, memengaruhi</div><div class="option"><b>B.</b>mengkreasi, mempengaruhi</div><div class="option"><b>C.</b>mengkreasikan, mempengaruhi</div><div class="option"><b>D.</b>mengkreasi, memengaruhi</div><div class="option"><b>E.</b>mengkreasikan, mempengarui</div></div></div>
-<pre class="source-table">2      Makna Gramatikal Imbuhan
-2.1     1. Makna Awalan (Prefiks)</pre>
-<h3>Penjelasan Detail</h3>
-<ul class="bullet-list"><li>Ber-:</li></ul>
-<ul class="bullet-list"><li>Mempunyai (beruang, berilmu).</li><li>Memakai (berbaju, bersepatu).</li><li>Melakukan tindakan (berlari, bernyanyi).</li><li>Saling/Resiprokal (bersalaman, berpelukan).</li><li>Berada dalam keadaan (bersedih, bergembira).</li></ul>
-<ul class="bullet-list"><li>MeN-:</li></ul>
-<ul class="bullet-list"><li>Melakukan tindakan (memukul, menulis).</li><li>Membuat jadi (menghijau, meninggi).</li><li>Menuju (melaut, mendarat).</li></ul>
-<ul class="bullet-list"><li>Ter-:</li></ul>
-<ul class="bullet-list"><li>Paling/Superlatif (terpandai, tertinggi).</li><li>Tidak sengaja (terjatuh, terbawa).</li><li>Dapat di- (terbaca, terangkat).</li><li>Sudah di-/Keadaan (tertutup, terbuka).</li></ul>
-<h3>2.2 2. Makna Akhiran (Sufiks) -kan dan -i</h3><p>Ini sering membingungkan. Perhatikan objeknya!</p>
-<h3>Aturan Krusial Utbk (K-T-S-P)</h3>
-<ul class="bullet-list"><li>Akhiran -kan (Benefaktif/Kausatif):</li></ul>
-<ul class="bullet-list"><li>Melakukan untuk orang lain (Ayah membelikan adik mainan).</li><li>Membuat objek bergerak (Ia menjatuhkan gelas → gelasnya jatuh).</li></ul>
-<ul class="bullet-list"><li>Akhiran -i (Lokatif/Repetitif):</li></ul>
-<ul class="bullet-list"><li>Tempat/Lokasi (Ia menduduki kursi → duduk di kursi).</li><li>Berulang-ulang (Ia memukuli maling → berkali-kali).</li><li>Memberi ke objek (Menghormati orang tua → memberi hormat).</li></ul>
-<p>Latihan Literasi 2: Makna Afiks</p>
-<p>Teks Latihan: Sosial</p>
-<p>Saat gempa terjadi, warga berhamburan keluar rumah untuk menyelamatkan diri. Mereka berlari menuju tanah lapang yang dianggap aman. Di pengungsian, para relawan saling bahu-membahu mendirikan tenda. Seorang ibu tampak menangisi rumahnya yang terbakar akibat korsleting listrik pascagempa. Tim SAR berusaha mengevakuasi korban yang masih tertimbun reruntuhan bangunan.</p>
-<p>1. Makna imbuhan ber-an pada kata berhamburan adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Saling melakukan (resiprokal)</div><div class="option"><b>B.</b>Melakukan pekerjaan secara berulang</div><div class="option"><b>C.</b>Banyak yang melakukan (plural)</div><div class="option"><b>D.</b>Berada dalam keadaan</div><div class="option"><b>E.</b>Melakukan tindakan tidak sengaja</div></div></div>
-<p>2. Makna imbuhan ter- pada kata terbakar dan tertimbun secara berturut-turut adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Tidak sengaja dan Dapat di-</div><div class="option"><b>B.</b>Dapat di- dan Keadaan</div><div class="option"><b>C.</b>Tidak sengaja dan Keadaan (sudah di-)</div><div class="option"><b>D.</b>Paling dan Tidak sengaja</div><div class="option"><b>E.</b>Keadaan dan Paling</div></div></div>
-<p>3. Penggunaan akhiran -i pada kata menangisi memberikan makna...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Menangis untuk orang lain (benefaktif).</div><div class="option"><b>B.</b>Menangis berkali-kali (repetitif).</div><div class="option"><b>C.</b>Membuat jadi menangis (kausatif).</div><div class="option"><b>D.</b>Menangis di suatu tempat (lokatif).</div><div class="option"><b>E.</b>Menangis mengenai/tentang sesuatu.</div></div></div>
-<pre class="source-table">3      Kata Majemuk &amp; Reduplikasi
-3.1     1. Kata Majemuk (Komposisi)</pre>
-<p>Jenis Kata Majemuk</p>
-<ul class="bullet-list"><li>Majemuk Dasar: Gabungan kata yang membentuk makna baru, tapi masih bisa ditelusuri. Contoh: rumah sakit, sapu tangan.</li></ul>
-<ul class="bullet-list"><li>Majemuk Idiomatis: Makna baru tidak berhubungan dengan unsur pembentuk. Contoh: kambing hitam, meja hijau, buah bibir.</li></ul>
-<ul class="bullet-list"><li>Penulisan:</li></ul>
-<ul class="bullet-list"><li>Terpisah: Jika tidak ada konfiks (awalan+akhiran). Contoh: tanda tangan, kerja sama, tanggung jawab.</li><li>Serangkai: 1. Kata tertentu (matahari, kacamata, olahraga). 2. Jika mendapat awalan+akhiran sekaligus. Contoh: pertanggungjawaban, menandatangani. 3. Jika hanya mendapat awalan/akhiran, TETAP DIPISAH. Contoh: bertanda tangan (benar), bertandatangan (salah).</li></ul>
-<h3>3.2 2. Reduplikasi (Kata Ulang)</h3>
-<p>Jenis Reduplikasi</p>
-<ul class="bullet-list"><li>Dwilingga (Utuh): Mengulang seluruh kata dasar. Contoh: buku-buku, rumah-rumah.</li></ul>
-<ul class="bullet-list"><li>Dwipurwa (Sebagian): Mengulang suku kata awal. Contoh: lelaki (laki), tetangga (tangga), pepohonan.</li></ul>
-<ul class="bullet-list"><li>Salin Suara (Berubah Bunyi): Contoh: sayur-mayur, lauk-pauk, gerak-gerik.</li></ul>
-<ul class="bullet-list"><li>Berimbuhan: Contoh: tarik-menarik, tolong-menolong.</li></ul>
-<p>Latihan Literasi 3: Ejaan Bentuk Kata</p>
-<p>Teks Latihan: Administrasi</p>
-<p>(1) Setiap peserta ujian wajib membawa kartu tanda tangan yang sah. (2) Peserta diminta untuk melipat gandakan lembar jawaban sebagai arsip. (3) Panitia tidak akan bertanggungjawab atas kehilangan barang bawaan. (4) Segala bentuk kecurangan akan ditindak tegas, termasuk kerja sama antarpeserta. (5) Suasana ujian harus sunyi senyap agar konsentrasi tidak terganggu.</p>
-<p>1. Penulisan kata majemuk yang SALAH dalam teks di atas terdapat pada kalimat nomor...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>(1) dan (4)</div><div class="option"><b>B.</b>(2) dan (3)</div><div class="option"><b>C.</b>(3) dan (5)</div><div class="option"><b>D.</b>(1), (2), dan (3)</div><div class="option"><b>E.</b>(4) saja</div></div></div>
-<p>2. Perbaikan yang tepat untuk kata melipat gandakan dan bertanggungjawab adalah...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>melipatgandakan, bertanggung jawab</div><div class="option"><b>B.</b>melipat-gandakan, bertanggung-jawab</div><div class="option"><b>C.</b>melipatgandakan, bertanggungjawab</div><div class="option"><b>D.</b>melipat gandakan, bertanggung jawab</div><div class="option"><b>E.</b>melipatgandakan, ber tanggung jawab</div></div></div>
-<p>3. Frasa sunyi senyap dan lauk-pauk (jika ada) merupakan contoh dari...</p>
-<div class="question"><p></p><div class="options"><div class="option"><b>A.</b>Kata majemuk idiomatis dan reduplikasi utuh.</div><div class="option"><b>B.</b>Frasa semakna dan reduplikasi salin suara.</div><div class="option"><b>C.</b>Frasa ambigu dan reduplikasi sebagian.</div><div class="option"><b>D.</b>Kata majemuk dasar dan reduplikasi berimbuhan.</div><div class="option"><b>E.</b>Frasa setara dan reduplikasi dwipurwa.</div></div></div>
-<p>4 Kunci Jawaban dan Pembahasan Kunci &amp; Pembahasan Latihan 1 (Pembentukan Kata)</p>
-<p>1. Jawaban: C.</p>
-<ul class="bullet-list"><li>Menterjemahkan → Salah. T luluh. Benar: Menerjemahkan.</li><li>Mempopulerkan → Salah. P luluh. Benar: Memopulerkan.</li><li>Mempengarui → Salah. P luluh + kurang ’h’. Benar: Memengaruhi.</li><li>Mensosialisasikan → Salah. S luluh. Benar: Menyosialisasikan.</li><li>Mengkreasi → Benar. Kr adalah gugus konsonan, tidak luluh.</li></ul>
-<p>2. Jawaban: A.</p>
-<ul class="bullet-list"><li>Mengkreasi sudah baku, tapi jika diberi akhiran -kan menjadi mengkreasikan (transitif).</li><li>Mempengarui salah total. P harus luluh (Pengaruh → Memengaruhi).</li></ul>
-<p>Kunci &amp; Pembahasan Latihan 2 (Makna Afiks)</p>
-<p>3. Jawaban: C (Banyak). Berhamburan artinya banyak yang keluar secara bersamaan/kacau.</p>
-<p>4. Jawaban: C.</p>
-<ul class="bullet-list"><li>Terbakar: Tidak sengaja dibakar.</li><li>Tertimbun: Keadaan sudah ditimbun/berada di bawah reruntuhan (statis).</li></ul>
-<div class="question"><p>5. Jawaban:</p><div class="options"><div class="option"><b>E.</b>Menangisi rumah = menangis tentang/mengenai rumah. (Objek rumah tidak bergerak, hanya menjadi alasan tangisan).</div></div></div>
-<p>Kunci &amp; Pembahasan Latihan 3 (Kata Majemuk &amp; Ejaan)</p>
-<p>6. Jawaban: B (2 dan 3).</p>
-<ul class="bullet-list"><li>(2) melipat gandakan: Salah. Jika ada awalan+akhiran (me-kan), kata majemuk wajib serangkai.</li><li>(3) bertanggungjawab: Salah. Hanya ada awalan (ber-), wajib dipisah.</li></ul>
-<p>7. Jawaban: A.</p>
-<ul class="bullet-list"><li>Lipat ganda + me-kan → Melipatgandakan.</li><li>Tanggung jawab + ber- → Bertanggung jawab.</li></ul>
-<p>8. Jawaban: B.</p>
-<ul class="bullet-list"><li>Sunyi senyap: Dua kata sinonim → Frasa Semakna.</li><li>Lauk-pauk: Pengulangan dengan perubahan bunyi vokal/konsonan → Salin Suara.</li></ul><nav class="pager" aria-label="Navigasi materi"><a href="04_Konjungsi_dan_Makna_Kata.html">← Konjungsi dan Makna Kata</a><a href="06_Perubahan_Makna.html">Perubahan Makna →</a></nav></article>
+<article class="card prose" id="materi"><div class="focus"><span>Morfem dan afiksasi</span><span>Peluluhan K-T-S-P</span><span>Makna imbuhan</span><span>Komposisi dan reduplikasi</span></div>
+<section><h2>1. Morfem dan Proses Morfologis</h2><p>Morfologi mempelajari bentuk kata, proses pembentukannya, serta perubahan makna atau kelas kata yang menyertainya. Unit terkecilnya adalah <strong>morfem</strong>.</p>
+<div class="concept-grid"><div class="concept"><b>Morfem bebas</b><span>dapat berdiri sendiri</span><p><em>makan, rumah, tulis</em></p></div><div class="concept"><b>Morfem terikat</b><span>harus melekat</span><p><em>meN-, ber-, -kan, -an</em></p></div></div>
+<table><thead><tr><th>Proses</th><th>Pengertian</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Proses">afiksasi</td><td data-label="Pengertian">penambahan imbuhan</td><td data-label="Contoh">tulis → menulis</td></tr>
+<tr><td data-label="Proses">reduplikasi</td><td data-label="Pengertian">pengulangan bentuk</td><td data-label="Contoh">anak → anak-anak</td></tr>
+<tr><td data-label="Proses">komposisi</td><td data-label="Pengertian">penggabungan dua kata</td><td data-label="Contoh">tanda + tangan → tanda tangan</td></tr>
+</tbody></table></section>
+
+<section><h2>2. Peluluhan K-T-S-P</h2><p>Fonem awal <b>k, t, s, p</b> pada kata dasar umumnya luluh ketika mendapat awalan <em>meN-</em> atau <em>peN-</em>, apabila huruf berikutnya berupa vokal.</p>
+<table><thead><tr><th>Kata dasar</th><th>Proses</th><th>Bentuk benar</th></tr></thead><tbody>
+<tr><td data-label="Kata dasar">kirim</td><td data-label="Proses">meN- + kirim</td><td data-label="Bentuk benar"><b>mengirim</b></td></tr>
+<tr><td data-label="Kata dasar">tulis</td><td data-label="Proses">meN- + tulis</td><td data-label="Bentuk benar"><b>menulis</b></td></tr>
+<tr><td data-label="Kata dasar">sapu</td><td data-label="Proses">meN- + sapu</td><td data-label="Bentuk benar"><b>menyapu</b></td></tr>
+<tr><td data-label="Kata dasar">pilih</td><td data-label="Proses">meN- + pilih</td><td data-label="Bentuk benar"><b>memilih</b></td></tr>
+</tbody></table>
+<h3>2.1 Kapan tidak luluh?</h3><ul><li><b>Gugus konsonan:</b> <em>kritik → mengkritik</em>, <em>proses → memproses</em>, <em>transfer → mentransfer</em>.</li><li><b>Beberapa bentuk serapan atau istilah:</b> bentuk baku ditentukan pemakaian dan kamus, misalnya <em>memproklamasikan</em>.</li><li><b>Huruf tersebut bagian imbuhan:</b> <em>memperoleh</em> berasal dari <em>meN- + per- + oleh</em>; p pada <em>per-</em> tidak luluh.</li><li><b>Pengecualian pembeda makna:</b> <em>mengkaji</em> dipertahankan agar berbeda dari <em>mengaji</em>.</li></ul>
+<div class="warning"><b>Jangan menghafal hasil akhirnya saja.</b> Tentukan kata dasar terlebih dahulu. Kesalahan menentukan kata dasar menyebabkan aturan peluluhan diterapkan pada huruf yang salah.</div></section>
+
+<section><h2>3. Makna Awalan</h2><table><thead><tr><th>Imbuhan</th><th>Makna umum</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Imbuhan"><em>meN-</em></td><td data-label="Makna umum">melakukan tindakan</td><td data-label="Contoh">menulis, membaca</td></tr>
+<tr><td data-label="Imbuhan"><em>ber-</em></td><td data-label="Makna umum">memiliki, memakai, melakukan, berada dalam keadaan</td><td data-label="Contoh">bersepeda, berbahagia</td></tr>
+<tr><td data-label="Imbuhan"><em>ter-</em></td><td data-label="Makna umum">paling, tidak sengaja, dapat, sudah dalam keadaan</td><td data-label="Contoh">tertinggi, tertabrak, terlihat, tertutup</td></tr>
+<tr><td data-label="Imbuhan"><em>peN-</em></td><td data-label="Makna umum">pelaku, alat, atau orang yang memiliki sifat</td><td data-label="Contoh">penulis, penghapus, pemalas</td></tr>
+<tr><td data-label="Imbuhan"><em>per-...-an</em></td><td data-label="Makna umum">hal, proses, tempat, atau wilayah</td><td data-label="Contoh">pertemuan, perumahan</td></tr>
+</tbody></table></section>
+
+<section><h2>4. Perbedaan -kan dan -i</h2><p>Makna akhiran bergantung pada verba dan konteks, tetapi pola berikut sangat membantu.</p>
+<table><thead><tr><th>Pola</th><th>Fokus</th><th>Contoh</th><th>Makna</th></tr></thead><tbody>
+<tr><td data-label="Pola"><em>menyiramkan</em></td><td data-label="Fokus">benda yang dipindahkan</td><td data-label="Contoh">Ibu menyiramkan air ke bunga.</td><td data-label="Makna">air bergerak</td></tr>
+<tr><td data-label="Pola"><em>menyirami</em></td><td data-label="Fokus">tempat/sasaran yang dikenai</td><td data-label="Contoh">Ibu menyirami bunga.</td><td data-label="Makna">bunga menjadi sasaran</td></tr>
+<tr><td data-label="Pola"><em>membelikan</em></td><td data-label="Fokus">tindakan untuk pihak lain</td><td data-label="Contoh">Ayah membelikan Adik sepatu.</td><td data-label="Makna">membeli untuk Adik</td></tr>
+<tr><td data-label="Pola"><em>menghadiahi</em></td><td data-label="Fokus">penerima</td><td data-label="Contoh">Ayah menghadiahi Adik sepatu.</td><td data-label="Makna">Adik diberi hadiah</td></tr>
+</tbody></table></section>
+
+<section><h2>5. Kata Majemuk</h2><p>Kata majemuk adalah gabungan kata yang membentuk satu kesatuan makna. Bentuk dasarnya umumnya ditulis terpisah, misalnya <em>tanggung jawab, kerja sama, tanda tangan</em>.</p>
+<table><thead><tr><th>Kondisi</th><th>Aturan</th><th>Contoh</th></tr></thead><tbody>
+<tr><td data-label="Kondisi">tanpa imbuhan</td><td data-label="Aturan">ditulis terpisah</td><td data-label="Contoh">tanggung jawab</td></tr>
+<tr><td data-label="Kondisi">hanya awalan atau akhiran</td><td data-label="Aturan">unsur tetap terpisah</td><td data-label="Contoh">bertanggung jawab</td></tr>
+<tr><td data-label="Kondisi">mendapat awalan dan akhiran sekaligus</td><td data-label="Aturan">ditulis serangkai</td><td data-label="Contoh">mempertanggungjawabkan, penandatanganan</td></tr>
+</tbody></table></section>
+
+<section><h2>6. Reduplikasi</h2><ul><li><b>Utuh:</b> <em>buku-buku</em> menyatakan banyak.</li><li><b>Sebagian:</b> <em>pepohonan</em> berasal dari pengulangan sebagian bentuk.</li><li><b>Berimbuhan:</b> <em>berlari-lari, kekanak-kanakan</em>.</li><li><b>Perubahan bunyi:</b> <em>sayur-mayur, lauk-pauk</em>.</li><li><b>Resiprokal:</b> <em>tolong-menolong, lempar-melempar</em> menyatakan saling.</li></ul></section>
+
+<section><h2>7. Strategi Analisis Bentuk Kata</h2><ol class="steps"><li>Tentukan kata dasar.</li><li>Pisahkan setiap imbuhan.</li><li>Periksa perubahan bunyi pada batas imbuhan dan kata dasar.</li><li>Tentukan makna gramatikal berdasarkan kalimat.</li><li>Periksa penulisan serangkai atau terpisah.</li></ol>
+<details class="answer-key"><summary>Buka contoh analisis</summary><div class="answer-body"><p><b>Penandatanganan</b> = peN- + tanda tangan + -an. Gabungan <em>tanda tangan</em> mendapat awalan dan akhiran sekaligus, sehingga ditulis serangkai. Fonem t pada <em>tanda</em> luluh menjadi n.</p></div></details></section>
+<nav class="pager" aria-label="Navigasi materi"><a href="04_Konjungsi_dan_Makna_Kata.html">← Konjungsi dan Makna Kata</a><a href="06_Perubahan_Makna.html">Perubahan Makna →</a></nav></article>
 <footer>© 2026 Balya Rochmadi · StudentPro · UTBK SNBT PPU</footer></main></body></html>
